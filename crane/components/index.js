@@ -1,5 +1,6 @@
 const map = require('./map')
 const table = require('./table')
+const donut = require('./donut')
 
 module.exports = {
   route: {
@@ -56,6 +57,7 @@ module.exports = {
   ],
   components: [
     map,
-    table
+    table,
+    donut
   ]
 }

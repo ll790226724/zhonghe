@@ -4,13 +4,16 @@
       <v-chart :options="craneStates.options" />
     </data-loader>
     <data-loader :style="{width: '400px', height: '254px', overflow: 'scroll', position: 'absolute', top: '78px', left: '1490px'}">
-      <vis-table :withHeader="false" theme='dark' stripe='' :headers="[{width: 120, key: 'index'}, {width: 280, key: 'name'}]" :data="[{index: 1, name: '生活服务'}, {width: 280,index: 2, name: '数据服务'}, {index: 3, name: '游戏'}, {index: 4, name: '电子商务'}, {index: 5, name: '音乐/视频/阅读'}, {index: 6, name: '智能硬件'}, {index: 7, name: '生活服务'}]">
+      <vis-table :withHeader="false" theme="dark" stripe="" :headers="[{width: 120, key: 'index'}, {width: 280, key: 'name'}]" :data="[{index: 1, name: '生活服务'}, {index: 2, name: '数据服务'}, {index: 3, name: '游戏'}, {index: 4, name: '电子商务'}, {index: 5, name: '音乐/视频/阅读'}, {index: 6, name: '智能硬件'}, {index: 7, name: '生活服务'}]">
         <template v-slot="{ cell: cell, columnKey: columnKey }">
           <span :class="columnKey === 'index' ? 'row-index-cell' : ''">
             {{cell}}
           </span>
         </template>
       </vis-table>
+    </data-loader>
+    <data-loader v-slot="{ results: results }" :style="{position: 'absolute', top: '436px', left: '1490px'}">
+      <donut :data="{0: {name: '数据服务', value: '120'}, 1: {name: '游戏', value: '110'}, 2: {name: '智能硬件', value: '100'}, 3: {name: '人力资源服务', value: '70'}, 4: {name: '计算机软件', value: '60'}, 5: {name: '其他', value: '12'}}" labelKey="name" valueKey="value" :theme="{background: 'transparent', colors: ['#6ad6ff', '#4b9bbe', '#367290', '#275570', '#1c4159', '#153349'], whitespace: 'nowrap'}" />
     </data-loader>
   </div>
 </template>
@@ -31,6 +34,9 @@ import {
   DataLoader,
   VisTable,
 } from '@byzanteam/vis-components'
+import {
+  Donut,
+} from '@byzanteam/graphite'
 
 export const resources = {
   mixins: [BuiltInMixin],
@@ -38,6 +44,7 @@ export const resources = {
   components: {
     DataLoader,
     VisTable,
+    Donut,
     'v-chart': Echarts
   },
 
