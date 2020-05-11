@@ -64,14 +64,14 @@ module.exports = {
   components: [
     map,
 
-    // {
-    //   id: 'background',
-    //   component: 'img',
-    //   position: [0, 0],
-    //   props: {
-    //     src: '/jinjiangwllz/images/bg.png'
-    //   },
-    // },
+    {
+      id: 'background',
+      component: 'img',
+      position: [0, 0],
+      props: {
+        src: '/static/Bg.png'
+      },
+    },
 
     {
       id: 'page-title',

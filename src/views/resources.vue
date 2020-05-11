@@ -3,6 +3,7 @@
     <data-loader :style="{position: 'absolute', top: '0px', left: '0px'}">
       <v-chart :options="craneStates.options" />
     </data-loader>
+    <img ref="background" src="/static/Bg.png" :style="{position: 'absolute', top: '0px', left: '0px'}" />
     <div ref="page-title" :style="{color: '#fff', fontSize: '42px', fontWeight: 600, textAlign: 'center', position: 'absolute', top: '35px', left: '750px'}">
       全省人力资源态势总览
     </div>
