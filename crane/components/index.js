@@ -1,6 +1,12 @@
 const map = require('./map')
 const partProduction = require('./part_production_digital')
 const talentNumber = require('./talent_number_digital')
+const talentAge = require('./talent_age_index_digital')
+const talentEducation = require('./talent_edution_index_digital')
+const talentIndustry = require('./talent_industry_index_digital')
+const talentQuality = require('./talent_quality_index_digital')
+const talentRank = require('./talent_rank_index_digital')
+const talentSynthesis = require('./talent_synthesis_index_digital')
 
 module.exports = {
   route: {
@@ -256,5 +262,11 @@ module.exports = {
 
     partProduction,
     talentNumber,
+    talentAge,
+    talentEducation,
+    talentIndustry,
+    talentQuality,
+    talentRank,
+    talentSynthesis
   ]
 }
