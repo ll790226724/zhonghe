@@ -37,46 +37,40 @@ export const resources = {
           backgroundColor: 'transparent',
           tooltip: {
             trigger: 'item',
-            formatter: '{b}<br/>{c} (p / km2)'
-          },
-          toolbox: {
-              show: true,
-              orient: 'vertical',
-              left: 'right',
-              top: 'center',
-              feature: {
-                dataView: {readOnly: false},
-                restore: {},
-                saveAsImage: {}
-              }
+            formatter: '{b}<br/>人才数量（人）：{c}'
           },
           visualMap: {
             type:'piecewise',
-            realtime: false,
-            calculable: true,
+            pieces: [
+              {gt: 1500, label: '1500人及以上'},
+              {gt: 1000, lte: 1500, label: '1000-1500人'},
+              {gt: 100, lte: 999, label: '100-999人'},
+              {gt: 10, lte: 99, label: '10-99人'},
+              {gt: 1, lt: 9, label: '1-9人'}
+            ],
+            orient: 'horizontal',
             inRange: {
               color: ['lightskyblue', 'yellow', 'orangered']
             }
           },
           series: [
             {
-              name: '香港18区人口密度',
               type: 'map',
-              mapType: 'Liuzhou', // 自定义扩展图表类型
+              mapType: 'Liuzhou',
               label: {
-                  show: true
+                show: true
               },
               data: [
-                {name: '城中区', value: 20057.34},
-                {name: '柳东新区', value: 15477.48},
-                {name: '柳南区', value: 31686.1},
-                {name: '柳北区', value: 6992.6},
-                {name: '柳江区', value: 44045.49},
-                {name: '柳城县', value: 40689.64},
-                {name: '鹿寨县', value: 37659.78},
-                {name: '融安县', value: 45180.97},
-                {name: '融水苗族自治县', value: 55204.26},
-                {name: '三江侗族自治县', value: 21900.9},
+                {name: '城中区', value: 4},
+                {name: '柳东新区', value: 15},
+                {name: '柳南区', value: 31},
+                {name: '柳北区', value: 69},
+                {name: '柳江区', value: 1440},
+                {name: '柳城县', value: 4068},
+                {name: '鹿寨县', value: 376},
+                {name: '融安县', value: 45},
+                {name: '融水苗族自治县', value: 55},
+                {name: '三江侗族自治县', value: 2},
               ],
             }
           ]
