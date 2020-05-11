@@ -108,3 +108,12 @@ export const resources = {
 }
 export default resources
 </script>
+
+<style lang="scss">
+.resources {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url('../../public/images/Bg.png');
+}
+</style>
