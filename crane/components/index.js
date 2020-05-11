@@ -244,20 +244,131 @@ module.exports = {
     },
 
     {
-      id: 'demand-type-circle',
+      id: 'value-circle',
       component: 'div',
-      position: [42, 364],
+      position: [104, 79],
       props: {
         $style: {
           height:'6px',
           width: '6px',
           borderRadius: '5px',
           borderWidth: '2px',
-          borderColor: '#2E2E2E',
+          borderColor: '#367391',
           borderStyle: 'solid',
         }
       },
+    },
 
+    {
+      id: 'number-circle',
+      component: 'div',
+      position: [104, 159],
+      props: {
+        $style: {
+          height:'6px',
+          width: '6px',
+          borderRadius: '5px',
+          borderWidth: '2px',
+          borderColor: '#367391',
+          borderStyle: 'solid',
+        }
+      },
+    },
+
+    {
+      id: 'education-circle',
+      component: 'div',
+      position: [64, 364],
+      props: {
+        $style: {
+          height:'6px',
+          width: '6px',
+          borderRadius: '5px',
+          borderWidth: '2px',
+          borderColor: '#367391',
+          borderStyle: 'solid',
+        }
+      },
+    },
+
+    {
+      id: 'rank-circle',
+      component: 'div',
+      position: [264, 364],
+      props: {
+        $style: {
+          height:'6px',
+          width: '6px',
+          borderRadius: '5px',
+          borderWidth: '2px',
+          borderColor: '#367391',
+          borderStyle: 'solid',
+        }
+      },
+    },
+
+    {
+      id: 'age-circle',
+      component: 'div',
+      position: [64, 472],
+      props: {
+        $style: {
+          height:'6px',
+          width: '6px',
+          borderRadius: '5px',
+          borderWidth: '2px',
+          borderColor: '#367391',
+          borderStyle: 'solid',
+        }
+      },
+    },
+
+    {
+      id: 'industry-circle',
+      component: 'div',
+      position: [264, 472],
+      props: {
+        $style: {
+          height:'6px',
+          width: '6px',
+          borderRadius: '5px',
+          borderWidth: '2px',
+          borderColor: '#367391',
+          borderStyle: 'solid',
+        }
+      },
+    },
+
+    {
+      id: 'quality-circle',
+      component: 'div',
+      position: [64, 580],
+      props: {
+        $style: {
+          height:'6px',
+          width: '6px',
+          borderRadius: '5px',
+          borderWidth: '2px',
+          borderColor: '#367391',
+          borderStyle: 'solid',
+        }
+      },
+    },
+
+    {
+      id: 'synthesis-circle',
+      component: 'div',
+      position: [264, 580],
+      props: {
+        $style: {
+          height:'6px',
+          width: '6px',
+          borderRadius: '5px',
+          borderWidth: '2px',
+          borderColor: '#367391',
+          borderStyle: 'solid',
+        }
+      },
     },
 
     partProduction,

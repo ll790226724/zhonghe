@@ -25,7 +25,7 @@ module.exports = {
         // 'v-if': 'results',
         titlePosition: 'bottom',
         $content: {
-          title: '人才素质指数',
+          title: '人才综合指数',
           $digital: 23,
         },
         $options: {
