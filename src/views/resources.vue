@@ -4,7 +4,7 @@
       <v-chart :options="craneStates.options" />
     </data-loader>
     <data-loader :style="{width: '400px', height: '254px', overflow: 'scroll', position: 'absolute', top: '78px', left: '1490px'}">
-      <vis-table :withHeader="false" :headers="[{width: 120, key: 'index'}, {width: 280, key: 'name'}]" :data="[{index: 1, name: '生活服务'}, {width: 280,index: 2, name: '数据服务'}, {index: 3, name: '游戏'}, {index: 4, name: '电子商务'}, {index: 5, name: '音乐/视频/阅读'}, {index: 6, name: '智能硬件'}, {index: 7, name: '生活服务'}]">
+      <vis-table :withHeader="false" theme='dark' stripe='' :headers="[{width: 120, key: 'index'}, {width: 280, key: 'name'}]" :data="[{index: 1, name: '生活服务'}, {width: 280,index: 2, name: '数据服务'}, {index: 3, name: '游戏'}, {index: 4, name: '电子商务'}, {index: 5, name: '音乐/视频/阅读'}, {index: 6, name: '智能硬件'}, {index: 7, name: '生活服务'}]">
         <template v-slot="{ cell: cell, columnKey: columnKey }">
           <span :class="columnKey === 'index' ? 'row-index-cell' : ''">
             {{cell}}
@@ -121,5 +121,26 @@ export default resources
   width: 100%;
   height: 100%;
   background-image: url('../../public/images/Bg.png');
+}
+
+.table {
+  .table__body {
+    tr {
+      td:first-child {
+        text-align: center;
+      }
+    }
+  }
+
+  .row-index-cell {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #6ad6ff;
+    color: #ffffff;
+  }
 }
 </style>

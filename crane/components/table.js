@@ -13,6 +13,8 @@ module.exports = {
       component: '@byzanteam/vis-components/vis-table',
       props: {
         $withHeader: false,
+        theme: 'dark',
+        stripe: '',
         $headers: "[{width: 120, key: 'index'}, {width: 280, key: 'name'}]",
         $data: "[{index: 1, name: '生活服务'}, {index: 2, name: '数据服务'}, {index: 3, name: '游戏'}, {index: 4, name: '电子商务'}, {index: 5, name: '音乐/视频/阅读'}, {index: 6, name: '智能硬件'}, {index: 7, name: '生活服务'}]"
       },
