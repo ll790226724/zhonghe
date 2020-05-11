@@ -15,37 +15,30 @@ exports.normal_digital_style = {
     fontWeight: 400,
   },
   $digitalStyle: {
-    fontSize: '36px',
+    fontSize: '32px',
     color: '#FFFFFF',
     fontWeight: 400,
     fontFamily: 'Oswald-Regular',
+    format: '11',
+    letterSpacing: '0.8',
   },
 };
 
-exports.total_count_digital_style = {
+exports.small_digital_style = {
   $titleStyle: {
-    color: '#2E2E2E',
-    fontSize: '14px',
+    color: '#367391',
+    fontSize: '16px',
     fontWeight: 400,
   },
   $digitalStyle: {
-    fontSize: '26px',
-    color: '#2E2E2E',
-    fontFamily: 'Oswald',
+    fontSize: '32px',
+    color: '#FFFFFF',
     fontWeight: 400,
-    format: '11.11',
-    letterSpacing: '0.6',
+    fontFamily: 'Oswald-Regular',
+    format: '11',
+    letterSpacing: '0.8',
 
   },
-  $suffixStyle: {
-    fontSize: '14px',
-    color: '#8F919F',
-    fontWeight: 400,
-  },
-  $options: {
-    separator: ',',
-    decimalPlaces: 2,
-  }
 };
 
 const chartTooltipOptions = {
@@ -58,7 +51,7 @@ const chartTooltipOptions = {
       $weight: 400
     },
     $notation: {
-      fill: '#007AFE',
+      fill: '#367391',
       name: 'circle-small',
       $size: 14
     }
