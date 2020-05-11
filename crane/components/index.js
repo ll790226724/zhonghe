@@ -8,6 +8,7 @@ const talentQuality = require('./talent_quality_index_digital')
 const talentRank = require('./talent_rank_index_digital')
 const talentSynthesis = require('./talent_synthesis_index_digital')
 const rank = require('./rank')
+const verticalBar = require('./vertical_bar')
 
 module.exports = {
   route: {
@@ -407,5 +408,6 @@ module.exports = {
     talentRank,
     talentSynthesis,
     rank,
+    verticalBar,
   ]
 }

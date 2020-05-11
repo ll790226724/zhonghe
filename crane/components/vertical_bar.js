@@ -1,8 +1,9 @@
-const { chartTooltipOptions } = require('../share');
+const { chartTooltipOptions } = require('../share')
 
 module.exports = {
+  id: 'demand-bar',
   component: '@byzanteam/vis-components/data-loader',
-  position: [-12, 705],
+  position: [41, 584],
   exports: {
     results: 'results',
   },
@@ -11,23 +12,25 @@ module.exports = {
     method: 'get',
     $data: "[{label: '投诉类型', amount: 12}]",
     $style: {
-      width: '384px',
-      height: '290px'
+      width: '400px',
+      height: '270px'
     },
   },
   children: [
     {
+      id: 'demand-bar-content',
       component: '@byzanteam/graphite/vertical-bar',
       props: {
-        'v-if': 'results',
-        $data: "results.map((result) => ({label: result[1], '数量（件）': result[0]}))",
+        // 'v-if': 'results',
+        // $data: "results.map((result) => ({label: result[1], '数量（件）': result[0]}))",
+        $data: "[{label: '电子商务', amount: 78}, {label: '广告营销', amount: 123}, {label: '分类消息', amount: '198'}, {label: '社交网络', amount: '67'}, {label: '信息安全', amount: '67'},{label: '互联网金融', amount: '87'}, {label: '企业服务', amount: '67'}, {label: '互联网', amount: '27'},]",
         labelKey: 'label',
         valueKey: '数量（件）',
         $mainAxis: {
           $labelStyle: {
-            $rotate: -45,
-            $size: 14,
-            fill: '#666666',
+            $rotate: 315,
+            $size: 12,
+            fill: '#367391',
           },
           $labelLength: 7,
           $lineStyle: {
@@ -42,18 +45,18 @@ module.exports = {
             stroke: 'transparent',
           },
           $labelStyle: {
-            $size: 16,
-            fill: '#666666',
+            $size: 12,
+            fill: '#367391',
           },
           unit: {
             content: '件',
-            fill: '#666666'
+            fill: '#367391'
           },
         },
         $gap: {
-          $outer: 3
+          $outer: 4.5
         },
-        $series: "['#1b74ef']",
+        $series: "['#6ad6ff'， #117ea8]",
         $theme: {
           background: 'transparent',
         },
