@@ -3,17 +3,17 @@ const { chartTooltipOptions } = require('../share');
 module.exports = {
   id: 'ranking_rank',
   component: '@byzanteam/vis-components/data-loader',
-  position: [1572, 263],
+  position: [82, 752],
   exports: {
     results: 'results',
   },
   props: {
-    $url: "`/v1/components/f5b74ddd-39de-493f-84ab-9d87fcf23fee/data?start=${craneStates.filterRange[0]}&end=${craneStates.filterRange[1]}`",
-    method: 'get',
-    $data: "[{label: '承办单位', amount: 12}]",
+    // $url: "`/v1/components/f5b74ddd-39de-493f-84ab-9d87fcf23fee/data?start=${craneStates.filterRange[0]}&end=${craneStates.filterRange[1]}`",
+    // method: 'get',
+    // $data: "[{label: '承办单位', amount: 12}]",
     $style: {
-      width: '298px',
-      maxHeight: '131px',
+      width: '296px',
+      height: '290px',
       padding: '8px',
       overflow: 'scroll'
     },
@@ -23,8 +23,9 @@ module.exports = {
       id: 'department-ranking-content',
       component: '@byzanteam/vis-components/ranking',
       props: {
-        'v-if': 'craneStates.rank',
-        $data: "results.slice(0, 3).map(item => { return {label: item[1], amount: item[0] } } )",
+        // 'v-if': 'craneStates.rank',
+        // $data: "results.slice(0, 3).map(item => { return {label: item[1], amount: item[0] } } )",
+        $data: "[{label: '大学', amount: 78}, {label: '硕士', amount: 23}, {label: '博士', amount: '18'}, {label: '博士后', amount: '7'},]",
         $keys: {
           label: 'label',
           value: 'amount',

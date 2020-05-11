@@ -67,7 +67,10 @@
       <digital-roll ref="talent-rank-index-content" titlePosition="bottom" :content="{title: '人才职称指数', digital: 23}" :options="{separator: ''}" :titleStyle="{color: '#367391', fontSize: '16px', fontWeight: '400'}" :digitalStyle="{fontSize: '32px', color: '#FFFFFF', fontWeight: '400', fontFamily: 'Oswald-Regular', format: '11', letterSpacing: '0.8'}" />
     </data-loader>
     <data-loader ref="talent-synthesis-index" v-slot="{ results: results }" :style="{position: 'absolute', top: '548px', left: '290px'}">
-      <digital-roll ref="talent-quality-index-content" titlePosition="bottom" :content="{title: '人才素质指数', digital: 23}" :options="{separator: ''}" :titleStyle="{color: '#367391', fontSize: '16px', fontWeight: '400'}" :digitalStyle="{fontSize: '32px', color: '#FFFFFF', fontWeight: '400', fontFamily: 'Oswald-Regular', format: '11', letterSpacing: '0.8'}" />
+      <digital-roll ref="talent-quality-index-content" titlePosition="bottom" :content="{title: '人才综合指数', digital: 23}" :options="{separator: ''}" :titleStyle="{color: '#367391', fontSize: '16px', fontWeight: '400'}" :digitalStyle="{fontSize: '32px', color: '#FFFFFF', fontWeight: '400', fontFamily: 'Oswald-Regular', format: '11', letterSpacing: '0.8'}" />
+    </data-loader>
+    <data-loader ref="ranking_rank" v-slot="{ results: results }" :style="{width: '296px', height: '290px', padding: '8px', overflow: 'scroll', position: 'absolute', top: '752px', left: '82px'}">
+      <ranking ref="department-ranking-content" :data="[{label: '大学', amount: 78}, {label: '硕士', amount: 23}, {label: '博士', amount: '18'}, {label: '博士后', amount: '7'},]" :keys="{label: 'label', value: 'amount', tooltip: 'name'}" :labelStyle="{color: '#666666', fontSize: '16px', lineHeight: '24px', fontWeight: '400'}" :valueStyle="{color: '#2E2E2E', fontSize: '16px', lineHeight: '1.5', fontWeight: '400'}" :lineStyle="{background: 'rgba(46, 46, 46, 0.05)', lineColor: ['#1B74EF', '#1B74EF80'], height: '3px', borderRadius: '3px'}" :tooltip="{text: {align: 'center', baseline: 'middle', fill: '#FFFFFF', size: 14, weight: 400}, notation: {fill: '#367391', name: 'circle-small', size: 14}}" :tooltipOptions="{background: 'rgba(60, 71, 89, 0.9)', text: {align: 'center', baseline: 'middle', fill: '#FFFFFF', size: 14, weight: 400}, title: {align: 'center', baseline: 'middle', fill: '#FFFFFF', size: 14, weight: 400}}" />
     </data-loader>
   </div>
 </template>
@@ -87,6 +90,7 @@ import BuiltInMixin from '../mixins/built_in'
 import {
   DataLoader,
   DigitalRoll,
+  Ranking,
 } from '@byzanteam/vis-components'
 
 export const resources = {
@@ -96,6 +100,7 @@ export const resources = {
     DataLoader,
     'v-chart': Echarts,
     DigitalRoll,
+    Ranking,
   },
 
   data () {

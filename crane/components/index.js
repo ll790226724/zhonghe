@@ -7,6 +7,7 @@ const talentIndustry = require('./talent_industry_index_digital')
 const talentQuality = require('./talent_quality_index_digital')
 const talentRank = require('./talent_rank_index_digital')
 const talentSynthesis = require('./talent_synthesis_index_digital')
+const rank = require('./rank')
 
 module.exports = {
   route: {
@@ -378,6 +379,7 @@ module.exports = {
     talentIndustry,
     talentQuality,
     talentRank,
-    talentSynthesis
+    talentSynthesis,
+    rank,
   ]
 }
