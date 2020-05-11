@@ -32,22 +32,22 @@ module.exports = {
           tooltip: 'name'
         },
         $labelStyle: {
-          color: '#666666',
+          color: '#4b9bbe',
           fontSize: '16px',
           lineHeight: '24px',
-          fontWeight: '400'
         },
         $valueStyle: {
-          color: '#2E2E2E',
+          color: '#6ad6ff',
           fontSize: '16px',
+          fontFamily: 'Oswald-Regular',
           lineHeight: '1.5',
           fontWeight: 400,
         },
         $lineStyle: {
-          background: 'rgba(46, 46, 46, 0.05)',
-          $lineColor: "['#1B74EF', '#1B74EF80']",
-          height: '3px',
-          borderRadius: '3px'
+          background: '#fff',
+          $lineColor: "['#0885b5', '#6ad6ff']",
+          height: '5px',
+          borderRadius: '2.5px'
         },
         ...chartTooltipOptions
       },
