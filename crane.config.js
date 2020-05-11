@@ -16,6 +16,18 @@ module.exports = {
         path: 'dist/index.css',
       },
     },
+
+    '@byzanteam/graphite': {
+      version: 'latest',
+    },
+
+    '@byzanteam/carbonium': {
+      version: 'latest',
+      style: {
+        type: 'normal',
+        path: 'dist/carbonium.css',
+      },
+    },
   },
   // 页面
   pages: [
