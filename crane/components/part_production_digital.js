@@ -26,6 +26,7 @@ module.exports = {
         titlePosition: 'left',
         $content: {
           title: '地区生产总值',
+          prefix: '￥',
           $digital: 23,
         },
         $options: {
