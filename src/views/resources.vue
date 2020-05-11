@@ -4,6 +4,8 @@
       <v-chart :options="craneStates.options" />
     </data-loader>
     <img ref="background" src="/static/Bg.png" :style="{position: 'absolute', top: '0px', left: '0px'}" />
+    <img ref="title-bg" :style="{width: '701px', height: '123px', position: 'absolute', top: '0px', left: '607px'}" src="/static/Title-Bg.png" />
+    <img ref="box-bg" :style="{width: '440px', height: '1059px', position: 'absolute', top: '10px', left: '10px'}" src="/static/Box-Bg.png" />
     <div ref="page-title" :style="{color: '#fff', fontSize: '42px', fontWeight: 600, textAlign: 'center', position: 'absolute', top: '35px', left: '750px'}">
       全省人力资源态势总览
     </div>

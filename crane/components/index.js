@@ -75,6 +75,32 @@ module.exports = {
     },
 
     {
+      id: 'title-bg',
+      component: 'img',
+      position: [607, 0],
+      props: {
+        $style: {
+          width: '701px',
+          height: '123px',
+        },
+        src: '/static/Title-Bg.png'
+      },
+    },
+
+    {
+      id: 'box-bg',
+      component: 'img',
+      position: [10, 10],
+      props: {
+        $style: {
+          width: '440px',
+          height: '1059px',
+        },
+        src: '/static/Box-Bg.png'
+      },
+    },
+
+    {
       id: 'page-title',
       component: 'div',
       content: '全省人力资源态势总览',
