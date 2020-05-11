@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "@byzanteam/vis-components": "latest",
+    "@byzanteam/graphite": "latest",
     "axios": "^0.19.0",
     "echarts": "^4.7.0",
     "lodash": "^4.17.15",

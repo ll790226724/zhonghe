@@ -72,7 +72,10 @@
       <digital-roll ref="talent-quality-index-content" titlePosition="bottom" :content="{title: '人才综合指数', digital: 23}" :options="{separator: ''}" :titleStyle="{color: '#367391', fontSize: '16px', fontWeight: '400'}" :digitalStyle="{fontSize: '32px', color: '#FFFFFF', fontWeight: '400', fontFamily: 'Oswald-Regular', format: '11', letterSpacing: '0.8'}" />
     </data-loader>
     <data-loader ref="ranking_rank" v-slot="{ results: results }" :style="{width: '296px', height: '290px', padding: '8px', overflow: 'scroll', position: 'absolute', top: '752px', left: '82px'}">
-      <ranking ref="department-ranking-content" :data="[{label: '大学', amount: 78}, {label: '硕士', amount: 23}, {label: '博士', amount: '18'}, {label: '博士后', amount: '7'},]" :keys="{label: 'label', value: 'amount', tooltip: 'name'}" :labelStyle="{color: '#4b9bbe', fontSize: '16px', lineHeight: '24px'}" :valueStyle="{color: '#6ad6ff', fontSize: '16px', fontFamily: 'Oswald-Regular', lineHeight: '1.5', fontWeight: '400'}" :lineStyle="{background: '#fff', lineColor: ['#0885b5', '#6ad6ff'], height: '5px', borderRadius: '2.5px'}" :tooltip="{text: {align: 'center', baseline: 'middle', fill: '#FFFFFF', size: 14, weight: 400}, notation: {fill: '#367391', name: 'circle-small', size: 14}}" :tooltipOptions="{background: 'rgba(60, 71, 89, 0.9)', text: {align: 'center', baseline: 'middle', fill: '#FFFFFF', size: 14, weight: 400}, title: {align: 'center', baseline: 'middle', fill: '#FFFFFF', size: 14, weight: 400}}" />
+      <ranking ref="department-ranking-content" :data="[{label: '大学', amount: 78}, {label: '硕士', amount: 23}, {label: '博士', amount: '18'}, {label: '博士后', amount: '7'},]" :keys="{label: 'label', value: 'amount', tooltip: 'name'}" :labelStyle="{color: '#4b9bbe', fontSize: '16px', lineHeight: '24px'}" :valueStyle="{color: '#6ad6ff', fontSize: '16px', fontFamily: 'Oswald-Regular', lineHeight: '1.5', fontWeight: '400'}" :lineStyle="{background: '#444', lineColor: ['#0885b5', '#6ad6ff'], height: '5px', borderRadius: '2.5px'}" :tooltip="{text: {align: 'center', baseline: 'middle', fill: '#FFFFFF', size: 14, weight: 400}, notation: {fill: '#367391', name: 'circle-small', size: 14}}" :tooltipOptions="{background: 'rgba(60, 71, 89, 0.9)', text: {align: 'center', baseline: 'middle', fill: '#FFFFFF', size: 14, weight: 400}, title: {align: 'center', baseline: 'middle', fill: '#FFFFFF', size: 14, weight: 400}}" />
+    </data-loader>
+    <data-loader ref="demand-vertical-bar" v-slot="{ results: results }" :style="{width: '400px', height: '270px', position: 'absolute', top: '752px', left: '1490px'}">
+      <vertical-bar ref="demand-vertical-bar-content" labelKey="label" valueKey="[数量(件)]" :data="[{label: '电子商务', '[数量(件)]': 78}, {label: '广告营销', '[数量(件)]': 123}, {label: '分类消息', '[数量(件)]': 198}, {label: '社交网络', '[数量(件)]': 27}, {label: '信息安全', '[数量(件)]': 267},{label: '互联网金融', '[数量(件)]': 87}, {label: '企业服务', '[数量(件)]': 67}, {label: '互联网', '[数量(件)]': 27},]" :style="{background: 'transparent'}" :mainAxis="{labelStyle: {rotate: 315, size: 12, fill: '#367391'}, lineStyle: {stroke: 'transparent'}, range: {count: '5'}}" :crossAxis="{labelStyle: {rotate: 315, size: 12, fill: '#367391'}, lineStyle: {stroke: 'transparent'}, range: {count: 5}, unit: {content: '件', fill: '#367391'}}" :rotate="180" :series="[['#6ad6ff', '#117ea8']]" :gap="{outer: '4.5'}" :tooltip="{text: {align: 'center', baseline: 'middle', fill: '#FFFFFF', size: 14, weight: 400}, notation: {fill: '#367391', name: 'circle-small', size: 14}}" :tooltipOptions="{background: 'rgba(60, 71, 89, 0.9)', text: {align: 'center', baseline: 'middle', fill: '#FFFFFF', size: 14, weight: 400}, title: {align: 'center', baseline: 'middle', fill: '#FFFFFF', size: 14, weight: 400}}" />
     </data-loader>
   </div>
 </template>
@@ -94,6 +97,9 @@ import {
   DigitalRoll,
   Ranking,
 } from '@byzanteam/vis-components'
+import {
+  VerticalBar,
+} from '@byzanteam/graphite'
 
 export const resources = {
   mixins: [BuiltInMixin],
@@ -103,6 +109,7 @@ export const resources = {
     'v-chart': Echarts,
     DigitalRoll,
     Ranking,
+    VerticalBar,
   },
 
   data () {
