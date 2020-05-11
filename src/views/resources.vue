@@ -1,6 +1,6 @@
 <template>
-  <div class="index">
-    <data-loader :style="{position: 'absolute', top: '0px', left: '0px'}">
+  <div class="resources">
+    <data-loader :style="{width: '900px', height: '698px', position: 'absolute', top: '261px', left: '510px'}">
       <v-chart :options="craneStates.options" />
     </data-loader>
   </div>
@@ -40,7 +40,7 @@ export const resources = {
             formatter: '{b}<br/>人才数量（人）：{c}'
           },
           visualMap: {
-            type:'piecewise',
+            type: 'piecewise',
             pieces: [
               {gt: 1500, label: '1500人及以上'},
               {gt: 1000, lte: 1500, label: '1000-1500人'},
@@ -49,17 +49,22 @@ export const resources = {
               {gt: 1, lt: 9, label: '1-9人'}
             ],
             orient: 'horizontal',
+            textStyle: {
+              color: 'white',
+              fontSize: '14px'
+            },
+            itemWidth: 18,
+            itemGap: 8,
+            textGap: 8,
             inRange: {
-              color: ['lightskyblue', 'yellow', 'orangered']
+              color: ['rgba(106, 214, 255, .1)', 'rgba(106, 214, 255, .4)', 'rgba(106, 214, 255, .5)', 'rgba(106, 214, 255, .6)', 'rgba(106, 214, 255, .7)']
             }
           },
           series: [
             {
               type: 'map',
               mapType: 'Liuzhou',
-              label: {
-                show: true
-              },
+              label: {show: true},
               data: [
                 {name: '城中区', value: 4},
                 {name: '柳东新区', value: 15},
@@ -70,21 +75,31 @@ export const resources = {
                 {name: '鹿寨县', value: 376},
                 {name: '融安县', value: 45},
                 {name: '融水苗族自治县', value: 55},
-                {name: '三江侗族自治县', value: 2},
+                {name: '三江侗族自治县', value: 2}
               ],
+              label: {
+                show: true,
+                color: 'white',
+              },
+              itemStyle: {
+                borderColor: '#6ad6ff',
+                borderType: 'dashed'
+              },
+              emphasis: {
+                label: {
+                  color: 'white',
+                  fontWeight: 600,
+                },
+                itemStyle: {
+                  areaColor: '#6ad6ff'
+                }
+              }
             }
           ]
-        }
+        },
       },
     }
   },
 }
 export default resources
 </script>
-
-<style lang="scss">
-.echarts {
-  width: 24rem;
-  height: 15rem;
-}
-</style>
