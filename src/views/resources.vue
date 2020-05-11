@@ -3,6 +3,9 @@
     <data-loader :style="{width: '900px', height: '698px', position: 'absolute', top: '261px', left: '510px'}">
       <v-chart :options="craneStates.options" />
     </data-loader>
+    <data-loader :style="{width: '400px', height: '254px', position: 'absolute', top: '78px', left: '1490px'}">
+      <vis-table :withHeader="false" :headers="[{key: 'index'},{key: 'name'}]" :data="[{name: '生活服务'}, {name: '数据服务'}, {name: '游戏'}, {name: '电子商务'}, {name: '音乐/视频/阅读'}, {name: '智能硬件'}, {name: '生活服务'}]" />
+    </data-loader>
   </div>
 </template>
 
@@ -20,6 +23,7 @@ Echarts.registerMap('Liuzhou', Liuzhou);
 import BuiltInMixin from '../mixins/built_in'
 import {
   DataLoader,
+  VisTable,
 } from '@byzanteam/vis-components'
 
 export const resources = {
@@ -27,6 +31,7 @@ export const resources = {
 
   components: {
     DataLoader,
+    VisTable,
     'v-chart': Echarts
   },
 
