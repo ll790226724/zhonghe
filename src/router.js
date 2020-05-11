@@ -9,9 +9,9 @@ export default new Router({
   base: '/',
   routes: [
     {
-      name: 'index',
-      path: '/index',
-      component: pages.index,
+      name: 'resources',
+      path: '/resources',
+      component: pages.resources,
     },
   ],
 })

@@ -1,4 +1,4 @@
-const index = require('./crane/components')
+const resources = require('./crane/components')
 
 module.exports = {
   // i18n 配置
@@ -19,6 +19,6 @@ module.exports = {
   },
   // 页面
   pages: [
-    index,
+    resources,
   ],
 }
