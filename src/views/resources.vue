@@ -3,8 +3,14 @@
     <data-loader :style="{width: '900px', height: '698px', position: 'absolute', top: '261px', left: '510px'}">
       <v-chart :options="craneStates.options" />
     </data-loader>
-    <data-loader :style="{width: '400px', height: '254px', position: 'absolute', top: '78px', left: '1490px'}">
-      <vis-table :withHeader="false" :headers="[{key: 'index'},{key: 'name'}]" :data="[{name: '生活服务'}, {name: '数据服务'}, {name: '游戏'}, {name: '电子商务'}, {name: '音乐/视频/阅读'}, {name: '智能硬件'}, {name: '生活服务'}]" />
+    <data-loader :style="{width: '400px', height: '254px', overflow: 'scroll', position: 'absolute', top: '78px', left: '1490px'}">
+      <vis-table :withHeader="false" :headers="[{width: 120, key: 'index'}, {width: 280, key: 'name'}]" :data="[{index: 1, name: '生活服务'}, {width: 280,index: 2, name: '数据服务'}, {index: 3, name: '游戏'}, {index: 4, name: '电子商务'}, {index: 5, name: '音乐/视频/阅读'}, {index: 6, name: '智能硬件'}, {index: 7, name: '生活服务'}]">
+        <template v-slot="{ cell: cell, columnKey: columnKey }">
+          <span :class="columnKey === 'index' ? 'row-index-cell' : ''">
+            {{cell}}
+          </span>
+        </template>
+      </vis-table>
     </data-loader>
   </div>
 </template>
