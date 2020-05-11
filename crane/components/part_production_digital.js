@@ -27,7 +27,6 @@ module.exports = {
         $content: {
           title: '地区生产总值',
           $digital: 'results[0][0]',
-          suffix: '件',
         },
         $options: {
           separator: '',

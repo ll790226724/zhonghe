@@ -1,4 +1,6 @@
 const map = require('./map')
+const partProduction = require('./part_production_digital')
+const talentNumber = require('./talent_number_digital')
 
 module.exports = {
   route: {
@@ -54,6 +56,205 @@ module.exports = {
     }
   ],
   components: [
-    map
+    map,
+
+    // {
+    //   id: 'background',
+    //   component: 'img',
+    //   position: [0, 0],
+    //   props: {
+    //     src: '/jinjiangwllz/images/bg.png'
+    //   },
+    // },
+
+    {
+      id: 'page-title',
+      component: 'div',
+      content: '全省人力资源态势总览',
+      position: [750, 35],
+      props: {
+        $style: {
+          color: '#fff',
+          fontSize: '42px',
+          $fontWeight: '600',
+          textAlign: 'center',
+        }
+      }
+    },
+
+    {
+      id: 'talent-index',
+      component: 'div',
+      position: [73, 262],
+      props: {
+        $style: {
+          color: '#fff',
+          fontSize: '18px',
+          fontWeight: '600',
+          textAlign: 'left',
+          letterSpacing: '0.9',
+        },
+      },
+      content: '人才指数综合分析',
+    },
+
+    {
+      id: 'talent-education',
+      component: 'div',
+      position: [73, 704],
+      props: {
+        $style: {
+          color: '#fff',
+          fontSize: '18px',
+          fontWeight: '600',
+          textAlign: 'left',
+          letterSpacing: '0.9',
+        },
+      },
+      content: '人才学历层次',
+    },
+
+    {
+      id: 'talent-industry',
+      component: 'div',
+      position: [1530, 46],
+      props: {
+        $style: {
+          color: '#fff',
+          fontSize: '18px',
+          fontWeight: '600',
+          textAlign: 'left',
+          letterSpacing: '0.9',
+        },
+      },
+      content: '人才流动行业排名',
+    },
+
+    {
+      id: 'industry-talent',
+      component: 'div',
+      position: [1530, 388],
+      props: {
+        $style: {
+          color: '#fff',
+          fontSize: '18px',
+          fontWeight: '600',
+          textAlign: 'left',
+          letterSpacing: '0.9',
+        },
+      },
+      content: '行业人才占比',
+    },
+
+    {
+      id: 'talent-demand',
+      component: 'div',
+      position: [1530, 704],
+      props: {
+        $style: {
+          color: '#fff',
+          fontSize: '18px',
+          fontWeight: '600',
+          textAlign: 'left',
+          letterSpacing: '0.9',
+        },
+      },
+      content: '各行业人才需求',
+    },
+
+    {
+      id: 'talent-index-icon',
+      component: 'div',
+      position: [30, 265],
+      props: {
+        $style: {
+          color: '#6ad6ff',
+          fontSize: '14px',
+          fontWeight: 400,
+          textAlign: 'left',
+        },
+      },
+      content: '  >>',
+    },
+
+    {
+      id: 'talent-education-icon',
+      component: 'div',
+      position: [30, 707],
+      props: {
+        $style: {
+          color: '#6ad6ff',
+          fontSize: '14px',
+          fontWeight: 400,
+          textAlign: 'left',
+        },
+      },
+      content: '  >>',
+    },
+
+    {
+      id: 'talent-industry-icon',
+      component: 'div',
+      position: [1490, 49],
+      props: {
+        $style: {
+          color: '#6ad6ff',
+          fontSize: '14px',
+          fontWeight: 400,
+          textAlign: 'left',
+        },
+      },
+      content: '  >>',
+    },
+
+    {
+      id: 'industry-talent-icon',
+      component: 'div',
+      position: [1490, 391],
+      props: {
+        $style: {
+          color: '#6ad6ff',
+          fontSize: '14px',
+          fontWeight: 400,
+          textAlign: 'left',
+        },
+      },
+      content: '  >>',
+    },
+
+    {
+      id: 'talent-demand-icon',
+      component: 'div',
+      position: [1490, 707],
+      props: {
+        $style: {
+          color: '#6ad6ff',
+          fontSize: '14px',
+          fontWeight: 400,
+          textAlign: 'left',
+        },
+      },
+      content: '  >>',
+    },
+
+    {
+      id: 'demand-type-circle',
+      component: 'div',
+      position: [42, 364],
+      props: {
+        $style: {
+          height:'6px',
+          width: '6px',
+          borderRadius: '5px',
+          borderWidth: '2px',
+          borderColor: '#2E2E2E',
+          borderStyle: 'solid',
+        }
+      },
+
+    },
+
+    partProduction,
+    talentNumber,
   ]
 }
