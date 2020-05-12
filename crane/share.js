@@ -16,7 +16,7 @@ exports.normal_digital_style = {
   },
   $digitalStyle: {
     fontSize: '32px',
-    color: '#FFFFFF',
+    color: '#6ad6ff',
     fontWeight: 400,
     fontFamily: 'Oswald-Regular',
     format: '11',
@@ -32,7 +32,7 @@ exports.small_digital_style = {
   },
   $digitalStyle: {
     fontSize: '32px',
-    color: '#FFFFFF',
+    color: '#6ad6ff',
     fontWeight: 400,
     fontFamily: 'Oswald-Regular',
     format: '11',
