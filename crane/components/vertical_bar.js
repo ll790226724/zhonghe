@@ -24,9 +24,9 @@ module.exports = {
       props: {
         // 'v-if': 'results',
         labelKey: 'label',
-        valueKey: '[数量(件)]',
+        valueKey: '数量(件)',
         // $data: "results.map((item)=>({label: item[0], '数量': item[1]}))",
-        $data: "[{label: '电子商务', '[数量(件)]': 78}, {label: '广告营销', '[数量(件)]': 123}, {label: '分类消息', '[数量(件)]': 198}, {label: '社交网络', '[数量(件)]': 27}, {label: '信息安全', '[数量(件)]': 267},{label: '互联网金融', '[数量(件)]': 87}, {label: '企业服务', '[数量(件)]': 67}, {label: '互联网', '[数量(件)]': 27},]",
+        $data: "[{label: '电子商务', '数量(件)': 78}, {label: '广告营销', '数量(件)': 123}, {label: '分类消息', '数量(件)': 198}, {label: '社交网络', '数量(件)': 27}, {label: '信息安全', '数量(件)': 267},{label: '互联网金融', '数量(件)': 87}, {label: '企业服务', '数量(件)': 67}, {label: '互联网', '数量(件)': 27},]",
         $style: {
           background: 'transparent'
         },
@@ -49,7 +49,7 @@ module.exports = {
         },
         $crossAxis: {
           $labelStyle: {
-            $rotate: 315,
+            $rotate: 0,
             $size: 12,
             fill: '#367391',
           },
@@ -60,7 +60,7 @@ module.exports = {
             $count: 5
           },
           $unit: {
-            content: '件',
+            content: '人',
             fill: '#367391'
           }
         },
