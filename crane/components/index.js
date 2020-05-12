@@ -74,9 +74,10 @@ module.exports = {
         src: '/static/images/Bg.png'
       },
     },
+
     map,
+
     table,
-    donut,
     {
       id: 'title-bg',
       component: 'img',
@@ -523,7 +524,7 @@ module.exports = {
         },
       ],
     },
-
+    donut,
     partProduction,
     talentNumber,
     talentAge,

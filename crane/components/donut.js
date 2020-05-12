@@ -1,3 +1,5 @@
+const { chartTooltipOptions } = require('../share');
+
 module.exports = {
   component: '@byzanteam/vis-components/data-loader',
   position: [1490, 436],
@@ -34,36 +36,7 @@ module.exports = {
             $size: 14,
           },
         },
-        $tooltip: {
-          $text: {
-            align: 'center',
-            baseline: 'middle',
-            fill: '#FFFFFF',
-            $size: 14,
-            $weight: 400
-          },
-          $notation: {
-            name: 'circle-small',
-            $size: 14
-          }
-        },
-        $tooltipOptions: {
-          background: 'rgba(86, 99, 116, 0.94)',
-          $text: {
-            align: 'center',
-            baseline: 'middle',
-            fill: '#FFFFFF',
-            $size: 14,
-            $weight: 400
-          },
-          $title:{
-            align: 'center',
-            baseline: 'middle',
-            fill: '#FFFFFF',
-            $size: 14,
-            $weight: 400
-          },
-        }
+        ...chartTooltipOptions
       }
     }
   ]
