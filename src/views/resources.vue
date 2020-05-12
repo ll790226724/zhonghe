@@ -167,7 +167,7 @@ export const resources = {
               fontSize: '14px'
             },
             itemWidth: 18,
-            itemGap: 8,
+            itemGap: 20,
             textGap: 8,
             inRange: {
               color: ['rgba(106, 214, 255, .1)', 'rgba(106, 214, 255, .4)', 'rgba(106, 214, 255, .5)', 'rgba(106, 214, 255, .6)', 'rgba(106, 214, 255, .7)']
@@ -177,7 +177,6 @@ export const resources = {
             {
               type: 'map',
               mapType: 'Liuzhou',
-              label: {show: true},
               data: [
                 {name: '城中区', value: 4},
                 {name: '柳东新区', value: 15},
