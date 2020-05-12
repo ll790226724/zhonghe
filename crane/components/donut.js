@@ -25,7 +25,7 @@ module.exports = {
           whitespace: 'nowrap'
         },
         $legendOptions: {
-          align: 'start',
+          $align: "['center', 'start']",
           $offset: '[0, 0]',
           position: 'right',
           layout: 'vertical',
