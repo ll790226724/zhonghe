@@ -1,6 +1,16 @@
 const map = require('./map')
 const table = require('./table')
 const donut = require('./donut')
+const partProduction = require('./part_production_digital')
+const talentNumber = require('./talent_number_digital')
+const talentAge = require('./talent_age_index_digital')
+const talentEducation = require('./talent_edution_index_digital')
+const talentIndustry = require('./talent_industry_index_digital')
+const talentQuality = require('./talent_quality_index_digital')
+const talentRank = require('./talent_rank_index_digital')
+const talentSynthesis = require('./talent_synthesis_index_digital')
+const rank = require('./rank')
+const verticalBar = require('./vertical_bar')
 
 module.exports = {
   route: {
@@ -58,6 +68,349 @@ module.exports = {
   components: [
     map,
     table,
-    donut
+    donut,
+    {
+      id: 'background',
+      component: 'img',
+      position: [0, 0],
+      props: {
+        src: '/static/images/Bg.png'
+      },
+    },
+
+    {
+      id: 'title-bg',
+      component: 'img',
+      position: [607, 0],
+      props: {
+        $style: {
+          width: '701px',
+          height: '123px',
+        },
+        src: '/static/images/Title-Bg.png'
+      },
+    },
+
+    {
+      id: 'box-bg',
+      component: 'img',
+      position: [10, 10],
+      props: {
+        $style: {
+          width: '440px',
+          height: '1059px',
+        },
+        src: '/static/images/Box-Bg.png'
+      },
+    },
+
+    {
+      id: 'page-title',
+      component: 'div',
+      content: '全省人力资源态势总览',
+      position: [750, 35],
+      props: {
+        $style: {
+          color: '#fff',
+          fontSize: '42px',
+          $fontWeight: '600',
+          textAlign: 'center',
+        }
+      }
+    },
+
+    {
+      id: 'talent-index',
+      component: 'div',
+      position: [73, 262],
+      props: {
+        $style: {
+          color: '#fff',
+          fontSize: '18px',
+          fontWeight: '600',
+          textAlign: 'left',
+          letterSpacing: '0.9',
+        },
+      },
+      content: '人才指数综合分析',
+    },
+
+    {
+      id: 'talent-education',
+      component: 'div',
+      position: [73, 704],
+      props: {
+        $style: {
+          color: '#fff',
+          fontSize: '18px',
+          fontWeight: '600',
+          textAlign: 'left',
+          letterSpacing: '0.9',
+        },
+      },
+      content: '人才学历层次',
+    },
+
+    {
+      id: 'talent-industry',
+      component: 'div',
+      position: [1530, 46],
+      props: {
+        $style: {
+          color: '#fff',
+          fontSize: '18px',
+          fontWeight: '600',
+          textAlign: 'left',
+          letterSpacing: '0.9',
+        },
+      },
+      content: '人才流动行业排名',
+    },
+
+    {
+      id: 'industry-talent',
+      component: 'div',
+      position: [1530, 388],
+      props: {
+        $style: {
+          color: '#fff',
+          fontSize: '18px',
+          fontWeight: '600',
+          textAlign: 'left',
+          letterSpacing: '0.9',
+        },
+      },
+      content: '行业人才占比',
+    },
+
+    {
+      id: 'talent-demand',
+      component: 'div',
+      position: [1530, 704],
+      props: {
+        $style: {
+          color: '#fff',
+          fontSize: '18px',
+          fontWeight: '600',
+          textAlign: 'left',
+          letterSpacing: '0.9',
+        },
+      },
+      content: '各行业人才需求',
+    },
+
+    {
+      id: 'talent-index-icon',
+      component: 'div',
+      position: [30, 265],
+      props: {
+        $style: {
+          color: '#6ad6ff',
+          fontSize: '14px',
+          fontWeight: 400,
+          textAlign: 'left',
+        },
+      },
+      content: '  >>',
+    },
+
+    {
+      id: 'talent-education-icon',
+      component: 'div',
+      position: [30, 707],
+      props: {
+        $style: {
+          color: '#6ad6ff',
+          fontSize: '14px',
+          fontWeight: 400,
+          textAlign: 'left',
+        },
+      },
+      content: '  >>',
+    },
+
+    {
+      id: 'talent-industry-icon',
+      component: 'div',
+      position: [1490, 49],
+      props: {
+        $style: {
+          color: '#6ad6ff',
+          fontSize: '14px',
+          fontWeight: 400,
+          textAlign: 'left',
+        },
+      },
+      content: '  >>',
+    },
+
+    {
+      id: 'industry-talent-icon',
+      component: 'div',
+      position: [1490, 391],
+      props: {
+        $style: {
+          color: '#6ad6ff',
+          fontSize: '14px',
+          fontWeight: 400,
+          textAlign: 'left',
+        },
+      },
+      content: '  >>',
+    },
+
+    {
+      id: 'talent-demand-icon',
+      component: 'div',
+      position: [1490, 707],
+      props: {
+        $style: {
+          color: '#6ad6ff',
+          fontSize: '14px',
+          fontWeight: 400,
+          textAlign: 'left',
+        },
+      },
+      content: '  >>',
+    },
+
+    {
+      id: 'value-circle',
+      component: 'div',
+      position: [104, 79],
+      props: {
+        $style: {
+          height:'6px',
+          width: '6px',
+          borderRadius: '5px',
+          borderWidth: '2px',
+          borderColor: '#367391',
+          borderStyle: 'solid',
+        }
+      },
+    },
+
+    {
+      id: 'number-circle',
+      component: 'div',
+      position: [104, 159],
+      props: {
+        $style: {
+          height:'6px',
+          width: '6px',
+          borderRadius: '5px',
+          borderWidth: '2px',
+          borderColor: '#367391',
+          borderStyle: 'solid',
+        }
+      },
+    },
+
+    {
+      id: 'education-circle',
+      component: 'div',
+      position: [64, 364],
+      props: {
+        $style: {
+          height:'6px',
+          width: '6px',
+          borderRadius: '5px',
+          borderWidth: '2px',
+          borderColor: '#367391',
+          borderStyle: 'solid',
+        }
+      },
+    },
+
+    {
+      id: 'rank-circle',
+      component: 'div',
+      position: [264, 364],
+      props: {
+        $style: {
+          height:'6px',
+          width: '6px',
+          borderRadius: '5px',
+          borderWidth: '2px',
+          borderColor: '#367391',
+          borderStyle: 'solid',
+        }
+      },
+    },
+
+    {
+      id: 'age-circle',
+      component: 'div',
+      position: [64, 472],
+      props: {
+        $style: {
+          height:'6px',
+          width: '6px',
+          borderRadius: '5px',
+          borderWidth: '2px',
+          borderColor: '#367391',
+          borderStyle: 'solid',
+        }
+      },
+    },
+
+    {
+      id: 'industry-circle',
+      component: 'div',
+      position: [264, 472],
+      props: {
+        $style: {
+          height:'6px',
+          width: '6px',
+          borderRadius: '5px',
+          borderWidth: '2px',
+          borderColor: '#367391',
+          borderStyle: 'solid',
+        }
+      },
+    },
+
+    {
+      id: 'quality-circle',
+      component: 'div',
+      position: [64, 580],
+      props: {
+        $style: {
+          height:'6px',
+          width: '6px',
+          borderRadius: '5px',
+          borderWidth: '2px',
+          borderColor: '#367391',
+          borderStyle: 'solid',
+        }
+      },
+    },
+
+    {
+      id: 'synthesis-circle',
+      component: 'div',
+      position: [264, 580],
+      props: {
+        $style: {
+          height:'6px',
+          width: '6px',
+          borderRadius: '5px',
+          borderWidth: '2px',
+          borderColor: '#367391',
+          borderStyle: 'solid',
+        }
+      },
+    },
+
+    partProduction,
+    talentNumber,
+    talentAge,
+    talentEducation,
+    talentIndustry,
+    talentQuality,
+    talentRank,
+    talentSynthesis,
+    rank,
+    verticalBar,
   ]
 }
