@@ -415,6 +415,90 @@ module.exports = {
     },
 
     {
+      id: 'age-bg',
+      component: 'div',
+      position: [40, 424],
+      props: {
+        $style: {
+          height: '80px',
+          width: '180px',
+          backgroundColor: '#6ad6ff05',
+          borderRadius: '5px',
+        }
+      }
+    },
+
+    {
+      id: 'education-bg',
+      component: 'div',
+      position: [240, 324],
+      props: {
+        $style: {
+          height: '80px',
+          width: '180px',
+          backgroundColor: '#6ad6ff05',
+          borderRadius: '5px',
+        }
+      }
+    },
+
+    {
+      id: 'industry-bg',
+      component: 'div',
+      position: [40, 432],
+      props: {
+        $style: {
+          height: '80px',
+          width: '180px',
+          backgroundColor: '#6ad6ff05',
+          borderRadius: '5px',
+        }
+      }
+    },
+
+    {
+      id: 'number-bg',
+      component: 'div',
+      position: [240, 432],
+      props: {
+        $style: {
+          height: '80px',
+          width: '180px',
+          backgroundColor: '#6ad6ff05',
+          borderRadius: '5px',
+        }
+      }
+    },
+
+    {
+      id: 'quality-bg',
+      component: 'div',
+      position: [40, 540],
+      props: {
+        $style: {
+          height: '80px',
+          width: '180px',
+          backgroundColor: '#6ad6ff05',
+          borderRadius: '5px',
+        }
+      }
+    },
+
+    {
+      id: 'synthesis-bg',
+      component: 'div',
+      position: [240, 540],
+      props: {
+        $style: {
+          height: '80px',
+          width: '180px',
+          backgroundColor: '#6ad6ff05',
+          borderRadius: '5px',
+        }
+      }
+    },
+
+    {
       id: 'departments-loader',
       component: '@byzanteam/vis-components/data-loader',
       position: [929, 125],

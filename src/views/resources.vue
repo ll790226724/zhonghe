@@ -60,6 +60,12 @@
     <div ref="industry-circle" :style="{height: '6px', width: '6px', borderRadius: '5px', borderWidth: '2px', borderColor: '#367391', borderStyle: 'solid', position: 'absolute', top: '472px', left: '264px'}" />
     <div ref="quality-circle" :style="{height: '6px', width: '6px', borderRadius: '5px', borderWidth: '2px', borderColor: '#367391', borderStyle: 'solid', position: 'absolute', top: '580px', left: '64px'}" />
     <div ref="synthesis-circle" :style="{height: '6px', width: '6px', borderRadius: '5px', borderWidth: '2px', borderColor: '#367391', borderStyle: 'solid', position: 'absolute', top: '580px', left: '264px'}" />
+    <div ref="age-bg" :style="{height: '80px', width: '180px', backgroundColor: '#6ad6ff05', borderRadius: '5px', position: 'absolute', top: '424px', left: '40px'}" />
+    <div ref="education-bg" :style="{height: '80px', width: '180px', backgroundColor: '#6ad6ff05', borderRadius: '5px', position: 'absolute', top: '324px', left: '240px'}" />
+    <div ref="industry-bg" :style="{height: '80px', width: '180px', backgroundColor: '#6ad6ff05', borderRadius: '5px', position: 'absolute', top: '432px', left: '40px'}" />
+    <div ref="number-bg" :style="{height: '80px', width: '180px', backgroundColor: '#6ad6ff05', borderRadius: '5px', position: 'absolute', top: '432px', left: '240px'}" />
+    <div ref="quality-bg" :style="{height: '80px', width: '180px', backgroundColor: '#6ad6ff05', borderRadius: '5px', position: 'absolute', top: '540px', left: '40px'}" />
+    <div ref="synthesis-bg" :style="{height: '80px', width: '180px', backgroundColor: '#6ad6ff05', borderRadius: '5px', position: 'absolute', top: '540px', left: '240px'}" />
     <data-loader ref="departments-loader" v-slot="{ results: results }" :style="{position: 'absolute', top: '125px', left: '929px'}">
       <vis-select ref="departments-select" :options="[{label: '福州', uuid: '0'}, {label: '全国', uuid: '1'}, {label: '陕西省', uuid: '2'}, {label: '江苏省', uuid: '3'}, {label: '福建省', uuid: '4'}, {label: '浙江省', uuid: '5'},]" v-model="craneStates.department" placeholder="福州" />
     </data-loader>
