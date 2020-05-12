@@ -1,4 +1,3 @@
-
 module.exports = {
   component: '@byzanteam/vis-components/data-loader',
   position: [1490, 436],
@@ -26,8 +25,8 @@ module.exports = {
           whitespace: 'nowrap'
         },
         $legendOptions: {
-          size: '70px',
-          $align: "['center', 'start']",
+          align: 'start',
+          $offset: '[0, 30]',
           position: 'right',
           layout: 'vertical',
           $label: {

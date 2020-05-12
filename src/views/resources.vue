@@ -1,5 +1,6 @@
 <template>
   <div class="resources">
+    <img ref="background" src="/static/images/Bg.png" :style="{position: 'absolute', top: '0px', left: '0px'}" />
     <data-loader :style="{width: '900px', height: '698px', position: 'absolute', top: '261px', left: '510px'}">
       <v-chart :options="craneStates.options" />
     </data-loader>
@@ -13,9 +14,8 @@
       </vis-table>
     </data-loader>
     <data-loader v-slot="{ results: results }" :style="{width: '400px', height: '218px', position: 'absolute', top: '436px', left: '1490px'}">
-      <donut :data="[{label: '数据服务', value: 120}, {label: '游戏', value: 110}, {label: '智能硬件', value: 100}, {label: '人力资源服务', value: 70}, {label: '计算机软件', value: 60}, {label: '其他', value: 12}]" labelKey="label" valueKey="value" :innerRadius="0.48" :hideLabel="true" :theme="{background: 'transparent', colors: ['#6ad6ff', '#4b9bbe', '#367290', '#275570', '#1c4159', '#153349'], whitespace: 'nowrap'}" :legendOptions="{size: '70px', position: 'right', layout: 'vertical', label: {fill: '#2E2E2E', size: 14}}" :tooltip="{text: {align: 'center', baseline: 'middle', fill: '#FFFFFF', size: 14, weight: 400}, notation: {name: 'circle-small', size: 14}}" :tooltipOptions="{background: 'rgba(86, 99, 116, 0.94)', text: {align: 'center', baseline: 'middle', fill: '#FFFFFF', size: 14, weight: 400}, title: {align: 'center', baseline: 'middle', fill: '#FFFFFF', size: 14, weight: 400}}" />
+      <donut :data="[{label: '数据服务', value: 120}, {label: '游戏', value: 110}, {label: '智能硬件', value: 100}, {label: '人力资源服务', value: 70}, {label: '计算机软件', value: 60}, {label: '其他', value: 12}]" labelKey="label" valueKey="value" :innerRadius="0.48" :hideLabel="true" :theme="{background: 'transparent', colors: ['#6ad6ff', '#4b9bbe', '#367290', '#275570', '#1c4159', '#153349'], whitespace: 'nowrap'}" :legendOptions="{align: 'start', offset: [0, 30], position: 'right', layout: 'vertical', label: {fill: '#2E2E2E', size: 14}}" :tooltip="{text: {align: 'center', baseline: 'middle', fill: '#FFFFFF', size: 14, weight: 400}, notation: {name: 'circle-small', size: 14}}" :tooltipOptions="{background: 'rgba(86, 99, 116, 0.94)', text: {align: 'center', baseline: 'middle', fill: '#FFFFFF', size: 14, weight: 400}, title: {align: 'center', baseline: 'middle', fill: '#FFFFFF', size: 14, weight: 400}}" />
     </data-loader>
-    <img ref="background" src="/static/images/Bg.png" :style="{position: 'absolute', top: '0px', left: '0px'}" />
     <img ref="title-bg" :style="{width: '701px', height: '123px', position: 'absolute', top: '0px', left: '607px'}" src="/static/images/Title-Bg.png" />
     <img ref="box-bg" :style="{width: '440px', height: '1059px', position: 'absolute', top: '10px', left: '10px'}" src="/static/images/Box-Bg.png" />
     <div ref="page-title" :style="{color: '#fff', fontSize: '42px', fontWeight: 600, textAlign: 'center', position: 'absolute', top: '35px', left: '750px'}">
@@ -88,7 +88,7 @@
     </data-loader>
     <data-loader ref="demand-vertical-bar" v-slot="{ results: results }" :style="{width: '400px', height: '270px', position: 'absolute', top: '752px', left: '1490px'}">
       <vertical-bar ref="demand-vertical-bar-content" labelKey="label" valueKey="[数量(件)]" :data="[{label: '电子商务', '[数量(件)]': 78}, {label: '广告营销', '[数量(件)]': 123}, {label: '分类消息', '[数量(件)]': 198}, {label: '社交网络', '[数量(件)]': 27}, {label: '信息安全', '[数量(件)]': 267},{label: '互联网金融', '[数量(件)]': 87}, {label: '企业服务', '[数量(件)]': 67}, {label: '互联网', '[数量(件)]': 27},]" :style="{background: 'transparent'}" :mainAxis="{labelStyle: {rotate: 315, size: 12, fill: '#367391'}, lineStyle: {stroke: 'transparent'}, range: {count: '5'}}" :crossAxis="{labelStyle: {rotate: 315, size: 12, fill: '#367391'}, lineStyle: {stroke: 'transparent'}, range: {count: 5}, unit: {content: '件', fill: '#367391'}}" :rotate="180" :series="[['#6ad6ff', '#117ea8']]" :gap="{outer: '4.5'}" :tooltip="{text: {align: 'center', baseline: 'middle', fill: '#FFFFFF', size: 14, weight: 400}, notation: {fill: '#367391', name: 'circle-small', size: 14}}" :tooltipOptions="{background: 'rgba(60, 71, 89, 0.9)', text: {align: 'center', baseline: 'middle', fill: '#FFFFFF', size: 14, weight: 400}, title: {align: 'center', baseline: 'middle', fill: '#FFFFFF', size: 14, weight: 400}}" />
-     </data-loader>
+    </data-loader>
   </div>
 </template>
 
@@ -106,17 +106,13 @@ Echarts.registerMap('Liuzhou', Liuzhou);
 import BuiltInMixin from '../mixins/built_in'
 import {
   DataLoader,
-
+  VisTable,
   DigitalRoll,
   Ranking,
 } from '@byzanteam/vis-components'
 import {
-  VerticalBar,
-
-  VisTable,
-} from '@byzanteam/vis-components'
-import {
   Donut,
+  VerticalBar,
 } from '@byzanteam/graphite'
 
 export const resources = {
@@ -124,12 +120,12 @@ export const resources = {
 
   components: {
     DataLoader,
+    VisTable,
     'v-chart': Echarts,
     DigitalRoll,
     Ranking,
-    VerticalBar,
-    VisTable,
     Donut,
+    VerticalBar,
   },
 
   data () {
@@ -151,6 +147,7 @@ export const resources = {
               {gt: 1, lt: 9, label: '1-9人'}
             ],
             orient: 'horizontal',
+            left: '30%',
             textStyle: {
               color: 'white',
               fontSize: '14px'
@@ -207,11 +204,16 @@ export default resources
 </script>
 
 <style lang="scss">
+.echarts {
+  width: 100%;
+  height: 100%;
+}
+
 .resources {
   position: absolute;
   width: 100%;
   height: 100%;
-  background-image: url('../../public/images/Bg.png');
+  background-image: url('../../public/static/images/Bg.png');
 }
 
 .table {
