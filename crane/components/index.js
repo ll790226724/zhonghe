@@ -71,7 +71,7 @@ module.exports = {
       component: 'img',
       position: [0, 0],
       props: {
-        src: '/static/Bg.png'
+        src: '/static/images/Bg.png'
       },
     },
 
@@ -84,7 +84,7 @@ module.exports = {
           width: '701px',
           height: '123px',
         },
-        src: '/static/Title-Bg.png'
+        src: '/static/images/Title-Bg.png'
       },
     },
 
@@ -97,7 +97,7 @@ module.exports = {
           width: '440px',
           height: '1059px',
         },
-        src: '/static/Box-Bg.png'
+        src: '/static/images/Box-Bg.png'
       },
     },
 
