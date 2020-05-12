@@ -214,7 +214,7 @@ module.exports = {
     {
       id: 'talent-index-icon',
       component: 'div',
-      position: [30, 265],
+      position: [38, 265],
       props: {
         $style: {
           color: '#6ad6ff',
@@ -223,13 +223,13 @@ module.exports = {
           textAlign: 'left',
         },
       },
-      content: '  >>',
+      content: '>>',
     },
 
     {
       id: 'talent-education-icon',
       component: 'div',
-      position: [30, 707],
+      position: [38, 707],
       props: {
         $style: {
           color: '#6ad6ff',
@@ -238,13 +238,13 @@ module.exports = {
           textAlign: 'left',
         },
       },
-      content: '  >>',
+      content: '>>',
     },
 
     {
       id: 'talent-industry-icon',
       component: 'div',
-      position: [1490, 49],
+      position: [1498, 49],
       props: {
         $style: {
           color: '#6ad6ff',
@@ -253,13 +253,13 @@ module.exports = {
           textAlign: 'left',
         },
       },
-      content: '  >>',
+      content: '>>',
     },
 
     {
       id: 'industry-talent-icon',
       component: 'div',
-      position: [1490, 391],
+      position: [1498, 391],
       props: {
         $style: {
           color: '#6ad6ff',
@@ -268,13 +268,13 @@ module.exports = {
           textAlign: 'left',
         },
       },
-      content: '  >>',
+      content: '>>',
     },
 
     {
       id: 'talent-demand-icon',
       component: 'div',
-      position: [1490, 707],
+      position: [1498, 707],
       props: {
         $style: {
           color: '#6ad6ff',
@@ -283,7 +283,7 @@ module.exports = {
           textAlign: 'left',
         },
       },
-      content: '  >>',
+      content: '>>',
     },
 
     {
