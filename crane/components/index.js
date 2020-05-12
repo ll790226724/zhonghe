@@ -1,4 +1,6 @@
 const map = require('./map')
+const table = require('./table')
+const donut = require('./donut')
 const partProduction = require('./part_production_digital')
 const talentNumber = require('./talent_number_digital')
 const talentAge = require('./talent_age_index_digital')
@@ -65,7 +67,8 @@ module.exports = {
   ],
   components: [
     map,
-
+    table,
+    donut,
     {
       id: 'background',
       component: 'img',

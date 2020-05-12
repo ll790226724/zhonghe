@@ -1,50 +1,70 @@
-const { chartTooltipOptions } = require('../share');
 
 module.exports = {
-  id: 'demand-donut',
   component: '@byzanteam/vis-components/data-loader',
-  position: [-10, 378],
+  position: [1490, 436],
   exports: {
     results: 'results',
   },
   props: {
-    $url: "`/v1/components/b9b74ddd-39de-493f-84ab-9d87fcf23fee/data?start=${craneStates.filterRange[0]}&end=${craneStates.filterRange[1]}`",
-    method: 'get',
-    $data: "[{label: '投诉性质', amount: 12}]",
     $style: {
-      width: '490px',
-      height: '200px',
-    }
+      width: '400px',
+      height: '218px'
+    },
   },
   children: [
     {
-      id: 'demand-donut-content',
       component: '@byzanteam/graphite/donut',
       props: {
-        'v-if': 'results',
-        $data: "results.map(item => { return {label: item[1], amount: item[0] } } )",
+        $data: "[{label: '数据服务', value: 120}, {label: '游戏', value: 110}, {label: '智能硬件', value: 100}, {label: '人力资源服务', value: 70}, {label: '计算机软件', value: 60}, {label: '其他', value: 12}]",
         labelKey: 'label',
-        valueKey: 'amount',
-        $innerRadius: '0.53',
-        $percentage: 'true',
+        valueKey: 'value',
+        $innerRadius: 0.48,
         $hideLabel: true,
         $theme: {
           background: 'transparent',
-          $colors: "['#1B74EF', '#15C689', '#FFBA08', '#BB4430', '#A2AEBB', '#7B92B5']",
+          $colors: "['#6ad6ff', '#4b9bbe', '#367290', '#275570', '#1c4159', '#153349']",
           whitespace: 'nowrap'
         },
         $legendOptions: {
-          size: '100px',
+          size: '70px',
           $align: "['center', 'start']",
+          position: 'right',
           layout: 'vertical',
           $label: {
             fill: '#2E2E2E',
             $size: 14,
           },
-          position: 'right',
-          $offset: "[-115, 0]",
         },
-        ...chartTooltipOptions
+        $tooltip: {
+          $text: {
+            align: 'center',
+            baseline: 'middle',
+            fill: '#FFFFFF',
+            $size: 14,
+            $weight: 400
+          },
+          $notation: {
+            name: 'circle-small',
+            $size: 14
+          }
+        },
+        $tooltipOptions: {
+          background: 'rgba(86, 99, 116, 0.94)',
+          $text: {
+            align: 'center',
+            baseline: 'middle',
+            fill: '#FFFFFF',
+            $size: 14,
+            $weight: 400
+          },
+          $title:{
+            align: 'center',
+            baseline: 'middle',
+            fill: '#FFFFFF',
+            $size: 14,
+            $weight: 400
+          },
+        }
       }
     }
   ]
