@@ -60,6 +60,9 @@
     <div ref="industry-circle" :style="{height: '6px', width: '6px', borderRadius: '5px', borderWidth: '2px', borderColor: '#367391', borderStyle: 'solid', position: 'absolute', top: '472px', left: '264px'}" />
     <div ref="quality-circle" :style="{height: '6px', width: '6px', borderRadius: '5px', borderWidth: '2px', borderColor: '#367391', borderStyle: 'solid', position: 'absolute', top: '580px', left: '64px'}" />
     <div ref="synthesis-circle" :style="{height: '6px', width: '6px', borderRadius: '5px', borderWidth: '2px', borderColor: '#367391', borderStyle: 'solid', position: 'absolute', top: '580px', left: '264px'}" />
+    <data-loader ref="departments-loader" v-slot="{ results: results }" :style="{position: 'absolute', top: '125px', left: '929px'}">
+      <vis-select ref="departments-select" :options="[{label: '福州', uuid: '0'}, {label: '全国', uuid: '1'}, {label: '陕西省', uuid: '2'}, {label: '江苏省', uuid: '3'}, {label: '福建省', uuid: '4'}, {label: '浙江省', uuid: '5'},]" v-model="craneStates.department" placeholder="福州" />
+    </data-loader>
     <data-loader ref="part-production-value" v-slot="{ results: results }" :style="{position: 'absolute', top: '56px', left: '130px'}">
       <digital-roll ref="deal-number-total" titlePosition="left" :content="{title: '地区生产总值', prefix: '￥', digital: 125200}" :options="{separator: ','}" :titleStyle="{color: '#367391', fontSize: '16px', fontWeight: '400'}" :prefixStyle="{color: '#367391', fontSize: '16px', fontWeight: '400'}" :suffixStyle="{color: '#367391', fontSize: '16px', fontWeight: '400'}" :digitalStyle="{fontSize: '32px', color: '#6ad6ff', fontWeight: '400', fontFamily: 'Oswald-Regular', format: '11', letterSpacing: '0.8'}" />
     </data-loader>
@@ -108,6 +111,7 @@ import BuiltInMixin from '../mixins/built_in'
 import {
   DataLoader,
   VisTable,
+  VisSelect,
   DigitalRoll,
   Ranking,
 } from '@byzanteam/vis-components'
@@ -123,6 +127,7 @@ export const resources = {
     DataLoader,
     VisTable,
     'v-chart': Echarts,
+    VisSelect,
     DigitalRoll,
     Ranking,
     Donut,
