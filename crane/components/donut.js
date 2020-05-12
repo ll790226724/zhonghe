@@ -25,14 +25,14 @@ module.exports = {
           whitespace: 'nowrap'
         },
         $legendOptions: {
-          size: '70px',
-          $align: "['center', 'start']",
-          layout: 'horizontal',
+          $align: 'start',
+          $offset: '[0, 30]',
+          position: 'right',
+          layout: 'vertical',
           $label: {
             fill: '#2E2E2E',
             $size: 14,
           },
-          position: 'bottom',
         },
         $tooltip: {
           $text: {
@@ -43,13 +43,12 @@ module.exports = {
             $weight: 400
           },
           $notation: {
-            fill: '#007AFE',
             name: 'circle-small',
             $size: 14
           }
         },
         $tooltipOptions: {
-          background: 'rgba(60, 71, 89, 0.9)',
+          background: 'rgba(86, 99, 116, 0.94)',
           $text: {
             align: 'center',
             baseline: 'middle',
