@@ -500,6 +500,34 @@ module.exports = {
     },
 
     {
+      id: 'production-bg',
+      component: 'div',
+      position: [30, 50],
+      props: {
+        $style: {
+          height: '50px',
+          width: '400px',
+          backgroundColor: '#6ad6ff05',
+          borderRadius: '5px',
+        }
+      }
+    },
+
+    {
+      id: 'production-bg',
+      component: 'div',
+      position: [30, 130],
+      props: {
+        $style: {
+          height: '50px',
+          width: '400px',
+          backgroundColor: '#6ad6ff05',
+          borderRadius: '5px',
+        }
+      }
+    },
+
+    {
       id: 'departments-loader',
       component: '@byzanteam/vis-components/data-loader',
       position: [929, 125],
