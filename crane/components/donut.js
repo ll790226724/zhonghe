@@ -26,11 +26,11 @@ module.exports = {
         },
         $legendOptions: {
           align: 'start',
-          $offset: '[0, 30]',
+          $offset: '[0, 0]',
           position: 'right',
           layout: 'vertical',
           $label: {
-            fill: '#2E2E2E',
+            fill: '#4b9bbe',
             $size: 14,
           },
         },
