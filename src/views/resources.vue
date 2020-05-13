@@ -162,7 +162,7 @@ export const resources = {
             ],
             orient: 'horizontal',
             bottom: '6%',
-            left: '22%',
+            left: '26%',
             textStyle: {
               color: '#ffffff',
               fontSize: 14

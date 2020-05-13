@@ -57,7 +57,7 @@ const chartTooltipOptions = {
     }
   },
   $tooltipOptions: {
-    background: 'rgba(60, 71, 89, 0.9)',
+    background: '#566374f0',
     $text: {
       align: 'center',
       baseline: 'middle',
