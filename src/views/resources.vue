@@ -161,10 +161,10 @@ export const resources = {
               {gt: 1, lt: 9, label: '1-9人'}
             ],
             orient: 'horizontal',
-            left: '30%',
+            left: '18%',
             textStyle: {
-              color: 'white',
-              fontSize: '14px'
+              color: '#ffffff',
+              fontSize: 14
             },
             itemWidth: 18,
             itemGap: 20,
