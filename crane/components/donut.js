@@ -2,7 +2,7 @@ const { chartTooltipOptions } = require('../share');
 
 module.exports = {
   component: '@byzanteam/vis-components/data-loader',
-  position: [1460, 380],
+  position: [1455, 380],
   exports: {
     results: 'results',
   },
@@ -16,7 +16,7 @@ module.exports = {
     {
       component: '@byzanteam/graphite/donut',
       props: {
-        $data: "[{label: '数据服务', value: 12}, {label: '游戏', value: 22}, {label: '智能硬件', value: 23}, {label: '人力资源服务', value: 40}, {label: '计算机软件', value: 10}, {label: '其他', value: 22}]",
+        $data: "[{label: '数据服务(%)', value: 12}, {label: '游戏(%)', value: 22}, {label: '智能硬件(%)', value: 23}, {label: '人力资源服务(%)', value: 40}, {label: '计算机软件(%)', value: 10}, {label: '其他(%)', value: 22}]",
         labelKey: 'label',
         valueKey: 'value',
         $innerRadius: 0.58,
