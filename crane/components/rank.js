@@ -24,7 +24,7 @@ module.exports = {
       props: {
         // 'v-if': 'craneStates.rank',
         // $data: "results.slice(0, 3).map(item => { return {label: item[1], amount: item[0] } } )",
-        $data: "[{label: '本科', amount: 78}, {label: '硕士', amount: 23}, {label: '博士', amount: 18}, {label: '高中生', amount: 68}, {label: '大专', amount: 47}, {label: '初中', amount: 45},]",
+        $data: "[{label: '本科', amount: 78.16}, {label: '硕士', amount: 23.21}, {label: '博士', amount: 18.01}, {label: '高中生', amount: 68.23}, {label: '大专', amount: 47.67}, {label: '初中', amount: 45.11},]",
         $keys: {
           label: 'label',
           value: 'amount',
