@@ -67,7 +67,7 @@ module.exports = {
         $rotate: 180,
         $series: "[['#6ad6ff', '#117ea8']]",
         $gap: {
-          outer: '5'
+          $outer: 5,
         },
         ...chartTooltipOptions
       },

@@ -126,7 +126,7 @@ module.exports = {
         $style: {
           color: '#fff',
           fontSize: '42px',
-          $fontWeight: '600',
+          $fontWeight: '500',
           textAlign: 'center',
         }
       }
