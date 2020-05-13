@@ -1,7 +1,7 @@
 <template>
   <div class="resources">
     <img ref="background" src="/static/images/Bg.png" :style="{position: 'absolute', top: '0px', left: '0px'}" />
-    <data-loader :style="{width: '900px', height: '698px', position: 'absolute', top: '261px', left: '510px'}">
+    <data-loader :style="{width: '900px', height: '900px', position: 'absolute', top: '160px', left: '510px'}">
       <v-chart :options="craneStates.options" />
     </data-loader>
     <data-loader :style="{width: '400px', height: '254px', overflow: 'scroll', position: 'absolute', top: '78px', left: '1490px'}">
@@ -16,22 +16,22 @@
     <img ref="title-bg" :style="{width: '701px', height: '123px', position: 'absolute', top: '0px', left: '607px'}" src="/static/images/Title-Bg.png" />
     <img ref="box-bg" :style="{width: '440px', height: '1059px', position: 'absolute', top: '10px', left: '10px'}" src="/static/images/Box-Bg.png" />
     <img ref="right-box-bg" :style="{width: '440px', height: '1059px', position: 'absolute', top: '10px', left: '1471px'}" src="/static/images/Box-Bg.png" />
-    <div ref="page-title" :style="{color: '#fff', fontSize: '42px', fontWeight: 500, textAlign: 'center', position: 'absolute', top: '27px', left: '750px'}">
+    <div ref="page-title" :style="{color: '#fff', fontSize: '42px', fontWeight: 500, textAlign: 'center', letterSpacing: '1.2px', position: 'absolute', top: '27px', left: '750px'}">
       全省人才资源态势总览
     </div>
-    <div ref="talent-index" :style="{color: '#fff', fontSize: '18px', fontWeight: '600', textAlign: 'left', letterSpacing: '0.9', position: 'absolute', top: '262px', left: '73px'}">
+    <div ref="talent-index" :style="{color: '#fff', fontSize: '18px', fontWeight: '600', textAlign: 'left', letterSpacing: '1px', position: 'absolute', top: '262px', left: '73px'}">
       人才指数综合分析
     </div>
-    <div ref="talent-education" :style="{color: '#fff', fontSize: '18px', fontWeight: '600', textAlign: 'left', letterSpacing: '0.9', position: 'absolute', top: '704px', left: '73px'}">
+    <div ref="talent-education" :style="{color: '#fff', fontSize: '18px', fontWeight: '600', textAlign: 'left', letterSpacing: '1px', position: 'absolute', top: '704px', left: '73px'}">
       人才学历层次
     </div>
-    <div ref="talent-industry" :style="{color: '#fff', fontSize: '18px', fontWeight: '600', textAlign: 'left', letterSpacing: '0.9', position: 'absolute', top: '46px', left: '1530px'}">
+    <div ref="talent-industry" :style="{color: '#fff', fontSize: '18px', fontWeight: '600', textAlign: 'left', letterSpacing: '1px', position: 'absolute', top: '46px', left: '1530px'}">
       人才流动行业排名
     </div>
-    <div ref="industry-talent" :style="{color: '#fff', fontSize: '18px', fontWeight: '600', textAlign: 'left', letterSpacing: '0.9', position: 'absolute', top: '388px', left: '1530px'}">
+    <div ref="industry-talent" :style="{color: '#fff', fontSize: '18px', fontWeight: '600', textAlign: 'left', letterSpacing: '1px', position: 'absolute', top: '388px', left: '1530px'}">
       行业人才占比
     </div>
-    <div ref="talent-demand" :style="{color: '#fff', fontSize: '18px', fontWeight: '600', textAlign: 'left', letterSpacing: '0.9', position: 'absolute', top: '704px', left: '1530px'}">
+    <div ref="talent-demand" :style="{color: '#fff', fontSize: '18px', fontWeight: '600', textAlign: 'left', letterSpacing: '1px', position: 'absolute', top: '704px', left: '1530px'}">
       各行业人才需求
     </div>
     <div ref="talent-index-icon" :style="{color: '#6ad6ff', fontSize: '14px', fontWeight: '400', textAlign: 'left', position: 'absolute', top: '265px', left: '38px'}">
@@ -49,14 +49,14 @@
     <div ref="talent-demand-icon" :style="{color: '#6ad6ff', fontSize: '14px', fontWeight: '400', textAlign: 'left', position: 'absolute', top: '707px', left: '1498px'}">
       >>
     </div>
-    <div ref="value-circle" :style="{height: '10px', width: '10px', borderRadius: '10px', borderWidth: '1px', borderColor: '#367391', borderStyle: 'solid', position: 'absolute', top: '79px', left: '104px'}" />
-    <div ref="number-circle" :style="{height: '10px', width: '10px', borderRadius: '10px', borderWidth: '1px', borderColor: '#367391', borderStyle: 'solid', position: 'absolute', top: '159px', left: '104px'}" />
-    <div ref="education-circle" :style="{height: '10px', width: '10px', borderRadius: '10px', borderWidth: '1px', borderColor: '#367391', borderStyle: 'solid', position: 'absolute', top: '364px', left: '64px'}" />
-    <div ref="rank-circle" :style="{height: '10px', width: '10px', borderRadius: '10px', borderWidth: '1px', borderColor: '#367391', borderStyle: 'solid', position: 'absolute', top: '364px', left: '264px'}" />
-    <div ref="age-circle" :style="{height: '10px', width: '10px', borderRadius: '10px', borderWidth: '1px', borderColor: '#367391', borderStyle: 'solid', position: 'absolute', top: '472px', left: '64px'}" />
-    <div ref="industry-circle" :style="{height: '10px', width: '10px', borderRadius: '10px', borderWidth: '1px', borderColor: '#367391', borderStyle: 'solid', position: 'absolute', top: '472px', left: '264px'}" />
-    <div ref="quality-circle" :style="{height: '10px', width: '10px', borderRadius: '10px', borderWidth: '1px', borderColor: '#367391', borderStyle: 'solid', position: 'absolute', top: '580px', left: '64px'}" />
-    <div ref="synthesis-circle" :style="{height: '10px', width: '10px', borderRadius: '10px', borderWidth: '1px', borderColor: '#367391', borderStyle: 'solid', position: 'absolute', top: '580px', left: '264px'}" />
+    <div ref="value-circle" :style="{height: '10px', width: '10px', borderRadius: '10px', borderWidth: '1px', borderColor: '#6ad6ff', borderStyle: 'solid', position: 'absolute', top: '79px', left: '104px'}" />
+    <div ref="number-circle" :style="{height: '10px', width: '10px', borderRadius: '10px', borderWidth: '1px', borderColor: '#6ad6ff', borderStyle: 'solid', position: 'absolute', top: '159px', left: '104px'}" />
+    <div ref="education-circle" :style="{height: '10px', width: '10px', borderRadius: '10px', borderWidth: '1px', borderColor: '#6ad6ff', borderStyle: 'solid', position: 'absolute', top: '364px', left: '64px'}" />
+    <div ref="rank-circle" :style="{height: '10px', width: '10px', borderRadius: '10px', borderWidth: '1px', borderColor: '#6ad6ff', borderStyle: 'solid', position: 'absolute', top: '364px', left: '264px'}" />
+    <div ref="age-circle" :style="{height: '10px', width: '10px', borderRadius: '10px', borderWidth: '1px', borderColor: '#6ad6ff', borderStyle: 'solid', position: 'absolute', top: '472px', left: '64px'}" />
+    <div ref="industry-circle" :style="{height: '10px', width: '10px', borderRadius: '10px', borderWidth: '1px', borderColor: '#6ad6ff', borderStyle: 'solid', position: 'absolute', top: '472px', left: '264px'}" />
+    <div ref="quality-circle" :style="{height: '10px', width: '10px', borderRadius: '10px', borderWidth: '1px', borderColor: '#6ad6ff', borderStyle: 'solid', position: 'absolute', top: '580px', left: '64px'}" />
+    <div ref="synthesis-circle" :style="{height: '10px', width: '10px', borderRadius: '10px', borderWidth: '1px', borderColor: '#6ad6ff', borderStyle: 'solid', position: 'absolute', top: '580px', left: '264px'}" />
     <div ref="age-bg" :style="{height: '80px', width: '180px', backgroundColor: '#6ad6ff05', borderRadius: '5px', position: 'absolute', top: '324px', left: '40px'}" />
     <div ref="education-bg" :style="{height: '80px', width: '180px', backgroundColor: '#6ad6ff05', borderRadius: '5px', position: 'absolute', top: '324px', left: '240px'}" />
     <div ref="industry-bg" :style="{height: '80px', width: '180px', backgroundColor: '#6ad6ff05', borderRadius: '5px', position: 'absolute', top: '432px', left: '40px'}" />
@@ -161,13 +161,14 @@ export const resources = {
               {gt: 1, lt: 9, label: '1-9人'}
             ],
             orient: 'horizontal',
-            left: '18%',
+            bottom: '6%',
+            left: '22%',
             textStyle: {
               color: '#ffffff',
               fontSize: 14
             },
             itemWidth: 18,
-            itemGap: 20,
+            itemGap: 10,
             textGap: 8,
             inRange: {
               color: ['rgba(106, 214, 255, .1)', 'rgba(106, 214, 255, .4)', 'rgba(106, 214, 255, .5)', 'rgba(106, 214, 255, .6)', 'rgba(106, 214, 255, .7)']
@@ -195,7 +196,8 @@ export const resources = {
               },
               itemStyle: {
                 borderColor: '#6ad6ff',
-                borderType: 'dashed'
+                borderType: 'dashed',
+                borderWidth: 0.5
               },
               emphasis: {
                 label: {
@@ -205,7 +207,8 @@ export const resources = {
                 itemStyle: {
                   areaColor: '#6ad6ff'
                 }
-              }
+              },
+              top: 50
             }
           ]
         },
