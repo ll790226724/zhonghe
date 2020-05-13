@@ -39,8 +39,7 @@
   white-space: nowrap;
   background-color: #082446;
   margin-top: 0;
-  border: 1px solid #082446;
-
+  border: 1px solid #6ad6ff1f;
 }
 
 .select-popover .popover__content .popover__body {
@@ -59,6 +58,9 @@
 .select-popover .popover__content .popover__body .popover__body__content .select__selection .select__selection__options .list .list__item {
   color: #4b9bbe;
   background-color: #082446;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  font-size: 14px;
 }
 
 .select-popover .popover__content .popover__body .popover__body__content .select__selection .select__selection__options .list .list__item:hover {
