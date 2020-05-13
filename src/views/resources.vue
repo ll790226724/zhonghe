@@ -1,7 +1,7 @@
 <template>
   <div class="resources">
     <img ref="background" src="/static/images/Bg.png" :style="{position: 'absolute', top: '0px', left: '0px'}" />
-    <data-loader :style="{width: '900px', height: '900px', position: 'absolute', top: '160px', left: '510px'}">
+    <data-loader :style="{width: '1100px', height: '900px', position: 'absolute', top: '160px', left: '410px'}">
       <v-chart :options="craneStates.options" />
     </data-loader>
     <data-loader :style="{width: '400px', height: '254px', overflow: 'scroll', position: 'absolute', top: '78px', left: '1490px'}">
@@ -199,7 +199,7 @@ export const resources = {
               },
               itemStyle: {
                 borderColor: '#6ad6ff',
-                borderType: 'dashed',
+                borderType: 'solid',
                 borderWidth: 0.5
               },
               emphasis: {
@@ -211,7 +211,6 @@ export const resources = {
                   areaColor: '#6ad6ff'
                 }
               },
-              top: 50
             }
           ]
         },

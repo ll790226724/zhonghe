@@ -1,9 +1,9 @@
 module.exports = {
   component: '@byzanteam/vis-components/data-loader',
-  position: [510, 160],
+  position: [410, 160],
   props: {
     $style: {
-      width: '900px',
+      width: '1100px',
       height: '900px'
     }
   },
