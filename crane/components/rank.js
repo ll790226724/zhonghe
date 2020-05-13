@@ -14,7 +14,6 @@ module.exports = {
     $style: {
       width: '296px',
       height: '290px',
-      padding: '8px',
       overflow: 'scroll'
     },
   },
