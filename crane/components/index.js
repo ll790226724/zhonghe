@@ -120,8 +120,8 @@ module.exports = {
     {
       id: 'page-title',
       component: 'div',
-      content: '全省人力资源态势总览',
-      position: [750, 35],
+      content: '全省人才资源态势总览',
+      position: [750, 27],
       props: {
         $style: {
           color: '#fff',
