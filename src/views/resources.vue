@@ -149,7 +149,8 @@ export const resources = {
           backgroundColor: 'transparent',
           tooltip: {
             trigger: 'item',
-            formatter: '{b}<br/>人才数量（人）：{c}'
+            formatter: '{b}<br/>人才数量（人）：{c}',
+            backgroundColor: '#566374f0',
           },
           visualMap: {
             type: 'piecewise',
