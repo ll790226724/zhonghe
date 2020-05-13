@@ -3,7 +3,7 @@ const { chartTooltipOptions } = require('../share');
 module.exports = {
   id: 'demand-vertical-bar',
   component: '@byzanteam/vis-components/data-loader',
-  position: [1490, 752],
+  position: [1490, 762],
   exports: {
     results: 'results',
   },
@@ -67,7 +67,7 @@ module.exports = {
         $rotate: 180,
         $series: "[['#6ad6ff', '#117ea8']]",
         $gap: {
-          outer: '4.5'
+          outer: '5'
         },
         ...chartTooltipOptions
       },

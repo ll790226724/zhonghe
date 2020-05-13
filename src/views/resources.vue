@@ -234,10 +234,12 @@ export default resources
     tr {
       td:first-child {
         text-align: center;
+        line-height: 46px;
       }
       td:last-child {
         text-align: left;
         color: #4b9bbe;
+        line-height: 46px;
       }
     }
   }
