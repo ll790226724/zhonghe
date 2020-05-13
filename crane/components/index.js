@@ -293,10 +293,10 @@ module.exports = {
       position: [104, 79],
       props: {
         $style: {
-          height:'6px',
-          width: '6px',
-          borderRadius: '5px',
-          borderWidth: '2px',
+          height:'10px',
+          width: '10px',
+          borderRadius: '10px',
+          borderWidth: '1px',
           borderColor: '#367391',
           borderStyle: 'solid',
         }
@@ -309,10 +309,10 @@ module.exports = {
       position: [104, 159],
       props: {
         $style: {
-          height:'6px',
-          width: '6px',
-          borderRadius: '5px',
-          borderWidth: '2px',
+          height:'10px',
+          width: '10px',
+          borderRadius: '10px',
+          borderWidth: '1px',
           borderColor: '#367391',
           borderStyle: 'solid',
         }
@@ -325,10 +325,10 @@ module.exports = {
       position: [64, 364],
       props: {
         $style: {
-          height:'6px',
-          width: '6px',
-          borderRadius: '5px',
-          borderWidth: '2px',
+          height:'10px',
+          width: '10px',
+          borderRadius: '10px',
+          borderWidth: '1px',
           borderColor: '#367391',
           borderStyle: 'solid',
         }
@@ -341,10 +341,10 @@ module.exports = {
       position: [264, 364],
       props: {
         $style: {
-          height:'6px',
-          width: '6px',
-          borderRadius: '5px',
-          borderWidth: '2px',
+          height:'10px',
+          width: '10px',
+          borderRadius: '10px',
+          borderWidth: '1px',
           borderColor: '#367391',
           borderStyle: 'solid',
         }
@@ -357,10 +357,10 @@ module.exports = {
       position: [64, 472],
       props: {
         $style: {
-          height:'6px',
-          width: '6px',
-          borderRadius: '5px',
-          borderWidth: '2px',
+          height:'10px',
+          width: '10px',
+          borderRadius: '10px',
+          borderWidth: '1px',
           borderColor: '#367391',
           borderStyle: 'solid',
         }
@@ -373,10 +373,10 @@ module.exports = {
       position: [264, 472],
       props: {
         $style: {
-          height:'6px',
-          width: '6px',
-          borderRadius: '5px',
-          borderWidth: '2px',
+          height:'10px',
+          width: '10px',
+          borderRadius: '10px',
+          borderWidth: '1px',
           borderColor: '#367391',
           borderStyle: 'solid',
         }
@@ -389,10 +389,10 @@ module.exports = {
       position: [64, 580],
       props: {
         $style: {
-          height:'6px',
-          width: '6px',
-          borderRadius: '5px',
-          borderWidth: '2px',
+          height:'10px',
+          width: '10px',
+          borderRadius: '10px',
+          borderWidth: '1px',
           borderColor: '#367391',
           borderStyle: 'solid',
         }
@@ -405,10 +405,10 @@ module.exports = {
       position: [264, 580],
       props: {
         $style: {
-          height:'6px',
-          width: '6px',
-          borderRadius: '5px',
-          borderWidth: '2px',
+          height:'10px',
+          width: '10px',
+          borderRadius: '10px',
+          borderWidth: '1px',
           borderColor: '#367391',
           borderStyle: 'solid',
         }
