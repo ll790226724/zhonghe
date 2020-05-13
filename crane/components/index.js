@@ -418,7 +418,7 @@ module.exports = {
     {
       id: 'age-bg',
       component: 'div',
-      position: [40, 424],
+      position: [40, 324],
       props: {
         $style: {
           height: '80px',
