@@ -2,13 +2,13 @@
   <div class="supply">
     <img ref="background" src="/static/images/Bg.png" :style="{position: 'absolute', top: '0px', left: '0px'}" />
     <img ref="title-bg" :style="{width: '701px', height: '123px', position: 'absolute', top: '0px', left: '607px'}" src="/static/images/Title-Bg.png" />
-    <div ref="page-title" :style="{width: '701px', color: '#fff', fontSize: '42px', fontWeight: 600, textAlign: 'center', position: 'absolute', top: '0px', left: '607px', top: '27px',}">
+    <div ref="page-title" :style="{width: '701px', color: '#fff', fontSize: '42px', fontWeight: 600, textAlign: 'center', position: 'absolute', top: '27px', left: '607px'}">
       人才供需专题
     </div>
     <img ref="box-bg" :style="{width: '440px', height: '1059px', position: 'absolute', top: '10px', left: '10px'}" src="/static/images/Box-Bg.png" />
     <data-loader ref="job_select" :style="{position: 'absolute', top: '50px', left: '40px'}">
       <Select :style="{width: '380px'}" v-model="craneStates.currentJob">
-        <Option v-for="(item, key) in craneStates.jobs" :key="key" value="index" label="name">
+        <Option v-for="(item, key) in craneStates.jobs" :key="key" :value="item.index" :label="item.name">
           {{item.name}}
         </Option>
       </Select>

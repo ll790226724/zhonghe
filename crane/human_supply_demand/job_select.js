@@ -19,8 +19,8 @@ module.exports = {
             exports: {item: 'item', index: 'key'}
           },
           props: {
-            value: "index",
-            label: "name"
+            $value: "item.index",
+            $label: "item.name"
           },
           content: '{{item.name}}',
         }
