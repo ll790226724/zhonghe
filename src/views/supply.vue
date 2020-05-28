@@ -13,6 +13,11 @@
         </Option>
       </Select>
     </data-loader>
+    <data-loader ref="supply-demand-count" :style="{width: '400px', height: '50px', backgroundColor: 'rgba(106, 214, 255, .02)', borderRadius: '5px', position: 'absolute', top: '196px', left: '30px'}" />
+    <div ref="value-circle" :style="{height: '10px', width: '10px', borderRadius: '10px', borderWidth: '1px', borderColor: '#6ad6ff', borderStyle: 'solid', position: 'absolute', top: '225px', left: '100px'}" />
+    <data-loader ref="supply-demand-count" :style="{position: 'absolute', top: '202px', left: '126px'}">
+      <digital-roll ref="talent-age-index-content" titlePosition="left" :content="{title: '企业人才需求数量', digital: 5200}" :options="{separator: ','}" :style="{width: '235px', height: '39px', position: 'absolute', top: '0px', left: 'undefinedpx'}" :titleStyle="{color: '#367391', fontSize: '16px', fontWeight: '400'}" :digitalStyle="{fontSize: '32px', color: '#6ad6ff', fontWeight: '400', fontFamily: 'Oswald-Regular', format: '11', letterSpacing: '2.4px'}" />
+    </data-loader>
   </div>
 </template>
 
@@ -20,6 +25,7 @@
 import BuiltInMixin from '../mixins/built_in'
 import {
   DataLoader,
+  DigitalRoll,
 } from '@byzanteam/vis-components'
 import {
   Select,
@@ -31,6 +37,7 @@ export const supply = {
 
   components: {
     DataLoader,
+    DigitalRoll,
     Select,
     Option,
   },

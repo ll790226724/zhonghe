@@ -1,4 +1,5 @@
 const jobSelect = require('./job_select')
+const singleDigital = require('./single_digital')
 
 module.exports = {
   route: {
@@ -72,6 +73,7 @@ module.exports = {
         src: '/static/images/Box-Bg.png'
       },
     },
-    jobSelect
+    jobSelect,
+    ...singleDigital
   ]
 }
