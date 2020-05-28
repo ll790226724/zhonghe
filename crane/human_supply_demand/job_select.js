@@ -4,15 +4,18 @@ module.exports = {
   position: [40, 50],
   children: [
     {
-      component: 'element-ui/el-select',
+      component: 'element-ui/Select',
       props: {
-        'v-model': 'cranetState.currentJob'
+        $style: {
+          width: '380px',
+        },
+        'v-model': 'craneStates.currentJob'
       },
       children: [
         {
-          component: 'element-ui/el-option',
+          component: 'element-ui/Option',
           vfor: {
-            data: "craneState.jobs",
+            data: "craneStates.jobs",
             exports: {item: 'item', index: 'key'}
           },
           props: {

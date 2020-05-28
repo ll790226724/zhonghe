@@ -1,11 +1,11 @@
 <template>
   <div class="supply">
     <data-loader ref="job_select" :style="{position: 'absolute', top: '50px', left: '40px'}">
-      <el-select v-model="cranetState.currentJob">
-        <el-option v-for="(item, key) in craneState.jobs" :key="key" value="index" label="name">
+      <Select :style="{width: '380px'}" v-model="craneStates.currentJob">
+        <Option v-for="(item, key) in craneStates.jobs" :key="key" value="index" label="name">
           {{item.name}}
-        </el-option>
-      </el-select>
+        </Option>
+      </Select>
     </data-loader>
   </div>
 </template>
@@ -16,8 +16,8 @@ import {
   DataLoader,
 } from '@byzanteam/vis-components'
 import {
-  ElSelect,
-  ElOption,
+  Select,
+  Option,
 } from 'element-ui'
 
 export const supply = {
@@ -25,15 +25,15 @@ export const supply = {
 
   components: {
     DataLoader,
-    ElSelect,
-    ElOption,
+    Select,
+    Option,
   },
 
   data () {
     return {
       craneStates: {
-        : '',
-        : [{index: 1, name: '高级前端工程师'}, {index: 2, name: 'java工程师'}, {index: 3, name: '用户体验设计师'}, {index: 4, name: '产品经理'}, {index: 5, name: '产品助理'}, {index: 6, name: '智能硬件'}, {index: 7, name: '生活服务'}],
+        currentJob: '',
+        jobs: [{index: 1, name: '高级前端工程师'}, {index: 2, name: 'java工程师'}, {index: 3, name: '用户体验设计师'}, {index: 4, name: '产品经理'}, {index: 5, name: '产品助理'}, {index: 6, name: '智能硬件'}, {index: 7, name: '生活服务'}],
       },
     }
   },

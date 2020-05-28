@@ -8,11 +8,11 @@ module.exports = {
   title:'人才供需专题',
   states: [
     {
-      name: 'job',
+      id: 'currentJob',
       value: ''
     },
     {
-      name: 'jobs',
+      id: 'jobs',
       value: [
         {index: 1, name: '高级前端工程师'},
         {index: 2, name: 'java工程师'},

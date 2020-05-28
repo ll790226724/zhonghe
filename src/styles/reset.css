@@ -87,3 +87,5 @@
 .ranking .ranking__block {
   margin-bottom: 12px;
 }
+
+@import './supply.css'
