@@ -1,6 +1,7 @@
 const jobSelect = require('./job_select')
 const singleDigital = require('./single_digital')
 const talentsExponent = require('./talents_exponent')
+const lineChart = require('./line')
 
 module.exports = {
   route: {
@@ -84,6 +85,7 @@ module.exports = {
     },
     jobSelect,
     ...singleDigital,
-    ...talentsExponent
+    ...talentsExponent,
+    ...lineChart
   ]
 }

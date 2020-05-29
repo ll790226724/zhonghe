@@ -37,7 +37,6 @@ module.exports = [
       {
         id: 'talent-age-index-content',
         component: '@byzanteam/vis-components/digital-roll',
-        position: [],
         props: {
           titlePosition: 'left',
           $content: {
