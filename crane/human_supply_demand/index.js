@@ -6,6 +6,7 @@ const salaryAnalysis = require('./salary_analysis')
 const industriesDemandRanking = require('./industries_demand_ranking')
 const talentsDemandChange = require('./talents_demand_change')
 const degreeAnalysis = require('./degree_analysis')
+const map = require('./map')
 
 module.exports = {
   route: {
@@ -97,6 +98,7 @@ module.exports = {
     },
     jobSelect,
     datePicker,
+    ...map,
     ...singleDigital,
     ...talentsExponent,
     ...salaryAnalysis,
