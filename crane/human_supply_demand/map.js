@@ -1,6 +1,5 @@
 module.exports = [
   {
-    id: 'departments-loader',
     component: '@byzanteam/vis-components/data-loader',
     position: [929, 125],
     children: [
@@ -26,6 +25,7 @@ module.exports = [
     },
     children: [
       {
+        id: 'map',
         component: 'v-chart',
         props: {
           $options: {

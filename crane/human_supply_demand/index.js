@@ -46,6 +46,10 @@ module.exports = {
     {
       id: 'chartTabCurrent',
       value: 'CHART_TAB_NAVS[0]'
+    },
+    {
+      id: 'selectedArea',
+      value: {}
     }
   ],
   components: [

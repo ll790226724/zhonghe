@@ -18,7 +18,7 @@
       <vis-select ref="departments-select" :options="[{label: '福州', uuid: '0'}, {label: '全国', uuid: '1'}, {label: '陕西省', uuid: '2'}, {label: '江苏省', uuid: '3'}, {label: '福建省', uuid: '4'}, {label: '浙江省', uuid: '5'},]" v-model="craneStates.department" placeholder="福州" />
     </data-loader>
     <data-loader :style="{width: '1100px', height: '900px', position: 'absolute', top: '160px', left: '410px'}">
-      <v-chart :options="{backgroundColor: 'transparent', series: [{type: 'map', mapType: 'Liuzhou', label: {show: true, color: 'white'}, itemStyle: {areaColor: 'rgba(106, 214, 255, .1)', borderColor: '#6ad6ff', borderType: 'solid', borderWidth: 0.5}, emphasis: {label: {color: 'white',fontWeight: 600}, itemStyle: {areaColor: '#6ad6ff'}}}]}" />
+      <v-chart ref="map" :options="{backgroundColor: 'transparent', series: [{type: 'map', mapType: 'Liuzhou', label: {show: true, color: 'white'}, itemStyle: {areaColor: 'rgba(106, 214, 255, .1)', borderColor: '#6ad6ff', borderType: 'solid', borderWidth: 0.5}, emphasis: {label: {color: 'white',fontWeight: 600}, itemStyle: {areaColor: '#6ad6ff'}}}]}" />
     </data-loader>
     <data-loader ref="supply-demand-count" :style="{width: '400px', height: '50px', backgroundColor: 'rgba(106, 214, 255, .02)', borderRadius: '5px', position: 'absolute', top: '196px', left: '30px'}" />
     <div ref="value-circle" :style="{height: '10px', width: '10px', borderRadius: '10px', borderWidth: '1px', borderColor: '#6ad6ff', borderStyle: 'solid', position: 'absolute', top: '225px', left: '100px'}" />
@@ -155,9 +155,32 @@ export const supply = {
         tabNavs: TAB_NAVS,
         tabCurrent: TAB_NAVS[0],
         chartTabNavs: CHART_TAB_NAVS,
-        chartTabCurrent: CHART_TAB_NAVS[0]
+        chartTabCurrent: CHART_TAB_NAVS[0],
+        selectedArea: {}
       },
     }
+  },
+
+  mounted() {
+    const { chart } = this.$refs.map
+    chart.on('click', (params) => {
+      chart.dispatchAction({
+        type: 'mapSelect',
+        dataIndex: params.dataIndex
+      })
+      debugger
+      if(this.craneStates.selectedArea) {
+        chart.dispatchAction({
+          type: 'mapUnSelect',
+          dataIndex: this.craneStates.selectedArea.dataIndex
+        })
+      }
+      if(this.craneStates.selectedArea.dataIndex === params.dataIndex) {
+        this.craneStates.selectedArea = {}
+      } else {
+        this.craneStates.selectedArea = params
+      }
+    })
   },
 }
 export default supply
