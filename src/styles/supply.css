@@ -42,3 +42,26 @@
   color: rgba(106, 214, 255, 1);
   background-color: rgba(106, 214, 255, .04);
 }
+
+.tabs .tab-navs-container {
+  border: none !important;
+}
+
+.tabs .tab-navs .tab-nav {
+  padding: 8px 0 10px;
+}
+
+.tabs .tab-nav::before {
+  border: 1px solid transparent;
+}
+
+.tabs .tab-nav.tab-nav-active::before {
+  background-color: rgba(106, 214, 255, 1) !important;
+}
+
+.tabs .tab-navs .tab-nav-label {
+  color: rgba(106, 214, 255, 1);
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 500;
+}

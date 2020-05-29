@@ -26,21 +26,12 @@ module.exports = {
       ]
     },
     {
-      id: 'tabCurrent',
-      value: '岗位排名'
+      id: 'tabNavs',
+      value: 'TAB_NAVS'
     },
     {
-      id: 'tabNavs',
-      value: [
-        {
-          uuid: 1,
-          label: '岗位排名'
-        },
-        {
-          uuid: 2,
-          label: '岗位薪资排名'
-        },
-      ]
+      id: 'tabCurrent',
+      value: 'TAB_NAVS[0]'
     },
   ],
   components: [
