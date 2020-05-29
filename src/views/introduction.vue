@@ -77,6 +77,7 @@
 import Echarts from 'vue-echarts'
 import 'echarts/lib/component/geo'
 import 'echarts/lib/chart/map'
+import 'echarts/lib/chart/bar'
 import 'echarts/lib/component/tooltip'
 import 'echarts/lib/component/legend'
 import 'echarts/lib/component/visualMap'
@@ -101,6 +102,7 @@ export const introduction = {
 
   data () {
     return {
+      Echarts: Echarts,
       craneStates: {
         options: {
           backgroundColor: 'transparent',

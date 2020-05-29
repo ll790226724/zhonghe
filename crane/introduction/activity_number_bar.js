@@ -23,6 +23,10 @@ module.exports = {
       // 'v-if': 'results',
       props: {
         $options: {
+          $dataset: {
+            source: [120, 200, 150, 80, 70, 110, 130],
+            dimensions: ['周一', '周二', '周三', '周四', '周五', '周六', '周日',],
+          },
           $xAxis: {
             $axisLabel:{
               $rotate: 0,
@@ -31,7 +35,7 @@ module.exports = {
               color: '#367391'
             },
             $axisLine:{
-              show: false
+              $show: false
             }
           },
           $yAxis: {
@@ -41,7 +45,7 @@ module.exports = {
               $fontWeight: 400,
               color: '#367391'
             },
-            splitNumber: 5,
+            $splitNumber: 5,
             name: '件',
             $nameTextStyle: {
               $fontSize: 12,
@@ -66,7 +70,6 @@ module.exports = {
 
               },
             },
-            data: [120, 200, 150, 80, 70, 110, 130],
           },
         },
       },
