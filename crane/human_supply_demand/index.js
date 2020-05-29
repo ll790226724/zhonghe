@@ -1,4 +1,5 @@
 const jobSelect = require('./job_select')
+const datePicker = require('./date_picker')
 const singleDigital = require('./single_digital')
 const talentsExponent = require('./talents_exponent')
 const salaryAnalysis = require('./salary_analysis')
@@ -95,6 +96,7 @@ module.exports = {
       },
     },
     jobSelect,
+    datePicker,
     ...singleDigital,
     ...talentsExponent,
     ...salaryAnalysis,

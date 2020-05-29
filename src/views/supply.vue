@@ -13,6 +13,7 @@
         </Option>
       </Select>
     </data-loader>
+    <date-picker :style="{width: '380px', height: '50px', position: 'absolute', top: '116px', left: '40px'}" v-model="craneStates.year" type="year" placeholder="选择时间" />
     <data-loader ref="supply-demand-count" :style="{width: '400px', height: '50px', backgroundColor: 'rgba(106, 214, 255, .02)', borderRadius: '5px', position: 'absolute', top: '196px', left: '30px'}" />
     <div ref="value-circle" :style="{height: '10px', width: '10px', borderRadius: '10px', borderWidth: '1px', borderColor: '#6ad6ff', borderStyle: 'solid', position: 'absolute', top: '225px', left: '100px'}" />
     <data-loader ref="supply-demand-count" :style="{position: 'absolute', top: '202px', left: '126px'}">
@@ -117,6 +118,7 @@ import {
 import {
   Select,
   Option,
+  DatePicker,
 } from 'element-ui'
 
 const TAB_NAVS = [{uuid: 1, label: '岗位排名'}, {uuid: 2, label: '岗位薪资排名'}]
@@ -133,7 +135,8 @@ export const supply = {
     VisTable,
     Select,
     Option,
-    'v-chart': Echarts
+    'v-chart': Echarts,
+    DatePicker,
   },
 
   data () {
