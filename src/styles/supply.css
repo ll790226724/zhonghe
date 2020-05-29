@@ -43,6 +43,29 @@
   background-color: rgba(106, 214, 255, .04);
 }
 
+.el-date-editor .el-input__inner {
+  height: 50px;
+  background-color: rgba(106, 214, 255, .02);
+  border-color: rgba(106, 214, 255, .12);
+  color: #ffffff;
+}
+
+.el-date-editor .el-input__inner::placeholder {
+  color: rgba(255, 255, 255, .8);
+}
+
+.el-picker-panel {
+  margin-top: 30px !important;
+  margin-left: 5px;
+  width: 380px;
+  background-color: #06172c;
+  border-color: rgba(106, 214, 255, .12);
+}
+
+.el-picker-panel .popper__arrow {
+  display: none;
+}
+
 .tabs .tab-navs-container {
   border: none !important;
 }
