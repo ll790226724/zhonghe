@@ -25,6 +25,24 @@
       需求岗位排名
     </div>
     <brick-tabs :tabNavs="craneStates.tabNavs" :activeTab="craneStates.tabCurrent" :style="{position: 'absolute', top: '352px', left: '110px'}" v-model="craneStates.tabCurrent" />
+    <data-loader v-if="craneStates.tabCurrent === craneStates.tabNavs[0]" :style="{width: '400px', height: '230px', overflow: 'scroll', position: 'absolute', top: '414px', left: '30px'}">
+      <vis-table :withHeader="false" theme="dark" stripe="" :headers="[{width: 120, key: 'index'}, {width: 280, key: 'name'}]" :data="[{index: 1, name: '广告设计师'}, {index: 2, name: '中级3D建模师'}, {index: 3, name: '产品经理'}, {index: 4, name: '产品助理'}, {index: 5, name: '交互设计师'}, {index: 6, name: '智能硬件'}, {index: 7, name: '生活服务'}]">
+        <template v-slot="{ cell: cell, columnKey: columnKey }">
+          <span :class="columnKey === 'index' ? 'row-index-cell' : ''">
+            {{cell}}
+          </span>
+        </template>
+      </vis-table>
+    </data-loader>
+    <data-loader v-if="craneStates.tabCurrent === craneStates.tabNavs[1]" :style="{width: '400px', height: '230px', overflow: 'scroll', position: 'absolute', top: '414px', left: '30px'}">
+      <vis-table :withHeader="false" theme="dark" stripe="" :headers="[{width: 120, key: 'index'}, {width: 280, key: 'name'}]" :data="[{index: 1, name: '中级3D建模师'}, {index: 2, name: '广告设计师'}, {index: 3, name: '生活服务'}, {index: 4, name: '产品助理'}, {index: 5, name: '交互设计师'}, {index: 6, name: '智能硬件'}, {index: 7, name: '产品经理'}]">
+        <template v-slot="{ cell: cell, columnKey: columnKey }">
+          <span :class="columnKey === 'index' ? 'row-index-cell' : ''">
+            {{cell}}
+          </span>
+        </template>
+      </vis-table>
+    </data-loader>
   </div>
 </template>
 
@@ -34,6 +52,7 @@ import {
   DataLoader,
   DigitalRoll,
   BrickTabs,
+  VisTable,
 } from '@byzanteam/vis-components'
 import {
   Select,
@@ -49,6 +68,7 @@ export const supply = {
     DataLoader,
     DigitalRoll,
     BrickTabs,
+    VisTable,
     Select,
     Option,
   },
