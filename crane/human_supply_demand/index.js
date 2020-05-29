@@ -1,7 +1,9 @@
 const jobSelect = require('./job_select')
 const singleDigital = require('./single_digital')
 const talentsExponent = require('./talents_exponent')
-const lineChart = require('./line')
+const salaryAnalysis = require('./salary_analysis')
+const industriesDemandRanking = require('./industries_demand_ranking')
+const talentsDemandChange = require('./talents_demand_change')
 
 module.exports = {
   route: {
@@ -86,6 +88,8 @@ module.exports = {
     jobSelect,
     ...singleDigital,
     ...talentsExponent,
-    ...lineChart
+    ...salaryAnalysis,
+    ...industriesDemandRanking,
+    ...talentsDemandChange
   ]
 }

@@ -54,8 +54,32 @@
     <data-loader ref="salary-count-digital" :style="{position: 'absolute', top: '772px', left: '146px'}">
       <digital-roll titlePosition="left" :content="{title: '岗位平均薪酬', digital: 5200}" :options="{separator: ','}" :style="{width: '199px', height: '39px'}" :titleStyle="{color: '#367391', fontSize: '16px', fontWeight: '400'}" :digitalStyle="{fontSize: '32px', color: '#6ad6ff', fontWeight: '400', fontFamily: 'Oswald-Regular', format: '11', letterSpacing: '2.4px'}" />
     </data-loader>
-    <data-loader ref="salary-count-line-chart" :style="{position: 'absolute', top: '846px', left: '30px'}">
-      <v-chart :options="{backgroundColor: 'transparent', tooltip: {trigger: 'item', formatter: '{b}<br/>平均薪酬（元）：{c}', backgroundColor: '#566374f0'}, xAxis: {type: 'category', data: ['2015', '2016', '2017', '2018', '2019', '2020'], axisLine: {show: false}, axisTick: {show: false}, axisLabel: {color: '#367391', fontSize: 12, fontWeight: 400}, splitLine: {show: false}}, yAxis: {type: 'value', name: '元', axisLine: {show: false}, axisTick: {show: false}, axisLabel: {color: '#367391', fontSize: 12, fontWeight: 400}, splitLine: {show: false}}, tootlip: {trigger: 'axis'}, series: {0: {type: 'line', data: [1274, 2348, 9848, 5500, 4900]}}}" />
+    <data-loader ref="salary-count-line-chart" :style="{width: '400px', height: '200px', position: 'absolute', top: '846px', left: '30px'}">
+      <v-chart :options="{backgroundColor: 'transparent', tooltip: {trigger: 'axis', formatter: '{b}<br/>平均薪酬（元）：{c}', backgroundColor: '#566374f0', axisPointer: {lineStyle: {color: '#ffffff', type: 'dotted'}}}, xAxis: {type: 'category', data: ['2015', '2016', '2017', '2018', '2019', '2020'], axisLine: {show: false}, axisTick: {show: false}, axisLabel: {color: '#367391', fontSize: 12, fontWeight: 400}, splitLine: {show: false}}, yAxis: {type: 'value', name: '元', axisLine: {show: false}, axisTick: {show: false}, nameTextStyle: {color: '#367391', fontSize: 12, fontWeight: 400}, axisLabel: {color: '#367391', fontSize: 12, fontWeight: 400}, splitLine: {show: false}}, series: [{type: 'line', data: [3200, 2274, 2348, 3848, 5500, 4900], showSymbol: false, lineStyle: {color: '#6ad6ff', width: 4}}]}" />
+    </data-loader>
+    <div ref="talent-index-icon" :style="{color: '#6ad6ff', fontSize: '14px', fontWeight: '400', textAlign: 'left', position: 'absolute', top: '49px', left: '1504px'}">
+      >>
+    </div>
+    <div ref="talent-demand" :style="{color: '#fff', fontSize: '18px', fontWeight: '600', textAlign: 'left', letterSpacing: '1px', position: 'absolute', top: '46px', left: '1536px'}">
+      重点行业需求排名
+    </div>
+    <data-loader v-if="craneStates.tabCurrent === craneStates.tabNavs[0]" :style="{width: '400px', height: '221px', overflow: 'scroll', position: 'absolute', top: '84px', left: '1490px'}">
+      <vis-table :withHeader="false" theme="dark" stripe="" :headers="[{width: 120, key: 'index'}, {width: 280, key: 'name'}]" :data="[{index: 1, name: '数据服务'}, {index: 2, name: '广告营销'}, {index: 3, name: '旅游'}, {index: 4, name: '医疗健康'}, {index: 5, name: '社交网络'}, {index: 6, name: '智能硬件'}, {index: 7, name: '生活服务'}]">
+        <template v-slot="{ cell: cell, columnKey: columnKey }">
+          <span :class="columnKey === 'index' ? 'row-index-cell' : ''">
+            {{cell}}
+          </span>
+        </template>
+      </vis-table>
+    </data-loader>
+    <div ref="talents-demand-change-icon" :style="{color: '#6ad6ff', fontSize: '14px', fontWeight: '400', textAlign: 'left', position: 'absolute', top: '374px', left: '1504px'}">
+      >>
+    </div>
+    <div ref="talents-demand-change-title·" :style="{color: '#fff', fontSize: '18px', fontWeight: '600', textAlign: 'left', letterSpacing: '1px', position: 'absolute', top: '371px', left: '1536px'}">
+      人才薪酬分析
+    </div>
+    <data-loader ref="talents-demand-change-count-line-chart" :style="{width: '400px', height: '230px', position: 'absolute', top: '419px', left: '1490px'}">
+      <v-chart :options="{backgroundColor: 'transparent', tooltip: {trigger: 'axis', formatter: '{b}<br/>人才供给（人）：{c0}<br />岗位需求（人）：{c1}', backgroundColor: '#566374f0', axisPointer: {lineStyle: {color: '#ffffff', type: 'dotted'}}}, xAxis: {type: 'category', data: ['2015', '2016', '2017', '2018', '2019', '2020'], axisLine: {show: false}, axisTick: {show: false}, axisLabel: {color: '#367391', fontSize: 12, fontWeight: 400}, splitLine: {show: false}}, yAxis: {type: 'value', name: '人', axisLine: {show: false}, axisTick: {show: false}, nameTextStyle: {color: '#367391', fontSize: 12, fontWeight: 400}, axisLabel: {color: '#367391', fontSize: 12, fontWeight: 400}, splitLine: {show: false}}, series: [{type: 'line', data: [200, 24, 238, 30, 50, 40], showSymbol: false, lineStyle: {color: '#6ad6ff', width: 4}}, {type: 'line', data: [300, 274, 248, 348, 50, 40], showSymbol: false, lineStyle: {color: '#367390', width: 4}}]}" />
     </data-loader>
   </div>
 </template>

@@ -2,9 +2,9 @@ const {small_digital_style} = require('../share')
 
 module.exports = [
   {
-    id: 'salary-icon',
+    id: 'talents-demand-change-icon',
     component: 'div',
-    position: [40, 717],
+    position: [1504, 374],
     props: {
       $style: {
         color: '#6ad6ff',
@@ -16,9 +16,9 @@ module.exports = [
     content: '>>',
   },
   {
-    id: 'salary-title·',
+    id: 'talents-demand-change-title·',
     component: 'div',
-    position: [74, 714],
+    position: [1536, 371],
     props: {
       $style: {
         color: '#fff',
@@ -31,72 +31,31 @@ module.exports = [
     content: '人才薪酬分析',
   },
   {
-    id: 'salary-count',
+    id: 'talents-demand-change-count-line-chart',
     component: '@byzanteam/vis-components/data-loader',
-    position: [30, 766],
+    position: [1490, 419],
     props: {
       $style: {
         width: '400px',
-        height: '50px',
-        backgroundColor: 'rgba(106, 214, 255, .02)',
-        borderRadius: '5px'
-      }
-    }
-  },
-  {
-    id: 'value-circle',
-    component: 'div',
-    position: [116, 795],
-    props: {
-      $style: {
-        height:'10px',
-        width: '10px',
-        borderRadius: '10px',
-        borderWidth: '1px',
-        borderColor: '#6ad6ff',
-        borderStyle: 'solid',
+        height: '230px'
       }
     },
-  },
-  {
-    id: 'salary-count-digital',
-    component: '@byzanteam/vis-components/data-loader',
-    position: [146, 772],
     children: [
       {
-        component: '@byzanteam/vis-components/digital-roll',
-        props: {
-          titlePosition: 'left',
-          $content: {
-            title: '岗位平均薪酬',
-            $digital: 5200,
-          },
-          $options: {
-            separator: ',',
-          },
-          $style: {
-            width: '199px',
-            height: '39px'
-          },
-          ...small_digital_style,
-        }
-      },
-    ]
-  },
-  {
-    id: 'salary-count-line-chart',
-    component: '@byzanteam/vis-components/data-loader',
-    position: [30, 846],
-    children: [
-      {
-        component: 'Vchart',
+        component: 'v-chart',
         props: {
           $options: {
             backgroundColor: 'transparent',
             $tooltip: {
-              trigger: 'item',
-              formatter: '{b}<br/>平均薪酬（元）：{c}',
+              trigger: 'axis',
+              formatter: '{b}<br/>人才供给（人）：{c0}<br />岗位需求（人）：{c1}',
               backgroundColor: '#566374f0',
+              $axisPointer: {
+                $lineStyle: {
+                  color: '#ffffff',
+                  type: 'dotted'
+                }
+              }
             },
             $xAxis: {
               type: 'category',
@@ -118,12 +77,17 @@ module.exports = [
             },
             $yAxis: {
               type: 'value',
-              name: '元',
+              name: '人',
               $axisLine: {
                 $show: false
               },
               $axisTick: {
                 $show: false,
+              },
+              $nameTextStyle: {
+                color: '#367391',
+                $fontSize: 12,
+                $fontWeight: 400
               },
               $axisLabel: {
                 color: '#367391',
@@ -134,15 +98,7 @@ module.exports = [
                 $show: false
               }
             },
-            $tootlip: {
-              trigger: 'axis',
-            },
-            $series: [
-              {
-                type: 'line',
-                $data: "[1274, 2348, 9848, 5500, 4900]"
-              }
-            ]
+            $series: "[{type: 'line', data: [200, 24, 238, 30, 50, 40], showSymbol: false, lineStyle: {color: '#6ad6ff', width: 4}}, {type: 'line', data: [300, 274, 248, 348, 50, 40], showSymbol: false, lineStyle: {color: '#367390', width: 4}}]"
           }
         }
       }
