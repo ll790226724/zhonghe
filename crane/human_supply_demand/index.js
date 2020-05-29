@@ -1,5 +1,6 @@
 const jobSelect = require('./job_select')
 const singleDigital = require('./single_digital')
+const talentsExponent = require('./talents_exponent')
 
 module.exports = {
   route: {
@@ -23,7 +24,24 @@ module.exports = {
         {index: 6, name: '智能硬件'},
         {index: 7, name: '生活服务'}
       ]
-    }
+    },
+    {
+      id: 'tabCurrent',
+      value: '岗位排名'
+    },
+    {
+      id: 'tabNavs',
+      value: [
+        {
+          uuid: 1,
+          label: '岗位排名'
+        },
+        {
+          uuid: 2,
+          label: '岗位薪资排名'
+        },
+      ]
+    },
   ],
   components: [
     {
@@ -74,6 +92,7 @@ module.exports = {
       },
     },
     jobSelect,
-    ...singleDigital
+    ...singleDigital,
+    ...talentsExponent
   ]
 }

@@ -18,6 +18,13 @@
     <data-loader ref="supply-demand-count" :style="{position: 'absolute', top: '202px', left: '126px'}">
       <digital-roll ref="talent-age-index-content" titlePosition="left" :content="{title: '企业人才需求数量', digital: 5200}" :options="{separator: ','}" :style="{width: '235px', height: '39px', position: 'absolute', top: '0px', left: 'undefinedpx'}" :titleStyle="{color: '#367391', fontSize: '16px', fontWeight: '400'}" :digitalStyle="{fontSize: '32px', color: '#6ad6ff', fontWeight: '400', fontFamily: 'Oswald-Regular', format: '11', letterSpacing: '2.4px'}" />
     </data-loader>
+    <div ref="talent-index-icon" :style="{color: '#6ad6ff', fontSize: '14px', fontWeight: '400', textAlign: 'left', position: 'absolute', top: '305px', left: '40px'}">
+      >>
+    </div>
+    <div ref="talent-demand" :style="{color: '#fff', fontSize: '18px', fontWeight: '600', textAlign: 'left', letterSpacing: '1px', position: 'absolute', top: '302px', left: '74px'}">
+      需求岗位排名
+    </div>
+    <brick-tabs :tabNavs="craneStates.tabNavs" :activeTab="craneStates.tabCurrent" :style="{position: 'absolute', top: '352px', left: '110px'}" v-model="craneStates.tabCurrent" />
   </div>
 </template>
 
@@ -26,6 +33,7 @@ import BuiltInMixin from '../mixins/built_in'
 import {
   DataLoader,
   DigitalRoll,
+  BrickTabs,
 } from '@byzanteam/vis-components'
 import {
   Select,
@@ -38,6 +46,7 @@ export const supply = {
   components: {
     DataLoader,
     DigitalRoll,
+    BrickTabs,
     Select,
     Option,
   },
@@ -47,6 +56,8 @@ export const supply = {
       craneStates: {
         currentJob: '',
         jobs: [{index: 1, name: '高级前端工程师'}, {index: 2, name: 'java工程师'}, {index: 3, name: '用户体验设计师'}, {index: 4, name: '产品经理'}, {index: 5, name: '产品助理'}, {index: 6, name: '智能硬件'}, {index: 7, name: '生活服务'}],
+        tabCurrent: '岗位排名',
+        tabNavs: [{uuid: 1, label: '岗位排名'}, {uuid: 2, label: '岗位薪资排名'}],
       },
     }
   },
