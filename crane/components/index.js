@@ -74,9 +74,10 @@ module.exports = {
         src: '/static/images/Bg.png'
       },
     },
+
     map,
+
     table,
-    donut,
     {
       id: 'title-bg',
       component: 'img',
@@ -104,16 +105,30 @@ module.exports = {
     },
 
     {
+      id: 'right-box-bg',
+      component: 'img',
+      position: [1471, 10],
+      props: {
+        $style: {
+          width: '440px',
+          height: '1059px',
+        },
+        src: '/static/images/Box-Bg.png'
+      },
+    },
+
+    {
       id: 'page-title',
       component: 'div',
-      content: '全省人力资源态势总览',
-      position: [750, 35],
+      content: '全省人才资源态势总览',
+      position: [750, 27],
       props: {
         $style: {
           color: '#fff',
           fontSize: '42px',
-          $fontWeight: '600',
+          $fontWeight: '500',
           textAlign: 'center',
+          letterSpacing: '1.2px',
         }
       }
     },
@@ -128,7 +143,7 @@ module.exports = {
           fontSize: '18px',
           fontWeight: '600',
           textAlign: 'left',
-          letterSpacing: '0.9',
+          letterSpacing: '1px',
         },
       },
       content: '人才指数综合分析',
@@ -144,7 +159,7 @@ module.exports = {
           fontSize: '18px',
           fontWeight: '600',
           textAlign: 'left',
-          letterSpacing: '0.9',
+          letterSpacing: '1px',
         },
       },
       content: '人才学历层次',
@@ -160,7 +175,7 @@ module.exports = {
           fontSize: '18px',
           fontWeight: '600',
           textAlign: 'left',
-          letterSpacing: '0.9',
+          letterSpacing: '1px',
         },
       },
       content: '人才流动行业排名',
@@ -176,7 +191,7 @@ module.exports = {
           fontSize: '18px',
           fontWeight: '600',
           textAlign: 'left',
-          letterSpacing: '0.9',
+          letterSpacing: '1px',
         },
       },
       content: '行业人才占比',
@@ -192,7 +207,7 @@ module.exports = {
           fontSize: '18px',
           fontWeight: '600',
           textAlign: 'left',
-          letterSpacing: '0.9',
+          letterSpacing: '1px',
         },
       },
       content: '各行业人才需求',
@@ -201,7 +216,7 @@ module.exports = {
     {
       id: 'talent-index-icon',
       component: 'div',
-      position: [30, 265],
+      position: [38, 265],
       props: {
         $style: {
           color: '#6ad6ff',
@@ -210,13 +225,13 @@ module.exports = {
           textAlign: 'left',
         },
       },
-      content: '  >>',
+      content: '>>',
     },
 
     {
       id: 'talent-education-icon',
       component: 'div',
-      position: [30, 707],
+      position: [38, 707],
       props: {
         $style: {
           color: '#6ad6ff',
@@ -225,13 +240,13 @@ module.exports = {
           textAlign: 'left',
         },
       },
-      content: '  >>',
+      content: '>>',
     },
 
     {
       id: 'talent-industry-icon',
       component: 'div',
-      position: [1490, 49],
+      position: [1498, 49],
       props: {
         $style: {
           color: '#6ad6ff',
@@ -240,13 +255,13 @@ module.exports = {
           textAlign: 'left',
         },
       },
-      content: '  >>',
+      content: '>>',
     },
 
     {
       id: 'industry-talent-icon',
       component: 'div',
-      position: [1490, 391],
+      position: [1498, 391],
       props: {
         $style: {
           color: '#6ad6ff',
@@ -255,13 +270,13 @@ module.exports = {
           textAlign: 'left',
         },
       },
-      content: '  >>',
+      content: '>>',
     },
 
     {
       id: 'talent-demand-icon',
       component: 'div',
-      position: [1490, 707],
+      position: [1498, 707],
       props: {
         $style: {
           color: '#6ad6ff',
@@ -270,7 +285,7 @@ module.exports = {
           textAlign: 'left',
         },
       },
-      content: '  >>',
+      content: '>>',
     },
 
     {
@@ -279,11 +294,11 @@ module.exports = {
       position: [104, 79],
       props: {
         $style: {
-          height:'6px',
-          width: '6px',
-          borderRadius: '5px',
-          borderWidth: '2px',
-          borderColor: '#367391',
+          height:'10px',
+          width: '10px',
+          borderRadius: '10px',
+          borderWidth: '1px',
+          borderColor: '#6ad6ff',
           borderStyle: 'solid',
         }
       },
@@ -295,11 +310,11 @@ module.exports = {
       position: [104, 159],
       props: {
         $style: {
-          height:'6px',
-          width: '6px',
-          borderRadius: '5px',
-          borderWidth: '2px',
-          borderColor: '#367391',
+          height:'10px',
+          width: '10px',
+          borderRadius: '10px',
+          borderWidth: '1px',
+          borderColor: '#6ad6ff',
           borderStyle: 'solid',
         }
       },
@@ -311,11 +326,11 @@ module.exports = {
       position: [64, 364],
       props: {
         $style: {
-          height:'6px',
-          width: '6px',
-          borderRadius: '5px',
-          borderWidth: '2px',
-          borderColor: '#367391',
+          height:'10px',
+          width: '10px',
+          borderRadius: '10px',
+          borderWidth: '1px',
+          borderColor: '#6ad6ff',
           borderStyle: 'solid',
         }
       },
@@ -327,11 +342,11 @@ module.exports = {
       position: [264, 364],
       props: {
         $style: {
-          height:'6px',
-          width: '6px',
-          borderRadius: '5px',
-          borderWidth: '2px',
-          borderColor: '#367391',
+          height:'10px',
+          width: '10px',
+          borderRadius: '10px',
+          borderWidth: '1px',
+          borderColor: '#6ad6ff',
           borderStyle: 'solid',
         }
       },
@@ -343,11 +358,11 @@ module.exports = {
       position: [64, 472],
       props: {
         $style: {
-          height:'6px',
-          width: '6px',
-          borderRadius: '5px',
-          borderWidth: '2px',
-          borderColor: '#367391',
+          height:'10px',
+          width: '10px',
+          borderRadius: '10px',
+          borderWidth: '1px',
+          borderColor: '#6ad6ff',
           borderStyle: 'solid',
         }
       },
@@ -359,11 +374,11 @@ module.exports = {
       position: [264, 472],
       props: {
         $style: {
-          height:'6px',
-          width: '6px',
-          borderRadius: '5px',
-          borderWidth: '2px',
-          borderColor: '#367391',
+          height:'10px',
+          width: '10px',
+          borderRadius: '10px',
+          borderWidth: '1px',
+          borderColor: '#6ad6ff',
           borderStyle: 'solid',
         }
       },
@@ -375,11 +390,11 @@ module.exports = {
       position: [64, 580],
       props: {
         $style: {
-          height:'6px',
-          width: '6px',
-          borderRadius: '5px',
-          borderWidth: '2px',
-          borderColor: '#367391',
+          height:'10px',
+          width: '10px',
+          borderRadius: '10px',
+          borderWidth: '1px',
+          borderColor: '#6ad6ff',
           borderStyle: 'solid',
         }
       },
@@ -391,16 +406,154 @@ module.exports = {
       position: [264, 580],
       props: {
         $style: {
-          height:'6px',
-          width: '6px',
-          borderRadius: '5px',
-          borderWidth: '2px',
-          borderColor: '#367391',
+          height:'10px',
+          width: '10px',
+          borderRadius: '10px',
+          borderWidth: '1px',
+          borderColor: '#6ad6ff',
           borderStyle: 'solid',
         }
       },
     },
 
+    {
+      id: 'age-bg',
+      component: 'div',
+      position: [40, 324],
+      props: {
+        $style: {
+          height: '80px',
+          width: '180px',
+          backgroundColor: '#6ad6ff05',
+          borderRadius: '5px',
+        }
+      }
+    },
+
+    {
+      id: 'education-bg',
+      component: 'div',
+      position: [240, 324],
+      props: {
+        $style: {
+          height: '80px',
+          width: '180px',
+          backgroundColor: '#6ad6ff05',
+          borderRadius: '5px',
+        }
+      }
+    },
+
+    {
+      id: 'industry-bg',
+      component: 'div',
+      position: [40, 432],
+      props: {
+        $style: {
+          height: '80px',
+          width: '180px',
+          backgroundColor: '#6ad6ff05',
+          borderRadius: '5px',
+        }
+      }
+    },
+
+    {
+      id: 'number-bg',
+      component: 'div',
+      position: [240, 432],
+      props: {
+        $style: {
+          height: '80px',
+          width: '180px',
+          backgroundColor: '#6ad6ff05',
+          borderRadius: '5px',
+        }
+      }
+    },
+
+    {
+      id: 'quality-bg',
+      component: 'div',
+      position: [40, 540],
+      props: {
+        $style: {
+          height: '80px',
+          width: '180px',
+          backgroundColor: '#6ad6ff05',
+          borderRadius: '5px',
+        }
+      }
+    },
+
+    {
+      id: 'synthesis-bg',
+      component: 'div',
+      position: [240, 540],
+      props: {
+        $style: {
+          height: '80px',
+          width: '180px',
+          backgroundColor: '#6ad6ff05',
+          borderRadius: '5px',
+        }
+      }
+    },
+
+    {
+      id: 'production-bg',
+      component: 'div',
+      position: [30, 50],
+      props: {
+        $style: {
+          height: '50px',
+          width: '400px',
+          backgroundColor: '#6ad6ff05',
+          borderRadius: '5px',
+        }
+      }
+    },
+
+    {
+      id: 'production-bg',
+      component: 'div',
+      position: [30, 130],
+      props: {
+        $style: {
+          height: '50px',
+          width: '400px',
+          backgroundColor: '#6ad6ff05',
+          borderRadius: '5px',
+        }
+      }
+    },
+
+    {
+      id: 'departments-loader',
+      component: '@byzanteam/vis-components/data-loader',
+      position: [929, 125],
+      exports: {
+        results: 'results',
+      },
+      props: {
+        // $url: "`/v1/components/d9b74ddd-39de-493f-84ab-9d87fcf23fee/data?start=${craneStates.filterRange[0]}&end=${craneStates.filterRange[1]}`",
+        // method: 'get',
+      },
+      children: [
+        {
+          id: 'departments-select',
+          component: '@byzanteam/vis-components/vis-select',
+          props: {
+            // 'v-if': 'results',
+            // $options: 'results.map( (item, index) => { return {label: item[0], uuid: index } } )',
+            $options: "[{label: '福州', uuid: '0'}, {label: '全国', uuid: '1'}, {label: '陕西省', uuid: '2'}, {label: '江苏省', uuid: '3'}, {label: '福建省', uuid: '4'}, {label: '浙江省', uuid: '5'},]",
+            'v-model': 'craneStates.department',
+            placeholder: '福州',
+          },
+        },
+      ],
+    },
+    donut,
     partProduction,
     talentNumber,
     talentAge,

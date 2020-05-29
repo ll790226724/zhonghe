@@ -1,0 +1,107 @@
+.select-trigger {
+  background-color: transparent !important;
+}
+.select-trigger-inputting {
+  border: transparent !important;
+  box-shadow: none !important;
+  width: auto !important;
+}
+
+.select-trigger-inputting .select-trigger-inputting__content {
+  color: #6ad6ff !important;
+  font-weight: 600 !important;
+  width: auto !important;
+  letter-spacing: .9px;
+  line-height: 1.6rem;
+}
+
+.select-trigger-inputting .select-trigger-inputting__content div {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  line-height: 27px;
+}
+
+.select-trigger-inputting .select-trigger-inputting__placeholder {
+  font-weight:500;
+  font-size:18px;
+  line-height: 27px;
+  color: rgba(46, 46, 46, .7) !important;
+}
+
+.select-trigger-inputting .select-trigger-inputting__icon {
+  color: rgba(46, 46, 46, .7) !important;
+}
+
+.select-popover .popover__content {
+  min-width: auto !important;
+  box-shadow: none!important;
+  white-space: nowrap;
+  background-color: #082446 !important;
+  margin-top: 8.8px !important;
+  border: 1px solid #6ad6ff1f !important;
+  border-radius: 4px;
+}
+
+.select-popover .popover__content .popover__body {
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.select-popover .popover__content .popover__body .popover__body__content {
+  padding: 0;
+}
+
+.select-popover .popover__content .popover__body .popover__body__content .select__selection .select__selection__options .list {
+  background-color:  #082446;
+}
+
+.select-popover .popover__content .popover__body .popover__body__content .select__selection .select__selection__options .list .list__item {
+  color: #4b9bbe;
+  background-color: #082446;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  font-size: 14px;
+}
+
+.select-popover .popover__content .popover__body .popover__body__content .select__selection .select__selection__options .list .list__item:hover {
+  color: #6ad6ff;
+  background-color: #4b9bbe14;
+}
+
+/*.select-selection .list .list__item__tail {*/
+/*  display: none !important;*/
+/*}*/
+
+.select-trigger-inputting .select-trigger-inputting__content div {
+  color: #6ad6ff !important;
+  font-weight: 600 !important;
+  padding-right: 12px;
+  font-size: 18px;
+}
+
+.select-trigger-inputting .select-trigger-inputting__icon {
+  color: #6ad6ff !important;
+}
+
+.ranking .ranking__block {
+  margin-bottom: 12px;
+}
+
+@font-face {
+  font-family: 'Oswald-Regular';
+  src:
+    url('/fonts/Oswald-Regular.woff') format('woff'),
+    url('/fonts/Oswald-Regular.woff2') format('woff');
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'Oswald-Light';
+  src:
+    url('/fonts/Oswald-Light.woff') format('woff'),
+    url('/fonts/Oswald-Light.woff2') format('woff');
+  font-weight: normal;
+}
+
+@import './supply.css'

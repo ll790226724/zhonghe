@@ -1,23 +1,25 @@
+const { chartTooltipOptions } = require('../share');
+
 module.exports = {
   component: '@byzanteam/vis-components/data-loader',
-  position: [1490, 436],
+  position: [1455, 380],
   exports: {
     results: 'results',
   },
   props: {
     $style: {
-      width: '400px',
-      height: '218px'
+      width: '460px',
+      height: '330px'
     },
   },
   children: [
     {
       component: '@byzanteam/graphite/donut',
       props: {
-        $data: "[{label: '数据服务', value: 120}, {label: '游戏', value: 110}, {label: '智能硬件', value: 100}, {label: '人力资源服务', value: 70}, {label: '计算机软件', value: 60}, {label: '其他', value: 12}]",
+        $data: "[{label: '数据服务(%)', value: 12}, {label: '游戏(%)', value: 22}, {label: '智能硬件(%)', value: 23}, {label: '人力资源服务(%)', value: 40}, {label: '计算机软件(%)', value: 10}, {label: '其他(%)', value: 22}]",
         labelKey: 'label',
         valueKey: 'value',
-        $innerRadius: 0.48,
+        $innerRadius: 0.58,
         $hideLabel: true,
         $theme: {
           background: 'transparent',
@@ -25,45 +27,16 @@ module.exports = {
           whitespace: 'nowrap'
         },
         $legendOptions: {
-          align: 'start',
-          $offset: '[0, 30]',
+          $align: "['center', 'start']",
+          $offset: '[-30, 0]',
           position: 'right',
           layout: 'vertical',
           $label: {
-            fill: '#2E2E2E',
+            fill: '#4b9bbe',
             $size: 14,
           },
         },
-        $tooltip: {
-          $text: {
-            align: 'center',
-            baseline: 'middle',
-            fill: '#FFFFFF',
-            $size: 14,
-            $weight: 400
-          },
-          $notation: {
-            name: 'circle-small',
-            $size: 14
-          }
-        },
-        $tooltipOptions: {
-          background: 'rgba(86, 99, 116, 0.94)',
-          $text: {
-            align: 'center',
-            baseline: 'middle',
-            fill: '#FFFFFF',
-            $size: 14,
-            $weight: 400
-          },
-          $title:{
-            align: 'center',
-            baseline: 'middle',
-            fill: '#FFFFFF',
-            $size: 14,
-            $weight: 400
-          },
-        }
+        ...chartTooltipOptions
       }
     }
   ]

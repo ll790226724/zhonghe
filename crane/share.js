@@ -20,7 +20,7 @@ exports.normal_digital_style = {
     fontWeight: 400,
     fontFamily: 'Oswald-Regular',
     format: '11',
-    letterSpacing: '0.8',
+    letterSpacing: '2.4px',
   },
 };
 
@@ -36,7 +36,7 @@ exports.small_digital_style = {
     fontWeight: 400,
     fontFamily: 'Oswald-Regular',
     format: '11',
-    letterSpacing: '0.8',
+    letterSpacing: '2.4px',
 
   },
 };
@@ -57,7 +57,7 @@ const chartTooltipOptions = {
     }
   },
   $tooltipOptions: {
-    background: 'rgba(60, 71, 89, 0.9)',
+    background: '#566374f0',
     $text: {
       align: 'center',
       baseline: 'middle',
