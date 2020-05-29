@@ -32,7 +32,6 @@ module.exports = [
     component: '@byzanteam/vis-components/data-loader',
     position: [1490, 84],
     props: {
-      'v-if': 'craneStates.tabCurrent === craneStates.tabNavs[0]',
       $style: {
         width: '400px',
         height: '221px',

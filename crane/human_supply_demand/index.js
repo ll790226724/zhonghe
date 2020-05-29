@@ -4,6 +4,7 @@ const talentsExponent = require('./talents_exponent')
 const salaryAnalysis = require('./salary_analysis')
 const industriesDemandRanking = require('./industries_demand_ranking')
 const talentsDemandChange = require('./talents_demand_change')
+const degreeAnalysis = require('./degree_analysis')
 
 module.exports = {
   route: {
@@ -36,6 +37,14 @@ module.exports = {
       id: 'tabCurrent',
       value: 'TAB_NAVS[0]'
     },
+    {
+      id: 'chartTabNavs',
+      value: 'CHART_TAB_NAVS'
+    },
+    {
+      id: 'chartTabCurrent',
+      value: 'CHART_TAB_NAVS[0]'
+    }
   ],
   components: [
     {
@@ -90,6 +99,7 @@ module.exports = {
     ...talentsExponent,
     ...salaryAnalysis,
     ...industriesDemandRanking,
-    ...talentsDemandChange
+    ...talentsDemandChange,
+    ...degreeAnalysis
   ]
 }
