@@ -1,4 +1,5 @@
 const resources = require('./crane/components')
+const intro = require('./crane/introduction')
 
 module.exports = {
   // i18n 配置
@@ -30,5 +31,6 @@ module.exports = {
   // 页面
   pages: [
     resources,
+    intro,
   ],
 }

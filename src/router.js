@@ -13,5 +13,10 @@ export default new Router({
       path: '/resources',
       component: pages.resources,
     },
+    {
+      name: 'introduction',
+      path: '/introduction',
+      component: pages.introduction,
+    },
   ],
 })
