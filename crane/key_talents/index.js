@@ -1,11 +1,37 @@
 const digitals = require('./digitals')
+const mapTabs = require('./map_tabs')
 
 module.exports = {
   route: {
     name: 'key_talents',
     path: 'keytTalents'
   },
-  title:'人才供需专题',
+  title:'重点人才专题',
+  states: [
+    {
+      id: 'types',
+      value: [
+        {index: 1, name: '学术型人才'},
+        {index: 2, name: '工程型人才'},
+        {index: 3, name: '技能型人才'},
+        {index: 4, name: '技术型人才'},
+        {index: 5, name: '产品助理'},
+        {index: 6, name: '智能硬件'},
+      ]
+    },
+    {
+      id: 'currentType',
+      value: ''
+    },
+    {
+      id: 'mapTabCurrent',
+      value: 'MAP_TAB_NAVS[0]'
+    },
+    {
+      id: 'mapTabNavs',
+      value: 'MAP_TAB_NAVS'
+    }
+  ],
   components: [
     {
       id: 'background',
@@ -65,6 +91,7 @@ module.exports = {
         src: '/static/images/Box-Bg.png'
       },
     },
-    ...digitals
+    ...digitals,
+    ...mapTabs
   ]
 }

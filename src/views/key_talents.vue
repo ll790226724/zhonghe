@@ -34,6 +34,19 @@
     <data-loader :style="{position: 'absolute', top: '134px', left: '1614px'}">
       <digital-roll ref="talent-age-index-content" titlePosition="left" :content="{title: '紧缺人才数量', digital: 564, suffix: '人'}" :options="{separator: ''}" :style="{width: '178px', height: '39px'}" :titleStyle="{color: '#367391', fontSize: '16px', fontWeight: '400'}" :digitalStyle="{fontSize: '32px', color: '#6ad6ff', fontWeight: '400', fontFamily: 'Oswald-Regular', format: '11', letterSpacing: '2.4px'}" letterSpacing="0.8px" :suffixStyle="{color: '#367391', fontSize: '16px', fontWeight: '400'}" />
     </data-loader>
+    <div :style="{width: '400px', height: '200px', backgroundColor: 'rgba(0, 0, 0, .03)', borderRadius: '4px', border: '1px dotted rgba(106, 214, 255, .3)', position: 'absolute', top: '244px', left: '30px'}" />
+    <brick-tabs :tabNavs="craneStates.mapTabNavs" :activeTab="craneStates.mapTabCurrent" :style="{position: 'absolute', top: '256px', left: '126px'}" v-model="craneStates.mapTabCurrent" />
+    <div>
+      <Select :style="{width: '180px', position: 'absolute', top: '324px', left: '43px'}" v-model="craneStates.currentType">
+        <Option v-for="(item, key) in craneStates.types" :key="key" :value="item.index" :label="item.name">
+          {{item.name}}
+        </Option>
+      </Select>
+      <input :style="{width: '180px', height: '48px', backgroundColor: 'rgba(106, 214, 255, .02)', border: '1px solid rgba(106, 214, 255, .12)', borderRadius: '4px', color: '#ffffff', position: 'absolute', top: '324px', left: '237px'}" />
+      <brick-button :style="{width: '148px', height: '25px', position: 'absolute', top: '400px', left: '156px'}">
+        查看人才供应地图
+      </brick-button>
+    </div>
   </div>
 </template>
 
@@ -42,7 +55,16 @@ import BuiltInMixin from '../mixins/built_in'
 import {
   DataLoader,
   DigitalRoll,
+  BrickTabs,
+  BrickButton,
 } from '@byzanteam/vis-components'
+import {
+  Select,
+  Option,
+  Input,
+} from 'element-ui'
+
+const MAP_TAB_NAVS = [{uuid: 1, label: '人才供应'}, {uuid: 2, label: '人才需求'}]
 
 export const key_talents = {
   mixins: [BuiltInMixin],
@@ -50,11 +72,20 @@ export const key_talents = {
   components: {
     DataLoader,
     DigitalRoll,
+    BrickTabs,
+    BrickButton,
+    Select,
+    Option,
+    Input,
   },
 
   data () {
     return {
       craneStates: {
+        types: [{index: 1, name: '学术型人才'}, {index: 2, name: '工程型人才'}, {index: 3, name: '技能型人才'}, {index: 4, name: '技术型人才'}, {index: 5, name: '产品助理'}, {index: 6, name: '智能硬件'}],
+        currentType: '',
+        mapTabCurrent: MAP_TAB_NAVS[0],
+        mapTabNavs: MAP_TAB_NAVS,
       },
     }
   },
