@@ -8,7 +8,7 @@
     <img ref="box-bg" :style="{width: '440px', height: '1059px', position: 'absolute', top: '10px', left: '10px'}" src="/static/images/Box-Bg.png" />
     <img ref="right-box-bg" :style="{width: '440px', height: '1059px', position: 'absolute', top: '10px', left: '1471px'}" src="/static/images/Box-Bg.png" />
     <div ref="page-title" :style="{color: '#fff', fontSize: '42px', fontWeight: 500, textAlign: 'center', letterSpacing: '1.2px', position: 'absolute', top: '27px', left: '750px'}">
-      全省人才资源态势总览
+      人才引进专题
     </div>
     <div ref="activity-number" :style="{color: '#fff', fontSize: '18px', fontWeight: '600', textAlign: 'left', letterSpacing: '1px', position: 'absolute', top: '155px', left: '74px'}">
       引才活动数量统计
@@ -42,32 +42,31 @@
     </div>
     <div ref="activity-number-circle" :style="{height: '10px', width: '10px', borderRadius: '10px', borderWidth: '1px', borderColor: '#6ad6ff', borderStyle: 'solid', position: 'absolute', top: '247px', left: '128px'}" />
     <div ref="high-level-talent-circle" :style="{height: '10px', width: '10px', borderRadius: '10px', borderWidth: '1px', borderColor: '#6ad6ff', borderStyle: 'solid', position: 'absolute', top: '722px', left: '104px'}" />
-    <div ref="education-circle" :style="{height: '10px', width: '10px', borderRadius: '10px', borderWidth: '1px', borderColor: '#6ad6ff', borderStyle: 'solid', position: 'absolute', top: '364px', left: '64px'}" />
-    <div ref="rank-circle" :style="{height: '10px', width: '10px', borderRadius: '10px', borderWidth: '1px', borderColor: '#6ad6ff', borderStyle: 'solid', position: 'absolute', top: '364px', left: '264px'}" />
-    <div ref="age-circle" :style="{height: '10px', width: '10px', borderRadius: '10px', borderWidth: '1px', borderColor: '#6ad6ff', borderStyle: 'solid', position: 'absolute', top: '472px', left: '64px'}" />
-    <div ref="industry-circle" :style="{height: '10px', width: '10px', borderRadius: '10px', borderWidth: '1px', borderColor: '#6ad6ff', borderStyle: 'solid', position: 'absolute', top: '472px', left: '264px'}" />
-    <div ref="quality-circle" :style="{height: '10px', width: '10px', borderRadius: '10px', borderWidth: '1px', borderColor: '#6ad6ff', borderStyle: 'solid', position: 'absolute', top: '580px', left: '64px'}" />
-    <div ref="synthesis-circle" :style="{height: '10px', width: '10px', borderRadius: '10px', borderWidth: '1px', borderColor: '#6ad6ff', borderStyle: 'solid', position: 'absolute', top: '580px', left: '264px'}" />
-    <div ref="age-bg" :style="{height: '80px', width: '180px', backgroundColor: '#6ad6ff05', borderRadius: '5px', position: 'absolute', top: '324px', left: '40px'}" />
-    <div ref="education-bg" :style="{height: '80px', width: '180px', backgroundColor: '#6ad6ff05', borderRadius: '5px', position: 'absolute', top: '324px', left: '240px'}" />
-    <div ref="industry-bg" :style="{height: '80px', width: '180px', backgroundColor: '#6ad6ff05', borderRadius: '5px', position: 'absolute', top: '432px', left: '40px'}" />
-    <div ref="number-bg" :style="{height: '80px', width: '180px', backgroundColor: '#6ad6ff05', borderRadius: '5px', position: 'absolute', top: '432px', left: '240px'}" />
-    <div ref="quality-bg" :style="{height: '80px', width: '180px', backgroundColor: '#6ad6ff05', borderRadius: '5px', position: 'absolute', top: '540px', left: '40px'}" />
-    <div ref="synthesis-bg" :style="{height: '80px', width: '180px', backgroundColor: '#6ad6ff05', borderRadius: '5px', position: 'absolute', top: '540px', left: '240px'}" />
-    <div ref="production-bg" :style="{height: '50px', width: '400px', backgroundColor: '#6ad6ff05', borderRadius: '5px', position: 'absolute', top: '50px', left: '30px'}" />
-    <div ref="production-bg" :style="{height: '50px', width: '400px', backgroundColor: '#6ad6ff05', borderRadius: '5px', position: 'absolute', top: '130px', left: '30px'}" />
+    <div ref="activity-bg" :style="{height: '50px', width: '400px', backgroundColor: '#6ad6ff05', borderRadius: '5px', position: 'absolute', top: '218px', left: '30px'}" />
+    <div ref="high-level-bg" :style="{height: '50px', width: '400px', backgroundColor: '#6ad6ff05', borderRadius: '5px', position: 'absolute', top: '693px', left: '30px'}" />
     <data-loader ref="departments-loader" v-slot="{ results: results }" :style="{position: 'absolute', top: '125px', left: '929px'}">
       <vis-select ref="departments-select" :options="[{label: '福州', uuid: '0'}, {label: '全国', uuid: '1'}, {label: '陕西省', uuid: '2'}, {label: '江苏省', uuid: '3'}, {label: '福建省', uuid: '4'}, {label: '浙江省', uuid: '5'},]" v-model="craneStates.department" placeholder="福州" />
     </data-loader>
-    <data-loader ref="activity-number-bar" v-slot="{ results: results }" :style="{width: '400px', height: '270px', position: 'absolute', top: '762px', left: '1490px'}">
-      <v-chart ref="activity-number-bar-content" :options="{xAxis: {axisLabel: {rotate: 0, fontSize: 12, fontWeight: 400, color: '#367391'}, axisLine: {show: 'false'}}, yAxis: {axisLabel: {rotate: 0, fontSize: 12, fontWeight: 400, color: '#367391'}, splitNumber: '5', name: '件', nameTextStyle: {fontSize: 12, fontWeight: 400, color: '#367391'}}, series: {type: 'bar', barCategoryGap: '10%', itemStyle: {normal: {color: new echarts.graphic.LinearGradient(0, 1, 0, 0, [
+    <data-loader ref="activity-number-bar" v-slot="{ results: results }" :style="{width: '400px', height: '250px', position: 'absolute', top: '783px', left: '30px'}">
+      <v-chart ref="activity-number-bar-content" :options="{xAxis: {axisLabel: {rotate: 0, fontSize: 12, fontWeight: 400, color: '#367391'}, axisLine: {show: false}, data: ['周一', '周二', '周三', '周四', '周五', '周六', '周日',]}, yAxis: {axisLabel: {rotate: 0, fontSize: 12, fontWeight: 400, color: '#367391'}, splitLine: {show: false}, splitNumber: 5, name: '件', nameTextStyle: {fontSize: 12, fontWeight: 400, color: '#367391'}}, series: {type: 'bar', barWidth: 5, barCategoryGap: '10%', itemStyle: {normal: {color: new Echarts.graphic.LinearGradient(0, 1, 0, 0, [
                       {
                         offset: 0,
-                        color: '#6ad6ff'
+                        color: '#117ea8'
                       },
                       {
                         offset: 1,
+                        color: '#6ad6ff'
+                      }], false),}}, data: [120, 200, 150, 80, 70, 110, 130]}}" />
+    </data-loader>
+    <data-loader ref="high-level-talent-bar" v-slot="{ results: results }" :style="{width: '400px', height: '250px', position: 'absolute', top: '308px', left: '30px'}">
+      <v-chart ref="high-level-talent-content" :options="{xAxis: {axisLabel: {rotate: 0, fontSize: 12, fontWeight: 400, color: '#367391'}, axisLine: {show: false}, data: ['周一', '周二', '周三', '周四', '周五', '周六', '周日',]}, yAxis: {axisLabel: {rotate: 0, fontSize: 12, fontWeight: 400, color: '#367391'}, splitLine: {show: false}, splitNumber: 5, name: '件', nameTextStyle: {fontSize: 12, fontWeight: 400, color: '#367391'}}, series: {type: 'bar', barWidth: 5, barCategoryGap: '10%', itemStyle: {normal: {color: new Echarts.graphic.LinearGradient(0, 1, 0, 0, [
+                      {
+                        offset: 0,
                         color: '#117ea8'
+                      },
+                      {
+                        offset: 1,
+                        color: '#6ad6ff'
                       }], false),}}, data: [120, 200, 150, 80, 70, 110, 130]}}" />
     </data-loader>
   </div>

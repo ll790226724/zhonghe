@@ -1,8 +1,8 @@
 
 module.exports = {
-  id: 'activity-number-bar',
+  id: 'high-level-talent-bar',
   component: '@byzanteam/vis-components/data-loader',
-  position: [30, 783],
+  position: [30, 308],
   exports: {
     results: 'results',
   },
@@ -18,7 +18,7 @@ module.exports = {
   },
   children: [
     {
-      id: 'activity-number-bar-content',
+      id: 'high-level-talent-content',
       component: 'v-chart',
       // 'v-if': 'results',
       props: {
