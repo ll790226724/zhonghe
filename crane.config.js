@@ -1,5 +1,6 @@
 const resources = require('./crane/components')
 const supplyDemand = require('./crane/human_supply_demand')
+const keyTalents = require('./crane/key_talents')
 
 module.exports = {
   // i18n 配置
@@ -39,5 +40,6 @@ module.exports = {
   pages: [
     resources,
     supplyDemand,
+    keyTalents
   ],
 }
