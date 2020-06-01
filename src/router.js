@@ -23,5 +23,10 @@ export default new Router({
       path: '/keytTalents',
       component: pages.key_talents,
     },
+    {
+      name: 'talents_competitiveness',
+      path: '/talents-competitiveness',
+      component: pages.talents_competitiveness,
+    },
   ],
 })
