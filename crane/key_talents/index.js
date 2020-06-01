@@ -20,7 +20,11 @@ module.exports = {
       ]
     },
     {
-      id: 'currentType',
+      id: 'currentTalentType',
+      value: ''
+    },
+    {
+      id: 'currentDemandType',
       value: ''
     },
     {

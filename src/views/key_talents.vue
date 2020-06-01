@@ -36,8 +36,19 @@
     </data-loader>
     <div :style="{width: '400px', height: '200px', backgroundColor: 'rgba(0, 0, 0, .03)', borderRadius: '4px', border: '1px dotted rgba(106, 214, 255, .3)', position: 'absolute', top: '244px', left: '30px'}" />
     <brick-tabs :tabNavs="craneStates.mapTabNavs" :activeTab="craneStates.mapTabCurrent" :style="{position: 'absolute', top: '256px', left: '126px'}" v-model="craneStates.mapTabCurrent" />
-    <div>
+    <div v-if="craneStates.mapTabCurrent === craneStates.mapTabNavs[0]">
       <Select class="map-select" :style="{width: '180px', position: 'absolute', top: '324px', left: '43px'}" v-model="craneStates.currentType">
+        <Option v-for="(item, key) in craneStates.types" :key="key" :value="item.index" :label="item.name">
+          {{item.name}}
+        </Option>
+      </Select>
+      <input :style="{width: '180px', height: '48px', backgroundColor: 'rgba(106, 214, 255, .02)', border: '1px solid rgba(106, 214, 255, .12)', borderRadius: '4px', color: '#ffffff', position: 'absolute', top: '324px', left: '237px'}" />
+      <brick-button :style="{width: '148px', height: '25px', position: 'absolute', top: '400px', left: '156px'}">
+        查看人才供应地图
+      </brick-button>
+    </div>
+    <div v-if="craneStates.mapTabCurrent === craneStates.mapTabNavs[1]">
+      <Select class="map-select" :style="{width: '180px', position: 'absolute', top: '324px', left: '43px'}" v-model="craneStates.currentDemandType">
         <Option v-for="(item, key) in craneStates.types" :key="key" :value="item.index" :label="item.name">
           {{item.name}}
         </Option>
@@ -59,8 +70,8 @@ import {
   BrickButton,
 } from '@byzanteam/vis-components'
 import {
-  Option,
   Select,
+  Option,
 } from 'iview'
 import {
   Input,
@@ -85,7 +96,8 @@ export const key_talents = {
     return {
       craneStates: {
         types: [{index: 1, name: '学术型人才'}, {index: 2, name: '工程型人才'}, {index: 3, name: '技能型人才'}, {index: 4, name: '技术型人才'}, {index: 5, name: '产品助理'}, {index: 6, name: '智能硬件'}],
-        currentType: '',
+        currentTalentType: '',
+        currentDemandType: '',
         mapTabCurrent: MAP_TAB_NAVS[0],
         mapTabNavs: MAP_TAB_NAVS,
       },

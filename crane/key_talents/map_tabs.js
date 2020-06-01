@@ -25,6 +25,9 @@ module.exports = [
   },
   {
     component: 'div',
+    props: {
+      'v-if': 'craneStates.mapTabCurrent === craneStates.mapTabNavs[0]'
+    },
     children: [
       {
         component: 'iview/Select',
@@ -38,7 +41,7 @@ module.exports = [
         },
         children: [
           {
-            component: 'element-ui/Option',
+            component: 'iview/Option',
             vfor: {
               data: "craneStates.types",
               exports: {item: 'item', index: 'key'}
@@ -52,7 +55,65 @@ module.exports = [
         ]
       },
       {
-        component: 'iview/input',
+        component: 'element-ui/input',
+        position: [237, 324],
+        props: {
+          $style: {
+            width: '180px',
+            height: '48px',
+            backgroundColor: 'rgba(106, 214, 255, .02)',
+            border: '1px solid rgba(106, 214, 255, .12)',
+            borderRadius: '4px',
+            color: '#ffffff'
+          }
+        }
+      },
+      {
+        component: '@byzanteam/vis-components/brick-button',
+        position: [156, 400],
+        content: '查看人才供应地图',
+        props: {
+          $style: {
+            width: '148px',
+            height: '25px'
+          }
+        }
+      }
+    ]
+  },
+  {
+    component: 'div',
+    props: {
+      'v-if': 'craneStates.mapTabCurrent === craneStates.mapTabNavs[1]'
+    },
+    children: [
+      {
+        component: 'iview/Select',
+        position: [43, 324],
+        props: {
+          class: 'map-select',
+          $style: {
+            width: '180px',
+          },
+          'v-model': 'craneStates.currentDemandType'
+        },
+        children: [
+          {
+            component: 'iview/Option',
+            vfor: {
+              data: "craneStates.types",
+              exports: {item: 'item', index: 'key'}
+            },
+            props: {
+              $value: "item.index",
+              $label: "item.name"
+            },
+            content: '{{item.name}}',
+          }
+        ]
+      },
+      {
+        component: 'element-ui/input',
         position: [237, 324],
         props: {
           $style: {
