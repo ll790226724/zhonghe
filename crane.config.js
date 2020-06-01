@@ -35,6 +35,13 @@ module.exports = {
         path: 'lib/theme-chalk/index.css',
       },
     },
+    'view-design': {
+      version: 'latest',
+      style: {
+        type: 'normal',
+        path: 'dist/styles/iview.css'
+      }
+    }
   },
   // 页面
   pages: [
