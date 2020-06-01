@@ -65,7 +65,6 @@ module.exports = {
         src: '/static/images/Box-Bg.png'
       },
     },
-
     {
       id: 'right-box-bg',
       component: 'img',
@@ -77,6 +76,64 @@ module.exports = {
         },
         src: '/static/images/Box-Bg.png'
       },
+    },
+    {
+      id: 'province-talent-number',
+      component: 'div',
+      position: [74, 46],
+      props: {
+        $style: {
+          color: '#fff',
+          fontSize: '18px',
+          fontWeight: '600',
+          textAlign: 'left',
+          letterSpacing: '1px',
+        },
+      },
+      content: '省域人才指标汇总',
+    },
+    {
+      id: 'province-talent-number-icon',
+      component: 'div',
+      position: [48, 49],
+      props: {
+        $style: {
+          color: '#6ad6ff',
+          fontSize: '14px',
+          fontWeight: 400,
+          textAlign: 'left',
+        },
+      },
+      content: '>>',
+    },
+    {
+      id: 'ten-number',
+      component: 'div',
+      position: [1536, 216],
+      props: {
+        $style: {
+          color: '#fff',
+          fontSize: '18px',
+          fontWeight: '600',
+          textAlign: 'left',
+          letterSpacing: '1px',
+        },
+      },
+      content: '十大指标汇总',
+    },
+    {
+      id: 'ten-number-icon',
+      component: 'div',
+      position: [1512, 219],
+      props: {
+        $style: {
+          color: '#6ad6ff',
+          fontSize: '14px',
+          fontWeight: 400,
+          textAlign: 'left',
+        },
+      },
+      content: '>>',
     },
 
     table,
