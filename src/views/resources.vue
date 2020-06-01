@@ -111,7 +111,7 @@ import 'echarts/lib/chart/map'
 import 'echarts/lib/component/tooltip'
 import 'echarts/lib/component/legend'
 import 'echarts/lib/component/visualMap'
-import Liuzhou from '../../public/static/liuzhou_districts.json'
+import Liuzhou from '../../public/static/fujian.json'
 
 Echarts.registerMap('Liuzhou', Liuzhou);
 

@@ -37,7 +37,7 @@
   min-width: auto !important;
   box-shadow: none!important;
   white-space: nowrap;
-  background-color: #082446;
+  background-color: #082446 !important;
   margin-top: 8.8px !important;
   border: 1px solid #6ad6ff1f !important;
   border-radius: 4px;
@@ -87,3 +87,21 @@
 .ranking .ranking__block {
   margin-bottom: 12px;
 }
+
+@font-face {
+  font-family: 'Oswald-Regular';
+  src:
+    url('/fonts/Oswald-Regular.woff') format('woff'),
+    url('/fonts/Oswald-Regular.woff2') format('woff');
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'Oswald-Light';
+  src:
+    url('/fonts/Oswald-Light.woff') format('woff'),
+    url('/fonts/Oswald-Light.woff2') format('woff');
+  font-weight: normal;
+}
+
+@import './supply.css'

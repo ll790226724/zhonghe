@@ -14,9 +14,14 @@ export default new Router({
       component: pages.resources,
     },
     {
+      name: 'supply',
+      path: '/supply',
+      component: pages.supply,
+    },
+    {
       name: 'introduction',
       path: '/introduction',
       component: pages.introduction,
-    },
+    }
   ],
 })

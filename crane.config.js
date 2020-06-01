@@ -1,4 +1,5 @@
 const resources = require('./crane/components')
+const supplyDemand = require('./crane/human_supply_demand')
 const intro = require('./crane/introduction')
 
 module.exports = {
@@ -27,10 +28,18 @@ module.exports = {
         path: 'dist/carbonium.css',
       },
     },
+    'element-ui': {
+      version: 'latest',
+      style: {
+        type: 'normal',
+        path: 'lib/theme-chalk/index.css',
+      },
+    },
   },
   // 页面
   pages: [
     resources,
+    supplyDemand,
     intro,
   ],
 }
