@@ -1,5 +1,6 @@
 const digitals = require('./digitals')
 const mapTabs = require('./map_tabs')
+const highTalentsDemandChange = require('./high_talents_demand_change')
 
 module.exports = {
   route: {
@@ -96,6 +97,7 @@ module.exports = {
       },
     },
     ...digitals,
-    ...mapTabs
+    ...mapTabs,
+    ...highTalentsDemandChange
   ]
 }
