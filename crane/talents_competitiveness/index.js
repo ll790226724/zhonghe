@@ -1,6 +1,6 @@
 const map = require('./map')
 const table = require('./table')
-
+const digital = require('./force_digital')
 module.exports = {
   route: {
     name: 'talents_competitiveness',
@@ -135,7 +135,22 @@ module.exports = {
       },
       content: '>>',
     },
-
+    {
+      id: 'force-circle',
+      component: 'div',
+      position: [1588, 89],
+      props: {
+        $style: {
+          height:'10px',
+          width: '10px',
+          borderRadius: '10px',
+          borderWidth: '1px',
+          borderColor: '#6ad6ff',
+          borderStyle: 'solid',
+        }
+      },
+    },
     table,
+    digital
   ]
 }

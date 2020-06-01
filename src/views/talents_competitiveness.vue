@@ -143,6 +143,7 @@
     <div ref="ten-number-icon" :style="{color: '#6ad6ff', fontSize: '14px', fontWeight: '400', textAlign: 'left', position: 'absolute', top: '219px', left: '1512px'}">
       >>
     </div>
+    <div ref="force-circle" :style="{height: '10px', width: '10px', borderRadius: '10px', borderWidth: '1px', borderColor: '#6ad6ff', borderStyle: 'solid', position: 'absolute', top: '89px', left: '1588px'}" />
     <data-loader :style="{width: '400px', height: '678px', overflow: 'scroll', position: 'absolute', top: '316px', left: '30px'}">
       <vis-table theme="dark" stripe="" :headers="[{width: 80, key: 'index',}, {width: 160, key: 'name', title: '省市排名'}, {width: 160, key: 'value', title: '人才质量指标'}]" :data="[{index: 1, name: '四川省', value: 99.8}, {index: 2, name: '重庆市', value: 99.5}, {index: 3, name: '青海省', value: 99.1}, {index: 4, name: '浙江省', value: 98.9}, {index: 5, name: '湖南省', value: 98.7}, {index: 6, name: '湖北省', value: 98.4}, {index: 7, name: '甘肃省', value:98.3}, {index: 8, name: '山东省', value:98.1}, {index: 9, name: '江苏省', value:98.0}, {index: 10, name: '江西省', value:97.2}, {index: 11, name: '福建省', value:97.0}, {index: 12, name: '贵州省', value:96.8},{index: 13, name: '陕西省', value:96.5}, {index: 14, name: '山西省', value:94.2}]">
         <template v-slot="{ cell: cell, columnKey: columnKey }">
@@ -151,6 +152,9 @@
           </span>
         </template>
       </vis-table>
+    </data-loader>
+    <data-loader ref="force-value" v-slot="{ results: results }" :style="{position: 'absolute', top: '66px', left: '1614px'}">
+      <digital-roll ref="force-value-content" titlePosition="left" :content="{title: '竞争力指数', digital: 98.2}" :options="{separator: ','}" :titleStyle="{color: '#367391', fontSize: '16px', fontWeight: '400'}" :prefixStyle="{color: '#367391', fontSize: '16px', fontWeight: '400'}" :suffixStyle="{color: '#367391', fontSize: '16px', fontWeight: '400'}" :digitalStyle="{fontSize: '32px', color: '#6ad6ff', fontWeight: '400', fontFamily: 'Oswald-Regular', format: '11', letterSpacing: '2.4px'}" />
     </data-loader>
   </div>
 </template>
@@ -165,11 +169,11 @@ import 'echarts/lib/component/legend'
 import china from '../../public/static/china.json'
 
 import BuiltInMixin from '../mixins/built_in'
-
 import {
   VisSelect,
   DataLoader,
   VisTable,
+  DigitalRoll,
 } from '@byzanteam/vis-components'
 
 Echarts.registerMap('china', china);
@@ -182,6 +186,7 @@ export const talents_competitiveness = {
     DataLoader,
     'v-chart': Echarts,
     VisTable,
+    DigitalRoll,
   },
 
   data () {
