@@ -1,7 +1,7 @@
 module.exports = [
   {
     component: '@byzanteam/vis-components/vis-select',
-    position: [809, 125],
+    position: [864, 125],
     props: {
       $options: "[{label: '福州', uuid: '0'}, {label: '全国', uuid: '1'}, {label: '陕西省', uuid: '2'}, {label: '江苏省', uuid: '3'}, {label: '福建省', uuid: '4'}, {label: '浙江省', uuid: '5'},]",
       'v-model': 'craneStates.department',
@@ -13,8 +13,8 @@ module.exports = [
   position: [410, 160],
   props: {
     $style: {
-      width: '1100px',
-      height: '900px'
+      width: '950px',
+      height: '794px'
     }
   },
   children: [
@@ -23,66 +23,148 @@ module.exports = [
       props: {
         $options: {
           backgroundColor: 'transparent',
-          $tooltip: {
-            trigger: 'item',
-            formatter: '{b}<br/>人才数量（人）：{c}',
-            backgroundColor: '#566374f0',
-          },
-          $visualMap: {
-            type: 'piecewise',
-            $pieces: "[{gt: 1500, label: '1500人及以上'}, {gt: 1000, lte: 1500, label: '1000-1500人'}, {gt: 100, lte: 999, label: '100-999人'}, {gt: 10, lte: 99, label: '10-99人'}, {gt: 1, lt: 9, label: '1-9人'}]",
-            orient: 'horizontal',
-            bottom: '6%',
-            left: '26%',
-            $textStyle: {
-              color: '#ffffff',
-              fontSize: 14
+          $geo: {
+            map: 'china',
+            $label: {
+              $normal: {
+                $show: false
+              },
+              $emphasis: {
+                $show: false,
+              }
             },
-            $itemWidth: 18,
-            $itemGap: 10,
-            $textGap: 8,
-            $inRange: {
-              $color: "['rgba(106, 214, 255, .1)', 'rgba(106, 214, 255, .4)', 'rgba(106, 214, 255, .5)', 'rgba(106, 214, 255, .6)', 'rgba(106, 214, 255, .7)']"
-            }
+            $itemStyle: {
+              normal: {
+                areaColor: 'rgba(106, 214, 255, 0.05)',
+                borderColor: '#6ad6ff',
+                borderType: 'solid',
+                $borderWidth: 0.5
+              },
+              emphasis: {
+                areaColor: '#6ad6ff',
+              }
+            },
+            $regions: "[{name: '南海诸岛', value: 0, itemStyle: { normal: { opacity: 0, label: { show: false}}}}]",
           },
           $series: `[
             {
-              type: 'map',
-              mapType: 'Liuzhou',
-              data: [
-                {name: '鼓楼区', value: 4},
-                {name: '台江区', value: 15},
-                {name: '仓山区', value: 31},
-                {name: '马尾区', value: 69},
-                {name: '晋安区', value: 1440},
-                {name: '长乐区', value: 4068},
-                {name: '闽侯县', value: 376},
-                {name: '连江县', value: 45},
-                {name: '罗源县', value: 55},
-                {name: '闽清县', value: 2},
-                {name: '永泰县', value: 677},
-                {name: '平潭县', value: 677},
-                {name: '福清市', value: 677},
-              ],
+              symbolSize: 0.1,
               label: {
-                show: true,
-                color: 'white',
-              },
-              itemStyle: {
-                borderColor: '#6ad6ff',
-                borderType: 'solid',
-                borderWidth: 0.5
-              },
-              emphasis: {
-                label: {
-                  color: 'white',
-                  fontWeight: 600,
+                normal: {
+                  formatter: '{b}',
+                  position: 'bottom',
+                  show: true
                 },
-                itemStyle: {
-                  areaColor: '#6ad6ff'
+                emphasis: {
+                  show: true
                 }
               },
-            }
+              itemStyle: {
+                normal: {
+                  color: '#fff'
+                }
+              },
+              type: 'scatter',
+              coordinateSystem: 'geo',
+              data: [
+                {name: '台湾', value: [121.5135, 25.0308, 42]},
+                {name: '黑龙江', value: [127.9688, 45.368, 34]},
+                {name: '内蒙古', value: [110.3467, 41.4899, 123,]},
+                {name: '吉林', value: [125.8154, 44.2584, 57]},
+                {name: '北京市', value: [116.4551, 40.2539, 89]},
+                {name: '辽宁', value: [123.1238, 42.1216, 373]},
+                {name: '河北', value: [114.4995, 38.1006, 21]},
+                {name: '天津', value: [117.4219, 39.4189, 465]},
+                {name: '山西', value: [112.3352, 37.9413, 781]},
+                {name: '陕西', value: [109.1162, 34.2004, 90]},
+                {name: '甘肃', value: [103.5901, 36.3043, 132]},
+                {name: '宁夏', value: [106.3586, 38.1775, 300]},
+                {name: '青海', value: [101.4038, 36.8207, 800]},
+                {name: '新疆', value: [87.9236, 43.5883, 14]},
+                {name: '西藏', value: [91.11, 29.97, 21]},
+                {name: '四川', value: [103.9526, 30.7617, 168]},
+                {name: '重庆', value: [108.384366, 30.439702, 78]},
+                {name: '山东', value: [117.1582, 36.8701, 31]},
+                {name: '河南', value: [113.4668, 34.6234, 34]},
+                {name: '江苏', value: [118.8062, 31.9208, 33]},
+                {name: '安徽', value: [117.29, 32.0581, 45]},
+                {name: '湖北', value: [114.3896, 30.6628, 134]},
+                {name: '浙江', value: [119.5313, 29.8773, 198]},
+                {name: '福建', value: [119.4543, 25.9222, 80]},
+                {name: '江西', value: [116.0046, 28.6633, 78]},
+                {name: '湖南', value: [113.0823, 28.2568, 152]},
+                {name: '贵州', value: [106.6992, 26.7682, 70]},
+                {name: '云南', value: [102.9199, 25.4663, 345]},
+                {name: '广东', value: [113.12244, 23.009505, 123]},
+                {name: '广西', value: [108.479, 23.1152, 114]},
+                {name: '海南', value: [110.3893, 19.8516, 214]},
+                {name: '上海', value: [121.4648, 31.2891, 33]},
+              ],
+            },
+            {
+              name: 'Top 5',
+              type: 'scatter',
+              coordinateSystem: 'geo',
+              symbol: 'pin',
+              symbolSize: [28, 36],
+              label: {
+                normal: {
+                  show: true,
+                  textStyle: {
+                    color: '#fff',
+                    fontSize: 9,
+                  },
+                  formatter (value){
+                    return value.data.value[2]
+                  }
+                }
+              },
+              itemStyle: {
+                normal: {
+                  color: '#37a6d7',
+                }
+              },
+              data: [
+                {name: '台湾', value: [121.5135, 25.0308, 42]},
+                {name: '黑龙江', value: [127.9688, 45.368, 34]},
+                {name: '内蒙古', value: [110.3467, 41.4899, 123,]},
+                {name: '吉林', value: [125.8154, 44.2584, 57]},
+                {name: '北京市', value: [116.4551, 40.2539, 89]},
+                {name: '辽宁', value: [123.1238, 42.1216, 373]},
+                {name: '河北', value: [114.4995, 38.1006, 21]},
+                {name: '天津', value: [117.4219, 39.4189, 465]},
+                {name: '山西', value: [112.3352, 37.9413, 781]},
+                {name: '陕西', value: [109.1162, 34.2004, 90]},
+                {name: '甘肃', value: [103.5901, 36.3043, 132]},
+                {name: '宁夏', value: [106.3586, 38.1775, 300]},
+                {name: '青海', value: [101.4038, 36.8207, 800]},
+                {name: '新疆', value: [87.9236, 43.5883, 14]},
+                {name: '西藏', value: [91.11, 29.97, 21]},
+                {name: '四川', value: [103.9526, 30.7617, 168]},
+                {name: '重庆', value: [108.384366, 30.439702, 78]},
+                {name: '山东', value: [117.1582, 36.8701, 31]},
+                {name: '河南', value: [113.4668, 34.6234, 34]},
+                {name: '江苏', value: [118.8062, 31.9208, 33]},
+                {name: '安徽', value: [117.29, 32.0581, 45]},
+                {name: '湖北', value: [114.3896, 30.6628, 134]},
+                {name: '浙江', value: [119.5313, 29.8773, 198]},
+                {name: '福建', value: [119.4543, 25.9222, 80]},
+                {name: '江西', value: [116.0046, 28.6633, 78]},
+                {name: '湖南', value: [113.0823, 28.2568, 152]},
+                {name: '贵州', value: [106.6992, 26.7682, 70]},
+                {name: '云南', value: [102.9199, 25.4663, 345]},
+                {name: '广东', value: [113.12244, 23.009505, 123]},
+                {name: '广西', value: [108.479, 23.1152, 114]},
+                {name: '海南', value: [110.3893, 19.8516, 214]},
+                {name: '上海', value: [121.4648, 31.2891, 33]},
+              ],
+              showEffectOn: 'render',
+              rippleEffect: {
+                brushType: 'stroke'
+              },
+              hoverAnimation: true,
+              zlevel: 1
+            },
           ]`
         }
       }

@@ -1,3 +1,5 @@
+const map = require('./map')
+
 module.exports = {
   route: {
     name: 'talents_competitiveness',
@@ -40,5 +42,6 @@ module.exports = {
         }
       }
     },
+    ...map
   ]
 }
