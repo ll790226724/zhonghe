@@ -140,6 +140,15 @@
         </template>
       </vis-table>
     </data-loader>
+    <div ref="degree-analysis-icon" :style="{color: '#6ad6ff', fontSize: '14px', fontWeight: '400', textAlign: 'left', position: 'absolute', top: '49px', left: '40px'}">
+      >>
+    </div>
+    <div ref="degree-analysis-title" :style="{color: '#fff', fontSize: '18px', fontWeight: '600', textAlign: 'left', letterSpacing: '1px', position: 'absolute', top: '46px', left: '74px'}">
+      省域人才指标汇总
+    </div>
+    <RadioGroup v-model="craneStates.indicator" type="button" :style="{width: '388px', height: '184px', position: 'absolute', top: '92px', left: '36px'}">
+      <Radio v-for="(item, key) in craneStates.indicators" :key="key" :label="item" />
+    </RadioGroup>
   </div>
 </template>
 
@@ -159,6 +168,10 @@ import {
   DataLoader,
   VisTable,
 } from '@byzanteam/vis-components'
+import {
+  RadioGroup,
+  Radio,
+} from 'iview'
 
 Echarts.registerMap('china', china);
 
@@ -170,6 +183,8 @@ export const talents_competitiveness = {
     DataLoader,
     'v-chart': Echarts,
     VisTable,
+    RadioGroup,
+    Radio,
   },
 
   data () {
@@ -177,6 +192,8 @@ export const talents_competitiveness = {
       craneStates: {
         province: '',
         city: '',
+        indicators: ['人才数量指标', '人才质量指标', '人才结构指标', '人才投入指标', '人才平台指标', '人才生活指标', '人才环境指标', '人才效能指标', '人才效益指标', '人才发展指标'],
+        indicator: '',
       },
     }
   },

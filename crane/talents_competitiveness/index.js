@@ -1,5 +1,6 @@
 const map = require('./map')
 const table = require('./table')
+const talentsIndicatorsSummary = require('./talents_indicators_summary')
 
 module.exports = {
   route: {
@@ -14,6 +15,14 @@ module.exports = {
     },
     {
       id: 'city',
+      value: ''
+    },
+    {
+      id: 'indicators',
+      value: ['人才数量指标', '人才质量指标', '人才结构指标', '人才投入指标', '人才平台指标', '人才生活指标', '人才环境指标', '人才效能指标', '人才效益指标', '人才发展指标']
+    },
+    {
+      id: 'indicator',
       value: ''
     }
   ],
@@ -78,7 +87,7 @@ module.exports = {
         src: '/static/images/Box-Bg.png'
       },
     },
-
     table,
+    ...talentsIndicatorsSummary
   ]
 }
