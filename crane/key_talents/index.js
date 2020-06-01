@@ -3,6 +3,7 @@ const mapTabs = require('./map_tabs')
 const highTalentsDemandChange = require('./high_talents_demand_change')
 const highTalentsDistribution = require('./high_talents_distribution')
 const shortageTalentsDistribution = require('./shortage_talents_distribution')
+const areaShortageChange = require('./area_shortage_change')
 
 module.exports = {
   route: {
@@ -102,6 +103,7 @@ module.exports = {
     ...mapTabs,
     ...highTalentsDemandChange,
     ...highTalentsDistribution,
-    ...shortageTalentsDistribution
+    ...shortageTalentsDistribution,
+    ...areaShortageChange
   ]
 }

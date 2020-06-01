@@ -85,6 +85,15 @@
     <data-loader :style="{width: '400px', height: '218px', overflow: 'scroll', position: 'absolute', top: '841px', left: '1490px'}">
       <v-chart :options="{backgroundColor: 'transparent', legend: {icon: 'circle', right: 80, top: 50, itemGap: 4, orient: 'vertical', textStyle: {color: '#4b9bbe', fontSize: '14'}}, color: ['#6ad6ff', '#4b9bbe', '#367290', '#275570', '#1c4159', '#153349'], series: [{type: 'pie', left: -120, radius: ['40%', '60%'], label: {show: false}, labelLine: {show: false}, data: [{value: 335, name: '电子信息'}, {value: 30, name: '机械电气'}, {value: 834, name: '精细化工'}, {value: 635, name: '生物医药'}, {value: 1548, name: '劳动经济'}, {value: 120, name: '经济计划'}]}]}" />
     </data-loader>
+    <div :style="{color: '#6ad6ff', fontSize: '14px', fontWeight: '400', textAlign: 'left', position: 'absolute', top: '459px', left: '1504px'}">
+      >>
+    </div>
+    <div :style="{color: '#fff', fontSize: '18px', fontWeight: '600', textAlign: 'left', letterSpacing: '1px', position: 'absolute', top: '456px', left: '1536px'}">
+      区域紧缺人才趋势
+    </div>
+    <data-loader ref="high-talents-demand-change-line-chart" :style="{width: '400px', height: '214px', position: 'absolute', top: '518px', left: '1490px'}">
+      <v-chart :options="{backgroundColor: 'transparent', color: ['#6ad6ff', '#367390'], tooltip: {trigger: 'axis', formatter: '{b}<br/>紧缺人才（人）：{c}', backgroundColor: '#566374f0', axisPointer: {lineStyle: {color: '#ffffff', type: 'dotted'}}}, xAxis: {type: 'category', data: ['2015', '2016', '2017', '2018', '2019', '2020'], axisLine: {show: false}, axisTick: {show: false}, axisLabel: {color: '#367391', fontSize: 12, fontWeight: 400}, splitLine: {show: false}}, yAxis: {type: 'value', name: '人', axisLine: {show: false}, axisTick: {show: false}, nameTextStyle: {color: '#367391', fontSize: 12, fontWeight: 400}, axisLabel: {color: '#367391', fontSize: 12, fontWeight: 400}, splitLine: {show: false}}, series: [{type: 'line', name: '人才供应', data: [200, 24, 238, 30, 50, 40], showSymbol: false, lineStyle: {width: 4}}]}" />
+    </data-loader>
   </div>
 </template>
 
