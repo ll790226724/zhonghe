@@ -112,7 +112,6 @@ module.exports = [
               ],
             },
             {
-              name: 'Top 5',
               type: 'scatter',
               coordinateSystem: 'geo',
               symbol: 'pin',
@@ -122,7 +121,8 @@ module.exports = [
                   show: true,
                   textStyle: {
                     color: '#fff',
-                    fontSize: 9,
+                    fontSize: 12,
+                    fontWeight: 500
                   },
                   formatter (value){
                     return value.data.value[2]

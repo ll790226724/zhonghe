@@ -64,7 +64,6 @@
                   ],
                 },
                 {
-                  name: 'Top 5',
                   type: 'scatter',
                   coordinateSystem: 'geo',
                   symbol: 'pin',
@@ -74,7 +73,8 @@
                       show: true,
                       textStyle: {
                         color: '#fff',
-                        fontSize: 9,
+                        fontSize: 12,
+                        fontWeight: 500
                       },
                       formatter (value){
                         return value.data.value[2]
