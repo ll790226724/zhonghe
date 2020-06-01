@@ -72,6 +72,9 @@
     <data-loader ref="introduce-place" v-slot="{ results: results }" :style="{width: '400px', height: '218px', position: 'absolute', top: '94px', left: '1490px'}">
       <v-chart ref="introduce-place-content" :options="{legend: {orient: 'vertical', right: '8%', top: 'middle', icon: 'circle', data: ['猎头', '熟人推荐', '主动接触搜寻', '政府政策', '人才落户', '其他'], textStyle: {color: '#489bbe', fontSize: 14}}, series: {name: '人才引进渠道', type: 'pie', left: '-34%', radius: ['0%', '55%'], label: {show: false}, labelLine: {show: false}, data: [{name:'猎头', value: 66, itemStyle: {color: '#6ad6ff'}}, {name:'熟人推荐', value: 55, itemStyle: {color: '#4b9bbe'}}, {name:'主动接触搜寻', value: 44, itemStyle: {color: '#367290'}}, {name:'政府政策', value: 33, itemStyle: {color: '#275570'}}, {name:'人才落户', value: 22, itemStyle: {color: '#1c4159'}}, {name:'其他', value: 11, itemStyle: {color: '#153349'}}]}}" />
     </data-loader>
+    <data-loader ref="talent-rank" v-slot="{ results: results }" :style="{width: '400px', height: '218px', position: 'absolute', top: '414px', left: '1490px'}">
+      <v-chart ref="talent-rank" :options="{legend: {orient: 'vertical', right: '8%', top: 'middle', icon: 'circle', data: ['学术型人才', '工程型人才', '技术型人才', '初级人才', '中级人才', '高级人才'], textStyle: {color: '#489bbe', fontSize: 14}}, series: {name: '人才引进渠道', type: 'pie', left: '-34%', radius: ['30%', '55%'], label: {show: false}, labelLine: {show: false}, data: [{name:'学术型人才', value: 66, itemStyle: {color: '#6ad6ff'}}, {name:'工程型人才', value: 55, itemStyle: {color: '#4b9bbe'}}, {name:'技术型人才', value: 44, itemStyle: {color: '#367290'}}, {name:'初级人才', value: 33, itemStyle: {color: '#275570'}}, {name:'中级人才', value: 22, itemStyle: {color: '#1c4159'}}, {name:'高级人才', value: 11, itemStyle: {color: '#153349'}}]}}" />
+    </data-loader>
   </div>
 </template>
 
