@@ -27,7 +27,7 @@ module.exports = [
     component: 'div',
     children: [
       {
-        component: 'element-ui/Select',
+        component: 'iview/Select',
         position: [43, 324],
         props: {
           class: 'map-select',

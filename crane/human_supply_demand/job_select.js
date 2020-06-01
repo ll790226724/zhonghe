@@ -4,8 +4,9 @@ module.exports = {
   position: [40, 50],
   children: [
     {
-      component: 'element-ui/Select',
+      component: 'iview/Select',
       props: {
+        class: 'departments-select',
         $style: {
           width: '380px',
         },
@@ -13,7 +14,7 @@ module.exports = {
       },
       children: [
         {
-          component: 'element-ui/Option',
+          component: 'iview/Option',
           vfor: {
             data: "craneStates.jobs",
             exports: {item: 'item', index: 'key'}

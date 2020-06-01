@@ -14,7 +14,7 @@
       </Select>
     </data-loader>
     <date-picker :style="{width: '380px', height: '50px', position: 'absolute', top: '116px', left: '40px'}" v-model="craneStates.year" type="year" placeholder="选择时间" />
-    <data-loader ref="departments-loader" :style="{position: 'absolute', top: '125px', left: '929px'}">
+    <data-loader :style="{position: 'absolute', top: '125px', left: '929px'}">
       <vis-select ref="departments-select" :options="[{label: '福州', uuid: '0'}, {label: '全国', uuid: '1'}, {label: '陕西省', uuid: '2'}, {label: '江苏省', uuid: '3'}, {label: '福建省', uuid: '4'}, {label: '浙江省', uuid: '5'},]" v-model="craneStates.department" placeholder="福州" />
     </data-loader>
     <data-loader :style="{width: '1100px', height: '900px', position: 'absolute', top: '160px', left: '410px'}">
@@ -125,6 +125,8 @@ import {
 import {
   Select,
   Option,
+} from 'iview'
+import {
   DatePicker,
 } from 'element-ui'
 
