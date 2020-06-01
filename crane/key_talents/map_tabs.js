@@ -52,7 +52,7 @@ module.exports = [
         ]
       },
       {
-        component: 'element-ui/input',
+        component: 'iview/input',
         position: [237, 324],
         props: {
           $style: {

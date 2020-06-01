@@ -59,10 +59,10 @@ import {
   BrickButton,
 } from '@byzanteam/vis-components'
 import {
+  Option,
   Select,
 } from 'iview'
 import {
-  Option,
   Input,
 } from 'element-ui'
 
