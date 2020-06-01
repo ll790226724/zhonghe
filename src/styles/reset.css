@@ -104,4 +104,5 @@
   font-weight: normal;
 }
 
-@import './supply.css'
+@import './supply.css';
+@import './key_talent.css';

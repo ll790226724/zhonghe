@@ -30,6 +30,7 @@ module.exports = [
         component: 'element-ui/Select',
         position: [43, 324],
         props: {
+          class: 'map-select',
           $style: {
             width: '180px',
           },
