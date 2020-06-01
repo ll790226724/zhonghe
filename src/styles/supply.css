@@ -7,6 +7,7 @@
 .ivu-select .ivu-select-selection .ivu-select-placeholder {
   height: 50px;
   font-size: 16px;
+  font-weight: 500;
   line-height: 50px;
   color: rgba(255, 255, 255, .8);
 }
@@ -17,6 +18,7 @@
   padding: 0 32px 0 8px;
   color: rgba(255, 255, 255, 1);
   font-size: 16px;
+  font-weight: 500;
 }
 
 .ivu-select .ivu-select-selection .ivu-select-arrow {
@@ -36,6 +38,7 @@
   height: 40px;
   padding-top: 0;
   padding-bottom: 0;
+  font-weight: 500;
 }
 
 .ivu-select-dropdown .ivu-select-dropdown-list .ivu-select-item:hover,
@@ -45,27 +48,34 @@
   background-color: rgba(106, 214, 255, .04);
 }
 
-.el-date-editor .el-input__inner {
+.ivu-date-picker .ivu-date-picker-rel .ivu-input {
   height: 50px;
   background-color: rgba(106, 214, 255, .02);
   border-color: rgba(106, 214, 255, .12);
   color: #ffffff;
+  font-size: 16px;
 }
 
-.el-date-editor .el-input__inner::placeholder {
+.ivu-date-picker .ivu-date-picker-rel .ivu-input::placeholder {
   color: rgba(255, 255, 255, .8);
 }
 
-.el-picker-panel {
-  margin-top: 30px !important;
-  margin-left: 5px;
-  width: 380px;
+.ivu-date-picker .ivu-input-prefix i, .ivu-date-picker .ivu-input-suffix i {
+  line-height: 50px;
+}
+
+.ivu-date-picker .ivu-select-dropdown {
+  margin-top: 10px !important;
   background-color: #06172c;
   border-color: rgba(106, 214, 255, .12);
 }
 
-.el-picker-panel .popper__arrow {
-  display: none;
+.supply-datepicker.ivu-date-picker .ivu-select-dropdown {
+  width: 380px;
+}
+
+.supply-datepicker.ivu-date-picker .ivu-date-picker-cells.ivu-date-picker-cells-year {
+  width: 360px;
 }
 
 .tabs .tab-navs-container {

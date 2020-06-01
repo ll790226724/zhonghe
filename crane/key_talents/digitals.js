@@ -13,7 +13,7 @@ const digital_style = {
 module.exports = [
   {
     component: 'div',
-    position: [10, 10],
+    position: [40, 49],
     props: {
       $style: {
         color: '#6ad6ff',

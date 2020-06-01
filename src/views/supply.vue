@@ -13,7 +13,7 @@
         </Option>
       </Select>
     </data-loader>
-    <date-picker :style="{width: '380px', height: '50px', position: 'absolute', top: '116px', left: '40px'}" v-model="craneStates.year" type="year" placeholder="选择时间" />
+    <date-picker class="supply-datepicker" :style="{width: '380px', height: '50px', position: 'absolute', top: '116px', left: '40px'}" v-model="craneStates.year" type="year" placeholder="选择时间" />
     <data-loader :style="{position: 'absolute', top: '125px', left: '929px'}">
       <vis-select ref="departments-select" :options="[{label: '福州', uuid: '0'}, {label: '全国', uuid: '1'}, {label: '陕西省', uuid: '2'}, {label: '江苏省', uuid: '3'}, {label: '福建省', uuid: '4'}, {label: '浙江省', uuid: '5'},]" v-model="craneStates.department" placeholder="福州" />
     </data-loader>
@@ -125,9 +125,9 @@ import {
 import {
   Select,
   Option,
+  DatePicker,
 } from 'iview'
 import {
-  DatePicker,
 } from 'element-ui'
 
 const TAB_NAVS = [{uuid: 1, label: '岗位排名'}, {uuid: 2, label: '岗位薪资排名'}]
@@ -145,8 +145,8 @@ export const supply = {
     VisTable,
     Select,
     Option,
-    'v-chart': Echarts,
     DatePicker,
+    'v-chart': Echarts,
   },
 
   data () {

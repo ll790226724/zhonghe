@@ -7,7 +7,7 @@
     </div>
     <img ref="box-bg" :style="{width: '440px', height: '1059px', position: 'absolute', top: '10px', left: '10px'}" src="/static/images/Box-Bg.png" />
     <img ref="box-bg" :style="{width: '440px', height: '1059px', position: 'absolute', top: '10px', left: '1471px'}" src="/static/images/Box-Bg.png" />
-    <div :style="{color: '#6ad6ff', fontSize: '14px', fontWeight: '400', textAlign: 'left', position: 'absolute', top: '10px', left: '10px'}">
+    <div :style="{color: '#6ad6ff', fontSize: '14px', fontWeight: '400', textAlign: 'left', position: 'absolute', top: '49px', left: '40px'}">
       >>
     </div>
     <div :style="{color: '#fff', fontSize: '18px', fontWeight: '600', textAlign: 'left', letterSpacing: '1px', position: 'absolute', top: '46px', left: '74px'}">
@@ -37,14 +37,14 @@
     <div :style="{width: '400px', height: '200px', backgroundColor: 'rgba(0, 0, 0, .03)', borderRadius: '4px', border: '1px dotted rgba(106, 214, 255, .3)', position: 'absolute', top: '244px', left: '30px'}" />
     <brick-tabs :tabNavs="craneStates.mapTabNavs" :activeTab="craneStates.mapTabCurrent" :style="{position: 'absolute', top: '256px', left: '126px'}" v-model="craneStates.mapTabCurrent" />
     <div v-if="craneStates.mapTabCurrent === craneStates.mapTabNavs[0]">
-      <Select class="map-select" :style="{width: '180px', position: 'absolute', top: '324px', left: '43px'}" v-model="craneStates.currentType">
+      <Select class="map-select" :style="{width: '180px', position: 'absolute', top: '324px', left: '43px'}" v-model="craneStates.currentTalentType">
         <Option v-for="(item, key) in craneStates.types" :key="key" :value="item.index" :label="item.name">
           {{item.name}}
         </Option>
       </Select>
-      <input :style="{width: '180px', height: '48px', backgroundColor: 'rgba(106, 214, 255, .02)', border: '1px solid rgba(106, 214, 255, .12)', borderRadius: '4px', color: '#ffffff', position: 'absolute', top: '324px', left: '237px'}" />
-      <brick-button :style="{width: '148px', height: '25px', position: 'absolute', top: '400px', left: '156px'}">
-        查看人才供应地图
+      <input placeholder="关键词" class="map-tabs-input" :style="{width: '180px', height: '48px', backgroundColor: 'rgba(106, 214, 255, .02)', border: '1px solid rgba(106, 214, 255, .12)', borderRadius: '4px', color: '#ffffff', fontSize: '16px', fontWeight: '500', position: 'absolute', top: '324px', left: '237px'}" />
+      <brick-button type="gradient" color="primary" :style="{width: '148px', height: '25px', position: 'absolute', top: '400px', left: '156px'}">
+        查看人才需求地图
       </brick-button>
     </div>
     <div v-if="craneStates.mapTabCurrent === craneStates.mapTabNavs[1]">
@@ -53,9 +53,21 @@
           {{item.name}}
         </Option>
       </Select>
-      <input :style="{width: '180px', height: '48px', backgroundColor: 'rgba(106, 214, 255, .02)', border: '1px solid rgba(106, 214, 255, .12)', borderRadius: '4px', color: '#ffffff', position: 'absolute', top: '324px', left: '237px'}" />
-      <brick-button :style="{width: '148px', height: '25px', position: 'absolute', top: '400px', left: '156px'}">
+      <input placeholder="关键词" class="map-tabs-input" :style="{width: '180px', height: '48px', backgroundColor: 'rgba(106, 214, 255, .02)', border: '1px solid rgba(106, 214, 255, .12)', borderRadius: '4px', color: '#ffffff', fontSize: '16px', fontWeight: '500', position: 'absolute', top: '324px', left: '237px'}" />
+      <brick-button type="gradient" color="primary" :style="{width: '148px', height: '25px', position: 'absolute', top: '400px', left: '156px'}">
         查看人才供应地图
+      </brick-button>
+    </div>
+    <div :style="{width: '400px', height: '200px', backgroundColor: 'rgba(0, 0, 0, .03)', borderRadius: '4px', border: '1px dotted rgba(106, 214, 255, .3)', position: 'absolute', top: '225px', left: '1490px'}" />
+    <div>
+      <date-picker class="map-tab-datepicker" :style="{width: '180px', position: 'absolute', top: '270px', left: '1503px'}" v-model="craneStates.time" type="year" placeholder="选择时间" />
+      <Select class="map-select" :style="{width: '180px', position: 'absolute', top: '270px', left: '1697px'}" v-model="craneStates.currentShortageType">
+        <Option v-for="(item, key) in craneStates.types" :key="key" :value="item.index" :label="item.name">
+          {{item.name}}
+        </Option>
+      </Select>
+      <brick-button type="gradient" color="primary" :style="{width: '148px', height: '25px', position: 'absolute', top: '346px', left: '1616px'}">
+        查看紧缺人才地图
       </brick-button>
     </div>
     <div :style="{color: '#6ad6ff', fontSize: '14px', fontWeight: '400', textAlign: 'left', position: 'absolute', top: '497px', left: '40px'}">
@@ -117,6 +129,7 @@ import {
 import {
   Select,
   Option,
+  DatePicker,
 } from 'iview'
 import {
   Input,
@@ -134,6 +147,7 @@ export const key_talents = {
     BrickButton,
     Select,
     Option,
+    DatePicker,
     Input,
     'v-chart': Echarts,
   },
@@ -146,6 +160,8 @@ export const key_talents = {
         currentDemandType: '',
         mapTabCurrent: MAP_TAB_NAVS[0],
         mapTabNavs: MAP_TAB_NAVS,
+        time: '',
+        currentShortageType: '',
       },
     }
   },

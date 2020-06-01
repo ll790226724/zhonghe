@@ -38,6 +38,14 @@ module.exports = {
     {
       id: 'mapTabNavs',
       value: 'MAP_TAB_NAVS'
+    },
+    {
+      id: 'time',
+      value: ''
+    },
+    {
+      id: 'currentShortageType',
+      value: ''
     }
   ],
   components: [
