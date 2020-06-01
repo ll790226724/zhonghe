@@ -2,7 +2,7 @@
   <div class="introduction">
     <img ref="background" src="/static/images/Bg.png" :style="{position: 'absolute', top: '0px', left: '0px'}" />
     <data-loader :style="{width: '1100px', height: '900px', position: 'absolute', top: '160px', left: '410px'}">
-      <v-chart :options="craneStates.options" />
+      <v-chart :options="{backgroundColor: 'transparent', series: [{type: 'map', mapType: 'Liuzhou', label: {show: true, color: 'white'}, itemStyle: {areaColor: 'rgba(106, 214, 255, .1)', borderColor: '#6ad6ff', borderType: 'solid', borderWidth: 0.5}, emphasis: {label: {color: 'white',fontWeight: 600}, itemStyle: {areaColor: '#6ad6ff'}}}]}" />
     </data-loader>
     <img ref="title-bg" :style="{width: '701px', height: '123px', position: 'absolute', top: '0px', left: '607px'}" src="/static/images/Title-Bg.png" />
     <img ref="box-bg" :style="{width: '440px', height: '1059px', position: 'absolute', top: '10px', left: '10px'}" src="/static/images/Box-Bg.png" />
@@ -84,7 +84,7 @@
     <data-loader ref="high-level-talent-digital" v-slot="{ results: results }" :style="{position: 'absolute', top: '699px', left: '130px'}">
       <digital-roll ref="high-level-talent-digital-content" titlePosition="left" :content="{title: '高层次人才引进总数', suffix: '人', digital: 560}" :options="{separator: ','}" :titleStyle="{color: '#367391', fontSize: '16px', fontWeight: '400'}" :prefixStyle="{color: '#367391', fontSize: '16px', fontWeight: '400'}" :suffixStyle="{color: '#367391', fontSize: '16px', fontWeight: '400'}" :digitalStyle="{fontSize: '32px', color: '#6ad6ff', fontWeight: '400', fontFamily: 'Oswald-Regular', format: '11', letterSpacing: '2.4px'}" />
     </data-loader>
-    <date-picker :style="{width: '380px', height: '50px', position: 'absolute', top: '50px', left: '40px'}" v-model="craneStates.year" type="year" placeholder="选择时间" />
+    <date-picker class="supply-datepicker" :style="{width: '380px', height: '50px', position: 'absolute', top: '50px', left: '40px'}" v-model="craneStates.year" type="year" placeholder="选择时间" />
   </div>
 </template>
 
@@ -110,7 +110,7 @@ import {
 } from '@byzanteam/vis-components'
 import {
   DatePicker,
-} from 'element-ui'
+} from 'iview'
 
 export const introduction = {
   mixins: [BuiltInMixin],
@@ -128,76 +128,7 @@ export const introduction = {
     return {
       Echarts: Echarts,
       craneStates: {
-        options: {
-          backgroundColor: 'transparent',
-          tooltip: {
-            trigger: 'item',
-            formatter: '{b}<br/>人才数量（人）：{c}',
-            backgroundColor: '#566374f0',
-          },
-          visualMap: {
-            type: 'piecewise',
-            pieces: [
-              {gt: 1500, label: '1500人及以上'},
-              {gt: 1000, lte: 1500, label: '1000-1500人'},
-              {gt: 100, lte: 999, label: '100-999人'},
-              {gt: 10, lte: 99, label: '10-99人'},
-              {gt: 1, lt: 9, label: '1-9人'}
-            ],
-            orient: 'horizontal',
-            bottom: '6%',
-            left: '26%',
-            textStyle: {
-              color: '#ffffff',
-              fontSize: 14
-            },
-            itemWidth: 18,
-            itemGap: 10,
-            textGap: 8,
-            inRange: {
-              color: ['rgba(106, 214, 255, .1)', 'rgba(106, 214, 255, .4)', 'rgba(106, 214, 255, .5)', 'rgba(106, 214, 255, .6)', 'rgba(106, 214, 255, .7)']
-            }
-          },
-          series: [
-            {
-              type: 'map',
-              mapType: 'fujian',
-              data: [
-                {name: '鼓楼区', value: 4},
-                {name: '台江区', value: 15},
-                {name: '仓山区', value: 31},
-                {name: '马尾区', value: 69},
-                {name: '晋安区', value: 1440},
-                {name: '长乐区', value: 4068},
-                {name: '闽侯县', value: 376},
-                {name: '连江县', value: 45},
-                {name: '罗源县', value: 55},
-                {name: '闽清县', value: 2},
-                {name: '永泰县', value: 677},
-                {name: '平潭县', value: 677},
-                {name: '福清市', value: 677},
-              ],
-              label: {
-                show: true,
-                color: 'white',
-              },
-              itemStyle: {
-                borderColor: '#6ad6ff',
-                borderType: 'solid',
-                borderWidth: 0.5
-              },
-              emphasis: {
-                label: {
-                  color: 'white',
-                  fontWeight: 600,
-                },
-                itemStyle: {
-                  areaColor: '#6ad6ff'
-                }
-              },
-            }
-          ]
-        },
+        selectedArea: {},
       },
     }
   },

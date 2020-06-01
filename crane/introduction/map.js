@@ -11,7 +11,10 @@ module.exports = {
     {
       component: 'v-chart',
       props: {
-        $options: 'craneStates.options'
+        $options: {
+          backgroundColor: 'transparent',
+          $series: "[{type: 'map', mapType: 'Liuzhou', label: {show: true, color: 'white'}, itemStyle: {areaColor: 'rgba(106, 214, 255, .1)', borderColor: '#6ad6ff', borderType: 'solid', borderWidth: 0.5}, emphasis: {label: {color: 'white',fontWeight: 600}, itemStyle: {areaColor: '#6ad6ff'}}}]"
+        }
       }
     }
   ]

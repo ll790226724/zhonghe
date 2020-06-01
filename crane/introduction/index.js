@@ -16,54 +16,8 @@ module.exports = {
   title: '人才引进专题',
   states: [
     {
-      id: 'options',
-      value: {
-        backgroundColor: 'transparent',
-        tooltip: {
-          trigger: 'item',
-          formatter: '{b}<br/>人才数量（人）：{c}'
-        },
-        visualMap: {
-          type:'piecewise',
-          pieces: [
-            {gt: 1500, label: '1500人及以上'},
-            {gt: 1000, lte: 1500, label: '1000-1500人'},
-            {gt: 100, lte: 999, label: '100-999人'},
-            {gt: 10, lte: 99, label: '10-99人'},
-            {gt: 1, lt: 9, label: '1-9人'}
-          ],
-          orient: 'horizontal',
-          bottom: '6%',
-          left: '26%',
-          inRange: {
-            color: ['lightskyblue', 'yellow', 'orangered']
-          }
-        },
-        series: [
-          {
-            type: 'map',
-            mapType: 'Liuzhou',
-            label: {
-              show: true
-            },
-            data: [
-              {name: '鼓楼区', value: 4},
-              {name: '台江区', value: 15},
-              {name: '仓山区', value: 31},
-              {name: '马尾区', value: 69},
-              {name: '晋安区', value: 1440},
-              {name: '长乐区', value: 4068},
-              {name: '闽侯县', value: 376},
-              {name: '连江县', value: 45},
-              {name: '罗源县', value: 55},
-              {name: '闽清县', value: 2},
-              {name: '永泰县', value: 677},
-              {name: '平潭县', value: 677},
-              {name: '福清市', value: 677},
-            ],
-          }
-        ]
-      }
+      id: 'selectedArea',
+      value: {}
     }
   ],
   components: [

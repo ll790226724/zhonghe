@@ -15,7 +15,6 @@
     "element-ui": "latest",
     "iview": "^3.5.4",
     "lodash": "^4.17.15",
-    "view-design": "^4.2.0",
     "vue": "^2.6.10",
     "vue-axios": "^2.1.4",
     "vue-echarts": "^5.0.0-beta.0",
