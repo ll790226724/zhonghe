@@ -15,7 +15,30 @@ module.exports = {
     {
       id: 'city',
       value: ''
-    }
+    },
+    {
+      id: 'types',
+      value: [
+        {index: 1, name: '四川省'},
+        {index: 2, name: '重庆市'},
+        {index: 3, name: '青海省'},
+        {index: 4, name: '浙江省'},
+        {index: 5, name: '湖南省'},
+        {index: 6, name: '湖北省'},
+        {index: 7, name: '甘肃省'},
+        {index: 8, name: '山东省'},
+        {index: 9, name: '江苏省'},
+        {index: 10, name: '江西省'},
+        {index: 11, name: '福建省'},
+        {index: 12, name: '贵州省'},
+        {index: 13, name: '陕西省'},
+        {index: 14, name: '山西省'},
+      ]
+    },
+    {
+      id: 'currentProvince',
+      value: ''
+    },
   ],
   components: [
     {
@@ -149,6 +172,33 @@ module.exports = {
           borderStyle: 'solid',
         }
       },
+    },
+    {
+      id: 'area-select',
+      component: 'iview/Select',
+      position: [1500, 577],
+      props: {
+        placeholder: '选择省市',
+        class: 'map-select',
+        $style: {
+          width: '382px',
+        },
+        'v-model': 'craneStates.currentProvince'
+      },
+      children: [
+        {
+          component: 'iview/Option',
+          vfor: {
+            data: "craneStates.types",
+            exports: {item: 'item', index: 'key'}
+          },
+          props: {
+            $value: "item.index",
+            $label: "item.name"
+          },
+          content: '{{item.name}}',
+        }
+      ]
     },
     table,
     digital
