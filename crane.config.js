@@ -1,5 +1,6 @@
 const resources = require('./crane/components')
 const supplyDemand = require('./crane/human_supply_demand')
+const intro = require('./crane/introduction')
 const keyTalents = require('./crane/key_talents')
 const talentsCompetitiveness = require('./crane/talents_competitiveness')
 
@@ -49,6 +50,7 @@ module.exports = {
     resources,
     supplyDemand,
     keyTalents,
-    talentsCompetitiveness
+    talentsCompetitiveness,
+    intro,
   ],
 }

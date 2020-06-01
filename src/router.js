@@ -19,6 +19,11 @@ export default new Router({
       component: pages.supply,
     },
     {
+      name: 'introduction',
+      path: '/introduction',
+      component: pages.introduction,
+    },
+    {
       name: 'key_talents',
       path: '/keytTalents',
       component: pages.key_talents,

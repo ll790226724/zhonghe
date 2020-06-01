@@ -129,6 +129,26 @@
                 },
               ]}" />
     </data-loader>
+    <img ref="box-bg" :style="{width: '440px', height: '1059px', position: 'absolute', top: '10px', left: '10px'}" src="/static/images/Box-Bg.png" />
+    <img ref="right-box-bg" :style="{width: '440px', height: '1059px', position: 'absolute', top: '10px', left: '1471px'}" src="/static/images/Box-Bg.png" />
+    <data-loader :style="{width: '400px', height: '678px', overflow: 'scroll', position: 'absolute', top: '316px', left: '30px'}">
+      <vis-table theme="dark" stripe="" :headers="[{width: 80, key: 'index',}, {width: 160, key: 'name', title: '省市排名'}, {width: 160, key: 'value', title: '人才质量指标'}]" :data="[{index: 1, name: '四川省', value: 99.8}, {index: 2, name: '重庆市', value: 99.5}, {index: 3, name: '青海省', value: 99.1}, {index: 4, name: '浙江省', value: 98.9}, {index: 5, name: '湖南省', value: 98.7}, {index: 6, name: '湖北省', value: 98.4}, {index: 7, name: '甘肃省', value:98.3}, {index: 8, name: '山东省', value:98.1}, {index: 9, name: '江苏省', value:98.0}, {index: 10, name: '江西省', value:97.2}, {index: 11, name: '福建省', value:97.0}, {index: 12, name: '贵州省', value:96.8},{index: 13, name: '陕西省', value:96.5}, {index: 14, name: '山西省', value:94.2}]">
+        <template v-slot="{ cell: cell, columnKey: columnKey }">
+          <span :class="columnKey === 'index' ? 'row-index-cell' : ''">
+            {{cell}}
+          </span>
+        </template>
+      </vis-table>
+    </data-loader>
+    <div ref="degree-analysis-icon" :style="{color: '#6ad6ff', fontSize: '14px', fontWeight: '400', textAlign: 'left', position: 'absolute', top: '49px', left: '40px'}">
+      >>
+    </div>
+    <div ref="degree-analysis-title" :style="{color: '#fff', fontSize: '18px', fontWeight: '600', textAlign: 'left', letterSpacing: '1px', position: 'absolute', top: '46px', left: '74px'}">
+      省域人才指标汇总
+    </div>
+    <RadioGroup v-model="craneStates.indicator" type="button" :style="{width: '388px', height: '184px', position: 'absolute', top: '92px', left: '36px'}">
+      <Radio v-for="(item, key) in craneStates.indicators" :key="key" :label="item" />
+    </RadioGroup>
   </div>
 </template>
 
@@ -146,7 +166,12 @@ import BuiltInMixin from '../mixins/built_in'
 import {
   VisSelect,
   DataLoader,
+  VisTable,
 } from '@byzanteam/vis-components'
+import {
+  RadioGroup,
+  Radio,
+} from 'iview'
 
 Echarts.registerMap('china', china);
 
@@ -156,7 +181,10 @@ export const talents_competitiveness = {
   components: {
     VisSelect,
     DataLoader,
-    'v-chart': Echarts
+    'v-chart': Echarts,
+    VisTable,
+    RadioGroup,
+    Radio,
   },
 
   data () {
@@ -164,9 +192,41 @@ export const talents_competitiveness = {
       craneStates: {
         province: '',
         city: '',
+        indicators: ['人才数量指标', '人才质量指标', '人才结构指标', '人才投入指标', '人才平台指标', '人才生活指标', '人才环境指标', '人才效能指标', '人才效益指标', '人才发展指标'],
+        indicator: '',
       },
     }
   },
 }
 export default talents_competitiveness
 </script>
+<style lang="scss">
+  .table {
+    thead {
+      border: none!important;
+      tr {
+        th {
+          text-align: left !important;
+          color: #6ad6ff !important;
+          font-size: 14px!important;
+          font-weight: 400;
+        }
+      }
+    }
+    .table__body {
+      tr {
+        td:first-child {
+          text-align: center!important;
+          line-height: 46px;
+        }
+        td{
+          text-align: left !important;
+          color: #4b9bbe !important;
+          line-height: 46px;
+          font-size: 14px;
+          font-weight: 400;
+        }
+      }
+    }
+  }
+</style>
