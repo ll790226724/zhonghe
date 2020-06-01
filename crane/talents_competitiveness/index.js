@@ -1,3 +1,5 @@
+const table = require('./table')
+
 module.exports = {
   route: {
     name: 'talents_competitiveness',
@@ -40,5 +42,32 @@ module.exports = {
         }
       }
     },
+    {
+      id: 'box-bg',
+      component: 'img',
+      position: [10, 10],
+      props: {
+        $style: {
+          width: '440px',
+          height: '1059px',
+        },
+        src: '/static/images/Box-Bg.png'
+      },
+    },
+
+    {
+      id: 'right-box-bg',
+      component: 'img',
+      position: [1471, 10],
+      props: {
+        $style: {
+          width: '440px',
+          height: '1059px',
+        },
+        src: '/static/images/Box-Bg.png'
+      },
+    },
+
+    table,
   ]
 }
