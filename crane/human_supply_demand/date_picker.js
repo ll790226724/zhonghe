@@ -1,7 +1,8 @@
 module.exports = {
-  component: 'element-ui/date-picker',
+  component: 'iview/date-picker',
   position: [40, 116],
   props: {
+    class: 'supply-datepicker',
     $style: {
       width: '380px',
       height: '50px'
