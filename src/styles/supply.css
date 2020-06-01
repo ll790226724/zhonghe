@@ -1,69 +1,81 @@
-.el-select .el-input .el-input__inner {
+.ivu-select .ivu-select-selection {
+  height: 50px;
   background-color: rgba(106, 214, 255, .02) !important;
   border-color: rgba(106, 214, 255, .12) !important;
 }
 
-.el-select .el-input input::placeholder {
+.ivu-select .ivu-select-selection .ivu-select-placeholder {
+  height: 50px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 50px;
   color: rgba(255, 255, 255, .8);
 }
 
-.el-select .el-input input {
+.ivu-select .ivu-select-selection .ivu-select-selected-value {
   height: 50px;
+  line-height: 50px;
   padding: 0 32px 0 8px;
   color: rgba(255, 255, 255, 1);
   font-size: 16px;
+  font-weight: 500;
 }
 
-.el-select .el-input .el-input__suffix {
+.ivu-select .ivu-select-selection .ivu-select-arrow {
   color: #ffffff;
 }
 
-.el-select-dropdown.el-popper {
-  margin-top: 20px !important;
-  margin-left: 5px;
-  width: 380px;
+.ivu-select .ivu-select-dropdown {
   background-color: #06172c;
   border-color: rgba(106, 214, 255, .12);
+  margin-top: 18px;
 }
 
-.el-select-dropdown.el-popper .popper__arrow {
-  display: none;
-}
-
-.el-select-dropdown.el-popper .el-select-dropdown__item {
+.ivu-select-dropdown .ivu-select-dropdown-list .ivu-select-item {
   color: rgba(106, 214, 255, 1);
-  font-size: 16px;
+  font-size: 16px !important;
   line-height: 40px;
   height: 40px;
+  padding-top: 0;
+  padding-bottom: 0;
+  font-weight: 500;
 }
 
-.el-select-dropdown.el-popper .el-select-dropdown__item.hover,
-.el-select-dropdown.el-popper .el-select-dropdown__item.selected {
+.ivu-select-dropdown .ivu-select-dropdown-list .ivu-select-item:hover,
+.ivu-select-dropdown .ivu-select-dropdown-list .ivu-select-item.ivu-select-item-focus,
+.ivu-select-dropdown .ivu-select-dropdown-list .ivu-select-item.ivu-select-item-selected {
   color: rgba(106, 214, 255, 1);
   background-color: rgba(106, 214, 255, .04);
 }
 
-.el-date-editor .el-input__inner {
+.ivu-date-picker .ivu-date-picker-rel .ivu-input {
   height: 50px;
   background-color: rgba(106, 214, 255, .02);
   border-color: rgba(106, 214, 255, .12);
   color: #ffffff;
+  font-size: 16px;
 }
 
-.el-date-editor .el-input__inner::placeholder {
+.ivu-date-picker .ivu-date-picker-rel .ivu-input::placeholder {
   color: rgba(255, 255, 255, .8);
 }
 
-.el-picker-panel {
-  margin-top: 30px !important;
-  margin-left: 5px;
-  width: 380px;
+.ivu-date-picker .ivu-input-prefix i, .ivu-date-picker .ivu-input-suffix i {
+  line-height: 50px;
+}
+
+.ivu-date-picker .ivu-select-dropdown {
+  margin-top: 10px !important;
   background-color: #06172c;
   border-color: rgba(106, 214, 255, .12);
 }
 
-.el-picker-panel .popper__arrow {
-  display: none;
+.supply-datepicker.ivu-date-picker .ivu-select-dropdown {
+  width: 380px;
+}
+
+.supply-datepicker.ivu-date-picker .ivu-date-picker-cells.ivu-date-picker-cells-year {
+  width: 360px;
 }
 
 .tabs .tab-navs-container {

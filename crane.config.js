@@ -1,6 +1,7 @@
 const resources = require('./crane/components')
 const supplyDemand = require('./crane/human_supply_demand')
 const intro = require('./crane/introduction')
+const keyTalents = require('./crane/key_talents')
 
 module.exports = {
   // i18n 配置
@@ -41,12 +42,20 @@ module.exports = {
         type: 'normal',
         path: 'dist/styles/iview.css'
       }
-    }
+    },
+    'iview': {
+      version: 'latest',
+      style: {
+        type: 'normal',
+        path: 'dist/styles/iview.css',
+      },
+    },
   },
   // 页面
   pages: [
     resources,
     supplyDemand,
     intro,
+    keyTalents,
   ],
 }

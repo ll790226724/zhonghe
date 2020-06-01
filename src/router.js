@@ -22,6 +22,11 @@ export default new Router({
       name: 'introduction',
       path: '/introduction',
       component: pages.introduction,
-    }
+    },
+    {
+      name: 'key_talents',
+      path: '/keytTalents',
+      component: pages.key_talents,
+    },
   ],
 })
