@@ -6,6 +6,7 @@ const donut = require('./talent_rank_dount')
 const rank = require('./education_rank')
 const activityDigital = require('./activity_number_digital')
 const highLevelDigital = require('./high_level_talent_digital')
+const date = require('./date_picker')
 
 module.exports = {
   route: {
@@ -386,5 +387,7 @@ module.exports = {
     activityDigital,
 
     highLevelDigital,
+
+    date,
   ]
 }

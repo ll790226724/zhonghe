@@ -84,6 +84,7 @@
     <data-loader ref="high-level-talent-digital" v-slot="{ results: results }" :style="{position: 'absolute', top: '699px', left: '130px'}">
       <digital-roll ref="high-level-talent-digital-content" titlePosition="left" :content="{title: '高层次人才引进总数', suffix: '人', digital: 560}" :options="{separator: ','}" :titleStyle="{color: '#367391', fontSize: '16px', fontWeight: '400'}" :prefixStyle="{color: '#367391', fontSize: '16px', fontWeight: '400'}" :suffixStyle="{color: '#367391', fontSize: '16px', fontWeight: '400'}" :digitalStyle="{fontSize: '32px', color: '#6ad6ff', fontWeight: '400', fontFamily: 'Oswald-Regular', format: '11', letterSpacing: '2.4px'}" />
     </data-loader>
+    <date-picker :style="{width: '380px', height: '50px', position: 'absolute', top: '50px', left: '40px'}" v-model="craneStates.year" type="year" placeholder="选择时间" />
   </div>
 </template>
 
@@ -107,6 +108,9 @@ import {
   Ranking,
   DigitalRoll,
 } from '@byzanteam/vis-components'
+import {
+  DatePicker,
+} from 'element-ui'
 
 export const introduction = {
   mixins: [BuiltInMixin],
@@ -117,6 +121,7 @@ export const introduction = {
     'v-chart': Echarts,
     Ranking,
     DigitalRoll,
+    DatePicker,
   },
 
   data () {
