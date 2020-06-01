@@ -69,6 +69,9 @@
                         color: '#6ad6ff'
                       }], false),}}, data: [120, 200, 150, 80, 70, 110, 130]}}" />
     </data-loader>
+    <data-loader ref="introduce-place" v-slot="{ results: results }" :style="{width: '400px', height: '218px', position: 'absolute', top: '94px', left: '1490px'}">
+      <v-chart ref="introduce-place-content" :options="{legend: {orient: 'vertical', right: '8%', top: 'middle', icon: 'circle', data: ['猎头', '熟人推荐', '主动接触搜寻', '政府政策', '人才落户', '其他'], textStyle: {color: '#489bbe', fontSize: 14}}, series: {name: '人才引进渠道', type: 'pie', left: '-34%', radius: ['0%', '55%'], label: {show: false}, labelLine: {show: false}, data: [{name:'猎头', value: 66, itemStyle: {color: '#6ad6ff'}}, {name:'熟人推荐', value: 55, itemStyle: {color: '#4b9bbe'}}, {name:'主动接触搜寻', value: 44, itemStyle: {color: '#367290'}}, {name:'政府政策', value: 33, itemStyle: {color: '#275570'}}, {name:'人才落户', value: 22, itemStyle: {color: '#1c4159'}}, {name:'其他', value: 11, itemStyle: {color: '#153349'}}]}}" />
+    </data-loader>
   </div>
 </template>
 
@@ -77,6 +80,7 @@ import Echarts from 'vue-echarts'
 import 'echarts/lib/component/geo'
 import 'echarts/lib/chart/map'
 import 'echarts/lib/chart/bar'
+import 'echarts/lib/chart/pie'
 import 'echarts/lib/component/tooltip'
 import 'echarts/lib/component/legend'
 import 'echarts/lib/component/visualMap'

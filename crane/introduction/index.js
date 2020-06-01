@@ -1,6 +1,7 @@
 const map = require('./map')
 const activity = require('./activity_number_bar')
 const highLevel = require('./high_level_talent_bar')
+const intro = require('./introduce_place_pie')
 
 module.exports = {
   route: {
@@ -371,5 +372,7 @@ module.exports = {
     activity,
 
     highLevel,
+
+    intro
   ]
 }
