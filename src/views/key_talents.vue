@@ -37,7 +37,7 @@
     <div :style="{width: '400px', height: '200px', backgroundColor: 'rgba(0, 0, 0, .03)', borderRadius: '4px', border: '1px dotted rgba(106, 214, 255, .3)', position: 'absolute', top: '244px', left: '30px'}" />
     <brick-tabs :tabNavs="craneStates.mapTabNavs" :activeTab="craneStates.mapTabCurrent" :style="{position: 'absolute', top: '256px', left: '126px'}" v-model="craneStates.mapTabCurrent" />
     <div v-if="craneStates.mapTabCurrent === craneStates.mapTabNavs[0]">
-      <Select class="map-select" :style="{width: '180px', position: 'absolute', top: '324px', left: '43px'}" v-model="craneStates.currentTalentType">
+      <Select placeholder="全部类型" class="map-select" :style="{width: '180px', position: 'absolute', top: '324px', left: '43px'}" v-model="craneStates.currentTalentType">
         <Option v-for="(item, key) in craneStates.types" :key="key" :value="item.index" :label="item.name">
           {{item.name}}
         </Option>
@@ -48,7 +48,7 @@
       </brick-button>
     </div>
     <div v-if="craneStates.mapTabCurrent === craneStates.mapTabNavs[1]">
-      <Select class="map-select" :style="{width: '180px', position: 'absolute', top: '324px', left: '43px'}" v-model="craneStates.currentDemandType">
+      <Select placeholder="全部类型" class="map-select" :style="{width: '180px', position: 'absolute', top: '324px', left: '43px'}" v-model="craneStates.currentDemandType">
         <Option v-for="(item, key) in craneStates.types" :key="key" :value="item.index" :label="item.name">
           {{item.name}}
         </Option>
@@ -61,7 +61,7 @@
     <div :style="{width: '400px', height: '200px', backgroundColor: 'rgba(0, 0, 0, .03)', borderRadius: '4px', border: '1px dotted rgba(106, 214, 255, .3)', position: 'absolute', top: '225px', left: '1490px'}" />
     <div>
       <date-picker class="map-tab-datepicker" :style="{width: '180px', position: 'absolute', top: '270px', left: '1503px'}" v-model="craneStates.time" type="year" placeholder="选择时间" />
-      <Select class="map-select" :style="{width: '180px', position: 'absolute', top: '270px', left: '1697px'}" v-model="craneStates.currentShortageType">
+      <Select placeholder="所有行业" class="map-select" :style="{width: '180px', position: 'absolute', top: '270px', left: '1697px'}" v-model="craneStates.currentShortageType">
         <Option v-for="(item, key) in craneStates.types" :key="key" :value="item.index" :label="item.name">
           {{item.name}}
         </Option>
@@ -106,6 +106,48 @@
     <data-loader ref="high-talents-demand-change-line-chart" :style="{width: '400px', height: '214px', position: 'absolute', top: '518px', left: '1490px'}">
       <v-chart :options="{backgroundColor: 'transparent', color: ['#6ad6ff', '#367390'], tooltip: {trigger: 'axis', formatter: '{b}<br/>紧缺人才（人）：{c}', backgroundColor: '#566374f0', axisPointer: {lineStyle: {color: '#ffffff', type: 'dotted'}}}, xAxis: {type: 'category', data: ['2015', '2016', '2017', '2018', '2019', '2020'], axisLine: {show: false}, axisTick: {show: false}, axisLabel: {color: '#367391', fontSize: 12, fontWeight: 400}, splitLine: {show: false}}, yAxis: {type: 'value', name: '人', axisLine: {show: false}, axisTick: {show: false}, nameTextStyle: {color: '#367391', fontSize: 12, fontWeight: 400}, axisLabel: {color: '#367391', fontSize: 12, fontWeight: 400}, splitLine: {show: false}}, series: [{type: 'line', name: '人才供应', data: [200, 24, 238, 30, 50, 40], showSymbol: false, lineStyle: {width: 4}}]}" />
     </data-loader>
+    <vis-select :options="[{label: '福州', uuid: '0'}, {label: '全国', uuid: '1'}, {label: '陕西省', uuid: '2'}, {label: '江苏省', uuid: '3'}, {label: '福建省', uuid: '4'}, {label: '浙江省', uuid: '5'},]" v-model="craneStates.department" placeholder="福州" :style="{position: 'absolute', top: '125px', left: '809px'}" />
+    <data-loader :style="{width: '1100px', height: '900px', position: 'absolute', top: '160px', left: '410px'}">
+      <v-chart :options="{backgroundColor: 'transparent', tooltip: {trigger: 'item', formatter: '{b}<br/>人才数量（人）：{c}', backgroundColor: '#566374f0'}, visualMap: {type: 'piecewise', pieces: [{gt: 1500, label: '1500人及以上'}, {gt: 1000, lte: 1500, label: '1000-1500人'}, {gt: 100, lte: 999, label: '100-999人'}, {gt: 10, lte: 99, label: '10-99人'}, {gt: 1, lt: 9, label: '1-9人'}], orient: 'horizontal', bottom: '6%', left: '26%', textStyle: {color: '#ffffff', fontSize: '14'}, itemWidth: 18, itemGap: 10, textGap: 8, inRange: {color: ['rgba(106, 214, 255, .1)', 'rgba(106, 214, 255, .4)', 'rgba(106, 214, 255, .5)', 'rgba(106, 214, 255, .6)', 'rgba(106, 214, 255, .7)']}}, series: [
+                {
+                  type: 'map',
+                  mapType: 'Liuzhou',
+                  data: [
+                    {name: '鼓楼区', value: 4},
+                    {name: '台江区', value: 15},
+                    {name: '仓山区', value: 31},
+                    {name: '马尾区', value: 69},
+                    {name: '晋安区', value: 1440},
+                    {name: '长乐区', value: 4068},
+                    {name: '闽侯县', value: 376},
+                    {name: '连江县', value: 45},
+                    {name: '罗源县', value: 55},
+                    {name: '闽清县', value: 2},
+                    {name: '永泰县', value: 677},
+                    {name: '平潭县', value: 677},
+                    {name: '福清市', value: 677},
+                  ],
+                  label: {
+                    show: true,
+                    color: 'white',
+                  },
+                  itemStyle: {
+                    borderColor: '#6ad6ff',
+                    borderType: 'solid',
+                    borderWidth: 0.5
+                  },
+                  emphasis: {
+                    label: {
+                      color: 'white',
+                      fontWeight: 600,
+                    },
+                    itemStyle: {
+                      areaColor: '#6ad6ff'
+                    }
+                  },
+                }
+              ]}" />
+    </data-loader>
   </div>
 </template>
 
@@ -125,6 +167,7 @@ import {
   DigitalRoll,
   BrickTabs,
   BrickButton,
+  VisSelect,
 } from '@byzanteam/vis-components'
 import {
   Select,
@@ -145,6 +188,7 @@ export const key_talents = {
     DigitalRoll,
     BrickTabs,
     BrickButton,
+    VisSelect,
     Select,
     Option,
     DatePicker,

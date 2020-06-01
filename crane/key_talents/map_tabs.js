@@ -33,6 +33,7 @@ module.exports = [
         component: 'iview/Select',
         position: [43, 324],
         props: {
+          placeholder: '全部类型',
           class: 'map-select',
           $style: {
             width: '180px',
@@ -97,6 +98,7 @@ module.exports = [
         component: 'iview/Select',
         position: [43, 324],
         props: {
+          placeholder: '全部类型',
           class: 'map-select',
           $style: {
             width: '180px',
@@ -184,6 +186,7 @@ module.exports = [
         component: 'iview/Select',
         position: [1697, 270],
         props: {
+          placeholder: '所有行业',
           class: 'map-select',
           $style: {
             width: '180px',
