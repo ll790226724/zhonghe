@@ -132,6 +132,28 @@ export const introduction = {
       },
     }
   },
+
+  mounted() {
+    const { chart } = this.$refs.map
+    chart.on('click', (params) => {
+      chart.dispatchAction({
+        type: 'mapSelect',
+        dataIndex: params.dataIndex
+      })
+      debugger
+      if(this.craneStates.selectedArea) {
+        chart.dispatchAction({
+          type: 'mapUnSelect',
+          dataIndex: this.craneStates.selectedArea.dataIndex
+        })
+      }
+      if(this.craneStates.selectedArea.dataIndex === params.dataIndex) {
+        this.craneStates.selectedArea = {}
+      } else {
+        this.craneStates.selectedArea = params
+      }
+    })
+  },
 }
 export default introduction
 </script>
