@@ -1,3 +1,4 @@
+const map = require('./map')
 const table = require('./table')
 
 module.exports = {
@@ -6,7 +7,16 @@ module.exports = {
     path: 'talents-competitiveness'
   },
   title:'省域人才综合竞争力',
-  states: [],
+  states: [
+    {
+      id: 'province',
+      value: ''
+    },
+    {
+      id: 'city',
+      value: ''
+    }
+  ],
   components: [
     {
       id: 'background',
@@ -42,6 +52,7 @@ module.exports = {
         }
       }
     },
+    ...map,
     {
       id: 'box-bg',
       component: 'img',
