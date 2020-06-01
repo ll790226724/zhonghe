@@ -6,7 +6,16 @@ module.exports = {
     path: 'talents-competitiveness'
   },
   title:'省域人才综合竞争力',
-  states: [],
+  states: [
+    {
+      id: 'province',
+      value: ''
+    },
+    {
+      id: 'city',
+      value: ''
+    }
+  ],
   components: [
     {
       id: 'background',
