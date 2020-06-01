@@ -78,6 +78,12 @@
     <data-loader ref="education_rank" v-slot="{ results: results }" :style="{width: '296px', height: '290px', overflow: 'scroll', position: 'absolute', top: '753px', left: '1542px'}">
       <ranking ref="education_rank-content" :data="[{label: '本科', amount: 78.16}, {label: '硕士', amount: 23.21}, {label: '博士', amount: 18.01}, {label: '高中生', amount: 68.23}, {label: '大专', amount: 47.67}, {label: '初中', amount: 45.11},]" :keys="{label: 'label', value: 'amount', tooltip: 'name'}" :labelStyle="{color: '#4b9bbe', fontSize: '16px', lineHeight: '24px'}" :valueStyle="{color: '#6ad6ff', fontSize: '16px', fontFamily: 'Oswald-Regular', lineHeight: '1.5', fontWeight: '400'}" :lineStyle="{background: '#ffffff0D', lineColor: ['#0885b5', '#6ad6ff'], height: '5px', borderRadius: '2.5px'}" :tooltip="{text: {align: 'center', baseline: 'middle', fill: '#FFFFFF', size: 14, weight: 400}, notation: {fill: '#367391', name: 'circle-small', size: 14}}" :tooltipOptions="{background: '#566374f0', text: {align: 'center', baseline: 'middle', fill: '#FFFFFF', size: 14, weight: 400}, title: {align: 'center', baseline: 'middle', fill: '#FFFFFF', size: 14, weight: 400}}" />
     </data-loader>
+    <data-loader ref="activity-number-digital" v-slot="{ results: results }" :style="{position: 'absolute', top: '224px', left: '154px'}">
+      <digital-roll ref="activity-number-digital-content" titlePosition="left" :content="{title: '引才活动统计', suffix: '次', digital: 189}" :options="{separator: ','}" :titleStyle="{color: '#367391', fontSize: '16px', fontWeight: '400'}" :prefixStyle="{color: '#367391', fontSize: '16px', fontWeight: '400'}" :suffixStyle="{color: '#367391', fontSize: '16px', fontWeight: '400'}" :digitalStyle="{fontSize: '32px', color: '#6ad6ff', fontWeight: '400', fontFamily: 'Oswald-Regular', format: '11', letterSpacing: '2.4px'}" />
+    </data-loader>
+    <data-loader ref="high-level-talent-digital" v-slot="{ results: results }" :style="{position: 'absolute', top: '699px', left: '130px'}">
+      <digital-roll ref="high-level-talent-digital-content" titlePosition="left" :content="{title: '高层次人才引进总数', suffix: '人', digital: 560}" :options="{separator: ','}" :titleStyle="{color: '#367391', fontSize: '16px', fontWeight: '400'}" :prefixStyle="{color: '#367391', fontSize: '16px', fontWeight: '400'}" :suffixStyle="{color: '#367391', fontSize: '16px', fontWeight: '400'}" :digitalStyle="{fontSize: '32px', color: '#6ad6ff', fontWeight: '400', fontFamily: 'Oswald-Regular', format: '11', letterSpacing: '2.4px'}" />
+    </data-loader>
   </div>
 </template>
 
@@ -99,6 +105,7 @@ import {
   DataLoader,
   VisSelect,
   Ranking,
+  DigitalRoll,
 } from '@byzanteam/vis-components'
 
 export const introduction = {
@@ -109,6 +116,7 @@ export const introduction = {
     VisSelect,
     'v-chart': Echarts,
     Ranking,
+    DigitalRoll,
   },
 
   data () {

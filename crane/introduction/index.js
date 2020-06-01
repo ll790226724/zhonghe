@@ -4,6 +4,8 @@ const highLevel = require('./high_level_talent_bar')
 const intro = require('./introduce_place_pie')
 const donut = require('./talent_rank_dount')
 const rank = require('./education_rank')
+const activityDigital = require('./activity_number_digital')
+const highLevelDigital = require('./high_level_talent_digital')
 
 module.exports = {
   route: {
@@ -380,5 +382,9 @@ module.exports = {
     donut,
 
     rank,
+
+    activityDigital,
+
+    highLevelDigital,
   ]
 }
