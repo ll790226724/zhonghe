@@ -1,4 +1,3 @@
-const {small_digital_style} = require('../share')
 
 module.exports = [
   {
@@ -28,7 +27,7 @@ module.exports = [
         letterSpacing: '1px',
       },
     },
-    content: '人才薪酬分析',
+    content: '人才供需变化',
   },
   {
     id: 'talents-demand-change-count-line-chart',
@@ -49,14 +48,14 @@ module.exports = [
             $color: "['#6ad6ff', '#367390']",
             $tooltip: {
               trigger: 'axis',
-              formatter: '{b}<br/>人才供给（人）：{c0}<br />岗位需求（人）：{c1}',
-              backgroundColor: '#566374f0',
               $axisPointer: {
                 $lineStyle: {
                   color: '#ffffff',
                   type: 'dotted'
                 }
-              }
+              },
+              $formatter: "demandTooltipFormatterFunc",
+              backgroundColor: '#566374f0',
             },
             $legend: {
               icon: 'circle',
@@ -108,7 +107,8 @@ module.exports = [
                 $show: false
               }
             },
-            $series: "[{type: 'line', name: '人才供给', data: [200, 24, 238, 30, 50, 40], showSymbol: false, lineStyle: {width: 4}}, {type: 'line', name: '岗位需求', data: [300, 274, 248, 348, 50, 40], showSymbol: false, lineStyle: {width: 4}}]"
+            $series: "[{type: 'line', name: '人才供给', data: [200, 24, 238, 30, 50, 40], showSymbol: false, lineStyle: {width: 4}}, {type: 'line', name: '岗位需求', data: [300, 274, 248, 348, 50, 40], showSymbol: false, lineStyle: {width: 4}}]",
+
           }
         }
       }

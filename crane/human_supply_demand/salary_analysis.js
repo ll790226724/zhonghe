@@ -101,14 +101,14 @@ module.exports = [
             backgroundColor: 'transparent',
             $tooltip: {
               trigger: 'axis',
-              formatter: '{b}<br/>平均薪酬（元）：{c}',
-              backgroundColor: '#566374f0',
               $axisPointer: {
                 $lineStyle: {
                   color: '#ffffff',
                   type: 'dotted'
                 }
-              }
+              },
+              $formatter: "salaryTooltipFormatterFunc",
+              backgroundColor: '#566374f0',
             },
             $xAxis: {
               type: 'category',
@@ -151,7 +151,7 @@ module.exports = [
                 $show: false
               }
             },
-            $series: "[{type: 'line', data: [3200, 2274, 2348, 3848, 5500, 4900], showSymbol: false, lineStyle: {color: '#6ad6ff', width: 4}}]"
+            $series: "[{type: 'line', data: [3200, 2274, 2348, 3848, 5500, 4900], showSymbol: false, lineStyle: {color: '#6ad6ff', width: 4}}]",
           }
         }
       }
