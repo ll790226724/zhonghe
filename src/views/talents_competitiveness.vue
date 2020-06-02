@@ -158,8 +158,44 @@
         </template>
       </vis-table>
     </data-loader>
-    <data-loader ref="force-value" v-slot="{ results: results }" :style="{position: 'absolute', top: '66px', left: '1614px'}">
-      <digital-roll ref="force-value-content" titlePosition="left" :content="{title: '竞争力指数', digital: 98.2}" :options="{separator: ','}" :titleStyle="{color: '#367391', fontSize: '16px', fontWeight: '400'}" :prefixStyle="{color: '#367391', fontSize: '16px', fontWeight: '400'}" :suffixStyle="{color: '#367391', fontSize: '16px', fontWeight: '400'}" :digitalStyle="{fontSize: '32px', color: '#6ad6ff', fontWeight: '400', fontFamily: 'Oswald-Regular', format: '11', letterSpacing: '2.4px'}" />
+    <div ref="degree-analysis-icon" :style="{color: '#6ad6ff', fontSize: '14px', fontWeight: '400', textAlign: 'left', position: 'absolute', top: '49px', left: '40px'}">
+      >>
+    </div>
+    <div ref="degree-analysis-title" :style="{color: '#fff', fontSize: '18px', fontWeight: '600', textAlign: 'left', letterSpacing: '1px', position: 'absolute', top: '46px', left: '74px'}">
+      省域人才指标汇总
+    </div>
+    <RadioGroup v-model="craneStates.indicator" type="button" :style="{width: '388px', height: '184px', position: 'absolute', top: '92px', left: '36px'}">
+      <Radio v-for="(item, key) in craneStates.indicators" :key="key" :label="item" />
+    </RadioGroup>
+    <data-loader :style="{width: '370px', height: '480px', position: 'absolute', top: '455px', left: '1506px'}">
+      <v-chart :options="{legend: {orient: 'vertical', bottom: 0, icon: 'circle', textStyle: {color: '#4b9bbe', fontSize: 14, padding: [2, 4]}}, color: ['#6ad6ff', '#4b9bbe', '#367290', '#275570', '#1c4159', '#153349'], radiusAxis: {axisLine: {color: '#19394f'}, splitLine: {color: '#19394f'}}, radar: {shape: 'circle', center: {0: '50%', 1: '50%'}, radius: '50% ', name: {textStyle: {color: '#4b9bbe', fontSize: 14}}, axisLine: {lineStyle: {color: '#19394f'}}, splitArea: {areaStyle: {color: 'transparent'}}, splitLine: {lineStyle: {color: '#19394f'}}, indicator: [{name: '人才数量指标'}, {name: '人才质量指标'}, {name: '人才结构指标'}, {name: '人才投入指标'}, {name: '人才平台指标'}, {name: '人才生活指标'}, {name: '人才环境指标'}, {name: '人才效能指标'}, {name: '人才效益指标'}, {name: '人才发展指标'}]}, series: [{
+                  type: 'radar',
+                  areaStyle: { normal: { itemStyle: { opacity: 0.2}}},
+                  axisLine: {},
+                  symbol: 'none',
+                  data: [
+                    {
+                      value: [4300, 10000, 28000, 35000, 50000, 19000, 28000, 35000, 50000, 19000],
+                      name: '四川省'
+                    },
+                    {
+                      value: [5000, 14000, 30000, 31000, 42000, 21000, 28000, 31000, 42000, 21000],
+                      name: '山东省'
+                    },
+                    {
+                      value: [5000, 1000, 38000, 31000, 42000, 21000, 38000, 31000, 42000, 21000],
+                      name: '江苏省'
+                    },
+                    {
+                      value: [5000, 34000, 2000, 38000, 52000, 61000, 2000, 38000, 52000, 61000],
+                      name: '上海市'
+                    }
+                  ]
+                }
+              ]}" />
+      <data-loader ref="force-value" v-slot="{ results: results }" :style="{position: 'absolute', top: '66px', left: '1614px'}">
+        <digital-roll ref="force-value-content" titlePosition="left" :content="{title: '竞争力指数', digital: 98.2}" :options="{separator: ','}" :titleStyle="{color: '#367391', fontSize: '16px', fontWeight: '400'}" :prefixStyle="{color: '#367391', fontSize: '16px', fontWeight: '400'}" :suffixStyle="{color: '#367391', fontSize: '16px', fontWeight: '400'}" :digitalStyle="{fontSize: '32px', color: '#6ad6ff', fontWeight: '400', fontFamily: 'Oswald-Regular', format: '11', letterSpacing: '2.4px'}" />
+      </data-loader>
     </data-loader>
   </div>
 </template>
@@ -168,6 +204,7 @@
 import Echarts from 'vue-echarts'
 import 'echarts/lib/component/geo'
 import 'echarts/lib/chart/map'
+import 'echarts/lib/chart/radar'
 import 'echarts/lib/chart/scatter'
 import 'echarts/lib/component/tooltip'
 import 'echarts/lib/component/legend'
@@ -183,9 +220,13 @@ import {
   DigitalRoll,
 } from '@byzanteam/vis-components'
 import {
+  RadioGroup,
+  Radio,
   Select,
   Option,
 } from 'iview'
+
+Echarts.registerMap('china', china);
 
 export const talents_competitiveness = {
   mixins: [BuiltInMixin],
@@ -195,6 +236,8 @@ export const talents_competitiveness = {
     DataLoader,
     'v-chart': Echarts,
     VisTable,
+    RadioGroup,
+    Radio,
     DigitalRoll,
     Select,
     Option,
@@ -205,6 +248,8 @@ export const talents_competitiveness = {
       craneStates: {
         province: '',
         city: '',
+        indicators: ['人才数量指标', '人才质量指标', '人才结构指标', '人才投入指标', '人才平台指标', '人才生活指标', '人才环境指标', '人才效能指标', '人才效益指标', '人才发展指标'],
+        indicator: '',
         types: [{index: 1, name: '四川省'}, {index: 2, name: '重庆市'}, {index: 3, name: '青海省'}, {index: 4, name: '浙江省'}, {index: 5, name: '湖南省'}, {index: 6, name: '湖北省'}, {index: 7, name: '甘肃省'}, {index: 8, name: '山东省'}, {index: 9, name: '江苏省'}, {index: 10, name: '江西省'}, {index: 11, name: '福建省'}, {index: 12, name: '贵州省'}, {index: 13, name: '陕西省'}, {index: 14, name: '山西省'}],
         currentProvince: '',
       },

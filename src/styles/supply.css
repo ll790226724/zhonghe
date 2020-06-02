@@ -31,6 +31,50 @@
   margin-top: 18px;
 }
 
+.ivu-select-dropdown .ivu-date-picker-header {
+  border-color: rgba(106, 214, 255, .12);
+  height: 42px;
+  line-height: 42px;
+  font-size: 16px;
+  color: #ffffff;
+}
+
+.ivu-select-dropdown .ivu-picker-panel-body .ivu-picker-panel-icon-btn {
+  color: rgba(255, 255, 255, .8);
+  margin-top: 8px;
+}
+
+.ivu-select-dropdown .ivu-picker-panel-body .ivu-date-picker-header-label {
+  color: #ffffff;
+}
+
+.ivu-date-picker-cells  .ivu-date-picker-cells-cell {
+  margin: 12px 24px;
+}
+
+.ivu-date-picker-cells  .ivu-date-picker-cells-cell,
+.ivu-date-picker-cells  .ivu-date-picker-cells-year span em {
+  width: 68px;
+  height: 34px;
+  line-height: 34px;
+  color: #ffffff;
+  font-size: 16px;
+  text-align: center;
+}
+
+.ivu-date-picker-cells-cell:hover em {
+  background-color: transparent;
+}
+
+.ivu-date-picker-cells .ivu-date-picker-cells-cell-focused,
+.ivu-date-picker-cells .ivu-date-picker-cells-cell-selected {
+  background-color: #6ad6ff;
+}
+
+.ivu-date-picker-cells .ivu-date-picker-cells-cell-selected em {
+  background-color: transparent;
+}
+
 .ivu-select-dropdown .ivu-select-dropdown-list .ivu-select-item {
   color: rgba(106, 214, 255, 1);
   font-size: 16px !important;

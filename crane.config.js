@@ -10,7 +10,6 @@ module.exports = {
   // 屏幕默认尺寸, 所有页面都继承该值，页面可单独设置
   size: [1920, 1080],
   requestSettings: {
-    baseURL: 'http://www.pdjxj.com/vis-backend/',
   },
   modules: {
     '@byzanteam/vis-components': {

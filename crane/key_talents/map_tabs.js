@@ -69,7 +69,8 @@ module.exports = [
             borderRadius: '4px',
             color: '#ffffff',
             fontSize: '16px',
-            fontWeight: 500
+            fontWeight: 500,
+            outline: 'none'
           }
         }
       },

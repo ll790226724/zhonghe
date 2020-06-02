@@ -109,6 +109,7 @@ input::placeholder {
 
 @import './supply.css';
 @import './key_talent.css';
+@import './talents_indicator_summary.css';
 
 .table {
   max-height: none !important;

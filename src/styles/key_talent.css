@@ -3,11 +3,11 @@
 }
 
 .map-tab-datepicker.ivu-date-picker .ivu-select-dropdown {
-  width: 180px;
+  width: 380px;
 }
 
 .map-tab-datepicker.ivu-date-picker .ivu-date-picker-cells.ivu-date-picker-cells-year {
-  width: 160px;
+  width: 360px;
 }
 
 input.map-tabs-input::placeholder {
