@@ -190,7 +190,7 @@ module.exports = {
     {
       id: 'area-select',
       component: 'iview/Select',
-      position: [1500, 577],
+      position: [1500, 277],
       props: {
         placeholder: '选择省市',
         class: 'map-select',
