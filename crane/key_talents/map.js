@@ -25,7 +25,7 @@ module.exports = [
           backgroundColor: 'transparent',
           $tooltip: {
             trigger: 'item',
-            formatter: '{b}<br/>人才数量（人）：{c}',
+            formatter: '{b}<br/>人才数量：{c}人',
             backgroundColor: '#566374f0',
           },
           $visualMap: {
