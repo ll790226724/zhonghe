@@ -44,6 +44,11 @@ module.exports = [
         props: {
           $options: {
             backgroundColor: 'transparent',
+            $tooltip: {
+              trigger: 'item',
+              $formatter: "pieTooltipFormatterFunc",
+              backgroundColor: '#566374f0',
+            },
             $legend: {
               icon: 'circle',
               $right: 80,

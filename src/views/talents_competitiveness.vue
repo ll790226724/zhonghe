@@ -329,7 +329,7 @@ export default talents_competitiveness
 .ivu-select-multiple .ivu-select-item-selected:after{
   color: #6ad6ff !important;
 }
-.ivu-select .ivu-select-selection .ivu-select-placeholder{
+.ivu-select-multiple .ivu-select-selection .ivu-select-placeholder{
   height: auto!important;
   line-height: 32px !important;
 }

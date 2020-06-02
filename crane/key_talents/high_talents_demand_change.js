@@ -45,7 +45,7 @@ module.exports = [
             $color: "['#6ad6ff', '#367390']",
             $tooltip: {
               trigger: 'axis',
-              formatter: '{b}<br/>人才供应（人）：{c0}<br />人才需求（人）：{c1}',
+              $formatter: "demandTooltipFormatterFunc",
               backgroundColor: '#566374f0',
               $axisPointer: {
                 $lineStyle: {

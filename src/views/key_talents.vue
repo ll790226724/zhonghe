@@ -77,7 +77,7 @@
       高层次人才供需变化
     </div>
     <data-loader ref="high-talents-demand-change-line-chart" :style="{width: '400px', height: '200px', position: 'absolute', top: '550px', left: '30px'}">
-      <v-chart :options="{backgroundColor: 'transparent', color: ['#6ad6ff', '#367390'], tooltip: {trigger: 'axis', formatter: '{b}<br/>人才供应（人）：{c0}<br />人才需求（人）：{c1}', backgroundColor: '#566374f0', axisPointer: {lineStyle: {color: '#ffffff', type: 'dotted'}}}, legend: {icon: 'circle', right: 10, itemGap: 4, textStyle: {color: '#4b9bbe', fontSize: '14'}}, xAxis: {type: 'category', data: ['2015', '2016', '2017', '2018', '2019', '2020'], axisLine: {show: false}, axisTick: {show: false}, axisLabel: {color: '#367391', fontSize: 12, fontWeight: 400}, splitLine: {show: false}}, yAxis: {type: 'value', name: '人', axisLine: {show: false}, axisTick: {show: false}, nameTextStyle: {color: '#367391', fontSize: 12, fontWeight: 400}, axisLabel: {color: '#367391', fontSize: 12, fontWeight: 400}, splitLine: {show: false}}, series: [{type: 'line', name: '人才供应', data: [200, 24, 238, 30, 50, 40], showSymbol: false, lineStyle: {width: 4}}, {type: 'line', name: '人才需求', data: [300, 274, 248, 348, 50, 40], showSymbol: false, lineStyle: {width: 4}}]}" />
+      <v-chart :options="{backgroundColor: 'transparent', color: ['#6ad6ff', '#367390'], tooltip: {trigger: 'axis', formatter: demandTooltipFormatterFunc, backgroundColor: '#566374f0', axisPointer: {lineStyle: {color: '#ffffff', type: 'dotted'}}}, legend: {icon: 'circle', right: 10, itemGap: 4, textStyle: {color: '#4b9bbe', fontSize: '14'}}, xAxis: {type: 'category', data: ['2015', '2016', '2017', '2018', '2019', '2020'], axisLine: {show: false}, axisTick: {show: false}, axisLabel: {color: '#367391', fontSize: 12, fontWeight: 400}, splitLine: {show: false}}, yAxis: {type: 'value', name: '人', axisLine: {show: false}, axisTick: {show: false}, nameTextStyle: {color: '#367391', fontSize: 12, fontWeight: 400}, axisLabel: {color: '#367391', fontSize: 12, fontWeight: 400}, splitLine: {show: false}}, series: [{type: 'line', name: '人才供应', data: [200, 24, 238, 30, 50, 40], showSymbol: false, lineStyle: {width: 4}}, {type: 'line', name: '人才需求', data: [300, 274, 248, 348, 50, 40], showSymbol: false, lineStyle: {width: 4}}]}" />
     </data-loader>
     <div ref="degree-analysis-icon" :style="{color: '#6ad6ff', fontSize: '14px', fontWeight: '400', textAlign: 'left', position: 'absolute', top: '806px', left: '40px'}">
       >>
@@ -95,7 +95,7 @@
       紧缺人才专业分布
     </div>
     <data-loader :style="{width: '400px', height: '218px', overflow: 'scroll', position: 'absolute', top: '841px', left: '1490px'}">
-      <v-chart :options="{backgroundColor: 'transparent', legend: {icon: 'circle', right: 80, top: 50, itemGap: 4, orient: 'vertical', textStyle: {color: '#4b9bbe', fontSize: '14'}}, color: ['#6ad6ff', '#4b9bbe', '#367290', '#275570', '#1c4159', '#153349'], series: [{type: 'pie', left: -120, radius: ['40%', '60%'], label: {show: false}, labelLine: {show: false}, data: [{value: 335, name: '电子信息'}, {value: 30, name: '机械电气'}, {value: 834, name: '精细化工'}, {value: 635, name: '生物医药'}, {value: 1548, name: '劳动经济'}, {value: 120, name: '经济计划'}]}]}" />
+      <v-chart :options="{backgroundColor: 'transparent', tooltip: {trigger: 'item', formatter: pieTooltipFormatterFunc, backgroundColor: '#566374f0'}, legend: {icon: 'circle', right: 80, top: 50, itemGap: 4, orient: 'vertical', textStyle: {color: '#4b9bbe', fontSize: '14'}}, color: ['#6ad6ff', '#4b9bbe', '#367290', '#275570', '#1c4159', '#153349'], series: [{type: 'pie', left: -120, radius: ['40%', '60%'], label: {show: false}, labelLine: {show: false}, data: [{value: 335, name: '电子信息'}, {value: 30, name: '机械电气'}, {value: 834, name: '精细化工'}, {value: 635, name: '生物医药'}, {value: 1548, name: '劳动经济'}, {value: 120, name: '经济计划'}]}]}" />
     </data-loader>
     <div :style="{color: '#6ad6ff', fontSize: '14px', fontWeight: '400', textAlign: 'left', position: 'absolute', top: '459px', left: '1504px'}">
       >>
@@ -104,7 +104,7 @@
       区域紧缺人才趋势
     </div>
     <data-loader ref="high-talents-demand-change-line-chart" :style="{width: '400px', height: '214px', position: 'absolute', top: '518px', left: '1490px'}">
-      <v-chart :options="{backgroundColor: 'transparent', color: ['#6ad6ff', '#367390'], tooltip: {trigger: 'axis', formatter: '{b}<br/>紧缺人才（人）：{c}', backgroundColor: '#566374f0', axisPointer: {lineStyle: {color: '#ffffff', type: 'dotted'}}}, xAxis: {type: 'category', data: ['2015', '2016', '2017', '2018', '2019', '2020'], axisLine: {show: false}, axisTick: {show: false}, axisLabel: {color: '#367391', fontSize: 12, fontWeight: 400}, splitLine: {show: false}}, yAxis: {type: 'value', name: '人', axisLine: {show: false}, axisTick: {show: false}, nameTextStyle: {color: '#367391', fontSize: 12, fontWeight: 400}, axisLabel: {color: '#367391', fontSize: 12, fontWeight: 400}, splitLine: {show: false}}, series: [{type: 'line', name: '人才供应', data: [200, 24, 238, 30, 50, 40], showSymbol: false, lineStyle: {width: 4}}]}" />
+      <v-chart :options="{backgroundColor: 'transparent', color: ['#6ad6ff', '#367390'], tooltip: {trigger: 'axis', formatter: shortageTooltipFormatterFunc, backgroundColor: '#566374f0', axisPointer: {lineStyle: {color: '#ffffff', type: 'dotted'}}}, xAxis: {type: 'category', data: ['2015', '2016', '2017', '2018', '2019', '2020'], axisLine: {show: false}, axisTick: {show: false}, axisLabel: {color: '#367391', fontSize: 12, fontWeight: 400}, splitLine: {show: false}}, yAxis: {type: 'value', name: '人', axisLine: {show: false}, axisTick: {show: false}, nameTextStyle: {color: '#367391', fontSize: 12, fontWeight: 400}, axisLabel: {color: '#367391', fontSize: 12, fontWeight: 400}, splitLine: {show: false}}, series: [{type: 'line', name: '人才供应', data: [200, 24, 238, 30, 50, 40], showSymbol: false, lineStyle: {width: 4}}]}" />
     </data-loader>
     <vis-select :options="[{label: '福州', uuid: '0'}, {label: '全国', uuid: '1'}, {label: '陕西省', uuid: '2'}, {label: '江苏省', uuid: '3'}, {label: '福建省', uuid: '4'}, {label: '浙江省', uuid: '5'},]" v-model="craneStates.department" placeholder="福州" :style="{position: 'absolute', top: '125px', left: '809px'}" />
     <data-loader :style="{width: '1100px', height: '900px', position: 'absolute', top: '160px', left: '410px'}">
@@ -209,6 +209,18 @@ export const key_talents = {
       },
     }
   },
+
+  methods: {
+    shortageTooltipFormatterFunc(params) {
+      return `${params[0].name}<br/><span style="display:inline-block;margin-right:5px;border-radius:10px;width:10px;height:10px;background-color: #6ad6ff;"></span>紧缺人才：${params[0].data}人`
+    },
+    demandTooltipFormatterFunc(params) {
+      return `${params[0].name}<br/>${params[0].marker}人才供应：${params[0].data}人</br>${params[1].marker}人才需求：${params[1].data}人`
+    },
+    pieTooltipFormatterFunc(params) {
+      return `${params.marker}${params.name}：${params.percent}%`
+    },
+  }
 }
 export default key_talents
 </script>
