@@ -96,10 +96,10 @@
     </div>
     <brick-tabs :tabNavs="craneStates.chartTabNavs" :activeTab="craneStates.chartTabCurrent" :style="{position: 'absolute', top: '764px', left: '1586px'}" v-model="craneStates.chartTabCurrent" />
     <data-loader v-if="craneStates.chartTabCurrent === craneStates.chartTabNavs[0]" :style="{width: '400px', height: '218px', overflow: 'scroll', position: 'absolute', top: '822px', left: '1490px'}">
-      <v-chart :options="{backgroundColor: 'transparent', legend: {icon: 'circle', right: 75, top: 'middle', itemGap: 7, orient: 'vertical', textStyle: {color: '#4b9bbe', fontSize: '14px'}}, color: ['#6ad6ff', '#4b9bbe', '#367290', '#275570', '#1c4159', '#153349'], series: [{type: 'pie', left: -140, radius: ['40%', '60%'], label: {show: false}, labelLine: {show: false}, data: [{value: 335, name: '大学'}, {value: 310, name: '硕士'}, {value: 234, name: '大专'}, {value: 135, name: '高中'}, {value: 1548, name: '初中'}, {value: 1548, name: '博士'}]}], tooltip: {trigger: 'item', formatter: pieTooltipFormatterFunc, backgroundColor: '#566374f0'}}" />
+      <v-chart :options="{backgroundColor: 'transparent', legend: {icon: 'circle', right: 75, top: 'middle', itemGap: 7, orient: 'vertical', textStyle: {color: '#4b9bbe', fontSize: 14}}, color: ['#6ad6ff', '#4b9bbe', '#367290', '#275570', '#1c4159', '#153349'], series: [{type: 'pie', left: -140, radius: ['40%', '60%'], label: {show: false}, labelLine: {show: false}, data: [{value: 335, name: '大学'}, {value: 310, name: '硕士'}, {value: 234, name: '大专'}, {value: 135, name: '高中'}, {value: 1548, name: '初中'}, {value: 1548, name: '博士'}]}], tooltip: {trigger: 'item', formatter: pieTooltipFormatterFunc, backgroundColor: '#566374f0'}}" />
     </data-loader>
     <data-loader v-if="craneStates.chartTabCurrent === craneStates.chartTabNavs[1]" :style="{width: '400px', height: '218px', overflow: 'scroll', position: 'absolute', top: '822px', left: '1490px'}">
-      <v-chart :options="{backgroundColor: 'transparent', legend: {icon: 'circle', right: 75, top: 'middle', itemGap: 7, orient: 'vertical', textStyle: {color: '#4b9bbe', fontSize: '14px'}}, color: ['#6ad6ff', '#4b9bbe', '#367290', '#275570', '#1c4159', '#153349'], series: [{type: 'pie', left: -140, radius: ['40%', '60%'], label: {show: false}, labelLine: {show: false}, data: [{value: 335, name: '大学'}, {value: 30, name: '硕士'}, {value: 834, name: '大专'}, {value: 635, name: '高中'}, {value: 1548, name: '初中'}, {value: 120, name: '博士'}]}], tooltip: {trigger: 'item', formatter: pieTooltipFormatterFunc, backgroundColor: '#566374f0'}}" />
+      <v-chart :options="{backgroundColor: 'transparent', legend: {icon: 'circle', right: 75, top: 'middle', itemGap: 7, orient: 'vertical', textStyle: {color: '#4b9bbe', fontSize: 14}}, color: ['#6ad6ff', '#4b9bbe', '#367290', '#275570', '#1c4159', '#153349'], series: [{type: 'pie', left: -140, radius: ['40%', '60%'], label: {show: false}, labelLine: {show: false}, data: [{value: 335, name: '大学'}, {value: 30, name: '硕士'}, {value: 834, name: '大专'}, {value: 635, name: '高中'}, {value: 1548, name: '初中'}, {value: 120, name: '博士'}]}], tooltip: {trigger: 'item', formatter: pieTooltipFormatterFunc, backgroundColor: '#566374f0'}}" />
     </data-loader>
   </div>
 </template>
@@ -190,7 +190,6 @@ export const supply = {
       return `${params[0].name}<br/><span style="display:inline-block;margin-right:5px;border-radius:10px;width:10px;height:10px;background-color: #6ad6ff;"></span>平均薪酬：${params[0].data}元`
     },
     demandTooltipFormatterFunc(params) {
-      console.log(params)
       return `${params[0].name}<br/>${params[0].marker}人才供给：${params[0].data}人</br>${params[1].marker}岗位需求：${params[1].data}人`
     },
     pieTooltipFormatterFunc(params) {

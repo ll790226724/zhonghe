@@ -47,12 +47,12 @@ module.exports = [
             $legend: {
               icon: 'circle',
               $right: 80,
-              $top: 50,
-              $itemGap: 4,
+              top: 'middle',
+              $itemGap: 7,
               orient: 'vertical',
               $textStyle: {
                 color: '#4b9bbe',
-                fontSize: 14
+                $fontSize: 14
               }
             },
             $color: "['#6ad6ff', '#4b9bbe', '#367290', '#275570', '#1c4159', '#153349']",

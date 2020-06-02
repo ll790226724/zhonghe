@@ -57,10 +57,10 @@ module.exports = [
             $legend: {
               icon: 'circle',
               $right: 10,
-              $itemGap: 4,
+              $itemGap: 7,
               $textStyle: {
                 color: '#4b9bbe',
-                fontSize: 14
+                $fontSize: 14
               }
             },
             $xAxis: {

@@ -64,7 +64,7 @@ module.exports = [
               orient: 'vertical',
               $textStyle: {
                 color: '#4b9bbe',
-                fontSize: '14px'
+                $fontSize: 14
               }
             },
             $color: "['#6ad6ff', '#4b9bbe', '#367290', '#275570', '#1c4159', '#153349']",
@@ -104,7 +104,7 @@ module.exports = [
               orient: 'vertical',
               $textStyle: {
                 color: '#4b9bbe',
-                fontSize: '14px'
+                $fontSize: 14
               }
             },
             $color: "['#6ad6ff', '#4b9bbe', '#367290', '#275570', '#1c4159', '#153349']",

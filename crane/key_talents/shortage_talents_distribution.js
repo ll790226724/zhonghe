@@ -52,8 +52,8 @@ module.exports = [
             $legend: {
               icon: 'circle',
               $right: 80,
-              $top: 50,
-              $itemGap: 4,
+              top: 'middle',
+              $itemGap: 7,
               orient: 'vertical',
               $textStyle: {
                 color: '#4b9bbe',
