@@ -1,6 +1,7 @@
 const map = require('./map')
 const table = require('./table')
 const talentsIndicatorsSummary = require('./talents_indicators_summary')
+const radar = require('./radar')
 
 module.exports = {
   route: {
@@ -88,6 +89,7 @@ module.exports = {
       },
     },
     table,
-    ...talentsIndicatorsSummary
+    ...talentsIndicatorsSummary,
+    radar
   ]
 }
