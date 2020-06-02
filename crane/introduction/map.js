@@ -9,6 +9,7 @@ module.exports = {
   },
   children: [
     {
+      id: 'map',
       component: 'v-chart',
       props: {
         $options: {

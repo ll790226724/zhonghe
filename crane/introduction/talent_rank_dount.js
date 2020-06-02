@@ -41,6 +41,11 @@ module.exports = {
             },
             $data: "[{name:'学术型人才', value: 66, itemStyle: {color: '#6ad6ff'}}, {name:'工程型人才', value: 55, itemStyle: {color: '#4b9bbe'}}, {name:'技术型人才', value: 44, itemStyle: {color: '#367290'}}, {name:'初级人才', value: 33, itemStyle: {color: '#275570'}}, {name:'中级人才', value: 22, itemStyle: {color: '#1c4159'}}, {name:'高级人才', value: 11, itemStyle: {color: '#153349'}}]"
           },
+          $tooltip: {
+            trigger: 'item',
+            $formatter: "pieTooltipFormatterFunc",
+            backgroundColor: '#566374f0',
+          }
         },
       }
     }

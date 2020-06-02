@@ -2,7 +2,7 @@
 module.exports = {
   id: 'activity-number-bar',
   component: '@byzanteam/vis-components/data-loader',
-  position: [30, 783],
+  position: [30, 308],
   exports: {
     results: 'results',
   },
@@ -72,6 +72,14 @@ module.exports = {
             },
             $data: "[120, 200, 150, 80, 70, 110, 130]"
           },
+          $tooltip: {
+            trigger: 'axis',
+            $axisPointer: {
+              type: 'shadow',
+            },
+            $formatter: "activityTooltipFormatterFunc",
+            backgroundColor: '#566374f0',
+          }
         },
       },
     },

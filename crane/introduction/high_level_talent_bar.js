@@ -2,7 +2,7 @@
 module.exports = {
   id: 'high-level-talent-bar',
   component: '@byzanteam/vis-components/data-loader',
-  position: [30, 308],
+  position: [30, 783],
   exports: {
     results: 'results',
   },
@@ -72,6 +72,14 @@ module.exports = {
             },
             $data: "[120, 200, 150, 80, 70, 110, 130]"
           },
+          $tooltip: {
+            trigger: 'axis',
+            $axisPointer: {
+              type: 'shadow',
+            },
+            $formatter: "tooltipFormatterFunc",
+            backgroundColor: '#566374f0',
+          }
         },
       },
     },
