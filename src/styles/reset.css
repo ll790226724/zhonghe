@@ -42,6 +42,7 @@
   margin-top: 8.8px !important;
   border: 1px solid #6ad6ff1f !important;
   border-radius: 4px;
+  width: auto !important;
 }
 
 .select-popover .popover__content .popover__body {
