@@ -58,17 +58,17 @@ module.exports = [
             backgroundColor: 'transparent',
             $legend: {
               icon: 'circle',
-              $right: 80,
-              $top: 50,
-              $itemGap: 4,
+              $right: 75,
+              top: 'middle',
+              $itemGap: 7,
               orient: 'vertical',
               $textStyle: {
                 color: '#4b9bbe',
-                fontSize: 14
+                fontSize: '14px'
               }
             },
             $color: "['#6ad6ff', '#4b9bbe', '#367290', '#275570', '#1c4159', '#153349']",
-            $series: "[{type: 'pie', left: -120, radius: ['40%', '60%'], label: {show: false}, labelLine: {show: false}, data: [{value: 335, name: '大学'}, {value: 310, name: '硕士'}, {value: 234, name: '大专'}, {value: 135, name: '高中'}, {value: 1548, name: '初中'}, {value: 1548, name: '博士'}]}]",
+            $series: "[{type: 'pie', left: -140, radius: ['40%', '60%'], label: {show: false}, labelLine: {show: false}, data: [{value: 335, name: '大学'}, {value: 310, name: '硕士'}, {value: 234, name: '大专'}, {value: 135, name: '高中'}, {value: 1548, name: '初中'}, {value: 1548, name: '博士'}]}]",
             $tooltip: {
               trigger: 'item',
               $formatter: "pieTooltipFormatterFunc",
@@ -98,17 +98,17 @@ module.exports = [
             backgroundColor: 'transparent',
             $legend: {
               icon: 'circle',
-              $right: 80,
-              $top: 50,
-              $itemGap: 4,
+              $right: 75,
+              top: 'middle',
+              $itemGap: 7,
               orient: 'vertical',
               $textStyle: {
                 color: '#4b9bbe',
-                fontSize: 14
+                fontSize: '14px'
               }
             },
             $color: "['#6ad6ff', '#4b9bbe', '#367290', '#275570', '#1c4159', '#153349']",
-            $series: "[{type: 'pie', left: -120, radius: ['40%', '60%'], label: {show: false}, labelLine: {show: false}, data: [{value: 335, name: '大学'}, {value: 30, name: '硕士'}, {value: 834, name: '大专'}, {value: 635, name: '高中'}, {value: 1548, name: '初中'}, {value: 120, name: '博士'}]}]",
+            $series: "[{type: 'pie', left: -140, radius: ['40%', '60%'], label: {show: false}, labelLine: {show: false}, data: [{value: 335, name: '大学'}, {value: 30, name: '硕士'}, {value: 834, name: '大专'}, {value: 635, name: '高中'}, {value: 1548, name: '初中'}, {value: 120, name: '博士'}]}]",
             $tooltip: {
               trigger: 'item',
               $formatter: "pieTooltipFormatterFunc",

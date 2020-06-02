@@ -127,7 +127,7 @@
 }
 
 .tabs .tab-navs .tab-nav {
-  padding: 8px 0 10px;
+  padding: 8px 16px 10px;
 }
 
 .tabs .tab-nav::before {

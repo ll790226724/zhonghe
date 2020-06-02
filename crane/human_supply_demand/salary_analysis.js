@@ -98,6 +98,12 @@ module.exports = [
         component: 'v-chart',
         props: {
           $options: {
+            grid: {
+              $top: 10,
+              $left: 52,
+              $right: 10,
+              $bottom: 30
+            },
             backgroundColor: 'transparent',
             $tooltip: {
               trigger: 'axis',
@@ -131,6 +137,7 @@ module.exports = [
             $yAxis: {
               type: 'value',
               name: '元',
+              splitNumber: 4,
               $axisLine: {
                 $show: false
               },

@@ -44,6 +44,11 @@ module.exports = [
         component: 'v-chart',
         props: {
           $options: {
+            grid: {
+              $left: 52,
+              $right: -10,
+              $bottom: 30
+            },
             backgroundColor: 'transparent',
             $color: "['#6ad6ff', '#367390']",
             $tooltip: {
@@ -59,7 +64,7 @@ module.exports = [
             },
             $legend: {
               icon: 'circle',
-              $right: 10,
+              $right: 0,
               $itemGap: 4,
               $textStyle: {
                 color: '#4b9bbe',
