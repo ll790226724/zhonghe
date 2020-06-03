@@ -204,7 +204,7 @@
       </vis-table>
     </data-loader>
     <data-loader ref="force-value" v-slot="{ results: results }" :style="{position: 'absolute', top: '66px', left: '1614px'}">
-      <digital-roll ref="force-value-content" titlePosition="left" :content="{title: '竞争力指数', digital: 98.2}" :options="{separator: ','}" :titleStyle="{color: '#367391', fontSize: '16px', fontWeight: '400'}" :prefixStyle="{color: '#367391', fontSize: '16px', fontWeight: '400'}" :suffixStyle="{color: '#367391', fontSize: '16px', fontWeight: '400'}" :digitalStyle="{fontSize: '32px', color: '#6ad6ff', fontWeight: '400', fontFamily: 'Oswald-Regular', format: '11', letterSpacing: '2.4px'}" />
+      <digital-roll ref="force-value-content" titlePosition="left" :content="{title: '竞争力指数', digital: 98.2}" :options="{separator: ',', decimalPlaces: 1}" :titleStyle="{color: '#367391', fontSize: '16px', fontWeight: '400'}" :prefixStyle="{color: '#367391', fontSize: '16px', fontWeight: '400'}" :suffixStyle="{color: '#367391', fontSize: '16px', fontWeight: '400'}" :digitalStyle="{fontSize: '32px', color: '#6ad6ff', fontWeight: '400', fontFamily: 'Oswald-Regular', format: '11', letterSpacing: '2.4px'}" />
     </data-loader>
   </div>
 </template>

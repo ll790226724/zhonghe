@@ -26,6 +26,7 @@ module.exports = {
         },
         $options: {
           separator: ',',
+          $decimalPlaces: 1
         },
         ...normal_digital_style,
       }
