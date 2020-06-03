@@ -41,6 +41,11 @@ module.exports = [
         component: 'v-chart',
         props: {
           $options: {
+            $grid: {
+              top: '24%',
+              right: '5%',
+              bottom: '10%'
+            },
             backgroundColor: 'transparent',
             $color: "['#6ad6ff', '#367390']",
             $tooltip: {
@@ -93,7 +98,8 @@ module.exports = [
               },
               $splitLine: {
                 $show: false
-              }
+              },
+              $splitNumber: 4,
             },
             $series: "[{type: 'line', name: '人才供应', data: [200, 24, 238, 30, 50, 40], showSymbol: false, lineStyle: {width: 4}}]"
           }
