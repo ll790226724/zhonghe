@@ -120,9 +120,9 @@ import 'echarts/lib/chart/bar'
 import 'echarts/lib/component/tooltip'
 import 'echarts/lib/component/legend'
 import 'echarts/lib/component/visualMap'
-import Liuzhou from '../../public/static/fujian.json'
+import fujian from '../../public/static/fujian.json'
 
-Echarts.registerMap('Liuzhou', Liuzhou);
+Echarts.registerMap('fujian', fujian);
 
 import BuiltInMixin from '../mixins/built_in'
 import {
@@ -188,7 +188,7 @@ export const resources = {
           series: [
             {
               type: 'map',
-              mapType: 'Liuzhou',
+              mapType: 'fujian',
               data: [
                 {name: '鼓楼区', value: 4},
                 {name: '台江区', value: 15},
@@ -206,6 +206,7 @@ export const resources = {
               ],
               label: {
                 show: true,
+                 fontSize: 14,
                 color: 'white',
               },
               itemStyle: {

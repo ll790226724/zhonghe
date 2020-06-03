@@ -44,9 +44,10 @@ module.exports = {
         series: [
           {
             type: 'map',
-            mapType: 'Liuzhou',
+            mapType: 'fujian',
             label: {
-              show: true
+              show: true,
+              fontSize: 14,
             },
             data: [
               {name: '城中区', value: 4},

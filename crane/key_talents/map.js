@@ -48,7 +48,7 @@ module.exports = [
           $series: `[
             {
               type: 'map',
-              mapType: 'Liuzhou',
+              mapType: 'fujian',
               data: [
                 {name: '鼓楼区', value: 4},
                 {name: '台江区', value: 15},
@@ -66,6 +66,7 @@ module.exports = [
               ],
               label: {
                 show: true,
+                fontSize: 14,
                 color: 'white',
               },
               itemStyle: {
