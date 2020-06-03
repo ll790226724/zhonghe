@@ -30,7 +30,7 @@ module.exports = {
             name: '行业人才占比',
             type: 'pie',
             left: '-34%',
-            $radius: "['30%', '55%']",
+            $radius: "['24%', '42%']",
             $label: {
               $show: false,
             },

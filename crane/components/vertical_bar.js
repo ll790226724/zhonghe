@@ -24,9 +24,13 @@ module.exports = {
       props: {
         // 'v-if': 'results',
         $options: {
+          $grid: {
+            top: '12%',
+            right: '1%'
+          },
           $xAxis: {
             $axisLabel:{
-              $rotate: 0,
+              $rotate: -315,
               $fontSize: 12,
               $fontWeight: 400,
               color: '#367391'
@@ -37,6 +41,9 @@ module.exports = {
             $data: "['电子商务', '广告营销', '分类消息', '社交网络', '信息安全', '互联网金融', '企业服务', '互联网']"
           },
           $yAxis: {
+            $axisLine: {
+              show: false
+            },
             $axisLabel:{
               $rotate: 0,
               $fontSize: 12,
