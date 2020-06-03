@@ -14,7 +14,7 @@ module.exports = {
         $options: {
           $legend: {
             orient: 'vertical',
-            $bottom: 0,
+            $bottom: 100,
             icon: 'circle',
             $itemWidth: 8,
             $itemHeight: 8,
@@ -35,7 +35,7 @@ module.exports = {
           },
           $radar: {
             shape: 'circle',
-            center: ['50%', '50%'],
+            $center: "['50%', '20%']",
             radius: '50% ',
             $name: {
               $textStyle: {
