@@ -70,12 +70,13 @@ module.exports = [
           $content: {
             title: '岗位平均薪酬',
             $digital: 5200,
+            prefix: '￥',
           },
           $options: {
             separator: ',',
           },
           $style: {
-            width: '199px',
+            width: '210px',
             height: '39px'
           },
           ...small_digital_style,
