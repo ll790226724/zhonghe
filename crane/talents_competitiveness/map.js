@@ -115,7 +115,7 @@ module.exports = [
               type: 'scatter',
               coordinateSystem: 'geo',
               symbol: 'pin',
-              symbolSize: [28, 36],
+              symbolSize: [48, 54],
               label: {
                 normal: {
                   show: true,
