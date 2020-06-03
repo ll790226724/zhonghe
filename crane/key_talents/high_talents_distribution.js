@@ -46,6 +46,8 @@ module.exports = [
             backgroundColor: 'transparent',
             $legend: {
               icon: 'circle',
+              $itemWidth: 8,
+              $itemHeight: 8,
               $right: 80,
               top: 'middle',
               $itemGap: 7,

@@ -22,6 +22,8 @@ module.exports = {
             right: '8%',
             top: 'middle',
             icon: 'circle',
+            $itemWidth: 8,
+            $itemHeight: 8,
             $data: "['学术型人才', '工程型人才', '技术型人才', '初级人才', '中级人才', '高级人才']",
             $textStyle: {
               color: '#489bbe',

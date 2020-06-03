@@ -22,6 +22,8 @@ module.exports = {
             right: '8%',
             top: 'middle',
             icon: 'circle',
+            $itemWidth: 8,
+            $itemHeight: 8,
             $data: "['猎头', '熟人推荐', '主动接触搜寻', '政府政策', '人才落户', '其他']",
             $textStyle: {
               color: '#489bbe',

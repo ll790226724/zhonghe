@@ -16,6 +16,8 @@ module.exports = {
             orient: 'vertical',
             $bottom: 0,
             icon: 'circle',
+            $itemWidth: 8,
+            $itemHeight: 8,
             $textStyle: {
               color: '#4b9bbe',
               $fontSize: 14,
