@@ -296,6 +296,7 @@ export default talents_competitiveness
       }
     }
   }
+
 .ivu-tag {
   background: #6ad6ff05 !important;
   border: 1px solid #6ad6ff1f !important;
@@ -309,11 +310,26 @@ export default talents_competitiveness
     padding-top: 4px;
   }
 }
+
 .ivu-select-multiple .ivu-select-selection {
   padding:7px 24px 7px 12px !important;
   height: auto!important;
+  max-height: 88px;
+  overflow: scroll;
+}
+.ivu-select-multiple .ivu-select-item {
+  font-weight: 400 !important;
+}
+.ivu-select-multiple .ivu-select-item:hover {
+  font-weight: 500 !important;
+}
+.ivu-select-multiple .ivu-select-item-selected {
+  background-color: transparent !important;
 }
 
+.ivu-select-multiple .ivu-select-item-selected:after {
+  font-size: 36px !important;
+}
 
 :root .ivu-tag .ivu-icon-ios-close {
   font-size: 18px !important;
