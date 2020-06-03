@@ -1,7 +1,7 @@
 module.exports = [
   {
     component: '@byzanteam/vis-components/data-loader',
-    position: [929, 125],
+    position: [876, 125],
     children: [
       {
         id: 'departments-select',
@@ -10,6 +10,21 @@ module.exports = [
           $options: "[{label: '福州', uuid: '0'}, {label: '全国', uuid: '1'}, {label: '陕西省', uuid: '2'}, {label: '江苏省', uuid: '3'}, {label: '福建省', uuid: '4'}, {label: '浙江省', uuid: '5'},]",
           'v-model': 'craneStates.department',
           placeholder: '福州',
+        },
+      },
+    ],
+  },
+  {
+    component: '@byzanteam/vis-components/data-loader',
+    position: [979, 125],
+    children: [
+      {
+        id: 'departments-select',
+        component: '@byzanteam/vis-components/vis-select',
+        props: {
+          $options: "[{label: '龙泉驿区', uuid: '0'}, {label: '锦江区', uuid: '1'}, {label: '青羊区', uuid: '2'}, {label: '成华区', uuid: '3'}, {label: '双流区', uuid: '4'}, {label: '高新区', uuid: '5'},]",
+          'v-model': 'craneStates.department',
+          placeholder: '区县',
         },
       },
     ],

@@ -14,8 +14,11 @@
       </Select>
     </data-loader>
     <date-picker class="supply-datepicker" :style="{width: '380px', height: '50px', position: 'absolute', top: '116px', left: '40px'}" v-model="craneStates.year" type="year" placeholder="选择时间" />
-    <data-loader :style="{position: 'absolute', top: '125px', left: '929px'}">
+    <data-loader :style="{position: 'absolute', top: '125px', left: '876px'}">
       <vis-select ref="departments-select" :options="[{label: '福州', uuid: '0'}, {label: '全国', uuid: '1'}, {label: '陕西省', uuid: '2'}, {label: '江苏省', uuid: '3'}, {label: '福建省', uuid: '4'}, {label: '浙江省', uuid: '5'},]" v-model="craneStates.department" placeholder="福州" />
+    </data-loader>
+    <data-loader :style="{position: 'absolute', top: '125px', left: '979px'}">
+      <vis-select ref="departments-select" :options="[{label: '龙泉驿区', uuid: '0'}, {label: '锦江区', uuid: '1'}, {label: '青羊区', uuid: '2'}, {label: '成华区', uuid: '3'}, {label: '双流区', uuid: '4'}, {label: '高新区', uuid: '5'},]" v-model="craneStates.department" placeholder="区县" />
     </data-loader>
     <data-loader :style="{width: '1100px', height: '900px', position: 'absolute', top: '160px', left: '410px'}">
       <v-chart ref="map" :options="{backgroundColor: 'transparent', series: [{type: 'map', mapType: 'Liuzhou', label: {show: true, color: 'white'}, itemStyle: {areaColor: 'rgba(106, 214, 255, .1)', borderColor: '#6ad6ff', borderType: 'solid', borderWidth: 0.5}, emphasis: {label: {color: 'white',fontWeight: 600}, itemStyle: {areaColor: '#6ad6ff'}}}]}" />
@@ -62,7 +65,7 @@
       <digital-roll titlePosition="left" :content="{title: '岗位平均薪酬', digital: 5200, prefix: '￥'}" :options="{separator: ','}" :style="{width: '210px', height: '39px'}" :prefixStyle="{color: '#367391', fontSize: '16px', fontWeight: '400'}" :suffixStyle="{color: '#367391', fontSize: '16px', fontWeight: '400'}" :titleStyle="{color: '#367391', fontSize: '16px', fontWeight: '400'}" :digitalStyle="{fontSize: '32px', color: '#6ad6ff', fontWeight: '400', fontFamily: 'Oswald-Regular', format: '11', letterSpacing: '2.4px'}" />
     </data-loader>
     <data-loader ref="salary-count-line-chart" :style="{width: '400px', height: '200px', position: 'absolute', top: '846px', left: '30px'}">
-      <v-chart :options="{grid: {top: 30, left: 52, right: 10, bottom: 30}, backgroundColor: 'transparent', tooltip: {trigger: 'axis', axisPointer: {lineStyle: {color: '#ffffff', type: 'dotted'}}, formatter: salaryTooltipFormatterFunc, backgroundColor: '#566374f0'}, xAxis: {type: 'category', data: ['2015', '2016', '2017', '2018', '2019', '2020'], axisLine: {show: false}, axisTick: {show: false}, axisLabel: {color: '#367391', fontSize: 12, fontWeight: 400}, splitLine: {show: false}}, yAxis: {type: 'value', name: '元', splitNumber: '4', axisLine: {show: false}, axisTick: {show: false}, nameTextStyle: {color: '#367391', fontSize: 12, fontWeight: 400}, axisLabel: {color: '#367391', fontSize: 12, fontWeight: 400}, splitLine: {show: false}}, series: [{type: 'line', data: [3200, 2274, 2348, 3848, 5500, 4900], showSymbol: false, lineStyle: {color: '#6ad6ff', width: 4}}]}" />
+      <v-chart :options="{color: ['#6ad6ff'], grid: {top: 30, left: 52, right: 10, bottom: 30}, backgroundColor: 'transparent', tooltip: {trigger: 'axis', axisPointer: {lineStyle: {color: '#ffffff', type: 'dotted'}}, formatter: salaryTooltipFormatterFunc, backgroundColor: '#566374f0'}, xAxis: {type: 'category', data: ['2015', '2016', '2017', '2018', '2019', '2020'], axisLine: {show: false}, axisTick: {show: false}, axisLabel: {color: '#367391', fontSize: 12, fontWeight: 400}, splitLine: {show: false}}, yAxis: {type: 'value', name: '元', splitNumber: '4', axisLine: {show: false}, axisTick: {show: false}, nameTextStyle: {color: '#367391', fontSize: 12, fontWeight: 400}, axisLabel: {color: '#367391', fontSize: 12, fontWeight: 400}, splitLine: {show: false}}, series: [{type: 'line', data: [3200, 2274, 2348, 3848, 5500, 4900], showSymbol: false, lineStyle: {color: '#6ad6ff', width: 4}}]}" />
     </data-loader>
     <div ref="talent-index-icon" :style="{color: '#6ad6ff', fontSize: '14px', fontWeight: '400', textAlign: 'left', position: 'absolute', top: '49px', left: '1504px'}">
       >>
