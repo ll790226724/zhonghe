@@ -1,33 +1,4 @@
-module.exports = [
-  {
-    id: 'degree-analysis-icon',
-    component: 'div',
-    position: [40, 49],
-    props: {
-      $style: {
-        color: '#6ad6ff',
-        fontSize: '14px',
-        fontWeight: 400,
-        textAlign: 'left',
-      },
-    },
-    content: '>>',
-  },
-  {
-    id: 'degree-analysis-title',
-    component: 'div',
-    position: [74, 46],
-    props: {
-      $style: {
-        color: '#fff',
-        fontSize: '18px',
-        fontWeight: '600',
-        textAlign: 'left',
-        letterSpacing: '1px',
-      },
-    },
-    content: '省域人才指标汇总',
-  },
+module.exports =
   {
     component: 'iview/RadioGroup',
     position: [36, 92],
@@ -53,4 +24,4 @@ module.exports = [
       }
     ]
   }
-]
+

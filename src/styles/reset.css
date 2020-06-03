@@ -115,3 +115,6 @@ input::placeholder {
 .table {
   max-height: none !important;
 }
+.table.table--dark th{
+  line-height: 40px;
+}
