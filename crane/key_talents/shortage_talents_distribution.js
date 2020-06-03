@@ -51,15 +51,15 @@ module.exports = [
             },
             $legend: {
               icon: 'circle',
-              $itemWidth: 8,
-              $itemHeight: 8,
+              $itemWidth: 10,
+              $itemHeight: 10,
               $right: 80,
               top: 'middle',
-              $itemGap: 7,
+              $itemGap: 9,
               orient: 'vertical',
               $textStyle: {
                 color: '#4b9bbe',
-                fontSize: 14
+                fontSize: 12
               }
             },
             $color: "['#6ad6ff', '#4b9bbe', '#367290', '#275570', '#1c4159', '#153349']",

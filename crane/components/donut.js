@@ -20,12 +20,13 @@ module.exports = {
             right: '8%',
             top: 'middle',
             icon: 'circle',
-            $itemWidth: 8,
-            $itemHeight: 8,
+            $itemGap: 9,
+            $itemWidth: 10,
+            $itemHeight: 10,
             $data: "['数据服务', '智能硬件', '人力资源服务', '计算机软件', '游戏', '其他']",
             $textStyle: {
               color: '#489bbe',
-              $fontSize: 14,
+              $fontSize: 12,
             },
           },
           $series: {
