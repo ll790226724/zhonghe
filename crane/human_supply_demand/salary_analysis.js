@@ -99,7 +99,7 @@ module.exports = [
         props: {
           $options: {
             grid: {
-              $top: 10,
+              $top: 30,
               $left: 52,
               $right: 10,
               $bottom: 30
