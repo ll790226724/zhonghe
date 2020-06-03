@@ -20,56 +20,68 @@ module.exports = {
   children: [
     {
       id: 'demand-vertical-bar-content',
-      component: '@byzanteam/graphite/vertical-bar',
+      component: 'v-chart',
       props: {
         // 'v-if': 'results',
-        labelKey: 'label',
-        valueKey: '数量(人)',
-        // $data: "results.map((item)=>({label: item[0], '数量': item[1]}))",
-        $data: "[{label: '电子商务', '数量(人)': 78}, {label: '广告营销', '数量(人)': 123}, {label: '分类消息', '数量(人)': 198}, {label: '社交网络', '数量(人)': 27}, {label: '信息安全', '数量(人)': 267},{label: '互联网金融', '数量(人)': 87}, {label: '企业服务', '数量(人)': 67}, {label: '互联网', '数量(人)': 27},]",
-        $style: {
-          background: 'transparent'
-        },
-        // $labels: [{
-        //   fill: '#FFFFFF',
-        //   fontWeight: '500'
-        // }],
-        $mainAxis: {
-          $labelStyle: {
-            $rotate: 315,
-            $size: 12,
-            fill: '#367391',
+        $options: {
+          $xAxis: {
+            $axisLabel:{
+              $rotate: 0,
+              $fontSize: 12,
+              $fontWeight: 400,
+              color: '#367391'
+            },
+            $axisLine:{
+              $show: false
+            },
+            $data: "['电子商务', '广告营销', '分类消息', '社交网络', '信息安全', '互联网金融', '企业服务', '互联网']"
           },
-          $lineStyle: {
-            stroke: 'transparent'
+          $yAxis: {
+            $axisLabel:{
+              $rotate: 0,
+              $fontSize: 12,
+              $fontWeight: 400,
+              color: '#367391'
+            },
+            $splitLine: {
+              $show: false
+            },
+            $splitNumber: 5,
+            name: '人',
+            $nameTextStyle: {
+              $fontSize: 12,
+              $fontWeight: 400,
+              color: '#367391'
+            },
           },
-          $range: {
-            count: 5
+          $series: {
+            type: 'bar',
+            $barWidth: 5,
+            barCategoryGap: '10%',
+            itemStyle: {
+              $normal: {
+                $color: `new Echarts.graphic.LinearGradient(0, 1, 0, 0, [
+                  {
+                    offset: 0,
+                    color: '#117ea8'
+                  },
+                  {
+                    offset: 1,
+                    color: '#6ad6ff'
+                  }], false),`
+              },
+            },
+            $data: "[120, 200, 150, 80, 70, 110, 130, 102]"
           },
-        },
-        $crossAxis: {
-          $labelStyle: {
-            $rotate: 0,
-            $size: 12,
-            fill: '#367391',
-          },
-          $lineStyle: {
-            stroke: 'transparent'
-          },
-          $range: {
-            $count: 5
-          },
-          $unit: {
-            content: '人',
-            fill: '#367391'
+          $tooltip: {
+            trigger: 'axis',
+            $axisPointer: {
+              type: 'shadow',
+            },
+            $formatter: "demandTooltipFormatterFunc",
+            backgroundColor: '#566374f0',
           }
         },
-        $rotate: 180,
-        $series: "[['#6ad6ff', '#117ea8']]",
-        $gap: {
-          $outer: 5,
-        },
-        ...chartTooltipOptions
       },
     },
   ],

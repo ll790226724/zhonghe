@@ -99,7 +99,15 @@
       <ranking ref="department-ranking-content" :data="[{label: '本科', amount: 78.16}, {label: '硕士', amount: 23.21}, {label: '博士', amount: 18.01}, {label: '高中生', amount: 68.23}, {label: '大专', amount: 47.67}, {label: '初中', amount: 45.11},]" :keys="{label: 'label', value: 'amount', tooltip: 'name'}" :labelStyle="{color: '#4b9bbe', fontSize: '16px', lineHeight: '24px'}" :valueStyle="{color: '#6ad6ff', fontSize: '16px', fontFamily: 'Oswald-Regular', lineHeight: '1.5', fontWeight: '400'}" :lineStyle="{background: '#ffffff0D', lineColor: ['#0885b5', '#6ad6ff'], height: '5px', borderRadius: '2.5px'}" :tooltip="{text: {align: 'center', baseline: 'middle', fill: '#FFFFFF', size: 14, weight: 400}, notation: {fill: '#367391', name: 'circle-small', size: 14}}" :tooltipOptions="{background: 'rgba(60, 71, 89, 0.9)', text: {align: 'center', baseline: 'middle', fill: '#FFFFFF', size: 14, weight: 400}, title: {align: 'center', baseline: 'middle', fill: '#FFFFFF', size: 14, weight: 400}}" />
     </data-loader>
     <data-loader ref="demand-vertical-bar" v-slot="{ results: results }" :style="{width: '400px', height: '270px', position: 'absolute', top: '762px', left: '1490px'}">
-      <vertical-bar ref="demand-vertical-bar-content" labelKey="label" valueKey="数量(人)" :data="[{label: '电子商务', '数量(人)': 78}, {label: '广告营销', '数量(人)': 123}, {label: '分类消息', '数量(人)': 198}, {label: '社交网络', '数量(人)': 27}, {label: '信息安全', '数量(人)': 267},{label: '互联网金融', '数量(人)': 87}, {label: '企业服务', '数量(人)': 67}, {label: '互联网', '数量(人)': 27},]" :style="{background: 'transparent'}" :mainAxis="{labelStyle: {rotate: 315, size: 12, fill: '#367391'}, lineStyle: {stroke: 'transparent'}, range: {count: '5'}}" :crossAxis="{labelStyle: {rotate: 0, size: 12, fill: '#367391'}, lineStyle: {stroke: 'transparent'}, range: {count: 5}, unit: {content: '人', fill: '#367391'}}" :rotate="180" :series="[['#6ad6ff', '#117ea8']]" :gap="{outer: 5}" :tooltip="{text: {align: 'center', baseline: 'middle', fill: '#FFFFFF', size: 14, weight: 400}, notation: {fill: '#367391', name: 'circle-small', size: 14}}" :tooltipOptions="{background: 'rgba(60, 71, 89, 0.9)', text: {align: 'center', baseline: 'middle', fill: '#FFFFFF', size: 14, weight: 400}, title: {align: 'center', baseline: 'middle', fill: '#FFFFFF', size: 14, weight: 400}}" />
+      <v-chart ref="demand-vertical-bar-content" :options="{xAxis: {axisLabel: {rotate: 0, fontSize: 12, fontWeight: 400, color: '#367391'}, axisLine: {show: false}, data: ['电子商务', '广告营销', '分类消息', '社交网络', '信息安全', '互联网金融', '企业服务', '互联网']}, yAxis: {axisLabel: {rotate: 0, fontSize: 12, fontWeight: 400, color: '#367391'}, splitLine: {show: false}, splitNumber: 5, name: '人', nameTextStyle: {fontSize: 12, fontWeight: 400, color: '#367391'}}, series: {type: 'bar', barWidth: 5, barCategoryGap: '10%', itemStyle: {normal: {color: new Echarts.graphic.LinearGradient(0, 1, 0, 0, [
+                      {
+                        offset: 0,
+                        color: '#117ea8'
+                      },
+                      {
+                        offset: 1,
+                        color: '#6ad6ff'
+                      }], false),}}, data: [120, 200, 150, 80, 70, 110, 130, 102]}, tooltip: {trigger: 'axis', axisPointer: {type: 'shadow'}, formatter: demandTooltipFormatterFunc, backgroundColor: '#566374f0'}}" />
     </data-loader>
   </div>
 </template>
@@ -108,6 +116,7 @@
 import Echarts from 'vue-echarts'
 import 'echarts/lib/component/geo'
 import 'echarts/lib/chart/map'
+import 'echarts/lib/chart/bar'
 import 'echarts/lib/component/tooltip'
 import 'echarts/lib/component/legend'
 import 'echarts/lib/component/visualMap'
@@ -144,6 +153,7 @@ export const resources = {
 
   data () {
     return {
+      Echarts: Echarts,
       craneStates: {
         options: {
           backgroundColor: 'transparent',
@@ -220,11 +230,8 @@ export const resources = {
   },
 
   methods: {
-    shortageTooltipFormatterFunc(params) {
-      return `${params[0].name}<br/><span style="display:inline-block;margin-right:5px;border-radius:10px;width:10px;height:10px;background-color: #6ad6ff;"></span>紧缺人才：${params[0].data}人`
-    },
     demandTooltipFormatterFunc(params) {
-      return `${params[0].name}<br/>${params[0].marker}人才供应：${params[0].data}人</br>${params[1].marker}人才需求：${params[1].data}人`
+      return `${params[0].name}<br/><span style="display:inline-block;margin-right:5px;border-radius:10px;width:10px;height:10px;background-color: #6ad6ff;"></span>紧缺人才：${params[0].data}人`
     },
     pieTooltipFormatterFunc(params) {
       return `${params.marker}${params.name}：${params.percent}%`
