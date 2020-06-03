@@ -64,8 +64,10 @@ module.exports = [
             },
             $legend: {
               icon: 'circle',
+              $itemWidth: 8,
+              $itemHeight: 8,
               $right: 0,
-              $itemGap: 4,
+              $itemGap: 14,
               $textStyle: {
                 color: '#4b9bbe',
                 fontSize: 14
