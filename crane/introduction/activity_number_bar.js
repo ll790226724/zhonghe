@@ -42,6 +42,12 @@ module.exports = {
               $fontWeight: 400,
               color: '#367391'
             },
+            $axisTick: {
+              $show: false
+            },
+            $axisLine:{
+              $show: false
+            },
             $splitLine: {
               $show: false
             },
@@ -59,6 +65,7 @@ module.exports = {
             barCategoryGap: '10%',
             itemStyle: {
               $normal: {
+                $barBorderRadius: 5,
                 $color: `new Echarts.graphic.LinearGradient(0, 1, 0, 0, [
                   {
                     offset: 0,
