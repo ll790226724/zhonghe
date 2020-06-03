@@ -156,7 +156,7 @@ module.exports = {
           letterSpacing: '1px',
         },
       },
-      content: '十大指标汇总',
+      content: '10大指标汇总',
     },
     {
       id: 'ten-number-icon',
@@ -190,7 +190,7 @@ module.exports = {
     {
       id: 'area-select',
       component: 'iview/Select',
-      position: [1500, 277],
+      position: [1500, 299],
       props: {
         placeholder: '选择省市',
         class: 'map-select',

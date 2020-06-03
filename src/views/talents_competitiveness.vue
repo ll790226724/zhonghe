@@ -183,13 +183,13 @@
       >>
     </div>
     <div ref="ten-number" :style="{color: '#fff', fontSize: '18px', fontWeight: '600', textAlign: 'left', letterSpacing: '1px', position: 'absolute', top: '216px', left: '1536px'}">
-      十大指标汇总
+      10大指标汇总
     </div>
     <div ref="ten-number-icon" :style="{color: '#6ad6ff', fontSize: '14px', fontWeight: '400', textAlign: 'left', position: 'absolute', top: '219px', left: '1512px'}">
       >>
     </div>
     <div ref="force-circle" :style="{height: '10px', width: '10px', borderRadius: '10px', borderWidth: '1px', borderColor: '#6ad6ff', borderStyle: 'solid', position: 'absolute', top: '89px', left: '1588px'}" />
-    <Select ref="area-select" multiple placeholder="选择省市" class="map-select" :style="{width: '382px', position: 'absolute', top: '277px', left: '1500px'}" v-model="craneStates.currentProvince">
+    <Select ref="area-select" multiple placeholder="选择省市" class="map-select" :style="{width: '382px', position: 'absolute', top: '299px', left: '1500px'}" v-model="craneStates.currentProvince">
       <Option v-for="(item, key) in craneStates.types" :key="key" :value="item.index" :label="item.name">
         {{item.name}}
       </Option>
