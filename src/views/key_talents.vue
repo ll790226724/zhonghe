@@ -86,7 +86,7 @@
       高层次人才专业分布
     </div>
     <data-loader :style="{width: '400px', height: '218px', overflow: 'scroll', position: 'absolute', top: '841px', left: '30px'}">
-      <v-chart :options="{backgroundColor: 'transparent', tooltip: {trigger: 'item', formatter: pieTooltipFormatterFunc, backgroundColor: '#566374f0'}, legend: {icon: 'circle', itemWidth: 10, itemHeight: 10, right: 80, top: 'middle', itemGap: 9, orient: 'vertical', textStyle: {color: '#4b9bbe', fontSize: 12}, inactiveColor: '#1C4159'}, color: ['#6ad6ff', '#4b9bbe', '#367290', '#275570', '#1c4159', '#153349'], series: [{type: 'pie', left: -120, radius: ['35%', '60%'], label: {show: false}, labelLine: {show: false}, data: [{value: 1335, name: '电子信息'}, {value: 30, name: '机械电气'}, {value: 934, name: '精细化工'}, {value: 735, name: '生物医药'}, {value: 548, name: '劳动经济'}, {value: 220, name: '经济计划'}]}]}" />
+      <v-chart :options="{backgroundColor: 'transparent', tooltip: {trigger: 'item', formatter: pieTooltipFormatterFunc, backgroundColor: '#566374f0'}, legend: {icon: 'circle', itemWidth: 10, itemHeight: 10, right: 80, top: 'middle', itemGap: 9, orient: 'vertical', textStyle: {color: '#4b9bbe', fontSize: 12}, inactiveColor: '#1C4159'}, color: ['#6ad6ff', '#4b9bbe', '#367290', '#275570', '#1c4159', '#153349'], series: [{type: 'pie', left: -120, radius: ['35%', '62%'], label: {show: false}, labelLine: {show: false}, data: [{value: 1335, name: '电子信息'}, {value: 30, name: '机械电气'}, {value: 934, name: '精细化工'}, {value: 735, name: '生物医药'}, {value: 548, name: '劳动经济'}, {value: 220, name: '经济计划'}]}]}" />
     </data-loader>
     <div ref="degree-analysis-icon" :style="{color: '#6ad6ff', fontSize: '14px', fontWeight: '400', textAlign: 'left', position: 'absolute', top: '805px', left: '1504px'}">
       >>
@@ -95,7 +95,7 @@
       紧缺人才专业分布
     </div>
     <data-loader :style="{width: '400px', height: '218px', overflow: 'scroll', position: 'absolute', top: '841px', left: '1490px'}">
-      <v-chart :options="{backgroundColor: 'transparent', tooltip: {trigger: 'item', formatter: pieTooltipFormatterFunc, backgroundColor: '#566374f0'}, legend: {icon: 'circle', itemWidth: 10, itemHeight: 10, right: 80, top: 'middle', itemGap: 9, orient: 'vertical', textStyle: {color: '#4b9bbe', fontSize: '12'}, inactiveColor: '#1C4159'}, color: ['#6ad6ff', '#4b9bbe', '#367290', '#275570', '#1c4159', '#153349'], series: [{type: 'pie', left: -120, radius: ['35%', '60%'], label: {show: false}, labelLine: {show: false}, data: [{value: 1335, name: '电子信息'}, {value: 930, name: '机械电气'}, {value: 734, name: '精细化工'}, {value: 635, name: '生物医药'}, {value: 548, name: '劳动经济'}, {value: 320, name: '经济计划'}]}]}" />
+      <v-chart :options="{backgroundColor: 'transparent', tooltip: {trigger: 'item', formatter: pieTooltipFormatterFunc, backgroundColor: '#566374f0'}, legend: {icon: 'circle', itemWidth: 10, itemHeight: 10, right: 80, top: 'middle', itemGap: 9, orient: 'vertical', textStyle: {color: '#4b9bbe', fontSize: '12'}, inactiveColor: '#1C4159'}, color: ['#6ad6ff', '#4b9bbe', '#367290', '#275570', '#1c4159', '#153349'], series: [{type: 'pie', left: -120, radius: ['35%', '62%'], label: {show: false}, labelLine: {show: false}, data: [{value: 1335, name: '电子信息'}, {value: 930, name: '机械电气'}, {value: 734, name: '精细化工'}, {value: 635, name: '生物医药'}, {value: 548, name: '劳动经济'}, {value: 320, name: '经济计划'}]}]}" />
     </data-loader>
     <div :style="{color: '#6ad6ff', fontSize: '14px', fontWeight: '400', textAlign: 'left', position: 'absolute', top: '459px', left: '1504px'}">
       >>

@@ -35,7 +35,7 @@ module.exports = {
             name: '人才引进渠道',
             type: 'pie',
             left: '-34%',
-            $radius: "['0%', '55%']",
+            $radius: "['0%', '59%']",
             $label: {
               $show: false,
             },

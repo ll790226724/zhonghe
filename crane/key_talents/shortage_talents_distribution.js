@@ -64,7 +64,7 @@ module.exports = [
               inactiveColor: '#1C4159',
             },
             $color: "['#6ad6ff', '#4b9bbe', '#367290', '#275570', '#1c4159', '#153349']",
-            $series: "[{type: 'pie', left: -120, radius: ['35%', '60%'], label: {show: false}, labelLine: {show: false}, data: [{value: 1335, name: '电子信息'}, {value: 930, name: '机械电气'}, {value: 734, name: '精细化工'}, {value: 635, name: '生物医药'}, {value: 548, name: '劳动经济'}, {value: 320, name: '经济计划'}]}]"
+            $series: "[{type: 'pie', left: -120, radius: ['35%', '62%'], label: {show: false}, labelLine: {show: false}, data: [{value: 1335, name: '电子信息'}, {value: 930, name: '机械电气'}, {value: 734, name: '精细化工'}, {value: 635, name: '生物医药'}, {value: 548, name: '劳动经济'}, {value: 320, name: '经济计划'}]}]"
           }
         }
       }
