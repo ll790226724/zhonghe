@@ -100,6 +100,18 @@ module.exports = {
         src: '/static/images/Box-Bg.png'
       },
     },
+    {
+      id: 'right-box-bg',
+      component: 'img',
+      position: [1471, 10],
+      props: {
+        $style: {
+          width: '440px',
+          height: '1059px',
+        },
+        src: '/static/images/Box-Bg.png'
+      },
+    },
     jobSelect,
     datePicker,
     ...map,

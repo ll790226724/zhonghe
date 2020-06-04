@@ -149,12 +149,15 @@ module.exports = [
               $nameTextStyle: {
                 color: '#367391',
                 $fontSize: 12,
-                $fontWeight: 400
+                $fontWeight: 400,
+                align: 'center',
+                $padding: "[0, 0, 0, 3]"
               },
               $axisLabel: {
                 color: '#367391',
                 $fontSize: 12,
-                $fontWeight: 400
+                $fontWeight: 400,
+                align: 'center'
               },
               $splitLine: {
                 $show: false

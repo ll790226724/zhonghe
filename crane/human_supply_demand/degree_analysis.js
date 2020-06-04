@@ -70,7 +70,7 @@ module.exports = [
               }
             },
             $color: "['#6ad6ff', '#4b9bbe', '#367290', '#275570', '#1c4159', '#153349']",
-            $series: "[{type: 'pie', left: -140, radius: ['35%', '62%'], label: {show: false}, labelLine: {show: false}, data: [{value: 335, name: '大学'}, {value: 310, name: '硕士'}, {value: 234, name: '大专'}, {value: 135, name: '高中'}, {value: 1548, name: '初中'}, {value: 1548, name: '博士'}]}]",
+            $series: "[{type: 'pie', left: -140, radius: ['35%', '62%'], label: {show: false}, labelLine: {show: false}, data: [{value: 1335, name: '大学'}, {value: 900, name: '硕士'}, {value: 700, name: '大专'}, {value: 500, name: '高中'}, {value: 300, name: '初中'}, {value: 120, name: '博士'}]}]",
             $tooltip: {
               trigger: 'item',
               $formatter: "pieTooltipFormatterFunc",
@@ -112,7 +112,7 @@ module.exports = [
               }
             },
             $color: "['#6ad6ff', '#4b9bbe', '#367290', '#275570', '#1c4159', '#153349']",
-            $series: "[{type: 'pie', left: -140, radius: ['35%', '62%'], label: {show: false}, labelLine: {show: false}, data: [{value: 335, name: '大学'}, {value: 30, name: '硕士'}, {value: 834, name: '大专'}, {value: 635, name: '高中'}, {value: 1548, name: '初中'}, {value: 120, name: '博士'}]}]",
+            $series: "[{type: 'pie', left: -140, radius: ['35%', '62%'], label: {show: false}, labelLine: {show: false}, data: [{value: 1335, name: '大学'}, {value: 900, name: '硕士'}, {value: 700, name: '大专'}, {value: 500, name: '高中'}, {value: 300, name: '初中'}, {value: 120, name: '博士'}]}]",
             $tooltip: {
               trigger: 'item',
               $formatter: "pieTooltipFormatterFunc",
