@@ -28,6 +28,7 @@ module.exports = {
               color: '#489bbe',
               $fontSize: 12,
             },
+            inactiveColor: '#1C4159',
           },
           $series: {
             name: '行业人才占比',

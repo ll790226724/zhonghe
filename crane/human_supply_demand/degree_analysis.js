@@ -67,7 +67,8 @@ module.exports = [
               $textStyle: {
                 color: '#4b9bbe',
                 $fontSize: 12
-              }
+              },
+              inactiveColor: '#1C4159',
             },
             $color: "['#6ad6ff', '#4b9bbe', '#367290', '#275570', '#1c4159', '#153349']",
             $series: "[{type: 'pie', left: -140, radius: ['35%', '62%'], label: {show: false}, labelLine: {show: false}, data: [{value: 1335, name: '大学'}, {value: 900, name: '硕士'}, {value: 700, name: '大专'}, {value: 500, name: '高中'}, {value: 300, name: '初中'}, {value: 120, name: '博士'}]}]",
@@ -109,7 +110,8 @@ module.exports = [
               $textStyle: {
                 color: '#4b9bbe',
                 $fontSize: 12
-              }
+              },
+              inactiveColor: '#1C4159',
             },
             $color: "['#6ad6ff', '#4b9bbe', '#367290', '#275570', '#1c4159', '#153349']",
             $series: "[{type: 'pie', left: -140, radius: ['35%', '62%'], label: {show: false}, labelLine: {show: false}, data: [{value: 1335, name: '大学'}, {value: 900, name: '硕士'}, {value: 700, name: '大专'}, {value: 500, name: '高中'}, {value: 300, name: '初中'}, {value: 120, name: '博士'}]}]",

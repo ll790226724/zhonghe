@@ -29,6 +29,7 @@ module.exports = {
               color: '#489bbe',
               $fontSize: 14,
             },
+            inactiveColor: '#1C4159',
           },
           $series: {
             name: '人才引进渠道',

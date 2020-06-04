@@ -71,7 +71,8 @@ module.exports = [
               $textStyle: {
                 color: '#4b9bbe',
                 fontSize: 14
-              }
+              },
+              inactiveColor: '#1C4159',
             },
             $xAxis: {
               type: 'category',
