@@ -22,7 +22,7 @@
       <vis-select ref="departments-select" :options="[{label: '龙泉驿区', uuid: '0'}, {label: '锦江区', uuid: '1'}, {label: '青羊区', uuid: '2'}, {label: '成华区', uuid: '3'}, {label: '双流区', uuid: '4'}, {label: '高新区', uuid: '5'},]" v-model="craneStates.department" placeholder="区县" />
     </data-loader>
     <data-loader :style="{width: '1100px', height: '900px', position: 'absolute', top: '160px', left: '410px'}">
-      <v-chart ref="map" :options="{backgroundColor: 'transparent', series: [{type: 'map', mapType: 'fujian', label: {show: true, fontSize: 14, color: 'white'}, itemStyle: {areaColor: 'rgba(106, 214, 255, .05)', borderColor: '#6ad6ff', borderType: 'solid', borderWidth: 0.5}, emphasis: {label: {color: 'white',fontWeight: 600}, itemStyle: {areaColor: '#6ad6ff'}}}]}" />
+      <v-chart ref="map" :options="{backgroundColor: 'transparent', series: [{type: 'map', mapType: 'fujian', label: {show: true, fontSize: 14, color: 'white'}, itemStyle: {areaColor: 'rgba(106, 214, 255, .05)', borderColor: '#6ad6ff', borderType: 'solid', borderWidth: 0.5}, emphasis: {label: {color: 'white',fontWeight: 600}, itemStyle: {areaColor: '#4B9BBE'}}}]}" />
     </data-loader>
     <data-loader ref="supply-demand-count" :style="{width: '400px', height: '50px', backgroundColor: 'rgba(106, 214, 255, .02)', borderRadius: '5px', position: 'absolute', top: '196px', left: '30px'}" />
     <div ref="value-circle" :style="{height: '10px', width: '10px', borderRadius: '10px', borderWidth: '1px', borderColor: '#6ad6ff', borderStyle: 'solid', position: 'absolute', top: '225px', left: '100px'}" />

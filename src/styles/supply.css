@@ -174,7 +174,7 @@
 }
 
 .ivu-date-picker-focused input {
-  box-shadow: none;
+  box-shadow: none !important;
 }
 
 .ivu-icon-ios-calendar-outline:before {
