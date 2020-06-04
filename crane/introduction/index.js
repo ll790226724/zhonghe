@@ -75,7 +75,7 @@ module.exports = {
       id: 'page-title',
       component: 'div',
       content: '人才引进专题',
-      position: [750, 27],
+      position: [833, 27],
       props: {
         $style: {
           color: '#fff',
@@ -170,7 +170,7 @@ module.exports = {
     {
       id: 'activity-number-icon',
       component: 'div',
-      position: [40, 155],
+      position: [40, 157],
       props: {
         $style: {
           color: '#6ad6ff',

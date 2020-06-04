@@ -132,6 +132,7 @@
   width: 380px;
   border: 1px solid rgba(106, 214, 255, .12);
   top: 46px !important;
+  box-shadow: none;
 }
 
 .supply-datepicker.ivu-date-picker .ivu-date-picker-cells.ivu-date-picker-cells-year {
