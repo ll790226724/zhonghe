@@ -99,6 +99,7 @@ module.exports = [
         component: 'v-chart',
         props: {
           $options: {
+            $color: "['#6ad6ff']",
             grid: {
               $top: 30,
               $left: 52,
@@ -159,7 +160,7 @@ module.exports = [
                 $show: false
               }
             },
-            $series: "[{type: 'line', data: [3200, 2274, 2348, 3848, 5500, 4900], showSymbol: false, lineStyle: {color: '#6ad6ff', width: 4}}]",
+            $series: "[{type: 'line', data: [3200, 2274, 2348, 3848, 5500, 4900], showSymbol: false, lineStyle: {width: 4}}]",
           }
         }
       }
