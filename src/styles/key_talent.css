@@ -1,14 +1,36 @@
 .map-select.el-select-dropdown.el-popper {
-  width: 180px;
+  width: 300px;
+}
+
+.map-tab-datepicker .ivu-select-dropdown .ivu-date-picker-header {
+  width: 300px !important;
 }
 
 .map-tab-datepicker.ivu-date-picker .ivu-select-dropdown {
-  width: 380px;
+  top: 45px !important;
+  width: 300px;
+  border: 1px solid rgba(106, 214, 255, .12);
+  box-shadow: none;
 }
 
 .map-tab-datepicker.ivu-date-picker .ivu-date-picker-cells.ivu-date-picker-cells-year {
-  width: 360px;
+  width: 300px;
+  text-align: left;
+  margin-left: 0;
+  margin-right: 0;
 }
+
+.map-tab-datepicker .ivu-date-picker-cells .ivu-date-picker-cells-cell:hover {
+  background-color: #6ad6ff0A;
+  border-radius: 4px;
+  font-size: 16px;
+  color: #6ad6ff;
+}
+
+.map-tab-datepicker .ivu-date-picker-cells .ivu-date-picker-cells-cell {
+  margin: 12px 14px 12px 14px !important;
+}
+
 
 input.map-tabs-input::placeholder {
   padding-left: 8px;

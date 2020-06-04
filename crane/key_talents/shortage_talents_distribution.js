@@ -60,10 +60,11 @@ module.exports = [
               $textStyle: {
                 color: '#4b9bbe',
                 fontSize: 12
-              }
+              },
+              inactiveColor: '#1C4159',
             },
             $color: "['#6ad6ff', '#4b9bbe', '#367290', '#275570', '#1c4159', '#153349']",
-            $series: "[{type: 'pie', left: -120, radius: ['35%', '60%'], label: {show: false}, labelLine: {show: false}, data: [{value: 335, name: '电子信息'}, {value: 30, name: '机械电气'}, {value: 834, name: '精细化工'}, {value: 635, name: '生物医药'}, {value: 1548, name: '劳动经济'}, {value: 120, name: '经济计划'}]}]"
+            $series: "[{type: 'pie', left: -120, radius: ['35%', '60%'], label: {show: false}, labelLine: {show: false}, data: [{value: 1335, name: '电子信息'}, {value: 930, name: '机械电气'}, {value: 734, name: '精细化工'}, {value: 635, name: '生物医药'}, {value: 548, name: '劳动经济'}, {value: 320, name: '经济计划'}]}]"
           }
         }
       }

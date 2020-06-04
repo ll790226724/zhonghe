@@ -1,7 +1,7 @@
 module.exports = [
   {
     component: '@byzanteam/vis-components/vis-select',
-    position: [809, 125],
+    position: [929, 125],
     props: {
       $options: "[{label: '福州', uuid: '0'}, {label: '全国', uuid: '1'}, {label: '陕西省', uuid: '2'}, {label: '江苏省', uuid: '3'}, {label: '福建省', uuid: '4'}, {label: '浙江省', uuid: '5'},]",
       'v-model': 'craneStates.department',
