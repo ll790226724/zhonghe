@@ -14,8 +14,11 @@ module.exports = {
         $options: {
           $legend: {
             orient: 'vertical',
-            $bottom: 0,
+            $bottom: 100,
             icon: 'circle',
+            $itemGap: 5,
+            $itemWidth: 10,
+            $itemHeight: 10,
             $textStyle: {
               color: '#4b9bbe',
               $fontSize: 14,
@@ -33,7 +36,7 @@ module.exports = {
           },
           $radar: {
             shape: 'circle',
-            center: ['50%', '50%'],
+            $center: "['50%', '26%']",
             radius: '50% ',
             $name: {
               $textStyle: {
@@ -60,7 +63,8 @@ module.exports = {
           },
           $series: `[{
               type: 'radar',
-              areaStyle: { normal: { itemStyle: { opacity: 0.2}}},
+              areaStyle: {opacity: 0.2},
+              lineStyle: {width: 1},
               axisLine: {},
               symbol: 'none',
               data: [

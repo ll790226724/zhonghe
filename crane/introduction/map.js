@@ -9,11 +9,12 @@ module.exports = {
   },
   children: [
     {
+      id: 'map',
       component: 'v-chart',
       props: {
         $options: {
           backgroundColor: 'transparent',
-          $series: "[{type: 'map', mapType: 'Liuzhou', label: {show: true, color: 'white'}, itemStyle: {areaColor: 'rgba(106, 214, 255, .1)', borderColor: '#6ad6ff', borderType: 'solid', borderWidth: 0.5}, emphasis: {label: {color: 'white',fontWeight: 600}, itemStyle: {areaColor: '#6ad6ff'}}}]"
+          $series: "[{type: 'map', mapType: 'fujian', label: {show: true,  fontSize: 14, color: 'white'}, itemStyle: {areaColor: 'rgba(106, 214, 255, .05)', borderColor: '#6ad6ff', borderType: 'solid', borderWidth: 0.5}, emphasis: {label: {color: 'white',fontWeight: 600}, itemStyle: {areaColor: '#6ad6ff'}}}]"
         }
       }
     }

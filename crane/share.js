@@ -25,6 +25,16 @@ exports.normal_digital_style = {
 };
 
 exports.small_digital_style = {
+  $prefixStyle: {
+    color: '#367391',
+    fontSize: '16px',
+    fontWeight: 400,
+  },
+  $suffixStyle: {
+    color: '#367391',
+    fontSize: '16px',
+    fontWeight: 400,
+  },
   $titleStyle: {
     color: '#367391',
     fontSize: '16px',
@@ -37,7 +47,6 @@ exports.small_digital_style = {
     fontFamily: 'Oswald-Regular',
     format: '11',
     letterSpacing: '2.4px',
-
   },
 };
 

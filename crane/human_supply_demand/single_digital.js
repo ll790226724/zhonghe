@@ -42,6 +42,7 @@ module.exports = [
           $content: {
             title: '企业人才需求数量',
             $digital: 5200,
+            suffix: '人'
           },
           $options: {
             separator: ',',

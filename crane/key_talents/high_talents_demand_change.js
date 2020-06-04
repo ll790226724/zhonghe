@@ -41,11 +41,16 @@ module.exports = [
         component: 'v-chart',
         props: {
           $options: {
+            $grid: {
+              top: '24%',
+              right: '5%',
+              bottom: '10%'
+            },
             backgroundColor: 'transparent',
             $color: "['#6ad6ff', '#367390']",
             $tooltip: {
               trigger: 'axis',
-              formatter: '{b}<br/>人才供应（人）：{c0}<br />人才需求（人）：{c1}',
+              $formatter: "demandTooltipFormatterFunc",
               backgroundColor: '#566374f0',
               $axisPointer: {
                 $lineStyle: {
@@ -57,10 +62,12 @@ module.exports = [
             $legend: {
               icon: 'circle',
               $right: 10,
-              $itemGap: 4,
+              $itemGap: 14,
+              $itemWidth: 8,
+              $itemHeight: 8,
               $textStyle: {
                 color: '#4b9bbe',
-                fontSize: 14
+                $fontSize: 14
               }
             },
             $xAxis: {
@@ -102,7 +109,8 @@ module.exports = [
               },
               $splitLine: {
                 $show: false
-              }
+              },
+              $splitNumber: 4,
             },
             $series: "[{type: 'line', name: '人才供应', data: [200, 24, 238, 30, 50, 40], showSymbol: false, lineStyle: {width: 4}}, {type: 'line', name: '人才需求', data: [300, 274, 248, 348, 50, 40], showSymbol: false, lineStyle: {width: 4}}]"
           }

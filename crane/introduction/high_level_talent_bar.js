@@ -2,7 +2,7 @@
 module.exports = {
   id: 'high-level-talent-bar',
   component: '@byzanteam/vis-components/data-loader',
-  position: [30, 308],
+  position: [30, 783],
   exports: {
     results: 'results',
   },
@@ -42,6 +42,12 @@ module.exports = {
               $fontWeight: 400,
               color: '#367391'
             },
+            $axisTick: {
+              $show: false
+            },
+            $axisLine:{
+              $show: false
+            },
             $splitLine: {
               $show: false
             },
@@ -59,6 +65,7 @@ module.exports = {
             barCategoryGap: '10%',
             itemStyle: {
               $normal: {
+                $barBorderRadius: 5,
                 $color: `new Echarts.graphic.LinearGradient(0, 1, 0, 0, [
                   {
                     offset: 0,
@@ -72,6 +79,14 @@ module.exports = {
             },
             $data: "[120, 200, 150, 80, 70, 110, 130]"
           },
+          $tooltip: {
+            trigger: 'axis',
+            $axisPointer: {
+              type: 'shadow',
+            },
+            $formatter: "tooltipFormatterFunc",
+            backgroundColor: '#566374f0',
+          }
         },
       },
     },

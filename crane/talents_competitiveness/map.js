@@ -20,7 +20,7 @@ module.exports = [
   },
   {
   component: '@byzanteam/vis-components/data-loader',
-  position: [410, 160],
+  position: [485, 190],
   props: {
     $style: {
       width: '950px',
@@ -35,6 +35,8 @@ module.exports = [
           backgroundColor: 'transparent',
           $geo: {
             map: 'china',
+            $left: 0,
+            $right: 0,
             $label: {
               $normal: {
                 $show: false
@@ -115,15 +117,13 @@ module.exports = [
               type: 'scatter',
               coordinateSystem: 'geo',
               symbol: 'pin',
-              symbolSize: [28, 36],
+              symbolSize: [48, 54],
               label: {
                 normal: {
                   show: true,
-                  textStyle: {
-                    color: '#fff',
-                    fontSize: 12,
-                    fontWeight: 500
-                  },
+                  color: '#fff',
+                  fontSize: 12,
+                  fontWeight: 500,
                   formatter (value){
                     return value.data.value[2]
                   }
@@ -132,6 +132,7 @@ module.exports = [
               itemStyle: {
                 normal: {
                   color: '#37a6d7',
+                  opacity: 1
                 }
               },
               data: [

@@ -68,8 +68,8 @@
     <data-loader ref="departments-loader" v-slot="{ results: results }" :style="{position: 'absolute', top: '125px', left: '929px'}">
       <vis-select ref="departments-select" :options="[{label: '福州', uuid: '0'}, {label: '全国', uuid: '1'}, {label: '陕西省', uuid: '2'}, {label: '江苏省', uuid: '3'}, {label: '福建省', uuid: '4'}, {label: '浙江省', uuid: '5'},]" v-model="craneStates.department" placeholder="福州" />
     </data-loader>
-    <data-loader v-slot="{ results: results }" :style="{width: '450px', height: '330px', position: 'absolute', top: '380px', left: '1455px'}">
-      <donut :data="[{label: '数据服务(%)', value: 12}, {label: '游戏(%)', value: 22}, {label: '智能硬件(%)', value: 23}, {label: '人力资源服务(%)', value: 40}, {label: '计算机软件(%)', value: 10}, {label: '其他(%)', value: 22}]" labelKey="label" valueKey="value" :innerRadius="0.58" :hideLabel="true" :theme="{background: 'transparent', colors: ['#6ad6ff', '#4b9bbe', '#367290', '#275570', '#1c4159', '#153349'], whitespace: 'nowrap'}" :legendOptions="{align: ['center', 'start'], offset: [-10, 0], position: 'right', layout: 'vertical', label: {fill: '#4b9bbe', size: 14}}" :tooltip="{text: {align: 'center', baseline: 'middle', fill: '#FFFFFF', size: 14, weight: 400}, notation: {fill: '#367391', name: 'circle-small', size: 14}}" :tooltipOptions="{background: 'rgba(60, 71, 89, 0.9)', text: {align: 'center', baseline: 'middle', fill: '#FFFFFF', size: 14, weight: 400}, title: {align: 'center', baseline: 'middle', fill: '#FFFFFF', size: 14, weight: 400}}" />
+    <data-loader v-slot="{ results: results }" :style="{width: '460px', height: '330px', position: 'absolute', top: '380px', left: '1455px'}">
+      <v-chart :options="{legend: {orient: 'vertical', right: '8%', top: 'middle', icon: 'circle', itemGap: 9, itemWidth: 10, itemHeight: 10, data: ['数据服务', '智能硬件', '人力资源服务', '计算机软件', '游戏', '其他'], textStyle: {color: '#489bbe', fontSize: 12}}, series: {name: '行业人才占比', type: 'pie', left: '-34%', radius: ['24%', '42%'], label: {show: false}, labelLine: {show: false}, data: [{name:'数据服务', value: 66, itemStyle: {color: '#6ad6ff'}}, {name:'智能硬件', value: 55, itemStyle: {color: '#4b9bbe'}}, {name:'人力资源服务', value: 44, itemStyle: {color: '#367290'}}, {name:'计算机软件', value: 33, itemStyle: {color: '#275570'}}, {name:'游戏', value: 22, itemStyle: {color: '#1c4159'}}, {name:'其他', value: 11, itemStyle: {color: '#153349'}}]}, tooltip: {trigger: 'item', formatter: pieTooltipFormatterFunc, backgroundColor: '#566374f0'}}" />
     </data-loader>
     <data-loader ref="part-production-value" v-slot="{ results: results }" :style="{position: 'absolute', top: '56px', left: '130px'}">
       <digital-roll ref="deal-number-total" titlePosition="left" :content="{title: '地区生产总值', prefix: '￥', digital: 125200}" :options="{separator: ','}" :titleStyle="{color: '#367391', fontSize: '16px', fontWeight: '400'}" :prefixStyle="{color: '#367391', fontSize: '16px', fontWeight: '400'}" :suffixStyle="{color: '#367391', fontSize: '16px', fontWeight: '400'}" :digitalStyle="{fontSize: '32px', color: '#6ad6ff', fontWeight: '400', fontFamily: 'Oswald-Regular', format: '11', letterSpacing: '2.4px'}" />
@@ -78,28 +78,36 @@
       <digital-roll ref="talent-number-content" titlePosition="left" :content="{title: '地区生产总值', digital: 5200, suffix: '人'}" :options="{separator: ','}" :titleStyle="{color: '#367391', fontSize: '16px', fontWeight: '400'}" :prefixStyle="{color: '#367391', fontSize: '16px', fontWeight: '400'}" :suffixStyle="{color: '#367391', fontSize: '16px', fontWeight: '400'}" :digitalStyle="{fontSize: '32px', color: '#6ad6ff', fontWeight: '400', fontFamily: 'Oswald-Regular', format: '11', letterSpacing: '2.4px'}" />
     </data-loader>
     <data-loader ref="talent-age-index" v-slot="{ results: results }" :style="{position: 'absolute', top: '440px', left: '90px'}">
-      <digital-roll ref="talent-age-index-content" titlePosition="bottom" :content="{title: '人才年龄指数', digital: 23}" :options="{separator: ''}" :titleStyle="{color: '#367391', fontSize: '16px', fontWeight: '400'}" :digitalStyle="{fontSize: '32px', color: '#6ad6ff', fontWeight: '400', fontFamily: 'Oswald-Regular', format: '11', letterSpacing: '2.4px'}" />
+      <digital-roll ref="talent-age-index-content" titlePosition="bottom" :content="{title: '人才年龄指数', digital: 23}" :options="{separator: ''}" :prefixStyle="{color: '#367391', fontSize: '16px', fontWeight: '400'}" :suffixStyle="{color: '#367391', fontSize: '16px', fontWeight: '400'}" :titleStyle="{color: '#367391', fontSize: '16px', fontWeight: '400'}" :digitalStyle="{fontSize: '32px', color: '#6ad6ff', fontWeight: '400', fontFamily: 'Oswald-Regular', format: '11', letterSpacing: '2.4px'}" />
     </data-loader>
     <data-loader ref="talent-education-index" v-slot="{ results: results }" :style="{position: 'absolute', top: '332px', left: '90px'}">
-      <digital-roll ref="talent-education-index-content" titlePosition="bottom" :content="{title: '人才学历指数', digital: 23}" :options="{separator: ''}" :titleStyle="{color: '#367391', fontSize: '16px', fontWeight: '400'}" :digitalStyle="{fontSize: '32px', color: '#6ad6ff', fontWeight: '400', fontFamily: 'Oswald-Regular', format: '11', letterSpacing: '2.4px'}" />
+      <digital-roll ref="talent-education-index-content" titlePosition="bottom" :content="{title: '人才学历指数', digital: 23}" :options="{separator: ''}" :prefixStyle="{color: '#367391', fontSize: '16px', fontWeight: '400'}" :suffixStyle="{color: '#367391', fontSize: '16px', fontWeight: '400'}" :titleStyle="{color: '#367391', fontSize: '16px', fontWeight: '400'}" :digitalStyle="{fontSize: '32px', color: '#6ad6ff', fontWeight: '400', fontFamily: 'Oswald-Regular', format: '11', letterSpacing: '2.4px'}" />
     </data-loader>
     <data-loader ref="talent-industry-index" v-slot="{ results: results }" :style="{position: 'absolute', top: '440px', left: '290px'}">
-      <digital-roll ref="talent-rank-index-content" titlePosition="bottom" :content="{title: '人才行业指数', digital: 23}" :options="{separator: ''}" :titleStyle="{color: '#367391', fontSize: '16px', fontWeight: '400'}" :digitalStyle="{fontSize: '32px', color: '#6ad6ff', fontWeight: '400', fontFamily: 'Oswald-Regular', format: '11', letterSpacing: '2.4px'}" />
+      <digital-roll ref="talent-rank-index-content" titlePosition="bottom" :content="{title: '人才行业指数', digital: 23}" :options="{separator: ''}" :prefixStyle="{color: '#367391', fontSize: '16px', fontWeight: '400'}" :suffixStyle="{color: '#367391', fontSize: '16px', fontWeight: '400'}" :titleStyle="{color: '#367391', fontSize: '16px', fontWeight: '400'}" :digitalStyle="{fontSize: '32px', color: '#6ad6ff', fontWeight: '400', fontFamily: 'Oswald-Regular', format: '11', letterSpacing: '2.4px'}" />
     </data-loader>
     <data-loader ref="talent-quality-index" v-slot="{ results: results }" :style="{position: 'absolute', top: '548px', left: '90px'}">
-      <digital-roll ref="talent-quality-index-content" titlePosition="bottom" :content="{title: '人才素质指数', digital: 23}" :options="{separator: ''}" :titleStyle="{color: '#367391', fontSize: '16px', fontWeight: '400'}" :digitalStyle="{fontSize: '32px', color: '#6ad6ff', fontWeight: '400', fontFamily: 'Oswald-Regular', format: '11', letterSpacing: '2.4px'}" />
+      <digital-roll ref="talent-quality-index-content" titlePosition="bottom" :content="{title: '人才素质指数', digital: 23}" :options="{separator: ''}" :prefixStyle="{color: '#367391', fontSize: '16px', fontWeight: '400'}" :suffixStyle="{color: '#367391', fontSize: '16px', fontWeight: '400'}" :titleStyle="{color: '#367391', fontSize: '16px', fontWeight: '400'}" :digitalStyle="{fontSize: '32px', color: '#6ad6ff', fontWeight: '400', fontFamily: 'Oswald-Regular', format: '11', letterSpacing: '2.4px'}" />
     </data-loader>
     <data-loader ref="talent-rank-index" v-slot="{ results: results }" :style="{position: 'absolute', top: '332px', left: '290px'}">
-      <digital-roll ref="talent-rank-index-content" titlePosition="bottom" :content="{title: '人才职称指数', digital: 23}" :options="{separator: ''}" :titleStyle="{color: '#367391', fontSize: '16px', fontWeight: '400'}" :digitalStyle="{fontSize: '32px', color: '#6ad6ff', fontWeight: '400', fontFamily: 'Oswald-Regular', format: '11', letterSpacing: '2.4px'}" />
+      <digital-roll ref="talent-rank-index-content" titlePosition="bottom" :content="{title: '人才职称指数', digital: 23}" :options="{separator: ''}" :prefixStyle="{color: '#367391', fontSize: '16px', fontWeight: '400'}" :suffixStyle="{color: '#367391', fontSize: '16px', fontWeight: '400'}" :titleStyle="{color: '#367391', fontSize: '16px', fontWeight: '400'}" :digitalStyle="{fontSize: '32px', color: '#6ad6ff', fontWeight: '400', fontFamily: 'Oswald-Regular', format: '11', letterSpacing: '2.4px'}" />
     </data-loader>
     <data-loader ref="talent-synthesis-index" v-slot="{ results: results }" :style="{position: 'absolute', top: '548px', left: '290px'}">
-      <digital-roll ref="talent-quality-index-content" titlePosition="bottom" :content="{title: '人才综合指数', digital: 23}" :options="{separator: ''}" :titleStyle="{color: '#367391', fontSize: '16px', fontWeight: '400'}" :digitalStyle="{fontSize: '32px', color: '#6ad6ff', fontWeight: '400', fontFamily: 'Oswald-Regular', format: '11', letterSpacing: '2.4px'}" />
+      <digital-roll ref="talent-quality-index-content" titlePosition="bottom" :content="{title: '人才综合指数', digital: 23}" :options="{separator: ''}" :prefixStyle="{color: '#367391', fontSize: '16px', fontWeight: '400'}" :suffixStyle="{color: '#367391', fontSize: '16px', fontWeight: '400'}" :titleStyle="{color: '#367391', fontSize: '16px', fontWeight: '400'}" :digitalStyle="{fontSize: '32px', color: '#6ad6ff', fontWeight: '400', fontFamily: 'Oswald-Regular', format: '11', letterSpacing: '2.4px'}" />
     </data-loader>
     <data-loader ref="ranking_rank" v-slot="{ results: results }" :style="{width: '296px', height: '290px', overflow: 'scroll', position: 'absolute', top: '752px', left: '82px'}">
       <ranking ref="department-ranking-content" :data="[{label: '本科', amount: 78.16}, {label: '硕士', amount: 23.21}, {label: '博士', amount: 18.01}, {label: '高中生', amount: 68.23}, {label: '大专', amount: 47.67}, {label: '初中', amount: 45.11},]" :keys="{label: 'label', value: 'amount', tooltip: 'name'}" :labelStyle="{color: '#4b9bbe', fontSize: '16px', lineHeight: '24px'}" :valueStyle="{color: '#6ad6ff', fontSize: '16px', fontFamily: 'Oswald-Regular', lineHeight: '1.5', fontWeight: '400'}" :lineStyle="{background: '#ffffff0D', lineColor: ['#0885b5', '#6ad6ff'], height: '5px', borderRadius: '2.5px'}" :tooltip="{text: {align: 'center', baseline: 'middle', fill: '#FFFFFF', size: 14, weight: 400}, notation: {fill: '#367391', name: 'circle-small', size: 14}}" :tooltipOptions="{background: 'rgba(60, 71, 89, 0.9)', text: {align: 'center', baseline: 'middle', fill: '#FFFFFF', size: 14, weight: 400}, title: {align: 'center', baseline: 'middle', fill: '#FFFFFF', size: 14, weight: 400}}" />
     </data-loader>
     <data-loader ref="demand-vertical-bar" v-slot="{ results: results }" :style="{width: '400px', height: '270px', position: 'absolute', top: '762px', left: '1490px'}">
-      <vertical-bar ref="demand-vertical-bar-content" labelKey="label" valueKey="数量(人)" :data="[{label: '电子商务', '数量(人)': 78}, {label: '广告营销', '数量(人)': 123}, {label: '分类消息', '数量(人)': 198}, {label: '社交网络', '数量(人)': 27}, {label: '信息安全', '数量(人)': 267},{label: '互联网金融', '数量(人)': 87}, {label: '企业服务', '数量(人)': 67}, {label: '互联网', '数量(人)': 27},]" :style="{background: 'transparent'}" :mainAxis="{labelStyle: {rotate: 315, size: 12, fill: '#367391'}, lineStyle: {stroke: 'transparent'}, range: {count: '5'}}" :crossAxis="{labelStyle: {rotate: 0, size: 12, fill: '#367391'}, lineStyle: {stroke: 'transparent'}, range: {count: 5}, unit: {content: '人', fill: '#367391'}}" :rotate="180" :series="[['#6ad6ff', '#117ea8']]" :gap="{outer: 5}" :tooltip="{text: {align: 'center', baseline: 'middle', fill: '#FFFFFF', size: 14, weight: 400}, notation: {fill: '#367391', name: 'circle-small', size: 14}}" :tooltipOptions="{background: 'rgba(60, 71, 89, 0.9)', text: {align: 'center', baseline: 'middle', fill: '#FFFFFF', size: 14, weight: 400}, title: {align: 'center', baseline: 'middle', fill: '#FFFFFF', size: 14, weight: 400}}" />
+      <v-chart ref="demand-vertical-bar-content" :options="{grid: {top: '12%', right: '1%'}, xAxis: {axisLabel: {rotate: -315, fontSize: 12, fontWeight: 400, color: '#367391'}, axisLine: {show: false}, data: ['电子商务', '广告营销', '分类消息', '社交网络', '信息安全', '互联网金融', '企业服务', '互联网']}, yAxis: {axisLine: {show: 'false'}, axisLabel: {rotate: 0, fontSize: 12, fontWeight: 400, color: '#367391'}, splitLine: {show: false}, splitNumber: 5, name: '人', nameTextStyle: {fontSize: 12, fontWeight: 400, color: '#367391'}}, series: {type: 'bar', barWidth: 5, barCategoryGap: '10%', itemStyle: {normal: {color: new Echarts.graphic.LinearGradient(0, 1, 0, 0, [
+                      {
+                        offset: 0,
+                        color: '#117ea8'
+                      },
+                      {
+                        offset: 1,
+                        color: '#6ad6ff'
+                      }], false),}}, data: [120, 200, 150, 80, 70, 110, 130, 102]}, tooltip: {trigger: 'axis', axisPointer: {type: 'shadow'}, formatter: demandTooltipFormatterFunc, backgroundColor: '#566374f0'}}" />
     </data-loader>
   </div>
 </template>
@@ -108,12 +116,13 @@
 import Echarts from 'vue-echarts'
 import 'echarts/lib/component/geo'
 import 'echarts/lib/chart/map'
+import 'echarts/lib/chart/bar'
 import 'echarts/lib/component/tooltip'
 import 'echarts/lib/component/legend'
 import 'echarts/lib/component/visualMap'
-import Liuzhou from '../../public/static/fujian.json'
+import fujian from '../../public/static/fujian.json'
 
-Echarts.registerMap('Liuzhou', Liuzhou);
+Echarts.registerMap('fujian', fujian);
 
 import BuiltInMixin from '../mixins/built_in'
 import {
@@ -144,6 +153,7 @@ export const resources = {
 
   data () {
     return {
+      Echarts: Echarts,
       craneStates: {
         options: {
           backgroundColor: 'transparent',
@@ -178,7 +188,7 @@ export const resources = {
           series: [
             {
               type: 'map',
-              mapType: 'Liuzhou',
+              mapType: 'fujian',
               data: [
                 {name: '鼓楼区', value: 4},
                 {name: '台江区', value: 15},
@@ -196,6 +206,7 @@ export const resources = {
               ],
               label: {
                 show: true,
+                 fontSize: 14,
                 color: 'white',
               },
               itemStyle: {
@@ -218,6 +229,15 @@ export const resources = {
       },
     }
   },
+
+  methods: {
+    demandTooltipFormatterFunc(params) {
+      return `${params[0].name}<br/><span style="display:inline-block;margin-right:5px;border-radius:10px;width:10px;height:10px;background-color: #6ad6ff;"></span>紧缺人才：${params[0].data}人`
+    },
+    pieTooltipFormatterFunc(params) {
+      return `${params.marker}${params.name}：${params.percent}%`
+    },
+  }
 }
 export default resources
 </script>

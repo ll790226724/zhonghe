@@ -70,12 +70,13 @@ module.exports = [
           $content: {
             title: '岗位平均薪酬',
             $digital: 5200,
+            prefix: '￥',
           },
           $options: {
             separator: ',',
           },
           $style: {
-            width: '199px',
+            width: '210px',
             height: '39px'
           },
           ...small_digital_style,
@@ -98,17 +99,24 @@ module.exports = [
         component: 'v-chart',
         props: {
           $options: {
+            $color: "['#6ad6ff']",
+            grid: {
+              $top: 30,
+              $left: 52,
+              $right: 10,
+              $bottom: 30
+            },
             backgroundColor: 'transparent',
             $tooltip: {
               trigger: 'axis',
-              formatter: '{b}<br/>平均薪酬（元）：{c}',
-              backgroundColor: '#566374f0',
               $axisPointer: {
                 $lineStyle: {
                   color: '#ffffff',
                   type: 'dotted'
                 }
-              }
+              },
+              $formatter: "salaryTooltipFormatterFunc",
+              backgroundColor: '#566374f0',
             },
             $xAxis: {
               type: 'category',
@@ -131,6 +139,7 @@ module.exports = [
             $yAxis: {
               type: 'value',
               name: '元',
+              splitNumber: 4,
               $axisLine: {
                 $show: false
               },
@@ -151,7 +160,7 @@ module.exports = [
                 $show: false
               }
             },
-            $series: "[{type: 'line', data: [3200, 2274, 2348, 3848, 5500, 4900], showSymbol: false, lineStyle: {color: '#6ad6ff', width: 4}}]"
+            $series: "[{type: 'line', data: [3200, 2274, 2348, 3848, 5500, 4900], showSymbol: false, lineStyle: {width: 4}}]",
           }
         }
       }

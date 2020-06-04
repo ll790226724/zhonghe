@@ -19,11 +19,6 @@ export default new Router({
       component: pages.supply,
     },
     {
-      name: 'introduction',
-      path: '/introduction',
-      component: pages.introduction,
-    },
-    {
       name: 'key_talents',
       path: '/keytTalents',
       component: pages.key_talents,
@@ -32,6 +27,11 @@ export default new Router({
       name: 'talents_competitiveness',
       path: '/talents-competitiveness',
       component: pages.talents_competitiveness,
+    },
+    {
+      name: 'introduction',
+      path: '/introduction',
+      component: pages.introduction,
     },
   ],
 })
