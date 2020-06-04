@@ -118,3 +118,8 @@ input::placeholder {
 .table.table--dark th{
   line-height: 40px;
 }
+
+.ivu-select .ivu-select-dropdown {
+  margin-top: 26px;
+  border: 1px solid #6ad6ff1f;
+}
