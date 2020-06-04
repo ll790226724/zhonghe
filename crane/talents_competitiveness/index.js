@@ -76,7 +76,7 @@ module.exports = {
       id: 'page-title',
       component: 'div',
       content: '省域人才综合竞争力',
-      position: [833, 27],
+      position: [770, 27],
       props: {
         $style: {
           color: '#fff',
@@ -111,8 +111,21 @@ module.exports = {
         src: '/static/images/Box-Bg.png'
       },
     },
+    {
+      id: 'force-digital-bg',
+      component: 'div',
+      position: [1490, 60],
+      props: {
+        $style: {
+          height: '50px',
+          width: '400px',
+          backgroundColor: '#6ad6ff05',
+          borderRadius: '5px',
+        }
+      }
+    },
     table,
-    ...talentsIndicatorsSummary,
+    talentsIndicatorsSummary,
     radar,
     {
       id: 'province-talent-number',

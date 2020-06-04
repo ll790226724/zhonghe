@@ -2,13 +2,13 @@
   <div class="talents_competitiveness">
     <img ref="background" src="/static/images/Bg.png" :style="{position: 'absolute', top: '0px', left: '0px'}" />
     <img ref="title-bg" :style="{width: '701px', height: '123px', position: 'absolute', top: '0px', left: '607px'}" src="/static/images/Title-Bg.png" />
-    <div ref="page-title" :style="{color: '#fff', fontSize: '42px', fontWeight: 600, textAlign: 'center', position: 'absolute', top: '27px', left: '833px'}">
+    <div ref="page-title" :style="{color: '#fff', fontSize: '42px', fontWeight: 600, textAlign: 'center', position: 'absolute', top: '27px', left: '770px'}">
       省域人才综合竞争力
     </div>
     <vis-select :options="[{label: '台湾', uuid: 1},{label: '黑龙江', uuid: 2 },{label: '内蒙古', uuid: 3},{label: '吉林', uuid: 4},{label: '北京市', uuid: 5},{label: '辽宁', uuid: 6},{label: '河北', uuid: 7},{label: '天津', uuid: 8},{label: '山西', uuid: 9},{label: '陕西', uuid: 10},{label: '甘肃', uuid: 11},{label: '宁夏', uuid: 12},{label: '青海', uuid: 13},{label: '新疆', uuid:  14},{label: '西藏', uuid: 15},{label: '四川', uuid: 17},{label: '重庆', uuid: 18},{label: '山东', uuid: 19},{label: '河南', uuid: 20},{label: '江苏', uuid: 21},{label: '安徽', uuid: 22},{label: '湖北', uuid: 23},{label: '浙江', uuid: 24},{label: '福建', uuid: 25},{label: '江西', uuid: 26},{label: '湖南', uuid: 27},{label: '贵州', uuid: 28},{label: '云南', uuid: 29},{label: '广东', uuid: 30},{label: '广西', uuid: 31}, {label: '海南', uuid: 32}, {label: '上海', uuid: 33}]" v-model="craneStates.province" placeholder="全国" :style="{position: 'absolute', top: '125px', left: '864px'}" />
     <vis-select v-if="craneStates.province" :options="[{label: '福州', uuid: '0'}, {label: '全国', uuid: '1'}, {label: '陕西省', uuid: '2'}, {label: '江苏省', uuid: '3'}, {label: '福建省', uuid: '4'}, {label: '浙江省', uuid: '5'},]" v-model="craneStates.city" placeholder="福州" :style="{position: 'absolute', top: '125px', left: '979px'}" />
-    <data-loader :style="{width: '950px', height: '794px', position: 'absolute', top: '160px', left: '410px'}">
-      <v-chart :options="{backgroundColor: 'transparent', geo: {map: 'china', label: {normal: {show: false}, emphasis: {show: false}}, itemStyle: {normal: {areaColor: 'rgba(106, 214, 255, 0.05)', borderColor: '#6ad6ff', borderType: 'solid', borderWidth: 0.5}, emphasis: {areaColor: '#6ad6ff'}}, regions: [{name: '南海诸岛', value: 0, itemStyle: { normal: { opacity: 0, label: { show: false}}}}]}, series: [
+    <data-loader :style="{width: '950px', height: '794px', position: 'absolute', top: '190px', left: '485px'}">
+      <v-chart :options="{backgroundColor: 'transparent', geo: {map: 'china', left: 0, right: 0, label: {normal: {show: false}, emphasis: {show: false}}, itemStyle: {normal: {areaColor: 'rgba(106, 214, 255, 0.05)', borderColor: '#6ad6ff', borderType: 'solid', borderWidth: 0.5}, emphasis: {areaColor: '#6ad6ff'}}, regions: [{name: '南海诸岛', value: 0, itemStyle: { normal: { opacity: 0, label: { show: false}}}}]}, series: [
                 {
                   symbolSize: 0.1,
                   label: {
@@ -71,11 +71,9 @@
                   label: {
                     normal: {
                       show: true,
-                      textStyle: {
-                        color: '#fff',
-                        fontSize: 12,
-                        fontWeight: 500
-                      },
+                      color: '#fff',
+                      fontSize: 12,
+                      fontWeight: 500,
                       formatter (value){
                         return value.data.value[2]
                       }
@@ -84,6 +82,7 @@
                   itemStyle: {
                     normal: {
                       color: '#37a6d7',
+                      opacity: 1
                     }
                   },
                   data: [
@@ -131,6 +130,7 @@
     </data-loader>
     <img ref="box-bg" :style="{width: '440px', height: '1059px', position: 'absolute', top: '10px', left: '10px'}" src="/static/images/Box-Bg.png" />
     <img ref="right-box-bg" :style="{width: '440px', height: '1059px', position: 'absolute', top: '10px', left: '1471px'}" src="/static/images/Box-Bg.png" />
+    <div ref="force-digital-bg" :style="{height: '50px', width: '400px', backgroundColor: '#6ad6ff05', borderRadius: '5px', position: 'absolute', top: '60px', left: '1490px'}" />
     <data-loader :style="{width: '400px', height: '678px', overflow: 'scroll', position: 'absolute', top: '316px', left: '30px'}">
       <vis-table theme="dark" stripe="" :headers="[{width: 80, key: 'index',}, {width: 160, key: 'name', title: '省市排名'}, {width: 160, key: 'value', title: '人才质量指标'}]" :data="[{index: 1, name: '四川省', value: 99.8}, {index: 2, name: '重庆市', value: 99.5}, {index: 3, name: '青海省', value: 99.1}, {index: 4, name: '浙江省', value: 98.9}, {index: 5, name: '湖南省', value: 98.7}, {index: 6, name: '湖北省', value: 98.4}, {index: 7, name: '甘肃省', value:98.3}, {index: 8, name: '山东省', value:98.1}, {index: 9, name: '江苏省', value:98.0}, {index: 10, name: '江西省', value:97.2}, {index: 11, name: '福建省', value:97.0}, {index: 12, name: '贵州省', value:96.8},{index: 13, name: '陕西省', value:96.5}, {index: 14, name: '山西省', value:94.2}]">
         <template v-slot="{ cell: cell, columnKey: columnKey }">
@@ -140,19 +140,14 @@
         </template>
       </vis-table>
     </data-loader>
-    <div ref="degree-analysis-icon" :style="{color: '#6ad6ff', fontSize: '14px', fontWeight: '400', textAlign: 'left', position: 'absolute', top: '49px', left: '40px'}">
-      >>
-    </div>
-    <div ref="degree-analysis-title" :style="{color: '#fff', fontSize: '18px', fontWeight: '600', textAlign: 'left', letterSpacing: '1px', position: 'absolute', top: '46px', left: '74px'}">
-      省域人才指标汇总
-    </div>
     <RadioGroup v-model="craneStates.indicator" type="button" :style="{width: '388px', height: '184px', position: 'absolute', top: '92px', left: '36px'}">
       <Radio v-for="(item, key) in craneStates.indicators" :key="key" :label="item" />
     </RadioGroup>
     <data-loader :style="{width: '370px', height: '480px', position: 'absolute', top: '455px', left: '1506px'}">
-      <v-chart :options="{legend: {orient: 'vertical', bottom: 100, icon: 'circle', itemWidth: 8, itemHeight: 8, textStyle: {color: '#4b9bbe', fontSize: 14, padding: [2, 4]}}, color: ['#6ad6ff', '#4b9bbe', '#367290', '#275570', '#1c4159', '#153349'], radiusAxis: {axisLine: {color: '#19394f'}, splitLine: {color: '#19394f'}}, radar: {shape: 'circle', center: ['50%', '20%'], radius: '50% ', name: {textStyle: {color: '#4b9bbe', fontSize: 14}}, axisLine: {lineStyle: {color: '#19394f'}}, splitArea: {areaStyle: {color: 'transparent'}}, splitLine: {lineStyle: {color: '#19394f'}}, indicator: [{name: '人才数量指标'}, {name: '人才质量指标'}, {name: '人才结构指标'}, {name: '人才投入指标'}, {name: '人才平台指标'}, {name: '人才生活指标'}, {name: '人才环境指标'}, {name: '人才效能指标'}, {name: '人才效益指标'}, {name: '人才发展指标'}]}, series: [{
+      <v-chart :options="{legend: {orient: 'vertical', bottom: 100, icon: 'circle', itemGap: 5, itemWidth: 10, itemHeight: 10, textStyle: {color: '#4b9bbe', fontSize: 14, padding: [2, 4]}}, color: ['#6ad6ff', '#4b9bbe', '#367290', '#275570', '#1c4159', '#153349'], radiusAxis: {axisLine: {color: '#19394f'}, splitLine: {color: '#19394f'}}, radar: {shape: 'circle', center: ['50%', '26%'], radius: '50% ', name: {textStyle: {color: '#4b9bbe', fontSize: 14}}, axisLine: {lineStyle: {color: '#19394f'}}, splitArea: {areaStyle: {color: 'transparent'}}, splitLine: {lineStyle: {color: '#19394f'}}, indicator: [{name: '人才数量指标'}, {name: '人才质量指标'}, {name: '人才结构指标'}, {name: '人才投入指标'}, {name: '人才平台指标'}, {name: '人才生活指标'}, {name: '人才环境指标'}, {name: '人才效能指标'}, {name: '人才效益指标'}, {name: '人才发展指标'}]}, series: [{
                   type: 'radar',
-                  areaStyle: { normal: { itemStyle: { opacity: 0.2}}},
+                  areaStyle: {opacity: 0.2},
+                  lineStyle: {width: 1},
                   axisLine: {},
                   symbol: 'none',
                   data: [
