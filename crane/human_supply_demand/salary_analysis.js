@@ -163,7 +163,7 @@ module.exports = [
                 $show: false
               }
             },
-            $series: "[{type: 'line', data: [3200, 2274, 2348, 3848, 5500, 4900], showSymbol: false, lineStyle: {width: 4}}]",
+            $series: "[{type: 'line', name: '平均薪酬', data: [3200, 2274, 2348, 3848, 5500, 4900], showSymbol: false, lineStyle: {width: 4}}]",
           }
         }
       }

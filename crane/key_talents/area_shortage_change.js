@@ -104,7 +104,7 @@ module.exports = [
               },
               $splitNumber: 4,
             },
-            $series: "[{type: 'line', name: '人才供应', data: [200, 24, 238, 30, 50, 40], showSymbol: false, lineStyle: {width: 4}}]"
+            $series: "[{type: 'line', name: '紧缺人才', data: [200, 24, 238, 30, 50, 40], showSymbol: false, lineStyle: {width: 4}}]"
           }
         }
       }

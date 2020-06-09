@@ -104,7 +104,7 @@
       区域紧缺人才趋势
     </div>
     <data-loader ref="high-talents-demand-change-line-chart" :style="{width: '400px', height: '214px', position: 'absolute', top: '518px', left: '1490px'}">
-      <v-chart :options="{grid: {top: '24%', right: '5%', bottom: '10%'}, backgroundColor: 'transparent', color: ['#6ad6ff', '#367390'], tooltip: {trigger: 'axis', formatter: shortageTooltipFormatterFunc, backgroundColor: '#566374f0', axisPointer: {lineStyle: {color: '#ffffff', type: 'dotted'}}}, xAxis: {type: 'category', data: ['2015', '2016', '2017', '2018', '2019', '2020'], axisLine: {show: false}, axisTick: {show: false}, axisLabel: {color: '#367391', fontSize: 12, fontWeight: 400}, splitLine: {show: false}}, yAxis: {type: 'value', name: '人', axisLine: {show: false}, axisTick: {show: false}, nameTextStyle: {color: '#367391', fontSize: 12, fontWeight: 400, align: 'center', padding: [0, 5, 0, 0]}, axisLabel: {color: '#367391', fontSize: 12, fontWeight: 400, align: 'center'}, splitLine: {show: false}, splitNumber: 4}, series: [{type: 'line', name: '人才供应', data: [200, 24, 238, 30, 50, 40], showSymbol: false, lineStyle: {width: 4}}]}" />
+      <v-chart :options="{grid: {top: '24%', right: '5%', bottom: '10%'}, backgroundColor: 'transparent', color: ['#6ad6ff', '#367390'], tooltip: {trigger: 'axis', formatter: shortageTooltipFormatterFunc, backgroundColor: '#566374f0', axisPointer: {lineStyle: {color: '#ffffff', type: 'dotted'}}}, xAxis: {type: 'category', data: ['2015', '2016', '2017', '2018', '2019', '2020'], axisLine: {show: false}, axisTick: {show: false}, axisLabel: {color: '#367391', fontSize: 12, fontWeight: 400}, splitLine: {show: false}}, yAxis: {type: 'value', name: '人', axisLine: {show: false}, axisTick: {show: false}, nameTextStyle: {color: '#367391', fontSize: 12, fontWeight: 400, align: 'center', padding: [0, 5, 0, 0]}, axisLabel: {color: '#367391', fontSize: 12, fontWeight: 400, align: 'center'}, splitLine: {show: false}, splitNumber: 4}, series: [{type: 'line', name: '紧缺人才', data: [200, 24, 238, 30, 50, 40], showSymbol: false, lineStyle: {width: 4}}]}" />
     </data-loader>
     <vis-select :options="[{label: '福州', uuid: '0'}, {label: '全国', uuid: '1'}, {label: '陕西省', uuid: '2'}, {label: '江苏省', uuid: '3'}, {label: '福建省', uuid: '4'}, {label: '浙江省', uuid: '5'},]" v-model="craneStates.department" placeholder="福州" :style="{position: 'absolute', top: '125px', left: '929px'}" />
     <data-loader :style="{width: '1100px', height: '900px', position: 'absolute', top: '160px', left: '410px'}">
@@ -213,10 +213,10 @@ export const key_talents = {
 
   methods: {
     shortageTooltipFormatterFunc(params) {
-      return `${params[0].name}<br/><span style="display:inline-block;margin-right:5px;border-radius:10px;width:10px;height:10px;background-color: #6ad6ff;"></span>紧缺人才：${params[0].data}人`
+      return `${params[0].name}<br/>${params[0].marker}${params[0].seriesName}：${params[0].data}人`
     },
     demandTooltipFormatterFunc(params) {
-      return `${params[0].name}<br/>${params[0].marker}人才供应：${params[0].data}人</br>${params[1].marker}人才需求：${params[1].data}人`
+      return `${params[0].name}<br/>${params[0].marker}${params[0].seriesName}：${params[0].data}人</br>${params[1].marker}${params[1].seriesName}：${params[1].data}人`
     },
     pieTooltipFormatterFunc(params) {
       return `${params.marker}${params.name}：${params.percent}%`
