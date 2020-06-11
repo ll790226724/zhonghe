@@ -20,6 +20,10 @@ module.exports = {
       value: ''
     },
     {
+      id: 'thisYear',
+      value: new Date().getFullYear()
+    },
+    {
       id: 'dateRange',
       value: []
     },
