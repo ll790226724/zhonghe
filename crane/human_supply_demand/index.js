@@ -24,6 +24,10 @@ module.exports = {
       value: ''
     },
     {
+      id: 'department',
+      value: {}
+    },
+    {
       id: 'dateRange',
       value: []
     },

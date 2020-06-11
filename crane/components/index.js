@@ -44,7 +44,7 @@ module.exports = {
         series: [
           {
             type: 'map',
-            mapType: 'fujian',
+            mapType: 'fuzhou',
             label: {
               show: true,
               fontSize: 14,

@@ -18,13 +18,10 @@
       <date-picker v-model="craneStates.year" :style="{width: '380px', height: '50px'}" :options="{disabledDate: (time) => {return !craneStates.dateRange.includes(time.getFullYear())}}" type="year" class="supply-datepicker" placeholder="选择时间" />
     </data-loader>
     <data-loader :style="{position: 'absolute', top: '125px', left: '876px'}">
-      <vis-select ref="departments-select" :options="[{label: '福州', uuid: '0'}, {label: '全国', uuid: '1'}, {label: '陕西省', uuid: '2'}, {label: '江苏省', uuid: '3'}, {label: '福建省', uuid: '4'}, {label: '浙江省', uuid: '5'},]" v-model="craneStates.department" placeholder="福州" />
-    </data-loader>
-    <data-loader :style="{position: 'absolute', top: '125px', left: '979px'}">
-      <vis-select ref="departments-select" :options="[{label: '龙泉驿区', uuid: '0'}, {label: '锦江区', uuid: '1'}, {label: '青羊区', uuid: '2'}, {label: '成华区', uuid: '3'}, {label: '双流区', uuid: '4'}, {label: '高新区', uuid: '5'},]" v-model="craneStates.department" placeholder="区县" />
+      <vis-select ref="departments-select" :options="[{label: '福州', uuid: 'fuzhou'}, {label: '宁德', uuid: 'ningde'}, {label: '龙岩', uuid: 'longyan'}, {label: '莆田', uuid: 'putian'}, {label: '南平', uuid: 'nanping'}, {label: '三明', uuid: 'sanming'}, {label: '厦门', uuid: 'xiamen'}, {label: '漳州', uuid: 'zhangzhou'}, {label: '泉州', uuid: 'quanzhou'}]" v-model="craneStates.department" placeholder="福州" />
     </data-loader>
     <data-loader :style="{width: '1100px', height: '900px', position: 'absolute', top: '160px', left: '410px'}">
-      <v-chart ref="map" :options="{backgroundColor: 'transparent', series: [{type: 'map', mapType: 'fujian', label: {show: true, fontSize: 14, color: 'white'}, itemStyle: {areaColor: 'rgba(106, 214, 255, .05)', borderColor: '#6ad6ff', borderType: 'solid', borderWidth: 0.5}, emphasis: {label: {color: 'white',fontWeight: 600}, itemStyle: {areaColor: '#4B9BBE'}}}]}" />
+      <v-chart ref="map" :options="{backgroundColor: 'transparent', series: [{type: 'map', mapType: craneStates.department.uuid || 'fuzhou', label: {show: true, fontSize: 14, color: 'white'}, itemStyle: {areaColor: 'rgba(106, 214, 255, .05)', borderColor: '#6ad6ff', borderType: 'solid', borderWidth: 0.5}, emphasis: {label: {color: 'white',fontWeight: 600}, itemStyle: {areaColor: '#4B9BBE'}}}]}" />
     </data-loader>
     <div ref="supply-demand-count" :style="{width: '400px', height: '50px', backgroundColor: 'rgba(106, 214, 255, .02)', borderRadius: '5px', position: 'absolute', top: '196px', left: '30px'}" />
     <div ref="value-circle" :style="{height: '10px', width: '10px', borderRadius: '10px', borderWidth: '1px', borderColor: '#6ad6ff', borderStyle: 'solid', position: 'absolute', top: '225px', left: '100px'}" />
@@ -121,6 +118,24 @@ import 'echarts/lib/component/tooltip'
 import 'echarts/lib/component/legend'
 import 'echarts/lib/component/visualMap'
 
+import longyan from '../../public/static/longyan.json'
+import nanping from '../../public/static/nanping.json'
+import putian from '../../public/static/putian.json'
+import ningde from '../../public/static/ningde.json'
+import quanzhou from '../../public/static/quanzhou.json'
+import sanming from '../../public/static/sanming.json'
+import xiamen from '../../public/static/xiamen.json'
+import zhangzhou from '../../public/static/zhangzhou.json'
+
+Echarts.registerMap('longyan', longyan);
+Echarts.registerMap('nanping', nanping);
+Echarts.registerMap('putian', putian);
+Echarts.registerMap('ningde', ningde);
+Echarts.registerMap('quanzhou', quanzhou);
+Echarts.registerMap('sanming', sanming);
+Echarts.registerMap('xiamen', xiamen);
+Echarts.registerMap('zhangzhou', zhangzhou);
+
 import {
   DataLoader,
   VisSelect,
@@ -160,6 +175,7 @@ export const supply = {
       craneStates: {
         currentJob: '',
         year: '',
+        department: {},
         dateRange: [],
         tabNavs: TAB_NAVS,
         tabCurrent: TAB_NAVS[0],
