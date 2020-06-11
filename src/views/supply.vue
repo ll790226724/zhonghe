@@ -7,9 +7,9 @@
     </div>
     <img ref="box-bg" :style="{width: '440px', height: '1059px', position: 'absolute', top: '10px', left: '10px'}" src="/static/images/Box-Bg.png" />
     <img ref="right-box-bg" :style="{width: '440px', height: '1059px', position: 'absolute', top: '10px', left: '1471px'}" src="/static/images/Box-Bg.png" />
-    <data-loader ref="job_select" :style="{position: 'absolute', top: '50px', left: '40px'}">
+    <data-loader ref="job_select" v-slot="{ results: results }" url="/v1/components/01b74ddd-39de-493f-84ab-9d87fcf23fee/data?offset=10" method="get" :data="[['']]" :style="{position: 'absolute', top: '50px', left: '40px'}">
       <Select class="departments-select" :style="{width: '380px'}" v-model="craneStates.currentJob">
-        <Option v-for="(item, key) in craneStates.jobs" :key="key" :value="item.index" :label="item.name">
+        <Option v-for="(item, key) in results.map((item, index) => ({index: index, name: item[0]}))" :key="key" :value="item.index" :label="item.name">
           {{item.name}}
         </Option>
       </Select>
@@ -157,7 +157,6 @@ export const supply = {
     return {
       craneStates: {
         currentJob: '',
-        jobs: [{index: 1, name: '高级前端工程师'}, {index: 2, name: 'java工程师'}, {index: 3, name: '用户体验设计师'}, {index: 4, name: '产品经理'}, {index: 5, name: '产品助理'}, {index: 6, name: '智能硬件'}, {index: 7, name: '生活服务'}],
         tabNavs: TAB_NAVS,
         tabCurrent: TAB_NAVS[0],
         chartTabNavs: CHART_TAB_NAVS,
