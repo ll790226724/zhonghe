@@ -134,7 +134,7 @@ module.exports = [
             },
             $xAxis: {
               type: 'category',
-              $data: "results.map(item => (item[1]))",
+              $data: "results ? results.map(item => (item[1])) : [0]",
               $axisLine: {
                 $show: false
               },
@@ -177,7 +177,7 @@ module.exports = [
                 $show: false
               }
             },
-            $series: "[{type: 'line', data: results.map(item => (item[0])), showSymbol: false, lineStyle: {width: 4}}]",
+            $series: "[{type: 'line', data: results ? results.map(item => (item[0])) : [0], showSymbol: false, lineStyle: {width: 4}}]",
           }
         }
       }

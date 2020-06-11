@@ -37,7 +37,7 @@ module.exports = [
       results: 'results',
     },
     props: {
-      url: "/v1/components/09b74ddd-39de-493f-84ab-9d87fcf23fee/data",
+      $url: "`/v1/components/09b74ddd-39de-493f-84ab-9d87fcf23fee/data?job=${craneStates.currentJob}&area=${currentRegion}`",
       method: 'get',
       $data: "[[0]]",
       $style: {
@@ -82,7 +82,7 @@ module.exports = [
             },
             $xAxis: {
               type: 'category',
-              $data: "results.map(item => (item[1]))",
+              $data: "results ? results.map(item => (item[1])) : [0]",
               $axisLine: {
                 $show: false
               },
@@ -124,7 +124,7 @@ module.exports = [
                 $show: false
               }
             },
-            $series: "[{type: 'line', name: '人才供给', data: results.map(item => (item[2])), showSymbol: false, lineStyle: {width: 4}}, {type: 'line', name: '岗位需求', data: results.map(item => (item[0])), showSymbol: false, lineStyle: {width: 4}}]",
+            $series: "[{type: 'line', name: '人才供给', data: results ? results.map(item => (item[2])) : [0], showSymbol: false, lineStyle: {width: 4}}, {type: 'line', name: '岗位需求', data: results ? results.map(item => (item[0])) : [0], showSymbol: false, lineStyle: {width: 4}}]",
 
           }
         }
