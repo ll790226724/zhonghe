@@ -21,7 +21,7 @@
       <vis-select ref="departments-select" :options="[{label: '福州', uuid: 'fuzhou'}, {label: '宁德', uuid: 'ningde'}, {label: '龙岩', uuid: 'longyan'}, {label: '莆田', uuid: 'putian'}, {label: '南平', uuid: 'nanping'}, {label: '三明', uuid: 'sanming'}, {label: '厦门', uuid: 'xiamen'}, {label: '漳州', uuid: 'zhangzhou'}, {label: '泉州', uuid: 'quanzhou'}]" v-model="craneStates.department" placeholder="福州" />
     </data-loader>
     <data-loader :style="{width: '1100px', height: '900px', position: 'absolute', top: '160px', left: '410px'}">
-      <v-chart ref="map" :options="{backgroundColor: 'transparent', series: [{type: 'map', mapType: craneStates.department.uuid || 'fuzhou', label: {show: true, fontSize: 14, color: 'white'}, itemStyle: {areaColor: 'rgba(106, 214, 255, .05)', borderColor: '#6ad6ff', borderType: 'solid', borderWidth: 0.5}, emphasis: {label: {color: 'white',fontWeight: 600}, itemStyle: {areaColor: '#4B9BBE'}}}]}" />
+      <v-chart ref="map" :options="mapOptions" />
     </data-loader>
     <div ref="supply-demand-count" :style="{width: '400px', height: '50px', backgroundColor: 'rgba(106, 214, 255, .02)', borderRadius: '5px', position: 'absolute', top: '196px', left: '30px'}" />
     <div ref="value-circle" :style="{height: '10px', width: '10px', borderRadius: '10px', borderWidth: '1px', borderColor: '#6ad6ff', borderStyle: 'solid', position: 'absolute', top: '225px', left: '100px'}" />
@@ -35,8 +35,8 @@
       需求岗位排名
     </div>
     <brick-tabs :tabNavs="craneStates.tabNavs" :activeTab="craneStates.tabCurrent" :style="{position: 'absolute', top: '352px', left: '110px'}" v-model="craneStates.tabCurrent" />
-    <data-loader v-slot="{ results: results }" v-if="craneStates.tabCurrent === craneStates.tabNavs[0]" :url="`/v1/components/04b74ddd-39de-493f-84ab-9d87fcf23fee/data?year=${generateYear}&job=${craneStates.currentJob}`" method="get" :data="[['']]" :style="{width: '400px', height: '230px', overflow: 'scroll', position: 'absolute', top: '414px', left: '30px'}">
-      <vis-table :withHeader="false" theme="dark" stripe="" :headers="[{width: 120, key: 'index'}, {width: 280, key: 'name'}]" :data="results.map((item, index) => ({index: index + 1, name: item[0]}))">
+    <data-loader v-slot="{ results: results }" v-if="craneStates.tabCurrent === craneStates.tabNavs[0]" :url="`/v1/components/04b74ddd-39de-493f-84ab-9d87fcf23fee/data?year=${generateYear}&job=${craneStates.currentJob}&area=${currentRegion}`" method="get" :data="[['']]" :style="{width: '400px', height: '230px', overflow: 'scroll', position: 'absolute', top: '414px', left: '30px'}">
+      <vis-table :withHeader="false" theme="dark" stripe="" :headers="[{width: 120, key: 'index'}, {width: 280, key: 'name'}]" :data="results ? results.map((item, index) => ({index: index + 1, name: item[0]})) : []">
         <template v-slot="{ cell: cell, columnKey: columnKey }">
           <span :class="columnKey === 'index' ? 'row-index-cell' : ''">
             {{cell}}
@@ -44,8 +44,8 @@
         </template>
       </vis-table>
     </data-loader>
-    <data-loader v-slot="{ results: results }" v-if="craneStates.tabCurrent === craneStates.tabNavs[1]" :url="`/v1/components/05b74ddd-39de-493f-84ab-9d87fcf23fee/data?year=${generateYear}&job=${craneStates.currentJob}`" method="get" :data="[['']]" :style="{width: '400px', height: '230px', overflow: 'scroll', position: 'absolute', top: '414px', left: '30px'}">
-      <vis-table :withHeader="false" theme="dark" stripe="" :headers="[{width: 120, key: 'index'}, {width: 280, key: 'name'}]" :data="results.map((item, index) => ({index: index + 1, salary: item[0], name: item[1]}))">
+    <data-loader v-slot="{ results: results }" v-if="craneStates.tabCurrent === craneStates.tabNavs[1]" :url="`/v1/components/05b74ddd-39de-493f-84ab-9d87fcf23fee/data?year=${generateYear}&job=${craneStates.currentJob}&area=${currentRegion}`" method="get" :data="[['']]" :style="{width: '400px', height: '230px', overflow: 'scroll', position: 'absolute', top: '414px', left: '30px'}">
+      <vis-table :withHeader="false" theme="dark" stripe="" :headers="[{width: 120, key: 'index'}, {width: 280, key: 'name'}]" :data="results ? results.map((item, index) => ({index: index + 1, salary: item[0], name: item[1]})) : []">
         <template v-slot="{ cell: cell, columnKey: columnKey }">
           <span :class="columnKey === 'index' ? 'row-index-cell' : ''">
             {{cell}}
@@ -192,6 +192,42 @@ export const supply = {
         return '2020'
       }
       return this.craneStates.year.getFullYear()
+    },
+    mapOptions () {
+      return {
+        backgroundColor: 'transparent',
+        series: [
+          {
+            type: 'map',
+            mapType: this.craneStates.department.uuid || 'fuzhou',
+            label: {
+              show: true,
+              fontSize: 14,
+              color: 'white'
+            },
+            itemStyle: {
+              areaColor: 'rgba(106, 214, 255, .05)',
+              borderColor: '#6ad6ff',
+              borderType: 'solid',
+              borderWidth: 0.5
+            },
+            emphasis: {
+              label: {
+                color: 'white',
+                fontWeight: 600
+              },
+              itemStyle: {
+                areaColor: '#4B9BBE'
+              }
+            }
+          }
+        ]
+      }
+    },
+    currentRegion () {
+      const city = this.craneStates.department.label || '福州'
+      const region = this.craneStates.selectedArea.name || ''
+      return `${city}${region}`
     }
   },
 
