@@ -37,7 +37,7 @@ module.exports = [
       results: 'results',
     },
     props: {
-      $url: "`/v1/components/03b74ddd-39de-493f-84ab-9d87fcf23fee/data?job=${craneStates.currentJob}&year=${generateYear}`",
+      $url: "`/v1/components/03b74ddd-39de-493f-84ab-9d87fcf23fee/data?job=${craneStates.currentJob || ''}&year=${generateYear}`",
       method: 'get',
       $data: "[[0]]",
     },
@@ -49,7 +49,7 @@ module.exports = [
           titlePosition: 'left',
           $content: {
             title: '企业人才需求数量',
-            $digital: "results[0][0]",
+            $digital: "results ? results[0][0] : 0",
             suffix: '人'
           },
           $options: {

@@ -15,6 +15,7 @@ module.exports = {
       component: 'iview/Select',
       props: {
         class: 'departments-select',
+        $clearable: true,
         $style: {
           width: '380px',
         },

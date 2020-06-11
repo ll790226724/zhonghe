@@ -47,7 +47,7 @@ module.exports = [
     },
     props: {
       'v-if': 'craneStates.tabCurrent === craneStates.tabNavs[0]',
-      $url: "`/v1/components/04b74ddd-39de-493f-84ab-9d87fcf23fee/data?year=${generateYear}&job=${craneStates.currentJob}&area=${currentRegion}`",
+      $url: "`/v1/components/04b74ddd-39de-493f-84ab-9d87fcf23fee/data?year=${generateYear}&job=${craneStates.currentJob || ''}&area=${currentRegion}`",
       method: 'get',
       $data: "[['']]",
       $style: {
@@ -95,7 +95,7 @@ module.exports = [
     },
     props: {
       'v-if': 'craneStates.tabCurrent === craneStates.tabNavs[1]',
-      $url: "`/v1/components/05b74ddd-39de-493f-84ab-9d87fcf23fee/data?year=${generateYear}&job=${craneStates.currentJob}&area=${currentRegion}`",
+      $url: "`/v1/components/05b74ddd-39de-493f-84ab-9d87fcf23fee/data?year=${generateYear}&job=${craneStates.currentJob || ''}&area=${currentRegion}`",
       method: 'get',
       $data: "[['']]",
       $style: {
