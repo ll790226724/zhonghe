@@ -62,6 +62,14 @@ module.exports = [
     id: 'salary-count-digital',
     component: '@byzanteam/vis-components/data-loader',
     position: [146, 772],
+    exports: {
+      results: 'results',
+    },
+    props: {
+      $url: "`/v1/components/06b74ddd-39de-493f-84ab-9d87fcf23fee/data?year=${craneStates.thisYear}&job=${craneStates.currentJob}`",
+      method: 'get',
+      $data: "[[0]]",
+    },
     children: [
       {
         component: '@byzanteam/vis-components/digital-roll',
@@ -69,7 +77,7 @@ module.exports = [
           titlePosition: 'left',
           $content: {
             title: '岗位平均薪酬',
-            $digital: 5200,
+            $digital: "results[0][0]",
             prefix: '￥',
           },
           $options: {
