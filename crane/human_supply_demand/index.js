@@ -20,6 +20,10 @@ module.exports = {
       value: ''
     },
     {
+      id: 'dateRange',
+      value: []
+    },
+    {
       id: 'tabNavs',
       value: 'TAB_NAVS'
     },
