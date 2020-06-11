@@ -9,7 +9,7 @@
     <img ref="right-box-bg" :style="{width: '440px', height: '1059px', position: 'absolute', top: '10px', left: '1471px'}" src="/static/images/Box-Bg.png" />
     <data-loader ref="job_select" v-slot="{ results: results }" url="/v1/components/01b74ddd-39de-493f-84ab-9d87fcf23fee/data?offset=10" method="get" :data="[['']]" :style="{position: 'absolute', top: '50px', left: '40px'}">
       <Select class="departments-select" :style="{width: '380px'}" v-model="craneStates.currentJob">
-        <Option v-for="(item, key) in results.map((item, index) => ({index: index, name: item[0]}))" :key="key" :value="item.index" :label="item.name">
+        <Option v-for="(item, key) in results.map((item, index) => ({index: item[0], name: item[0]}))" :key="key" :value="item.index" :label="item.name">
           {{item.name}}
         </Option>
       </Select>
@@ -61,10 +61,10 @@
     </div>
     <data-loader ref="salary-count" :style="{width: '400px', height: '50px', backgroundColor: 'rgba(106, 214, 255, .02)', borderRadius: '5px', position: 'absolute', top: '766px', left: '30px'}" />
     <div ref="value-circle" :style="{height: '10px', width: '10px', borderRadius: '10px', borderWidth: '1px', borderColor: '#6ad6ff', borderStyle: 'solid', position: 'absolute', top: '795px', left: '116px'}" />
-    <data-loader ref="salary-count-digital" v-slot="{ results: results }" :url="`/v1/components/06b74ddd-39de-493f-84ab-9d87fcf23fee/data?year=${generateYear}&job=${craneStates.currentJob}`" method="get" :data="[[0]]" :style="{position: 'absolute', top: '772px', left: '146px'}">
+    <data-loader ref="salary-count-digital" v-slot="{ results: results }" :url="`/v1/components/06b74ddd-39de-493f-84ab-9d87fcf23fee/data?year=${generateYear}&job=${craneStates.currentJob}&area=${currentRegion}`" method="get" :data="[[0]]" :style="{position: 'absolute', top: '772px', left: '146px'}">
       <digital-roll titlePosition="left" :content="{title: '岗位平均薪酬', digital: results[0][0], prefix: '￥'}" :options="{separator: ','}" :style="{width: '210px', height: '39px'}" :prefixStyle="{color: '#367391', fontSize: '16px', fontWeight: '400'}" :suffixStyle="{color: '#367391', fontSize: '16px', fontWeight: '400'}" :titleStyle="{color: '#367391', fontSize: '16px', fontWeight: '400'}" :digitalStyle="{fontSize: '32px', color: '#6ad6ff', fontWeight: '400', fontFamily: 'Oswald-Regular', format: '11', letterSpacing: '2.4px'}" />
     </data-loader>
-    <data-loader ref="salary-count-line-chart" v-slot="{ results: results }" :url="`/v1/components/07b74ddd-39de-493f-84ab-9d87fcf23fee/data?job=${craneStates.currentJob}`" method="get" :data="[[0]]" :style="{width: '400px', height: '200px', position: 'absolute', top: '846px', left: '30px'}">
+    <data-loader ref="salary-count-line-chart" v-slot="{ results: results }" :url="`/v1/components/07b74ddd-39de-493f-84ab-9d87fcf23fee/data?job=${craneStates.currentJob}&area=${currentRegion}`" method="get" :data="[[0]]" :style="{width: '400px', height: '200px', position: 'absolute', top: '846px', left: '30px'}">
       <v-chart :options="{color: ['#6ad6ff'], grid: {top: 30, left: 52, right: 10, bottom: 30}, backgroundColor: 'transparent', tooltip: {trigger: 'axis', axisPointer: {lineStyle: {color: '#ffffff', type: 'dotted'}}, formatter: salaryTooltipFormatterFunc, backgroundColor: '#566374f0'}, xAxis: {type: 'category', data: results.map(item => (item[1])), axisLine: {show: false}, axisTick: {show: false}, axisLabel: {color: '#367391', fontSize: 12, fontWeight: 400}, splitLine: {show: false}}, yAxis: {type: 'value', name: '元', splitNumber: '4', axisLine: {show: false}, axisTick: {show: false}, nameTextStyle: {color: '#367391', fontSize: 12, fontWeight: 400, align: 'center', padding: [0, 0, 0, 3]}, axisLabel: {color: '#367391', fontSize: 12, fontWeight: 400, align: 'center'}, splitLine: {show: false}}, series: [{type: 'line', data: results.map(item => (item[0])), showSymbol: false, lineStyle: {width: 4}}]}" />
     </data-loader>
     <div ref="talent-index-icon" :style="{color: '#6ad6ff', fontSize: '14px', fontWeight: '400', textAlign: 'left', position: 'absolute', top: '49px', left: '1504px'}">

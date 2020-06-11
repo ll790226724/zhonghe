@@ -24,7 +24,7 @@ module.exports = {
         {
           component: 'iview/Option',
           vfor: {
-            data: "results.map((item, index) => ({index: index, name: item[0]}))",
+            data: "results.map((item, index) => ({index: item[0], name: item[0]}))",
             exports: {item: 'item', index: 'key'}
           },
           props: {

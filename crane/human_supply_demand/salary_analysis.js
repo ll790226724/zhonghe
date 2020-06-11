@@ -66,7 +66,7 @@ module.exports = [
       results: 'results',
     },
     props: {
-      $url: "`/v1/components/06b74ddd-39de-493f-84ab-9d87fcf23fee/data?year=${generateYear}&job=${craneStates.currentJob}`",
+      $url: "`/v1/components/06b74ddd-39de-493f-84ab-9d87fcf23fee/data?year=${generateYear}&job=${craneStates.currentJob}&area=${currentRegion}`",
       method: 'get',
       $data: "[[0]]",
     },
@@ -100,7 +100,7 @@ module.exports = [
       results: 'results',
     },
     props: {
-      $url: "`/v1/components/07b74ddd-39de-493f-84ab-9d87fcf23fee/data?job=${craneStates.currentJob}`",
+      $url: "`/v1/components/07b74ddd-39de-493f-84ab-9d87fcf23fee/data?job=${craneStates.currentJob}&area=${currentRegion}`",
       method: 'get',
       $data: "[[0]]",
       $style: {
