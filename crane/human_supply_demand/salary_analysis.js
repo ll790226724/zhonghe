@@ -96,7 +96,13 @@ module.exports = [
     id: 'salary-count-line-chart',
     component: '@byzanteam/vis-components/data-loader',
     position: [30, 846],
+    exports: {
+      results: 'results',
+    },
     props: {
+      $url: "`/v1/components/07b74ddd-39de-493f-84ab-9d87fcf23fee/data?year=${craneStates.thisYear}&job=${craneStates.currentJob}`",
+      method: 'get',
+      $data: "[[0]]",
       $style: {
         width: '400px',
         height: '200px'
