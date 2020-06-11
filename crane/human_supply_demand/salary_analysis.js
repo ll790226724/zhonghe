@@ -66,7 +66,7 @@ module.exports = [
       results: 'results',
     },
     props: {
-      $url: "`/v1/components/06b74ddd-39de-493f-84ab-9d87fcf23fee/data?year=${craneStates.thisYear}&job=${craneStates.currentJob}`",
+      $url: "`/v1/components/06b74ddd-39de-493f-84ab-9d87fcf23fee/data?year=${generateYear}&job=${craneStates.currentJob}`",
       method: 'get',
       $data: "[[0]]",
     },
