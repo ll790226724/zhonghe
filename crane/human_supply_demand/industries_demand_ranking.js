@@ -37,7 +37,7 @@ module.exports = [
     props: {
       url: "/v1/components/08b74ddd-39de-493f-84ab-9d87fcf23fee/data",
       method: 'get',
-      $data: "[['']]",
+      $data: "[['暂无数据']]",
       $style: {
         width: '400px',
         height: '221px',
@@ -52,7 +52,7 @@ module.exports = [
           theme: 'dark',
           stripe: '',
           $headers: "[{width: 120, key: 'index'}, {width: 280, key: 'name'}]",
-          $data: "results ? results.map((item, index) => ({index: index + 1, name: item[0]})) : []"
+          $data: "results ? results.map((item, index) => ({index: index + 1, name: item[0]})) : [{index: 0, name: '暂无数据'}]"
         },
         children: [
           {

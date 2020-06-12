@@ -39,7 +39,7 @@ module.exports = [
     props: {
       $url: "`/v1/components/09b74ddd-39de-493f-84ab-9d87fcf23fee/data?job=${craneStates.currentJob || ''}&area=${currentRegion}`",
       method: 'get',
-      $data: "[[0]]",
+      $data: "[[0, '暂无数据']]",
       $style: {
         width: '400px',
         height: '230px'
@@ -82,7 +82,7 @@ module.exports = [
             },
             $xAxis: {
               type: 'category',
-              $data: "results ? results.map(item => (item[1])) : [0]",
+              $data: "results ? results.map(item => (item[1])) : ['暂无数据']",
               $axisLine: {
                 $show: false
               },

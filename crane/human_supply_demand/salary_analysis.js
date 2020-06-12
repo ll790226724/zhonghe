@@ -134,7 +134,7 @@ module.exports = [
             },
             $xAxis: {
               type: 'category',
-              $data: "results ? results.map(item => (item[1])) : [0]",
+              $data: "results ? results.map(item => (item[1])) : ['暂无数据']",
               $axisLine: {
                 $show: false
               },

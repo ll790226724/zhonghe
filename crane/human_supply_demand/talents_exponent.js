@@ -64,7 +64,7 @@ module.exports = [
           theme: 'dark',
           stripe: '',
           $headers: "[{width: 120, key: 'index'}, {width: 280, key: 'name'}]",
-          $data: "results ? results.map((item, index) => ({index: index + 1, name: item[0]})) : []"
+          $data: "results ? results.map((item, index) => ({index: index + 1, name: item[0]})) : [{index: 0, name: '暂无数据'}]"
         },
         children: [
           {
@@ -112,7 +112,7 @@ module.exports = [
           theme: 'dark',
           stripe: '',
           $headers: "[{width: 80, key: 'index'}, {width: 160, key: 'name'}, {width: 160, key: 'salary'}]",
-          $data: "results ? results.map((item, index) => ({index: index + 1, salary: item[0], name: item[1]})) : []"
+          $data: "results ? results.map((item, index) => ({index: index + 1, salary: item[0], name: item[1]})) : [{index: 0, name: '暂无数据'}]"
         },
         children: [
           {
