@@ -9,7 +9,7 @@ const map = require ('./map')
 module.exports = {
   route: {
     name: 'key_talents',
-    path: 'keytTalents'
+    path: 'keyTalents'
   },
   title:'重点人才专题',
   states: [

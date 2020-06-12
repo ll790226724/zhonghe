@@ -53,7 +53,7 @@
           {{item.name}}
         </Option>
       </Select>
-      <input placeholder="关键词" class="map-tabs-input" :style="{width: '180px', height: '48px', backgroundColor: 'rgba(106, 214, 255, .02)', border: '1px solid rgba(106, 214, 255, .12)', borderRadius: '4px', color: '#ffffff', fontSize: '16px', fontWeight: '500', position: 'absolute', top: '324px', left: '237px'}" />
+      <input placeholder="关键词" class="map-tabs-input" :style="{width: '180px', height: '48px', paddingLeft: '8px', backgroundColor: 'rgba(106, 214, 255, .02)', border: '1px solid rgba(106, 214, 255, .12)', borderRadius: '4px', color: '#ffffff', fontSize: '16px', fontWeight: '500', outline: 'none', position: 'absolute', top: '324px', left: '237px'}" />
       <brick-button type="gradient" color="primary" :style="{width: '148px', height: '25px', position: 'absolute', top: '400px', left: '156px'}">
         查看人才供应地图
       </brick-button>

@@ -84,7 +84,6 @@ module.exports = [
             separator: ',',
           },
           $style: {
-            width: '210px',
             height: '39px'
           },
           ...small_digital_style,
