@@ -46,7 +46,7 @@ module.exports = [
       results: 'results',
     },
     props: {
-      'v-if': 'craneStates.tabCurrent === craneStates.tabNavs[0]',
+      'v-show': 'craneStates.tabCurrent === craneStates.tabNavs[0]',
       $url: "`/v1/components/04b74ddd-39de-493f-84ab-9d87fcf23fee/data?year=${generateYear}&job=${craneStates.currentJob || ''}&area=${currentRegion}`",
       method: 'get',
       $data: "[['']]",
@@ -94,7 +94,7 @@ module.exports = [
       results: 'results',
     },
     props: {
-      'v-if': 'craneStates.tabCurrent === craneStates.tabNavs[1]',
+      'v-show': 'craneStates.tabCurrent === craneStates.tabNavs[1]',
       $url: "`/v1/components/05b74ddd-39de-493f-84ab-9d87fcf23fee/data?year=${generateYear}&job=${craneStates.currentJob || ''}&area=${currentRegion}`",
       method: 'get',
       $data: "[['']]",
@@ -111,7 +111,7 @@ module.exports = [
           $withHeader: false,
           theme: 'dark',
           stripe: '',
-          $headers: "[{width: 120, key: 'index'}, {width: 280, key: 'name'}]",
+          $headers: "[{width: 80, key: 'index'}, {width: 160, key: 'name'}, {width: 160, key: 'salary'}]",
           $data: "results ? results.map((item, index) => ({index: index + 1, salary: item[0], name: item[1]})) : []"
         },
         children: [
