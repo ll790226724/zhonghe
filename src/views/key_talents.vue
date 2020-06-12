@@ -106,12 +106,12 @@
     <data-loader ref="high-talents-demand-change-line-chart" :style="{width: '400px', height: '214px', position: 'absolute', top: '518px', left: '1490px'}">
       <v-chart :options="{grid: {top: '24%', right: '5%', bottom: '10%'}, backgroundColor: 'transparent', color: ['#6ad6ff', '#367390'], tooltip: {trigger: 'axis', formatter: shortageTooltipFormatterFunc, backgroundColor: '#566374f0', axisPointer: {lineStyle: {color: '#ffffff', type: 'dotted'}}}, xAxis: {type: 'category', data: ['2015', '2016', '2017', '2018', '2019', '2020'], axisLine: {show: false}, axisTick: {show: false}, axisLabel: {color: '#367391', fontSize: 12, fontWeight: 400}, splitLine: {show: false}}, yAxis: {type: 'value', name: '人', axisLine: {show: false}, axisTick: {show: false}, nameTextStyle: {color: '#367391', fontSize: 12, fontWeight: 400, align: 'center', padding: [0, 5, 0, 0]}, axisLabel: {color: '#367391', fontSize: 12, fontWeight: 400, align: 'center'}, splitLine: {show: false}, splitNumber: 4}, series: [{type: 'line', name: '人才供应', data: [200, 24, 238, 30, 50, 40], showSymbol: false, lineStyle: {width: 4}}]}" />
     </data-loader>
-    <vis-select :options="[{label: '福州', uuid: '0'}, {label: '全国', uuid: '1'}, {label: '陕西省', uuid: '2'}, {label: '江苏省', uuid: '3'}, {label: '福建省', uuid: '4'}, {label: '浙江省', uuid: '5'},]" v-model="craneStates.department" placeholder="福州" :style="{position: 'absolute', top: '125px', left: '929px'}" />
+    <vis-select :options="craneStates.selectOptions" v-model="craneStates.department" placeholder="福州" :style="{position: 'absolute', top: '125px', left: '929px'}" />
     <data-loader :style="{width: '1100px', height: '900px', position: 'absolute', top: '160px', left: '410px'}">
       <v-chart :options="{backgroundColor: 'transparent', tooltip: {trigger: 'item', formatter: '{b}<br/>人才数量：{c}人', backgroundColor: '#566374f0'}, visualMap: {type: 'piecewise', pieces: [{gt: 1500, label: '1500人及以上'}, {gt: 1000, lte: 1500, label: '1000-1500人'}, {gt: 100, lte: 999, label: '100-999人'}, {gt: 10, lte: 99, label: '10-99人'}, {gt: 1, lt: 9, label: '1-9人'}], orient: 'horizontal', bottom: '6%', left: '26%', textStyle: {color: '#ffffff', fontSize: '14'}, itemWidth: 18, itemGap: 10, textGap: 8, inRange: {color: ['rgba(106, 214, 255, .1)', 'rgba(106, 214, 255, .4)', 'rgba(106, 214, 255, .5)', 'rgba(106, 214, 255, .6)', 'rgba(106, 214, 255, .7)']}}, series: [
                 {
                   type: 'map',
-                  mapType: 'fuzhou',
+                  mapType: craneStates.department.uuid,
                   data: [
                     {name: '鼓楼区', value: 4},
                     {name: '台江区', value: 15},
@@ -130,9 +130,10 @@
                   label: {
                     show: true,
                     fontSize: 14,
-                    color: 'white',
+                    color: 'white'
                   },
                   itemStyle: {
+                    areaColor: 'rgba(106, 214, 255, .05)',
                     borderColor: '#6ad6ff',
                     borderType: 'solid',
                     borderWidth: 0.5
@@ -207,7 +208,20 @@ export const key_talents = {
         mapTabNavs: MAP_TAB_NAVS,
         time: '',
         currentShortageType: '',
+        selectOptions: [{label: '福州', uuid: 'fuzhou'}, {label: '宁德', uuid: 'ningde'}, {label: '龙岩', uuid: 'longyan'}, {label: '莆田', uuid: 'putian'}, {label: '南平', uuid: 'nanping'}, {label: '三明', uuid: 'sanming'}, {label: '厦门', uuid: 'xiamen'}, {label: '漳州', uuid: 'zhangzhou'}, {label: '泉州', uuid: 'quanzhou'}],
+        department: null,
       },
+    }
+  },
+
+  watch: {
+    'craneStates.department': {
+      handler (value) {
+        if(!value) {
+          this.craneStates.department = this.craneStates.selectOptions[0]
+        }
+      },
+      immediate: true
     }
   },
 

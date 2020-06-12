@@ -18,7 +18,7 @@
       <date-picker v-model="craneStates.year" :style="{width: '380px', height: '50px'}" :options="{disabledDate: (time) => {return !craneStates.dateRange.includes(time.getFullYear())}}" type="year" class="supply-datepicker" placeholder="选择时间" />
     </data-loader>
     <data-loader :style="{position: 'absolute', top: '125px', left: '876px'}">
-      <vis-select ref="departments-select" :options="[{label: '福州', uuid: 'fuzhou'}, {label: '宁德', uuid: 'ningde'}, {label: '龙岩', uuid: 'longyan'}, {label: '莆田', uuid: 'putian'}, {label: '南平', uuid: 'nanping'}, {label: '三明', uuid: 'sanming'}, {label: '厦门', uuid: 'xiamen'}, {label: '漳州', uuid: 'zhangzhou'}, {label: '泉州', uuid: 'quanzhou'}]" v-model="craneStates.department" placeholder="福州" />
+      <vis-select ref="departments-select" :options="selectOptions" v-model="craneStates.department" placeholder="福州" />
     </data-loader>
     <data-loader :style="{width: '1100px', height: '900px', position: 'absolute', top: '160px', left: '410px'}">
       <v-chart ref="map" :options="mapOptions" />

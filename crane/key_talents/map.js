@@ -3,7 +3,7 @@ module.exports = [
     component: '@byzanteam/vis-components/vis-select',
     position: [929, 125],
     props: {
-      $options: "[{label: '福州', uuid: '0'}, {label: '全国', uuid: '1'}, {label: '陕西省', uuid: '2'}, {label: '江苏省', uuid: '3'}, {label: '福建省', uuid: '4'}, {label: '浙江省', uuid: '5'},]",
+      $options: "craneStates.selectOptions",
       'v-model': 'craneStates.department',
       placeholder: '福州',
     }
@@ -48,7 +48,7 @@ module.exports = [
           $series: `[
             {
               type: 'map',
-              mapType: 'fuzhou',
+              mapType: craneStates.department.uuid,
               data: [
                 {name: '鼓楼区', value: 4},
                 {name: '台江区', value: 15},
@@ -67,9 +67,10 @@ module.exports = [
               label: {
                 show: true,
                 fontSize: 14,
-                color: 'white',
+                color: 'white'
               },
               itemStyle: {
+                areaColor: 'rgba(106, 214, 255, .05)',
                 borderColor: '#6ad6ff',
                 borderType: 'solid',
                 borderWidth: 0.5
