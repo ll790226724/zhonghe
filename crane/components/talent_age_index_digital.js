@@ -7,7 +7,6 @@ module.exports = {
   exports: {
     results: 'results',
   },
-
   props: {
     $url: "`/v1/components/16b74ddd-39de-493f-84ab-9d87fcf23fee/data`",
     method: 'get',

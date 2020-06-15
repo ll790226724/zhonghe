@@ -79,9 +79,31 @@ module.exports = {
         src: '/static/images/Bg.png'
       },
     },
-
+    {
+      id: 'box-bg',
+      component: 'img',
+      position: [10, 10],
+      props: {
+        $style: {
+          width: '440px',
+          height: '1059px',
+        },
+        src: '/static/images/Box-Bg.png'
+      },
+    },
+    {
+      id: 'right-box-bg',
+      component: 'img',
+      position: [1471, 10],
+      props: {
+        $style: {
+          width: '440px',
+          height: '1059px',
+        },
+        src: '/static/images/Box-Bg.png'
+      },
+    },
     map,
-
     table,
     {
       id: 'title-bg',
@@ -95,33 +117,6 @@ module.exports = {
         src: '/static/images/Title-Bg.png'
       },
     },
-
-    {
-      id: 'box-bg',
-      component: 'img',
-      position: [10, 10],
-      props: {
-        $style: {
-          width: '440px',
-          height: '1059px',
-        },
-        src: '/static/images/Box-Bg.png'
-      },
-    },
-
-    {
-      id: 'right-box-bg',
-      component: 'img',
-      position: [1471, 10],
-      props: {
-        $style: {
-          width: '440px',
-          height: '1059px',
-        },
-        src: '/static/images/Box-Bg.png'
-      },
-    },
-
     {
       id: 'page-title',
       component: 'div',
@@ -137,7 +132,6 @@ module.exports = {
         }
       }
     },
-
     {
       id: 'talent-index',
       component: 'div',
@@ -153,7 +147,6 @@ module.exports = {
       },
       content: '人才指数综合分析',
     },
-
     {
       id: 'talent-education',
       component: 'div',
@@ -169,7 +162,6 @@ module.exports = {
       },
       content: '人才学历层次',
     },
-
     {
       id: 'talent-industry',
       component: 'div',
@@ -185,7 +177,6 @@ module.exports = {
       },
       content: '人才流动行业排名',
     },
-
     {
       id: 'industry-talent',
       component: 'div',
@@ -201,7 +192,6 @@ module.exports = {
       },
       content: '行业人才占比',
     },
-
     {
       id: 'talent-demand',
       component: 'div',
@@ -217,7 +207,6 @@ module.exports = {
       },
       content: '各行业人才需求',
     },
-
     {
       id: 'talent-index-icon',
       component: 'div',
@@ -232,7 +221,6 @@ module.exports = {
       },
       content: '>>',
     },
-
     {
       id: 'talent-education-icon',
       component: 'div',
@@ -247,7 +235,6 @@ module.exports = {
       },
       content: '>>',
     },
-
     {
       id: 'talent-industry-icon',
       component: 'div',
@@ -262,7 +249,6 @@ module.exports = {
       },
       content: '>>',
     },
-
     {
       id: 'industry-talent-icon',
       component: 'div',
@@ -277,7 +263,6 @@ module.exports = {
       },
       content: '>>',
     },
-
     {
       id: 'talent-demand-icon',
       component: 'div',
@@ -292,7 +277,6 @@ module.exports = {
       },
       content: '>>',
     },
-
     {
       id: 'value-circle',
       component: 'div',
@@ -308,7 +292,6 @@ module.exports = {
         }
       },
     },
-
     {
       id: 'number-circle',
       component: 'div',
@@ -324,7 +307,6 @@ module.exports = {
         }
       },
     },
-
     {
       id: 'education-circle',
       component: 'div',
@@ -340,7 +322,6 @@ module.exports = {
         }
       },
     },
-
     {
       id: 'rank-circle',
       component: 'div',
@@ -356,7 +337,6 @@ module.exports = {
         }
       },
     },
-
     {
       id: 'age-circle',
       component: 'div',
@@ -372,7 +352,6 @@ module.exports = {
         }
       },
     },
-
     {
       id: 'industry-circle',
       component: 'div',
@@ -388,7 +367,6 @@ module.exports = {
         }
       },
     },
-
     {
       id: 'quality-circle',
       component: 'div',
@@ -404,7 +382,6 @@ module.exports = {
         }
       },
     },
-
     {
       id: 'synthesis-circle',
       component: 'div',
@@ -420,7 +397,6 @@ module.exports = {
         }
       },
     },
-
     {
       id: 'age-bg',
       component: 'div',
@@ -434,7 +410,6 @@ module.exports = {
         }
       }
     },
-
     {
       id: 'education-bg',
       component: 'div',
@@ -448,7 +423,6 @@ module.exports = {
         }
       }
     },
-
     {
       id: 'industry-bg',
       component: 'div',
@@ -462,7 +436,6 @@ module.exports = {
         }
       }
     },
-
     {
       id: 'number-bg',
       component: 'div',
@@ -476,7 +449,6 @@ module.exports = {
         }
       }
     },
-
     {
       id: 'quality-bg',
       component: 'div',
@@ -490,7 +462,6 @@ module.exports = {
         }
       }
     },
-
     {
       id: 'synthesis-bg',
       component: 'div',
@@ -504,7 +475,6 @@ module.exports = {
         }
       }
     },
-
     {
       id: 'production-bg',
       component: 'div',
@@ -518,7 +488,6 @@ module.exports = {
         }
       }
     },
-
     {
       id: 'production-bg',
       component: 'div',
@@ -532,7 +501,6 @@ module.exports = {
         }
       }
     },
-
     {
       id: 'departments-loader',
       component: '@byzanteam/vis-components/data-loader',
