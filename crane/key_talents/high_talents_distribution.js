@@ -31,7 +31,13 @@ module.exports = [
   {
     component: '@byzanteam/vis-components/data-loader',
     position: [30, 841],
+    exports: {
+      results: 'results',
+    },
     props: {
+      $url: "`/v1/components/28b74ddd-39de-493f-84ab-9d87fcf23fee/data`",
+      method: 'get',
+      $data: "[[0, '暂无数据']]",
       $style: {
         width: '400px',
         height: '218px',
@@ -64,7 +70,7 @@ module.exports = [
               inactiveColor: '#1C4159',
             },
             $color: "['#6ad6ff', '#4b9bbe', '#367290', '#275570', '#1c4159', '#153349']",
-            $series: "[{type: 'pie', left: -120, radius: ['35%', '62%'], label: {show: false}, labelLine: {show: false}, data: [{value: 1335, name: '电子信息'}, {value: 30, name: '机械电气'}, {value: 934, name: '精细化工'}, {value: 735, name: '生物医药'}, {value: 548, name: '劳动经济'}, {value: 220, name: '经济计划'}]}]"
+            $series: "[{type: 'pie', left: -120, radius: ['35%', '62%'], label: {show: false}, labelLine: {show: false}, data: results ? results.map(item => ({value: item [0], name: item[1]})) : [{value: 0, name: '暂无数据'}]}]"
           }
         }
       }
