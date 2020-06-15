@@ -5,6 +5,9 @@ module.exports = {
     results: 'results',
   },
   props: {
+    $url: "`/v1/components/22b74ddd-39de-493f-84ab-9d87fcf23fee/data?area=${craneStates.department.label}`",
+    method: 'get',
+    $data: "[[0, '暂无数据']]",
     $style: {
       width: '460px',
       height: '218px'
@@ -21,6 +24,7 @@ module.exports = {
             $itemWidth: 10,
             $itemHeight: 10,
             $right: 75,
+            $left: 285,
             top: 'middle',
             $itemGap: 9,
             orient: 'vertical',
@@ -31,7 +35,7 @@ module.exports = {
             inactiveColor: '#1C4159',
           },
           $color: "['#6ad6ff', '#4b9bbe', '#367290', '#275570', '#1c4159', '#153349']",
-          $series: "[{type: 'pie', left: -140, radius: ['35%', '62%'], label: {show: false}, labelLine: {show: false}, data: [{value: 1335, name: '数据服务'}, {value: 900, name: '智能硬件'}, {value: 700, name: '人力资源服务'}, {value: 500, name: '计算机软件'}, {value: 300, name: '游戏'}, {value: 120, name: '其他'}]}]",
+          $series: "[{type: 'pie', left: -140, radius: ['35%', '62%'], label: {show: false}, labelLine: {show: false}, data: results.map(item => ({value: item[0], name: item[1]}))}]",
           $tooltip: {
             trigger: 'item',
             $formatter: "pieTooltipFormatterFunc",
