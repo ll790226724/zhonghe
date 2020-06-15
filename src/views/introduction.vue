@@ -2,7 +2,7 @@
   <div class="introduction">
     <img ref="background" src="/static/images/Bg.png" :style="{position: 'absolute', top: '0px', left: '0px'}" />
     <data-loader :style="{width: '1100px', height: '900px', position: 'absolute', top: '160px', left: '410px'}">
-      <v-chart ref="map" :options="{backgroundColor: 'transparent', series: [{type: 'map', mapType: 'fujian', label: {show: true,  fontSize: 14, color: 'white'}, itemStyle: {areaColor: 'rgba(106, 214, 255, .05)', borderColor: '#6ad6ff', borderType: 'solid', borderWidth: 0.5}, emphasis: {label: {color: 'white',fontWeight: 600}, itemStyle: {areaColor: '#4B9BBE'}}}]}" />
+      <v-chart ref="map" :options="{backgroundColor: 'transparent', series: [{type: 'map', mapType: craneStates.department.uuid, label: {show: true,  fontSize: 14, color: 'white'}, itemStyle: {areaColor: 'rgba(106, 214, 255, .05)', borderColor: '#6ad6ff', borderType: 'solid', borderWidth: 0.5}, emphasis: {label: {color: 'white',fontWeight: 600}, itemStyle: {areaColor: '#4B9BBE'}}}]}" />
     </data-loader>
     <img ref="title-bg" :style="{width: '701px', height: '123px', position: 'absolute', top: '0px', left: '607px'}" src="/static/images/Title-Bg.png" />
     <img ref="box-bg" :style="{width: '440px', height: '1059px', position: 'absolute', top: '10px', left: '10px'}" src="/static/images/Box-Bg.png" />
@@ -45,7 +45,7 @@
     <div ref="activity-bg" :style="{height: '50px', width: '400px', backgroundColor: '#6ad6ff05', borderRadius: '5px', position: 'absolute', top: '218px', left: '30px'}" />
     <div ref="high-level-bg" :style="{height: '50px', width: '400px', backgroundColor: '#6ad6ff05', borderRadius: '5px', position: 'absolute', top: '693px', left: '30px'}" />
     <data-loader ref="departments-loader" v-slot="{ results: results }" :style="{position: 'absolute', top: '125px', left: '929px'}">
-      <vis-select ref="departments-select" :options="[{label: '福州', uuid: '0'}, {label: '全国', uuid: '1'}, {label: '陕西省', uuid: '2'}, {label: '江苏省', uuid: '3'}, {label: '福建省', uuid: '4'}, {label: '浙江省', uuid: '5'},]" v-model="craneStates.department" placeholder="福州" />
+      <vis-select ref="departments-select" :options="craneStates.selectOptions" v-model="craneStates.department" placeholder="福州" />
     </data-loader>
     <data-loader ref="activity-number-bar" v-slot="{ results: results }" :style="{width: '400px', height: '250px', position: 'absolute', top: '308px', left: '30px'}">
       <v-chart ref="activity-number-bar-content" :options="{xAxis: {axisLabel: {rotate: 0, fontSize: 12, fontWeight: 400, color: '#367391'}, axisLine: {show: false}, data: ['周一', '周二', '周三', '周四', '周五', '周六', '周日',]}, yAxis: {axisLabel: {rotate: 0, fontSize: 12, fontWeight: 400, color: '#367391', align: 'center'}, axisTick: {show: false}, axisLine: {show: false}, splitLine: {show: false}, splitNumber: 5, name: '件', nameTextStyle: {fontSize: 12, fontWeight: 400, color: '#367391', align: 'center', padding: [0, 5, 0, 0]}}, series: {type: 'bar', barWidth: 7, barCategoryGap: '10%', itemStyle: {normal: {barBorderRadius: 7, color: new Echarts.graphic.LinearGradient(0, 1, 0, 0, [
@@ -97,9 +97,9 @@ import 'echarts/lib/chart/pie'
 import 'echarts/lib/component/tooltip'
 import 'echarts/lib/component/legend'
 import 'echarts/lib/component/visualMap'
-import fujian from '../../public/static/fujian.json'
+import fuzhou from '../../public/static/fuzhou.json'
 
-Echarts.registerMap('fujian', fujian);
+Echarts.registerMap('fuzhou', fuzhou);
 
 import BuiltInMixin from '../mixins/built_in'
 import {
@@ -129,7 +129,20 @@ export const introduction = {
       Echarts: Echarts,
       craneStates: {
         selectedArea: {},
+        selectOptions: [{label: '福州', uuid: 'fuzhou'}, {label: '宁德', uuid: 'ningde'}, {label: '龙岩', uuid: 'longyan'}, {label: '莆田', uuid: 'putian'}, {label: '南平', uuid: 'nanping'}, {label: '三明', uuid: 'sanming'}, {label: '厦门', uuid: 'xiamen'}, {label: '漳州', uuid: 'zhangzhou'}, {label: '泉州', uuid: 'quanzhou'}],
+        department: null,
       },
+    }
+  },
+
+  watch: {
+    'craneStates.department': {
+      handler (value) {
+        if(!value) {
+          this.craneStates.department = this.craneStates.selectOptions[0]
+        }
+      },
+      immediate: true
     }
   },
 

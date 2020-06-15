@@ -20,13 +20,6 @@
   margin-right: 0;
 }
 
-.map-tab-datepicker .ivu-date-picker-cells .ivu-date-picker-cells-cell:hover {
-  background-color: #6ad6ff0A;
-  border-radius: 4px;
-  font-size: 16px;
-  color: #6ad6ff;
-}
-
 .map-tab-datepicker .ivu-date-picker-cells .ivu-date-picker-cells-cell {
   margin: 12px 14px 12px 14px !important;
 }

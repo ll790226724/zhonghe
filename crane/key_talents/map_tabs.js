@@ -131,12 +131,14 @@ module.exports = [
           $style: {
             width: '180px',
             height: '48px',
+            paddingLeft: '8px',
             backgroundColor: 'rgba(106, 214, 255, .02)',
             border: '1px solid rgba(106, 214, 255, .12)',
             borderRadius: '4px',
             color: '#ffffff',
             fontSize: '16px',
             fontWeight: 500,
+            outline: 'none'
           }
         }
       },

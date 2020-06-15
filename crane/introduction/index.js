@@ -18,6 +18,14 @@ module.exports = {
     {
       id: 'selectedArea',
       value: {}
+    },
+    {
+      id: 'selectOptions',
+      value: [{label: '福州', uuid: 'fuzhou'}, {label: '宁德', uuid: 'ningde'}, {label: '龙岩', uuid: 'longyan'}, {label: '莆田', uuid: 'putian'}, {label: '南平', uuid: 'nanping'}, {label: '三明', uuid: 'sanming'}, {label: '厦门', uuid: 'xiamen'}, {label: '漳州', uuid: 'zhangzhou'}, {label: '泉州', uuid: 'quanzhou'}]
+    },
+    {
+      id: 'department',
+      value: null,
     }
   ],
   components: [
@@ -29,9 +37,7 @@ module.exports = {
         src: '/static/images/Bg.png'
       },
     },
-
     map,
-
     {
       id: 'title-bg',
       component: 'img',
@@ -44,7 +50,6 @@ module.exports = {
         src: '/static/images/Title-Bg.png'
       },
     },
-
     {
       id: 'box-bg',
       component: 'img',
@@ -57,7 +62,6 @@ module.exports = {
         src: '/static/images/Box-Bg.png'
       },
     },
-
     {
       id: 'right-box-bg',
       component: 'img',
@@ -70,7 +74,6 @@ module.exports = {
         src: '/static/images/Box-Bg.png'
       },
     },
-
     {
       id: 'page-title',
       component: 'div',
@@ -86,7 +89,6 @@ module.exports = {
         }
       }
     },
-
     {
       id: 'activity-number',
       component: 'div',
@@ -102,7 +104,6 @@ module.exports = {
       },
       content: '引才活动数量统计',
     },
-
     {
       id: 'high-level-talent',
       component: 'div',
@@ -118,7 +119,6 @@ module.exports = {
       },
       content: '高层次人才引进统计',
     },
-
     {
       id: 'introduce-place',
       component: 'div',
@@ -134,7 +134,6 @@ module.exports = {
       },
       content: '引进渠道分析',
     },
-
     {
       id: 'talent-rank',
       component: 'div',
@@ -150,7 +149,6 @@ module.exports = {
       },
       content: '引进人才职称分布',
     },
-
     {
       id: 'talent-education',
       component: 'div',
@@ -166,7 +164,6 @@ module.exports = {
       },
       content: '引进人才学历分布',
     },
-
     {
       id: 'activity-number-icon',
       component: 'div',
@@ -181,7 +178,6 @@ module.exports = {
       },
       content: '>>',
     },
-
     {
       id: 'high-level-talent-icon',
       component: 'div',
@@ -196,7 +192,6 @@ module.exports = {
       },
       content: '>>',
     },
-
     {
       id: 'introduce-place-icon',
       component: 'div',
@@ -211,7 +206,6 @@ module.exports = {
       },
       content: '>>',
     },
-
     {
       id: 'talent-rank-icon',
       component: 'div',
@@ -226,7 +220,6 @@ module.exports = {
       },
       content: '>>',
     },
-
     {
       id: 'talent-education-icon',
       component: 'div',
@@ -241,7 +234,6 @@ module.exports = {
       },
       content: '>>',
     },
-
     {
       id: 'activity-number-circle',
       component: 'div',
@@ -273,7 +265,6 @@ module.exports = {
         }
       },
     },
-
     {
       id: 'activity-bg',
       component: 'div',
@@ -287,7 +278,6 @@ module.exports = {
         }
       }
     },
-
     {
       id: 'high-level-bg',
       component: 'div',
@@ -301,7 +291,6 @@ module.exports = {
         }
       }
     },
-
     {
       id: 'departments-loader',
       component: '@byzanteam/vis-components/data-loader',
@@ -309,39 +298,25 @@ module.exports = {
       exports: {
         results: 'results',
       },
-      props: {
-        // $url: "`/v1/components/d9b74ddd-39de-493f-84ab-9d87fcf23fee/data?start=${craneStates.filterRange[0]}&end=${craneStates.filterRange[1]}`",
-        // method: 'get',
-      },
       children: [
         {
           id: 'departments-select',
           component: '@byzanteam/vis-components/vis-select',
           props: {
-            // 'v-if': 'results',
-            // $options: 'results.map( (item, index) => { return {label: item[0], uuid: index } } )',
-            $options: "[{label: '福州', uuid: '0'}, {label: '全国', uuid: '1'}, {label: '陕西省', uuid: '2'}, {label: '江苏省', uuid: '3'}, {label: '福建省', uuid: '4'}, {label: '浙江省', uuid: '5'},]",
+            $options: "craneStates.selectOptions",
             'v-model': 'craneStates.department',
             placeholder: '福州',
           },
         },
       ],
     },
-
     activity,
-
     highLevel,
-
     intro,
-
     donut,
-
     rank,
-
     activityDigital,
-
     highLevelDigital,
-
     date,
   ]
 }
