@@ -78,7 +78,7 @@ module.exports = [
       {
         component: '@byzanteam/vis-components/brick-button',
         position: [156, 400],
-        content: '查看人才需求地图',
+        content: '查看人才供应地图',
         props: {
           type: "gradient",
           color: "primary",
@@ -145,7 +145,7 @@ module.exports = [
       {
         component: '@byzanteam/vis-components/brick-button',
         position: [156, 400],
-        content: '查看人才供应地图',
+        content: '查看人才需求地图',
         props: {
           type: "gradient",
           color: "primary",
