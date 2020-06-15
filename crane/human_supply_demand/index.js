@@ -20,16 +20,16 @@ module.exports = {
       value: ''
     },
     {
-      id: 'jobs',
-      value: [
-        {index: 1, name: '高级前端工程师'},
-        {index: 2, name: 'java工程师'},
-        {index: 3, name: '用户体验设计师'},
-        {index: 4, name: '产品经理'},
-        {index: 5, name: '产品助理'},
-        {index: 6, name: '智能硬件'},
-        {index: 7, name: '生活服务'}
-      ]
+      id: 'year',
+      value: ''
+    },
+    {
+      id: 'department',
+      value: {}
+    },
+    {
+      id: 'dateRange',
+      value: []
     },
     {
       id: 'tabNavs',
@@ -92,6 +92,18 @@ module.exports = {
       id: 'box-bg',
       component: 'img',
       position: [10, 10],
+      props: {
+        $style: {
+          width: '440px',
+          height: '1059px',
+        },
+        src: '/static/images/Box-Bg.png'
+      },
+    },
+    {
+      id: 'right-box-bg',
+      component: 'img',
+      position: [1471, 10],
       props: {
         $style: {
           width: '440px',

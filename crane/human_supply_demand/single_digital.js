@@ -3,7 +3,7 @@ const {small_digital_style} = require('../share')
 module.exports = [
   {
     id: 'supply-demand-count',
-    component: '@byzanteam/vis-components/data-loader',
+    component: 'div',
     position: [30, 196],
     props: {
       $style: {
@@ -33,6 +33,14 @@ module.exports = [
     id: 'supply-demand-count',
     component: '@byzanteam/vis-components/data-loader',
     position: [126, 202],
+    exports: {
+      results: 'results',
+    },
+    props: {
+      $url: "`/v1/components/03b74ddd-39de-493f-84ab-9d87fcf23fee/data?job=${craneStates.currentJob || ''}&year=${generateYear}`",
+      method: 'get',
+      $data: "[[0]]",
+    },
     children: [
       {
         id: 'talent-age-index-content',
@@ -41,14 +49,13 @@ module.exports = [
           titlePosition: 'left',
           $content: {
             title: '企业人才需求数量',
-            $digital: 5200,
+            $digital: "results ? results[0][0] : 0",
             suffix: '人'
           },
           $options: {
             separator: ',',
           },
           $style: {
-            width: '235px',
             height: '39px'
           },
           ...small_digital_style,

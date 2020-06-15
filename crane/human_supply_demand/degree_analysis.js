@@ -42,8 +42,14 @@ module.exports = [
   {
     component: '@byzanteam/vis-components/data-loader',
     position: [1490, 822],
+    exports: {
+      results: 'results',
+    },
     props: {
       'v-if': 'craneStates.chartTabCurrent === craneStates.chartTabNavs[0]',
+      $url: "`/v1/components/10b74ddd-39de-493f-84ab-9d87fcf23fee/data?year=${generateYear}&job=${craneStates.currentJob || ''}&area=${currentRegion}`",
+      method: 'get',
+      $data: "[[0, '暂无数据']]",
       $style: {
         width: '400px',
         height: '218px',
@@ -67,10 +73,11 @@ module.exports = [
               $textStyle: {
                 color: '#4b9bbe',
                 $fontSize: 12
-              }
+              },
+              inactiveColor: '#1C4159',
             },
             $color: "['#6ad6ff', '#4b9bbe', '#367290', '#275570', '#1c4159', '#153349']",
-            $series: "[{type: 'pie', left: -140, radius: ['35%', '62%'], label: {show: false}, labelLine: {show: false}, data: [{value: 335, name: '大学'}, {value: 310, name: '硕士'}, {value: 234, name: '大专'}, {value: 135, name: '高中'}, {value: 1548, name: '初中'}, {value: 1548, name: '博士'}]}]",
+            $series: "[{type: 'pie', left: -140, radius: ['35%', '62%'], label: {show: false}, labelLine: {show: false}, data: results ? results.map(item => ({value: item [0], name: item[1]})) : [{value: 0, name: '暂无数据'}]}]",
             $tooltip: {
               trigger: 'item',
               $formatter: "pieTooltipFormatterFunc",
@@ -84,8 +91,14 @@ module.exports = [
   {
     component: '@byzanteam/vis-components/data-loader',
     position: [1490, 822],
+    exports: {
+      results: 'results',
+    },
     props: {
       'v-if': 'craneStates.chartTabCurrent === craneStates.chartTabNavs[1]',
+      $url: "`/v1/components/11b74ddd-39de-493f-84ab-9d87fcf23fee/data?year=${generateYear}&job=${craneStates.currentJob || ''}&area=${currentRegion}`",
+      method: 'get',
+      $data: "[[0, '暂无数据']]",
       $style: {
         width: '400px',
         height: '218px',
@@ -109,10 +122,11 @@ module.exports = [
               $textStyle: {
                 color: '#4b9bbe',
                 $fontSize: 12
-              }
+              },
+              inactiveColor: '#1C4159',
             },
             $color: "['#6ad6ff', '#4b9bbe', '#367290', '#275570', '#1c4159', '#153349']",
-            $series: "[{type: 'pie', left: -140, radius: ['35%', '62%'], label: {show: false}, labelLine: {show: false}, data: [{value: 335, name: '大学'}, {value: 30, name: '硕士'}, {value: 834, name: '大专'}, {value: 635, name: '高中'}, {value: 1548, name: '初中'}, {value: 120, name: '博士'}]}]",
+            $series: "[{type: 'pie', left: -140, radius: ['35%', '62%'], label: {show: false}, labelLine: {show: false}, data: results ? results.map(item => ({value: item [0], name: item[1]})) : [{value: 0, name: '暂无数据'}]}]",
             $tooltip: {
               trigger: 'item',
               $formatter: "pieTooltipFormatterFunc",

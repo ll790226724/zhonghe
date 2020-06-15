@@ -62,6 +62,14 @@ module.exports = [
     id: 'salary-count-digital',
     component: '@byzanteam/vis-components/data-loader',
     position: [146, 772],
+    exports: {
+      results: 'results',
+    },
+    props: {
+      $url: "`/v1/components/06b74ddd-39de-493f-84ab-9d87fcf23fee/data?year=${generateYear}&job=${craneStates.currentJob || ''}&area=${currentRegion}`",
+      method: 'get',
+      $data: "[[0]]",
+    },
     children: [
       {
         component: '@byzanteam/vis-components/digital-roll',
@@ -69,14 +77,13 @@ module.exports = [
           titlePosition: 'left',
           $content: {
             title: '岗位平均薪酬',
-            $digital: 5200,
+            $digital: "results ? results[0][0] : 0",
             prefix: '￥',
           },
           $options: {
             separator: ',',
           },
           $style: {
-            width: '210px',
             height: '39px'
           },
           ...small_digital_style,
@@ -88,7 +95,13 @@ module.exports = [
     id: 'salary-count-line-chart',
     component: '@byzanteam/vis-components/data-loader',
     position: [30, 846],
+    exports: {
+      results: 'results',
+    },
     props: {
+      $url: "`/v1/components/07b74ddd-39de-493f-84ab-9d87fcf23fee/data?job=${craneStates.currentJob || ''}&area=${currentRegion}`",
+      method: 'get',
+      $data: "[[0]]",
       $style: {
         width: '400px',
         height: '200px'
@@ -120,7 +133,7 @@ module.exports = [
             },
             $xAxis: {
               type: 'category',
-              $data: "['2015', '2016', '2017', '2018', '2019', '2020']",
+              $data: "results ? results.map(item => (item[1])) : ['暂无数据']",
               $axisLine: {
                 $show: false
               },
@@ -149,18 +162,21 @@ module.exports = [
               $nameTextStyle: {
                 color: '#367391',
                 $fontSize: 12,
-                $fontWeight: 400
+                $fontWeight: 400,
+                align: 'center',
+                $padding: "[0, 0, 0, 3]"
               },
               $axisLabel: {
                 color: '#367391',
                 $fontSize: 12,
-                $fontWeight: 400
+                $fontWeight: 400,
+                align: 'center'
               },
               $splitLine: {
                 $show: false
               }
             },
-            $series: "[{type: 'line', data: [3200, 2274, 2348, 3848, 5500, 4900], showSymbol: false, lineStyle: {width: 4}}]",
+            $series: "[{type: 'line', data: results ? results.map(item => (item[0])) : [0], showSymbol: false, lineStyle: {width: 4}}]",
           }
         }
       }

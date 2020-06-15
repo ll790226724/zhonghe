@@ -40,7 +40,8 @@ module.exports = {
               $rotate: 0,
               $fontSize: 12,
               $fontWeight: 400,
-              color: '#367391'
+              color: '#367391',
+              align: 'center'
             },
             $axisTick: {
               $show: false
@@ -56,16 +57,18 @@ module.exports = {
             $nameTextStyle: {
               $fontSize: 12,
               $fontWeight: 400,
-              color: '#367391'
+              color: '#367391',
+              align: 'center',
+              $padding:"[0, 5, 0, 0]"
             },
           },
           $series: {
             type: 'bar',
-            $barWidth: 5,
+            $barWidth: 7,
             barCategoryGap: '10%',
             itemStyle: {
               $normal: {
-                $barBorderRadius: 5,
+                $barBorderRadius: 7,
                 $color: `new Echarts.graphic.LinearGradient(0, 1, 0, 0, [
                   {
                     offset: 0,

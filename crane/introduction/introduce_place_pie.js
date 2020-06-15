@@ -29,12 +29,13 @@ module.exports = {
               color: '#489bbe',
               $fontSize: 14,
             },
+            inactiveColor: '#1C4159',
           },
           $series: {
             name: '人才引进渠道',
             type: 'pie',
             left: '-34%',
-            $radius: "['0%', '55%']",
+            $radius: "['0%', '59%']",
             $label: {
               $show: false,
             },

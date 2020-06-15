@@ -42,8 +42,14 @@ module.exports = [
   {
     component: '@byzanteam/vis-components/data-loader',
     position: [30, 414],
+    exports: {
+      results: 'results',
+    },
     props: {
-      'v-if': 'craneStates.tabCurrent === craneStates.tabNavs[0]',
+      'v-show': 'craneStates.tabCurrent === craneStates.tabNavs[0]',
+      $url: "`/v1/components/04b74ddd-39de-493f-84ab-9d87fcf23fee/data?year=${generateYear}&job=${craneStates.currentJob || ''}&area=${currentRegion}`",
+      method: 'get',
+      $data: "[['']]",
       $style: {
         width: '400px',
         height: '230px',
@@ -58,7 +64,7 @@ module.exports = [
           theme: 'dark',
           stripe: '',
           $headers: "[{width: 120, key: 'index'}, {width: 280, key: 'name'}]",
-          $data: "[{index: 1, name: '广告设计师'}, {index: 2, name: '中级3D建模师'}, {index: 3, name: '产品经理'}, {index: 4, name: '产品助理'}, {index: 5, name: '交互设计师'}, {index: 6, name: '智能硬件'}, {index: 7, name: '生活服务'}]"
+          $data: "results ? results.map((item, index) => ({index: index + 1, name: item[0]})) : [{index: 0, name: '暂无数据'}]"
         },
         children: [
           {
@@ -84,8 +90,14 @@ module.exports = [
   {
     component: '@byzanteam/vis-components/data-loader',
     position: [30, 414],
+    exports: {
+      results: 'results',
+    },
     props: {
-      'v-if': 'craneStates.tabCurrent === craneStates.tabNavs[1]',
+      'v-show': 'craneStates.tabCurrent === craneStates.tabNavs[1]',
+      $url: "`/v1/components/05b74ddd-39de-493f-84ab-9d87fcf23fee/data?year=${generateYear}&job=${craneStates.currentJob || ''}&area=${currentRegion}`",
+      method: 'get',
+      $data: "[['']]",
       $style: {
         width: '400px',
         height: '230px',
@@ -99,8 +111,8 @@ module.exports = [
           $withHeader: false,
           theme: 'dark',
           stripe: '',
-          $headers: "[{width: 120, key: 'index'}, {width: 280, key: 'name'}]",
-          $data: "[{index: 1, name: '中级3D建模师'}, {index: 2, name: '广告设计师'}, {index: 3, name: '生活服务'}, {index: 4, name: '产品助理'}, {index: 5, name: '交互设计师'}, {index: 6, name: '智能硬件'}, {index: 7, name: '产品经理'}]"
+          $headers: "[{width: 80, key: 'index'}, {width: 160, key: 'name'}, {width: 160, key: 'salary'}]",
+          $data: "results ? results.map((item, index) => ({index: index + 1, salary: item[0], name: item[1]})) : [{index: 0, name: '暂无数据'}]"
         },
         children: [
           {

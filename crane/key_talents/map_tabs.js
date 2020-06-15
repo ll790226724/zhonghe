@@ -5,7 +5,7 @@ module.exports = [
     props: {
       $style: {
         width: '400px',
-        height: '200px',
+        height: '220px',
         backgroundColor: 'rgba(0, 0, 0, .03)',
         borderRadius: '4px',
         border: '1px dotted rgba(106, 214, 255, .3)'
@@ -64,6 +64,7 @@ module.exports = [
           $style: {
             width: '180px',
             height: '48px',
+            paddingLeft: '8px',
             backgroundColor: 'rgba(106, 214, 255, .02)',
             border: '1px solid rgba(106, 214, 255, .12)',
             borderRadius: '4px',
@@ -130,12 +131,14 @@ module.exports = [
           $style: {
             width: '180px',
             height: '48px',
+            paddingLeft: '8px',
             backgroundColor: 'rgba(106, 214, 255, .02)',
             border: '1px solid rgba(106, 214, 255, .12)',
             borderRadius: '4px',
             color: '#ffffff',
             fontSize: '16px',
             fontWeight: 500,
+            outline: 'none'
           }
         }
       },
@@ -160,7 +163,7 @@ module.exports = [
     props: {
       $style: {
         width: '400px',
-        height: '200px',
+        height: '180px',
         backgroundColor: 'rgba(0, 0, 0, .03)',
         borderRadius: '4px',
         border: '1px dotted rgba(106, 214, 255, .3)'

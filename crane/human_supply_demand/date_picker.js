@@ -1,14 +1,34 @@
 module.exports = {
-  component: 'iview/date-picker',
+  id: 'job_select',
+  component: '@byzanteam/vis-components/data-loader',
   position: [40, 116],
   props: {
-    class: 'supply-datepicker',
-    $style: {
-      width: '380px',
-      height: '50px'
+    url: '/v1/components/02b74ddd-39de-493f-84ab-9d87fcf23fee/data',
+    method: 'get',
+    $data: "[['']]",
+  },
+  events: {
+    requestDone: {
+      params: ['exports'],
+      actions: ["setState('dateRange', exports.results.map((item) => (Number(item[0]))))"],
     },
-    'v-model': 'craneStates.year',
-    type: 'year',
-    placeholder: '选择时间'
-  }
+  },
+  children: [
+    {
+      component: 'iview/date-picker',
+      props: {
+        'v-model': 'craneStates.year',
+        $style: {
+          width: '380px',
+          height: '50px'
+        },
+        $options: {
+          $disabledDate: "(time) => {return !craneStates.dateRange.includes(time.getFullYear())}"
+        },
+        type: 'year',
+        class: 'supply-datepicker',
+        placeholder: '选择时间'
+      }
+    }
+  ]
 }

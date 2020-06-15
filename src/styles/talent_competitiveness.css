@@ -1,0 +1,13 @@
+.ivu-select-multiple .ivu-select-dropdown {
+  margin-top: 26px;
+  border: 1px solid #6ad6ff1f;
+  max-height: 384px;
+}
+
+.ivu-select-multiple .ivu-select-dropdown .ivu-select-dropdown-list .ivu-select-item {
+  font-size: 14px !important;
+}
+
+.ivu-select-multiple .ivu-icon-ios-close:before {
+  color: #6ad6ff33
+}

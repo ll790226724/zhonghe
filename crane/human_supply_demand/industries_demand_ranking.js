@@ -31,7 +31,13 @@ module.exports = [
   {
     component: '@byzanteam/vis-components/data-loader',
     position: [1490, 84],
+    exports: {
+      results: 'results',
+    },
     props: {
+      url: "/v1/components/08b74ddd-39de-493f-84ab-9d87fcf23fee/data",
+      method: 'get',
+      $data: "[['暂无数据']]",
       $style: {
         width: '400px',
         height: '221px',
@@ -46,7 +52,7 @@ module.exports = [
           theme: 'dark',
           stripe: '',
           $headers: "[{width: 120, key: 'index'}, {width: 280, key: 'name'}]",
-          $data: "[{index: 1, name: '数据服务'}, {index: 2, name: '广告营销'}, {index: 3, name: '旅游'}, {index: 4, name: '医疗健康'}, {index: 5, name: '社交网络'}, {index: 6, name: '智能硬件'}, {index: 7, name: '生活服务'}]"
+          $data: "results ? results.map((item, index) => ({index: index + 1, name: item[0]})) : [{index: 0, name: '暂无数据'}]"
         },
         children: [
           {
