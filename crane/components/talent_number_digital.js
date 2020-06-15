@@ -21,7 +21,7 @@ module.exports = {
         // 'v-if': 'results',
         titlePosition: 'left',
         $content: {
-          title: '地区生产总值',
+          title: '中高端人才数量',
           $digital: 5200,
           suffix: '人',
         },

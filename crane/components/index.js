@@ -20,6 +20,10 @@ module.exports = {
   title: '全国人才资源态势总览',
   states: [
     {
+      id: 'department',
+      value: {}
+    },
+    {
       id: 'options',
       value: {
         backgroundColor: 'transparent',
@@ -536,18 +540,12 @@ module.exports = {
       exports: {
         results: 'results',
       },
-      props: {
-        // $url: "`/v1/components/d9b74ddd-39de-493f-84ab-9d87fcf23fee/data?start=${craneStates.filterRange[0]}&end=${craneStates.filterRange[1]}`",
-        // method: 'get',
-      },
       children: [
         {
           id: 'departments-select',
           component: '@byzanteam/vis-components/vis-select',
           props: {
-            // 'v-if': 'results',
-            // $options: 'results.map( (item, index) => { return {label: item[0], uuid: index } } )',
-            $options: "[{label: '福州', uuid: '0'}, {label: '全国', uuid: '1'}, {label: '陕西省', uuid: '2'}, {label: '江苏省', uuid: '3'}, {label: '福建省', uuid: '4'}, {label: '浙江省', uuid: '5'},]",
+            $options: "selectOptions",
             'v-model': 'craneStates.department',
             placeholder: '福州',
           },

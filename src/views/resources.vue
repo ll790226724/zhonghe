@@ -66,16 +66,16 @@
     <div ref="production-bg" :style="{height: '50px', width: '400px', backgroundColor: '#6ad6ff05', borderRadius: '5px', position: 'absolute', top: '50px', left: '30px'}" />
     <div ref="production-bg" :style="{height: '50px', width: '400px', backgroundColor: '#6ad6ff05', borderRadius: '5px', position: 'absolute', top: '130px', left: '30px'}" />
     <data-loader ref="departments-loader" v-slot="{ results: results }" :style="{position: 'absolute', top: '125px', left: '929px'}">
-      <vis-select ref="departments-select" :options="[{label: '福州', uuid: '0'}, {label: '全国', uuid: '1'}, {label: '陕西省', uuid: '2'}, {label: '江苏省', uuid: '3'}, {label: '福建省', uuid: '4'}, {label: '浙江省', uuid: '5'},]" v-model="craneStates.department" placeholder="福州" />
+      <vis-select ref="departments-select" :options="selectOptions" v-model="craneStates.department" placeholder="福州" />
     </data-loader>
     <data-loader v-slot="{ results: results }" :style="{width: '460px', height: '218px', position: 'absolute', top: '435px', left: '1455px'}">
       <v-chart :options="{backgroundColor: 'transparent', legend: {icon: 'circle', itemWidth: 10, itemHeight: 10, right: 75, top: 'middle', itemGap: 9, orient: 'vertical', textStyle: {color: '#4b9bbe', fontSize: 12}, inactiveColor: '#1C4159'}, color: ['#6ad6ff', '#4b9bbe', '#367290', '#275570', '#1c4159', '#153349'], series: [{type: 'pie', left: -140, radius: ['35%', '62%'], label: {show: false}, labelLine: {show: false}, data: [{value: 1335, name: '数据服务'}, {value: 900, name: '智能硬件'}, {value: 700, name: '人力资源服务'}, {value: 500, name: '计算机软件'}, {value: 300, name: '游戏'}, {value: 120, name: '其他'}]}], tooltip: {trigger: 'item', formatter: pieTooltipFormatterFunc, backgroundColor: '#566374f0'}}" />
     </data-loader>
-    <data-loader ref="part-production-value" v-slot="{ results: results }" :style="{position: 'absolute', top: '56px', left: '130px'}">
-      <digital-roll ref="deal-number-total" titlePosition="left" :content="{title: '地区生产总值', prefix: '￥', digital: 125200}" :options="{separator: ','}" :titleStyle="{color: '#367391', fontSize: '16px', fontWeight: '400'}" :prefixStyle="{color: '#367391', fontSize: '16px', fontWeight: '400'}" :suffixStyle="{color: '#367391', fontSize: '16px', fontWeight: '400'}" :digitalStyle="{fontSize: '32px', color: '#6ad6ff', fontWeight: '400', fontFamily: 'Oswald-Regular', format: '11', letterSpacing: '2.4px'}" />
+    <data-loader ref="part-production-value" v-slot="{ results: results }" :url="`/v1/components/12b74ddd-39de-493f-84ab-9d87fcf23fee/data?area=${craneStates.department.label}`" method="get" :data="[[0]]" :style="{position: 'absolute', top: '56px', left: '130px'}">
+      <digital-roll ref="deal-number-total" v-if="results" titlePosition="left" :content="{title: '地区生产总值', prefix: '￥', digital: results[0][0]}" :options="{separator: ','}" :titleStyle="{color: '#367391', fontSize: '16px', fontWeight: '400'}" :prefixStyle="{color: '#367391', fontSize: '16px', fontWeight: '400'}" :suffixStyle="{color: '#367391', fontSize: '16px', fontWeight: '400'}" :digitalStyle="{fontSize: '32px', color: '#6ad6ff', fontWeight: '400', fontFamily: 'Oswald-Regular', format: '11', letterSpacing: '2.4px'}" />
     </data-loader>
     <data-loader ref="talent-number" v-slot="{ results: results }" :style="{position: 'absolute', top: '136px', left: '130px'}">
-      <digital-roll ref="talent-number-content" titlePosition="left" :content="{title: '地区生产总值', digital: 5200, suffix: '人'}" :options="{separator: ','}" :titleStyle="{color: '#367391', fontSize: '16px', fontWeight: '400'}" :prefixStyle="{color: '#367391', fontSize: '16px', fontWeight: '400'}" :suffixStyle="{color: '#367391', fontSize: '16px', fontWeight: '400'}" :digitalStyle="{fontSize: '32px', color: '#6ad6ff', fontWeight: '400', fontFamily: 'Oswald-Regular', format: '11', letterSpacing: '2.4px'}" />
+      <digital-roll ref="talent-number-content" titlePosition="left" :content="{title: '中高端人才数量', digital: 5200, suffix: '人'}" :options="{separator: ','}" :titleStyle="{color: '#367391', fontSize: '16px', fontWeight: '400'}" :prefixStyle="{color: '#367391', fontSize: '16px', fontWeight: '400'}" :suffixStyle="{color: '#367391', fontSize: '16px', fontWeight: '400'}" :digitalStyle="{fontSize: '32px', color: '#6ad6ff', fontWeight: '400', fontFamily: 'Oswald-Regular', format: '11', letterSpacing: '2.4px'}" />
     </data-loader>
     <data-loader ref="talent-age-index" v-slot="{ results: results }" :style="{position: 'absolute', top: '440px', left: '90px'}">
       <digital-roll ref="talent-age-index-content" titlePosition="bottom" :content="{title: '人才年龄指数', digital: 23}" :options="{separator: ''}" :prefixStyle="{color: '#367391', fontSize: '16px', fontWeight: '400'}" :suffixStyle="{color: '#367391', fontSize: '16px', fontWeight: '400'}" :titleStyle="{color: '#367391', fontSize: '16px', fontWeight: '400'}" :digitalStyle="{fontSize: '32px', color: '#6ad6ff', fontWeight: '400', fontFamily: 'Oswald-Regular', format: '11', letterSpacing: '2.4px'}" />
@@ -124,6 +124,8 @@ import fuzhou from '../../public/static/fuzhou.json'
 
 Echarts.registerMap('fuzhou', fuzhou);
 
+const SELECT_OPTIONS = [{label: '福州', uuid: 'fuzhou'}, {label: '宁德', uuid: 'ningde'}, {label: '龙岩', uuid: 'longyan'}, {label: '莆田', uuid: 'putian'}, {label: '南平', uuid: 'nanping'}, {label: '三明', uuid: 'sanming'}, {label: '厦门', uuid: 'xiamen'}, {label: '漳州', uuid: 'zhangzhou'}, {label: '泉州', uuid: 'quanzhou'}]
+
 import BuiltInMixin from '../mixins/built_in'
 import {
   DataLoader,
@@ -154,7 +156,9 @@ export const resources = {
   data () {
     return {
       Echarts: Echarts,
+      selectOptions: SELECT_OPTIONS,
       craneStates: {
+        department: SELECT_OPTIONS[0],
         options: {
           backgroundColor: 'transparent',
           tooltip: {
