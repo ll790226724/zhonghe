@@ -1,6 +1,6 @@
 module.exports = [
   {
-    component: '@byzanteam/vis-components/vis-select',
+    component: '@byzanteam/vis-components/brick-radio-button-select',
     position: [929, 125],
     props: {
       $options: "craneStates.selectOptions",

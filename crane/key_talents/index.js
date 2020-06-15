@@ -25,6 +25,10 @@ module.exports = {
       ]
     },
     {
+      id: 'currentKeyword',
+      value: ''
+    },
+    {
       id: 'currentTalentType',
       value: ''
     },
