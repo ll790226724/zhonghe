@@ -187,29 +187,43 @@ module.exports = [
         }
       },
       {
-        component: 'iview/Select',
+        id: 'industry_select',
+        component: '@byzanteam/vis-components/data-loader',
         position: [1697, 270],
+        exports: {
+          results: 'results',
+        },
         props: {
-          placeholder: '所有行业',
-          class: 'map-select',
-          $style: {
-            width: '180px',
-          },
-          'v-model': 'craneStates.currentShortageType'
+          url: '/v1/components/30b74ddd-39de-493f-84ab-9d87fcf23fee/data?offset=10',
+          method: 'get',
+          $data: "[['']]",
         },
         children: [
           {
-            component: 'iview/Option',
-            vfor: {
-              data: "craneStates.types",
-              exports: {item: 'item', index: 'key'}
-            },
+            component: 'iview/Select',
             props: {
-              $value: "item.index",
-              $label: "item.name"
+              placeholder: '所有行业',
+              class: 'map-select',
+              $style: {
+                width: '180px',
+              },
+              'v-model': 'craneStates.currentShortageType'
             },
-            content: '{{item.name}}',
-          }
+            children: [
+              {
+                component: 'iview/Option',
+                vfor: {
+                  data: "results.map((item, index) => ({index: item[0], name: item[0]}))",
+                  exports: {item: 'item', index: 'key'}
+                },
+                props: {
+                  $value: "item.index",
+                  $label: "item.name"
+                },
+                content: '{{item.name}}',
+              }
+            ]
+          },
         ]
       },
       {

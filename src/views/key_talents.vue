@@ -61,11 +61,13 @@
     <div :style="{width: '400px', height: '180px', backgroundColor: 'rgba(0, 0, 0, .03)', borderRadius: '4px', border: '1px dotted rgba(106, 214, 255, .3)', position: 'absolute', top: '225px', left: '1490px'}" />
     <div>
       <date-picker class="map-tab-datepicker" :style="{width: '180px', position: 'absolute', top: '270px', left: '1503px'}" v-model="craneStates.time" type="year" placeholder="选择时间" />
-      <Select placeholder="所有行业" class="map-select" :style="{width: '180px', position: 'absolute', top: '270px', left: '1697px'}" v-model="craneStates.currentShortageType">
-        <Option v-for="(item, key) in craneStates.types" :key="key" :value="item.index" :label="item.name">
-          {{item.name}}
-        </Option>
-      </Select>
+      <data-loader ref="industry_select" v-slot="{ results: results }" url="/v1/components/30b74ddd-39de-493f-84ab-9d87fcf23fee/data?offset=10" method="get" :data="[['']]" :style="{position: 'absolute', top: '270px', left: '1697px'}">
+        <Select placeholder="所有行业" class="map-select" :style="{width: '180px'}" v-model="craneStates.currentShortageType">
+          <Option v-for="(item, key) in results.map((item, index) => ({index: item[0], name: item[0]}))" :key="key" :value="item.index" :label="item.name">
+            {{item.name}}
+          </Option>
+        </Select>
+      </data-loader>
       <brick-button type="gradient" color="primary" :style="{width: '148px', height: '25px', position: 'absolute', top: '346px', left: '1616px'}">
         查看紧缺人才地图
       </brick-button>
