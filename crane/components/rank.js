@@ -23,7 +23,7 @@ module.exports = {
       component: '@byzanteam/vis-components/ranking',
       props: {
         'v-if': 'results',
-        $data: "[{label: '本科', amount: 78.16}, {label: '硕士', amount: 23.21}, {label: '博士', amount: 18.01}, {label: '高中生', amount: 68.23}, {label: '大专', amount: 47.67}, {label: '初中', amount: 45.11},]",
+        $data: "results.map(item => ({label: item[1], amount: item[0]}))",
         $keys: {
           label: 'label',
           value: 'amount',
