@@ -3,10 +3,10 @@
     <img ref="background" src="/static/images/Bg.png" :style="{position: 'absolute', top: '0px', left: '0px'}" />
     <img ref="box-bg" :style="{width: '440px', height: '1059px', position: 'absolute', top: '10px', left: '10px'}" src="/static/images/Box-Bg.png" />
     <img ref="right-box-bg" :style="{width: '440px', height: '1059px', position: 'absolute', top: '10px', left: '1471px'}" src="/static/images/Box-Bg.png" />
-    <data-loader :style="{width: '1100px', height: '900px', position: 'absolute', top: '160px', left: '410px'}">
-      <v-chart :options="craneStates.options" />
+    <data-loader v-slot="{ results: results }" @requestDone="(param)=>[setState('mapData', param.results.map((item) => ({name: item[1], value: item[0]})))]" :url="`/v1/components/20b74ddd-39de-493f-84ab-9d87fcf23fee/data?area=${craneStates.department.label}`" method="get" :data="[[0, '暂无数据']]" :style="{width: '1100px', height: '900px', position: 'absolute', top: '160px', left: '410px'}">
+      <v-chart v-if="results" :options="{backgroundColor: 'transparent', tooltip: {trigger: 'item', formatter: (params) => {return params.name + '<br />人才数量（人）：' + (isNaN(params.value) ? 0 : params.value)}, backgroundColor: '#566374f0'}, visualMap: {type: 'piecewise', pieces: [{gt: 1500, label: '1500人及以上'}, {gt: 1000, lte: 1500, label: '1000-1500人'}, {gt: 100, lte: 999, label: '100-999人'}, {gt: 10, lte: 99, label: '10-99人'}, {gt: 1, lt: 9, label: '1-9人'}], orient: 'horizontal', bottom: '6%', left: '26%', textStyle: {color: '#ffffff', fontSize: 14}, itemWidth: 18, itemGap: 10, textGap: 8, inRange: {color: ['rgba(106, 214, 255, .1)', 'rgba(106, 214, 255, .4)', 'rgba(106, 214, 255, .5)', 'rgba(106, 214, 255, .6)', 'rgba(106, 214, 255, .7)']}}, series: {type: 'map', mapType: craneStates.department.uuid, data: results.map(item => ({name: item[1], value: item[0]})), label: {show: true, fontSize: 14, color: 'white'}, itemStyle: {areaColor: 'rgba(106, 214, 255, .05)', borderColor: '#6ad6ff', borderType: 'solid', borderWidth: 0.5}, emphasis: {label: {color: 'white', fontWeight: 600}, itemStyle: {areaColor: '#6ad6ff'}}}}" />
     </data-loader>
-    <data-loader v-slot="{ results: results }" :url="`/v1/components/21b74ddd-39de-493f-84ab-9d87fcf23fee/data?area=${craneStates.department.label}`" method="get" :data="[[0, '暂无数据']]" :style="{width: '400px', height: '254px', overflow: 'scroll', position: 'absolute', top: '78px', left: '1490px'}">
+    <data-loader v-slot="{ results: results }" :url="`/v1/components/21b74ddd-39de-493f-84ab-9d87fcf23fee/data?area=${craneStates.department.label}`" method="get" :data="[['暂无数据']]" :style="{width: '400px', height: '254px', overflow: 'scroll', position: 'absolute', top: '78px', left: '1490px'}">
       <vis-table :withHeader="false" theme="dark" stripe="" :headers="[{width: 120, key: 'index'}, {width: 280, key: 'name'}]" :data="results.map((item, index) => ({index: index + 1, name: item[0]}))">
         <template v-slot="{ cell: cell, columnKey: columnKey }">
           <span :class="columnKey === 'index' ? 'row-index-cell' : ''">
@@ -65,10 +65,10 @@
     <div ref="synthesis-bg" :style="{height: '80px', width: '180px', backgroundColor: '#6ad6ff05', borderRadius: '5px', position: 'absolute', top: '540px', left: '240px'}" />
     <div ref="production-bg" :style="{height: '50px', width: '400px', backgroundColor: '#6ad6ff05', borderRadius: '5px', position: 'absolute', top: '50px', left: '30px'}" />
     <div ref="production-bg" :style="{height: '50px', width: '400px', backgroundColor: '#6ad6ff05', borderRadius: '5px', position: 'absolute', top: '130px', left: '30px'}" />
-    <data-loader ref="departments-loader" v-slot="{ results: results }" :style="{position: 'absolute', top: '125px', left: '929px'}">
-      <vis-select ref="departments-select" :options="selectOptions" v-model="craneStates.department" placeholder="福州" />
-    </data-loader>
-    <data-loader v-slot="{ results: results }" :url="`/v1/components/22b74ddd-39de-493f-84ab-9d87fcf23fee/data?area=${craneStates.department.label}`" method="get" :data="[[0, '暂无数据']]" :style="{width: '460px', height: '218px', position: 'absolute', top: '435px', left: '1455px'}">
+    <div ref="departments-loader" :style="{position: 'absolute', top: '125px', left: '929px'}">
+      <brick-radio-button-select ref="departments-select" :options="selectOptions" v-model="craneStates.department" placeholder="福州" />
+    </div>
+    <data-loader v-slot="{ results: results }" url="/v1/components/22b74ddd-39de-493f-84ab-9d87fcf23fee/data" method="get" :data="[[0, '暂无数据']]" :style="{width: '460px', height: '218px', position: 'absolute', top: '435px', left: '1455px'}">
       <v-chart :options="{backgroundColor: 'transparent', legend: {icon: 'circle', itemWidth: 10, itemHeight: 10, right: 75, left: 285, top: 'middle', itemGap: 9, orient: 'vertical', textStyle: {color: '#4b9bbe', fontSize: 12}, inactiveColor: '#1C4159'}, color: ['#6ad6ff', '#4b9bbe', '#367290', '#275570', '#1c4159', '#153349'], series: [{type: 'pie', left: -140, radius: ['35%', '62%'], label: {show: false}, labelLine: {show: false}, data: results.map(item => ({value: item[0], name: item[1]}))}], tooltip: {trigger: 'item', formatter: pieTooltipFormatterFunc, backgroundColor: '#566374f0'}}" />
     </data-loader>
     <data-loader ref="part-production-value" v-slot="{ results: results }" :url="`/v1/components/12b74ddd-39de-493f-84ab-9d87fcf23fee/data?area=${craneStates.department.label}`" method="get" :data="[[0]]" :style="{position: 'absolute', top: '56px', left: '130px'}">
@@ -130,7 +130,7 @@ import BuiltInMixin from '../mixins/built_in'
 import {
   DataLoader,
   VisTable,
-  VisSelect,
+  BrickRadioButtonSelect,
   DigitalRoll,
   Ranking,
 } from '@byzanteam/vis-components'
@@ -146,7 +146,7 @@ export const resources = {
     DataLoader,
     VisTable,
     'v-chart': Echarts,
-    VisSelect,
+    BrickRadioButtonSelect,
     DigitalRoll,
     Ranking,
     Donut,
@@ -159,78 +159,16 @@ export const resources = {
       selectOptions: SELECT_OPTIONS,
       craneStates: {
         department: SELECT_OPTIONS[0],
-        options: {
-          backgroundColor: 'transparent',
-          tooltip: {
-            trigger: 'item',
-            formatter: '{b}<br/>人才数量（人）：{c}',
-            backgroundColor: '#566374f0',
-          },
-          visualMap: {
-            type: 'piecewise',
-            pieces: [
-              {gt: 1500, label: '1500人及以上'},
-              {gt: 1000, lte: 1500, label: '1000-1500人'},
-              {gt: 100, lte: 999, label: '100-999人'},
-              {gt: 10, lte: 99, label: '10-99人'},
-              {gt: 1, lt: 9, label: '1-9人'}
-            ],
-            orient: 'horizontal',
-            bottom: '6%',
-            left: '26%',
-            textStyle: {
-              color: '#ffffff',
-              fontSize: 14
-            },
-            itemWidth: 18,
-            itemGap: 10,
-            textGap: 8,
-            inRange: {
-              color: ['rgba(106, 214, 255, .1)', 'rgba(106, 214, 255, .4)', 'rgba(106, 214, 255, .5)', 'rgba(106, 214, 255, .6)', 'rgba(106, 214, 255, .7)']
-            }
-          },
-          series: [
-            {
-              type: 'map',
-              mapType: 'fuzhou',
-              data: [
-                {name: '鼓楼区', value: 4},
-                {name: '台江区', value: 15},
-                {name: '仓山区', value: 31},
-                {name: '马尾区', value: 69},
-                {name: '晋安区', value: 1440},
-                {name: '长乐区', value: 4068},
-                {name: '闽侯县', value: 376},
-                {name: '连江县', value: 45},
-                {name: '罗源县', value: 55},
-                {name: '闽清县', value: 2},
-                {name: '永泰县', value: 677},
-                {name: '平潭县', value: 677},
-                {name: '福清市', value: 677},
-              ],
-              label: {
-                show: true,
-                 fontSize: 14,
-                color: 'white',
-              },
-              itemStyle: {
-                borderColor: '#6ad6ff',
-                borderType: 'solid',
-                borderWidth: 0.5
-              },
-              emphasis: {
-                label: {
-                  color: 'white',
-                  fontWeight: 600,
-                },
-                itemStyle: {
-                  areaColor: '#6ad6ff'
-                }
-              },
-            }
-          ]
-        },
+        mapData: []
       },
+    }
+  },
+
+  watch: {
+    'craneStates.department' (value) {
+      if(!value) {
+        this.craneStates.department = this.selectOptions[0]
+      }
     }
   },
 
