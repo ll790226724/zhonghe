@@ -55,21 +55,7 @@ module.exports = [
             {
               type: 'map',
               mapType: craneStates.department.uuid,
-              data: [
-                {name: '鼓楼区', value: 4},
-                {name: '台江区', value: 15},
-                {name: '仓山区', value: 31},
-                {name: '马尾区', value: 69},
-                {name: '晋安区', value: 1440},
-                {name: '长乐区', value: 4068},
-                {name: '闽侯县', value: 376},
-                {name: '连江县', value: 45},
-                {name: '罗源县', value: 55},
-                {name: '闽清县', value: 2},
-                {name: '永泰县', value: 677},
-                {name: '平潭县', value: 677},
-                {name: '福清市', value: 677},
-              ],
+              data: results.map(item => {return {name: item[1], value: item[0]}}),
               label: {
                 show: true,
                 fontSize: 14,

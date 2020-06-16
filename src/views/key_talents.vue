@@ -116,21 +116,7 @@
                 {
                   type: 'map',
                   mapType: craneStates.department.uuid,
-                  data: [
-                    {name: '鼓楼区', value: 4},
-                    {name: '台江区', value: 15},
-                    {name: '仓山区', value: 31},
-                    {name: '马尾区', value: 69},
-                    {name: '晋安区', value: 1440},
-                    {name: '长乐区', value: 4068},
-                    {name: '闽侯县', value: 376},
-                    {name: '连江县', value: 45},
-                    {name: '罗源县', value: 55},
-                    {name: '闽清县', value: 2},
-                    {name: '永泰县', value: 677},
-                    {name: '平潭县', value: 677},
-                    {name: '福清市', value: 677},
-                  ],
+                  data: results.map(item => {return {name: item[1], value: item[0]}}),
                   label: {
                     show: true,
                     fontSize: 14,
@@ -233,13 +219,13 @@ export const key_talents = {
       }
     },
     supplyUrl() {
-      return '/v1/components/25b74ddd-39de-493f-84ab-9d87fcf23fee/data?job=' + this.craneStates.supplyInputWord + '&area=' + this.craneStates.department.label
+      return `/v1/components/25b74ddd-39de-493f-84ab-9d87fcf23fee/data?job=${this.craneStates.supplyInputWord}&area=${this.craneStates.department.label}`
     },
     demandUrl() {
-      return '/v1/components/26b74ddd-39de-493f-84ab-9d87fcf23fee/data?job=' + this.craneStates.demandInputWord + '&area=' + this.craneStates.department.label
+      return `/v1/components/26b74ddd-39de-493f-84ab-9d87fcf23fee/data?job=${this.craneStates.demandInputWord}&area=${this.craneStates.department.label}`
     },
     shortageUrl() {
-      return '/v1/components/31b74ddd-39de-493f-84ab-9d87fcf23fee/data?industry=' + this.craneStates.currentShortageType + '&area=' + this.craneStates.department.label
+      return `/v1/components/31b74ddd-39de-493f-84ab-9d87fcf23fee/data?industry=${this.craneStates.currentShortageType}&area=${this.craneStates.department.label}`
     }
   },
 
@@ -252,45 +238,6 @@ export const key_talents = {
       },
       immediate: true
     },
-    'craneStates.currentShortageIndustry': {
-      handler(value) {
-        this.axios.get('/v1/components/31b74ddd-39de-493f-84ab-9d87fcf23fee/data', {
-          params: {
-            industry: value
-          }
-        }).then(({data}) => {
-          this.craneStates.mapData = data.data.map(item => {
-            return {name: item[1], value: item[0]}
-          })
-        })
-      }
-    },
-    'craneStates.currentSupplyKeyword': {
-      handler(value) {
-        this.axios.get('/v1/components/25b74ddd-39de-493f-84ab-9d87fcf23fee/data', {
-          params: {
-            job: value,
-          }
-        }).then(({data}) => {
-          this.craneStates.mapData = data.data.map(item => {
-            return {name: item[1], value: item[0]}
-          })
-        })
-      }
-    },
-    'craneStates.currentDemandKeyword': {
-      handler(value) {
-        this.axios.get('/v1/components/26b74ddd-39de-493f-84ab-9d87fcf23fee/data', {
-          params: {
-            job: value,
-          }
-        }).then(({data}) => {
-          this.craneStates.mapData = data.data.map(item => {
-            return {name: item[1], value: item[0]}
-          })
-        })
-      }
-    }
   },
 
   methods: {
