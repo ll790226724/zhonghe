@@ -21,7 +21,7 @@ module.exports = {
     },
     {
       id: 'indicators',
-      value: ['人才数量指标', '人才质量指标', '人才结构指标', '人才投入指标', '人才平台指标', '人才生活指标', '人才环境指标', '人才效能指标', '人才效益指标', '人才发展指标']
+      value: [{name: '人才数量指标'}, {name: '人才质量指标'}, {name: '人才结构指标'}, {name: '人才投入指标'}, {name: '人才平台指标'}, {name: '人才生活指标'}, {name: '人才环境指标'}, {name: '人才效能指标'}, {name: '人才效益指标'}, {name: '人才发展指标'}]
     },
     {
       id: 'indicator',
@@ -48,11 +48,15 @@ module.exports = {
     },
     {
       id: 'currentProvince',
-      value: ''
+      value: []
     },
     {
       id: 'selectedArea',
       value: {}
+    },
+    {
+      id: 'radarData',
+      value: []
     }
   ],
   components: [
@@ -220,14 +224,14 @@ module.exports = {
         {
           component: 'iview/Option',
           vfor: {
-            data: "craneStates.types",
+            data: "selectOptions",
             exports: {item: 'item', index: 'key'}
           },
           props: {
-            $value: "item.index",
-            $label: "item.name"
+            $value: "item.label",
+            $label: "item.label"
           },
-          content: '{{item.name}}',
+          content: '{{item.label}}',
         }
       ]
     },
