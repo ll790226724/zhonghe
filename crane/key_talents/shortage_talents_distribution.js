@@ -35,7 +35,7 @@ module.exports = [
       results: 'results',
     },
     props: {
-      $url: "`/v1/components/33b74ddd-39de-493f-84ab-9d87fcf23fee/data?industry=${craneStates.currentShortageIndustry}`",
+      $url: "`/v1/components/33b74ddd-39de-493f-84ab-9d87fcf23fee/data?industry=${craneStates.currentShortageType}`",
       method: 'get',
       $data: "[[0, '暂无数据']]",
       $style: {
