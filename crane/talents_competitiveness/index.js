@@ -13,7 +13,7 @@ module.exports = {
   states: [
     {
       id: 'province',
-      value: ''
+      value: {label: '福建', uuid: 1}
     },
     {
       id: 'city',
@@ -50,6 +50,10 @@ module.exports = {
       id: 'currentProvince',
       value: ''
     },
+    {
+      id: 'selectedArea',
+      value: {}
+    }
   ],
   components: [
     {

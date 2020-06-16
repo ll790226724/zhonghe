@@ -1,19 +1,19 @@
 module.exports = [
   {
-    component: '@byzanteam/vis-components/vis-select',
+    component: '@byzanteam/vis-components/brick-radio-button-select',
     position: [864, 125],
     props: {
-      $options: "[{label: '台湾', uuid: 1},{label: '黑龙江', uuid: 2 },{label: '内蒙古', uuid: 3},{label: '吉林', uuid: 4},{label: '北京市', uuid: 5},{label: '辽宁', uuid: 6},{label: '河北', uuid: 7},{label: '天津', uuid: 8},{label: '山西', uuid: 9},{label: '陕西', uuid: 10},{label: '甘肃', uuid: 11},{label: '宁夏', uuid: 12},{label: '青海', uuid: 13},{label: '新疆', uuid:  14},{label: '西藏', uuid: 15},{label: '四川', uuid: 17},{label: '重庆', uuid: 18},{label: '山东', uuid: 19},{label: '河南', uuid: 20},{label: '江苏', uuid: 21},{label: '安徽', uuid: 22},{label: '湖北', uuid: 23},{label: '浙江', uuid: 24},{label: '福建', uuid: 25},{label: '江西', uuid: 26},{label: '湖南', uuid: 27},{label: '贵州', uuid: 28},{label: '云南', uuid: 29},{label: '广东', uuid: 30},{label: '广西', uuid: 31}, {label: '海南', uuid: 32}, {label: '上海', uuid: 33}]",
+      $options: "[{label: '福建', uuid: 1}]",
       'v-model': 'craneStates.province',
       placeholder: '全国',
     }
   },
   {
-    component: '@byzanteam/vis-components/vis-select',
+    component: '@byzanteam/vis-components/brick-radio-button-select',
     position: [979, 125],
     props: {
       'v-if': 'craneStates.province',
-      $options: "[{label: '福州', uuid: '0'}, {label: '全国', uuid: '1'}, {label: '陕西省', uuid: '2'}, {label: '江苏省', uuid: '3'}, {label: '福建省', uuid: '4'}, {label: '浙江省', uuid: '5'},]",
+      $options: "selectOptions",
       'v-model': 'craneStates.city',
       placeholder: '福州',
     }
@@ -29,12 +29,13 @@ module.exports = [
   },
   children: [
     {
+      id: 'map',
       component: 'v-chart',
       props: {
         $options: {
           backgroundColor: 'transparent',
           $geo: {
-            map: 'china',
+            $map: "craneStates.city.uuid",
             $left: 0,
             $right: 0,
             $label: {
