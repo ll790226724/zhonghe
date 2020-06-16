@@ -90,7 +90,7 @@ module.exports = [
         },
         events: {
           'click': {
-            actions: ["setState('currentKeyword', craneStates.inputWord)"]
+            actions: ["setState('currentSupplyKeyword', craneStates.inputWord)"]
           }
         }
       }
@@ -163,7 +163,7 @@ module.exports = [
         },
         events: {
           'click': {
-            actions: ["setState('currentKeyword', craneStates.inputWord)"]
+            actions: ["setState('currentDemandKeyword', craneStates.inputWord)"]
           }
         }
       }

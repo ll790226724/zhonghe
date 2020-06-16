@@ -27,8 +27,12 @@ module.exports = {
       value: '',
     },
     {
-      id: 'currentKeyword',
+      id: 'currentSupplyKeyword',
       value: ''
+    },
+    {
+      id: 'currentDemandKeyword',
+      value: '',
     },
     {
       id: 'currentTalentType',
@@ -61,6 +65,10 @@ module.exports = {
     {
       id: 'currentShortageIndustry',
       value: '',
+    },
+    {
+      id: 'mapData',
+      value: []
     },
     {
       id: 'selectOptions',

@@ -43,7 +43,7 @@
         </Option>
       </Select>
       <input placeholder="关键词" class="map-tabs-input" v-model="craneStates.inputWord" :style="{width: '180px', height: '48px', paddingLeft: '8px', backgroundColor: 'rgba(106, 214, 255, .02)', border: '1px solid rgba(106, 214, 255, .12)', borderRadius: '4px', color: '#ffffff', fontSize: '16px', fontWeight: '500', outline: 'none', position: 'absolute', top: '324px', left: '237px'}" />
-      <brick-button @click="()=>[setState('currentKeyword', craneStates.inputWord)]" type="gradient" color="primary" :style="{width: '148px', height: '25px', position: 'absolute', top: '400px', left: '156px'}">
+      <brick-button @click="()=>[setState('currentSupplyKeyword', craneStates.inputWord)]" type="gradient" color="primary" :style="{width: '148px', height: '25px', position: 'absolute', top: '400px', left: '156px'}">
         查看人才供应地图
       </brick-button>
     </div>
@@ -54,7 +54,7 @@
         </Option>
       </Select>
       <input placeholder="关键词" class="map-tabs-input" v-model="craneStates.inputWord" :style="{width: '180px', height: '48px', paddingLeft: '8px', backgroundColor: 'rgba(106, 214, 255, .02)', border: '1px solid rgba(106, 214, 255, .12)', borderRadius: '4px', color: '#ffffff', fontSize: '16px', fontWeight: '500', outline: 'none', position: 'absolute', top: '324px', left: '237px'}" />
-      <brick-button @click="()=>[setState('currentKeyword', craneStates.inputWord)]" type="gradient" color="primary" :style="{width: '148px', height: '25px', position: 'absolute', top: '400px', left: '156px'}">
+      <brick-button @click="()=>[setState('currentDemandKeyword', craneStates.inputWord)]" type="gradient" color="primary" :style="{width: '148px', height: '25px', position: 'absolute', top: '400px', left: '156px'}">
         查看人才需求地图
       </brick-button>
     </div>
@@ -116,21 +116,7 @@
                 {
                   type: 'map',
                   mapType: craneStates.department.uuid,
-                  data: [
-                    {name: '鼓楼区', value: 4},
-                    {name: '台江区', value: 15},
-                    {name: '仓山区', value: 31},
-                    {name: '马尾区', value: 69},
-                    {name: '晋安区', value: 1440},
-                    {name: '长乐区', value: 4068},
-                    {name: '闽侯县', value: 376},
-                    {name: '连江县', value: 45},
-                    {name: '罗源县', value: 55},
-                    {name: '闽清县', value: 2},
-                    {name: '永泰县', value: 677},
-                    {name: '平潭县', value: 677},
-                    {name: '福清市', value: 677},
-                  ],
+                  data: craneStates.mapData,
                   label: {
                     show: true,
                     fontSize: 14,
@@ -207,7 +193,8 @@ export const key_talents = {
       craneStates: {
         types: [{index: 1, name: '学术型人才'}, {index: 2, name: '工程型人才'}, {index: 3, name: '技能型人才'}, {index: 4, name: '技术型人才'}],
         inputWord: '',
-        currentKeyword: '',
+        currentSupplyKeyword: '',
+        currentDemandKeyword: '',
         currentTalentType: '',
         currentDemandType: '',
         mapTabCurrent: MAP_TAB_NAVS[0],
@@ -216,6 +203,7 @@ export const key_talents = {
         dateRange: [],
         currentShortageType: '',
         currentShortageIndustry: '',
+        mapData: [],
         selectOptions: [{label: '福州', uuid: 'fuzhou'}, {label: '宁德', uuid: 'ningde'}, {label: '龙岩', uuid: 'longyan'}, {label: '莆田', uuid: 'putian'}, {label: '南平', uuid: 'nanping'}, {label: '三明', uuid: 'sanming'}, {label: '厦门', uuid: 'xiamen'}, {label: '漳州', uuid: 'zhangzhou'}, {label: '泉州', uuid: 'quanzhou'}],
         department: null,
       },
@@ -230,6 +218,45 @@ export const key_talents = {
         }
       },
       immediate: true
+    },
+    'craneStates.currentShortageIndustry': {
+      handler(value) {
+        this.axios.get('/v1/components/31b74ddd-39de-493f-84ab-9d87fcf23fee/data', {
+          params: {
+            industry: value
+          }
+        }).then(({data}) => {
+          this.craneStates.mapData = data.data.map(item => {
+            return {name: item[1], value: item[0]}
+          })
+        })
+      }
+    },
+    'craneStates.currentSupplyKeyword': {
+      handler(value) {
+        this.axios.get('/v1/components/25b74ddd-39de-493f-84ab-9d87fcf23fee/data', {
+          params: {
+            job: value,
+          }
+        }).then(({data}) => {
+          this.craneStates.mapData = data.data.map(item => {
+            return {name: item[1], value: item[0]}
+          })
+        })
+      }
+    },
+    'craneStates.currentDemandKeyword': {
+      handler(value) {
+        this.axios.get('/v1/components/26b74ddd-39de-493f-84ab-9d87fcf23fee/data', {
+          params: {
+            job: value,
+          }
+        }).then(({data}) => {
+          this.craneStates.mapData = data.data.map(item => {
+            return {name: item[1], value: item[0]}
+          })
+        })
+      }
     }
   },
 
