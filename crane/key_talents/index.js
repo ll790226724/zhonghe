@@ -23,6 +23,10 @@ module.exports = {
       ]
     },
     {
+      id: 'inputWord',
+      value: '',
+    },
+    {
       id: 'currentKeyword',
       value: ''
     },

@@ -61,6 +61,7 @@ module.exports = [
         props: {
           placeholder: '关键词',
           class: 'map-tabs-input',
+          'v-model': 'craneStates.inputWord',
           $style: {
             width: '180px',
             height: '48px',
@@ -85,6 +86,11 @@ module.exports = [
           $style: {
             width: '148px',
             height: '25px'
+          }
+        },
+        events: {
+          'click': {
+            actions: ["setState('currentKeyword', craneStates.inputWord)"]
           }
         }
       }
@@ -128,6 +134,7 @@ module.exports = [
         props: {
           placeholder: '关键词',
           class: 'map-tabs-input',
+          'v-model': 'craneStates.inputWord',
           $style: {
             width: '180px',
             height: '48px',
@@ -152,6 +159,11 @@ module.exports = [
           $style: {
             width: '148px',
             height: '25px'
+          }
+        },
+        events: {
+          'click': {
+            actions: ["setState('currentKeyword', craneStates.inputWord)"]
           }
         }
       }
