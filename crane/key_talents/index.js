@@ -55,6 +55,10 @@ module.exports = {
       value: ''
     },
     {
+      id: 'year',
+      value: '',
+    },
+    {
       id: 'dateRange',
       value: [],
     },
