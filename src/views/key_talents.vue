@@ -186,18 +186,6 @@ import {
 
 const MAP_TAB_NAVS = [{uuid: 1, label: '人才供应'}, {uuid: 2, label: '人才需求'}]
 
-const DEPARTMENT = {
-  'fuzhou': '福州',
-  'ningde': '宁德',
-  'longyan': '龙岩',
-  'putian': '莆田',
-  'nanping': '南平',
-  'sanming': '三明',
-  'xiamen': '厦门',
-  'zhangzhou': '漳州',
-  'quanzhou': '泉州',
-}
-
 export const key_talents = {
   mixins: [BuiltInMixin],
 
@@ -216,7 +204,6 @@ export const key_talents = {
 
   data () {
     return {
-      departmentText: DEPARTMENT,
       craneStates: {
         types: [{index: 1, name: '学术型人才'}, {index: 2, name: '工程型人才'}, {index: 3, name: '技能型人才'}, {index: 4, name: '技术型人才'}],
         currentKeyword: '',
