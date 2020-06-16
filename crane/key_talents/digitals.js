@@ -209,6 +209,14 @@ module.exports = [
   {
     component: '@byzanteam/vis-components/data-loader',
     position: [1614, 134],
+    props: {
+      $url: "`/v1/components/24b74ddd-39de-493f-84ab-9d87fcf23fee/data`",
+      method: 'get',
+      $data: "[[0]]",
+    },
+    exports: {
+      results: 'results',
+    },
     children: [
       {
         id: 'talent-age-index-content',
@@ -217,14 +225,14 @@ module.exports = [
           titlePosition: 'left',
           $content: {
             title: '紧缺人才数量',
-            $digital: 564,
+            $digital: "results ? results[0][0] : 0",
             suffix: '人',
           },
           $options: {
             separator: '',
           },
           $style: {
-            width: '178px',
+            width: '278px',
             height: '39px'
           },
           ...digital_style,
