@@ -31,6 +31,10 @@ module.exports = {
       value: '',
     },
     {
+      id: 'mapType',
+      value: 'supply',
+    },
+    {
       id: 'currentTalentType',
       value: ''
     },

@@ -163,7 +163,7 @@ module.exports = [
         },
         events: {
           'click': {
-            actions: ["setState('mapType', 'demand'"]
+            actions: ["setState('mapType', 'demand')"]
           }
         }
       }
