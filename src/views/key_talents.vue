@@ -60,7 +60,9 @@
     </div>
     <div :style="{width: '400px', height: '180px', backgroundColor: 'rgba(0, 0, 0, .03)', borderRadius: '4px', border: '1px dotted rgba(106, 214, 255, .3)', position: 'absolute', top: '225px', left: '1490px'}" />
     <div>
-      <date-picker class="map-tab-datepicker" :style="{width: '180px', position: 'absolute', top: '270px', left: '1503px'}" v-model="craneStates.time" type="year" placeholder="选择时间" />
+      <data-loader ref="job_select" @requestDone="(exports)=>[setState('dateRange', exports.results.map((item) => (Number(item[0]))))]" url="/v1/components/02b74ddd-39de-493f-84ab-9d87fcf23fee/data" method="get" :data="[['']]" :style="{position: 'absolute', top: '270px', left: '1503px'}">
+        <date-picker class="map-tab-datepicker" :options="{disabledDate: (time) => {return !craneStates.dateRange.includes(time.getFullYear())}}" :style="{width: '180px'}" v-model="craneStates.year" type="year" placeholder="选择时间" />
+      </data-loader>
       <data-loader ref="industry_select" v-slot="{ results: results }" url="/v1/components/30b74ddd-39de-493f-84ab-9d87fcf23fee/data?offset=10" method="get" :data="[['']]" :style="{position: 'absolute', top: '270px', left: '1697px'}">
         <Select placeholder="所有行业" class="map-select" :style="{width: '180px'}" v-model="craneStates.currentShortageType">
           <Option v-for="(item, key) in results.map((item, index) => ({index: item[0], name: item[0]}))" :key="key" :value="item.index" :label="item.name">
@@ -216,13 +218,14 @@ export const key_talents = {
     return {
       departmentText: DEPARTMENT,
       craneStates: {
-        types: [{index: 1, name: '学术型人才'}, {index: 2, name: '工程型人才'}, {index: 3, name: '技能型人才'}, {index: 4, name: '技术型人才'}, {index: 5, name: '产品助理'}, {index: 6, name: '智能硬件'}],
+        types: [{index: 1, name: '学术型人才'}, {index: 2, name: '工程型人才'}, {index: 3, name: '技能型人才'}, {index: 4, name: '技术型人才'}],
         currentKeyword: '',
         currentTalentType: '',
         currentDemandType: '',
         mapTabCurrent: MAP_TAB_NAVS[0],
         mapTabNavs: MAP_TAB_NAVS,
         time: '',
+        dateRange: [],
         currentShortageType: '',
         selectOptions: [{label: '福州', uuid: 'fuzhou'}, {label: '宁德', uuid: 'ningde'}, {label: '龙岩', uuid: 'longyan'}, {label: '莆田', uuid: 'putian'}, {label: '南平', uuid: 'nanping'}, {label: '三明', uuid: 'sanming'}, {label: '厦门', uuid: 'xiamen'}, {label: '漳州', uuid: 'zhangzhou'}, {label: '泉州', uuid: 'quanzhou'}],
         department: null,

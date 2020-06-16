@@ -174,17 +174,37 @@ module.exports = [
     component: 'div',
     children: [
       {
-        component: 'iview/date-picker',
+        id: 'job_select',
+        component: '@byzanteam/vis-components/data-loader',
         position: [1503, 270],
         props: {
-          class: 'map-tab-datepicker',
-          $style: {
-            width: '180px',
+          url: '/v1/components/02b74ddd-39de-493f-84ab-9d87fcf23fee/data',
+          method: 'get',
+          $data: "[['']]",
+        },
+        events: {
+          requestDone: {
+            params: ['exports'],
+            actions: ["setState('dateRange', exports.results.map((item) => (Number(item[0]))))"],
           },
-          'v-model': 'craneStates.time',
-          type: 'year',
-          placeholder: '选择时间'
-        }
+        },
+        children: [
+          {
+            component: 'iview/date-picker',
+            props: {
+              class: 'map-tab-datepicker',
+              $options: {
+                $disabledDate: "(time) => {return !craneStates.dateRange.includes(time.getFullYear())}"
+              },
+              $style: {
+                width: '180px',
+              },
+              'v-model': 'craneStates.year',
+              type: 'year',
+              placeholder: '选择时间'
+            }
+          },
+        ]
       },
       {
         id: 'industry_select',

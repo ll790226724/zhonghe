@@ -20,8 +20,6 @@ module.exports = {
         {index: 2, name: '工程型人才'},
         {index: 3, name: '技能型人才'},
         {index: 4, name: '技术型人才'},
-        {index: 5, name: '产品助理'},
-        {index: 6, name: '智能硬件'},
       ]
     },
     {
@@ -47,6 +45,10 @@ module.exports = {
     {
       id: 'time',
       value: ''
+    },
+    {
+      id: 'dateRange',
+      value: [],
     },
     {
       id: 'currentShortageType',
