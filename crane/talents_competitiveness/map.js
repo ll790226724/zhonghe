@@ -5,7 +5,7 @@ module.exports = [
     props: {
       $options: "[{label: '福建', uuid: 1}]",
       'v-model': 'craneStates.province',
-      placeholder: '全国',
+      placeholder: '请选择',
     }
   },
   {

@@ -25,7 +25,7 @@ module.exports = {
     },
     {
       id: 'indicator',
-      value: ''
+      value: '人才数量指标'
     },
     {
       id: 'types',
@@ -128,7 +128,6 @@ module.exports = {
         }
       }
     },
-    table,
     talentsIndicatorsSummary,
     radar,
     {
@@ -209,6 +208,7 @@ module.exports = {
       component: 'iview/Select',
       position: [1500, 299],
       props: {
+        $multiple: true,
         placeholder: '选择省市',
         class: 'map-select',
         $style: {
