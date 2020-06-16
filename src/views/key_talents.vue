@@ -192,9 +192,9 @@ export const key_talents = {
     return {
       craneStates: {
         types: [{index: 1, name: '学术型人才'}, {index: 2, name: '工程型人才'}, {index: 3, name: '技能型人才'}, {index: 4, name: '技术型人才'}],
-        inputWord: '',
-        currentSupplyKeyword: '',
-        currentDemandKeyword: '',
+        supplyInputWord: '',
+        demandInputWord: '',
+        mapType: 'supply',
         currentTalentType: '',
         currentDemandType: '',
         mapTabCurrent: MAP_TAB_NAVS[0],
@@ -202,11 +202,30 @@ export const key_talents = {
         time: '',
         dateRange: [],
         currentShortageType: '',
-        currentShortageIndustry: '',
-        mapData: [],
         selectOptions: [{label: '福州', uuid: 'fuzhou'}, {label: '宁德', uuid: 'ningde'}, {label: '龙岩', uuid: 'longyan'}, {label: '莆田', uuid: 'putian'}, {label: '南平', uuid: 'nanping'}, {label: '三明', uuid: 'sanming'}, {label: '厦门', uuid: 'xiamen'}, {label: '漳州', uuid: 'zhangzhou'}, {label: '泉州', uuid: 'quanzhou'}],
         department: null,
       },
+    }
+  },
+  computed: {
+    requestUrl() {
+      switch (this.craneStates.mapType) {
+        case "supply":
+          return this.supplyUrl;
+        case "demand":
+          return this.demandUrl;
+        case "shortage":
+          return this.shortageUrl;
+      }
+    },
+    supplyUrl() {
+      return '/v1/components/25b74ddd-39de-493f-84ab-9d87fcf23fee/data?job=' + this.craneStates.supplyInputWord + '&area=' + this.craneStates.department.label
+    },
+    demandUrl() {
+      return '/v1/components/26b74ddd-39de-493f-84ab-9d87fcf23fee/data?job=' + this.craneStates.demandInputWord + '&area=' + this.craneStates.department.label
+    },
+    shortageUrl() {
+      return '/v1/components/31b74ddd-39de-493f-84ab-9d87fcf23fee/data?industry=' + this.craneStates.currentShortageType + '&area=' + this.craneStates.department.label
     }
   },
 

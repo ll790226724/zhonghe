@@ -11,7 +11,13 @@ module.exports = [
   {
   component: '@byzanteam/vis-components/data-loader',
   position: [410, 160],
+  exports: {
+    results: 'results',
+  },
   props: {
+    $url: "`${requestUrl}`",
+    method: 'get',
+    $data: "[[0, '暂无数据']]",
     $style: {
       width: '1100px',
       height: '900px'

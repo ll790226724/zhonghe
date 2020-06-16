@@ -23,15 +23,11 @@ module.exports = {
       ]
     },
     {
-      id: 'inputWord',
+      id: 'supplyInputWord',
       value: '',
     },
     {
-      id: 'currentSupplyKeyword',
-      value: ''
-    },
-    {
-      id: 'currentDemandKeyword',
+      id: 'demandInputWord',
       value: '',
     },
     {
@@ -61,14 +57,6 @@ module.exports = {
     {
       id: 'currentShortageType',
       value: ''
-    },
-    {
-      id: 'currentShortageIndustry',
-      value: '',
-    },
-    {
-      id: 'mapData',
-      value: []
     },
     {
       id: 'selectOptions',

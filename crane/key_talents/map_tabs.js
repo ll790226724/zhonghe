@@ -61,7 +61,7 @@ module.exports = [
         props: {
           placeholder: '关键词',
           class: 'map-tabs-input',
-          'v-model': 'craneStates.inputWord',
+          'v-model': 'craneStates.supplyInputWord',
           $style: {
             width: '180px',
             height: '48px',
@@ -90,7 +90,7 @@ module.exports = [
         },
         events: {
           'click': {
-            actions: ["setState('currentSupplyKeyword', craneStates.inputWord)"]
+            actions: ["setState('mapType', 'supply')"]
           }
         }
       }
@@ -134,7 +134,7 @@ module.exports = [
         props: {
           placeholder: '关键词',
           class: 'map-tabs-input',
-          'v-model': 'craneStates.inputWord',
+          'v-model': 'craneStates.demandInputWord',
           $style: {
             width: '180px',
             height: '48px',
@@ -163,7 +163,7 @@ module.exports = [
         },
         events: {
           'click': {
-            actions: ["setState('currentDemandKeyword', craneStates.inputWord)"]
+            actions: ["setState('mapType', 'demand'"]
           }
         }
       }
@@ -272,7 +272,7 @@ module.exports = [
         },
         events: {
           'click': {
-            actions: ["setState('currentShortageIndustry', craneStates.currentShortageType)"]
+            actions: ["setState('mapType', 'shortage')"]
           }
         }
       }
