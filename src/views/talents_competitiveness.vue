@@ -5,10 +5,10 @@
     <div ref="page-title" :style="{color: '#fff', fontSize: '42px', fontWeight: 600, textAlign: 'center', position: 'absolute', top: '27px', left: '770px'}">
       省域人才综合竞争力
     </div>
-    <brick-radio-button-select :options="[{label: '福建', uuid: 1}]" v-model="craneStates.province" placeholder="请选择" :style="{position: 'absolute', top: '125px', left: '864px'}" />
+    <brick-radio-button-select :options="provinceOptions" v-model="craneStates.province" placeholder="全省" :style="{position: 'absolute', top: '125px', left: '864px'}" />
     <brick-radio-button-select v-if="craneStates.province" :options="selectOptions" v-model="craneStates.city" placeholder="福州" :style="{position: 'absolute', top: '125px', left: '979px'}" />
     <data-loader :style="{width: '950px', height: '794px', position: 'absolute', top: '190px', left: '485px'}">
-      <v-chart ref="map" :options="{backgroundColor: 'transparent', geo: {map: craneStates.city.uuid, left: 0, right: 0, label: {normal: {show: false}, emphasis: {show: false}}, itemStyle: {normal: {areaColor: 'rgba(106, 214, 255, 0.05)', borderColor: '#6ad6ff', borderType: 'solid', borderWidth: 0.5}, emphasis: {areaColor: '#6ad6ff'}}, regions: [{name: '南海诸岛', value: 0, itemStyle: { normal: { opacity: 0, label: { show: false}}}}]}, series: [
+      <v-chart ref="map" :options="{backgroundColor: 'transparent', geo: {map: craneStates.city ? craneStates.city.uuid : 'fujian', left: 0, right: 0, label: {normal: {show: false}, emphasis: {show: false}}, itemStyle: {normal: {areaColor: 'rgba(106, 214, 255, 0.05)', borderColor: '#6ad6ff', borderType: 'solid', borderWidth: 0.5}, emphasis: {areaColor: '#6ad6ff'}}, regions: [{name: '南海诸岛', value: 0, itemStyle: { normal: { opacity: 0, label: { show: false}}}}]}, series: [
                 {
                   symbolSize: 0.1,
                   label: {
@@ -172,7 +172,7 @@
         </template>
       </vis-table>
     </data-loader>
-    <data-loader ref="force-value" v-slot="{ results: results }" :url="`/v1/components/38b74ddd-39de-493f-84ab-9d87fcf23fee/data?province=${craneStates.province ? craneStates.province.label : ''}&city=${craneStates.city.label}`" method="get" :data="[[0]]" :style="{position: 'absolute', top: '66px', left: '1614px'}">
+    <data-loader ref="force-value" v-slot="{ results: results }" :url="`/v1/components/38b74ddd-39de-493f-84ab-9d87fcf23fee/data?province=${craneStates.province ? craneStates.province.label : ''}&city=${craneStates.city ? craneStates.city.label : ''}`" method="get" :data="[[0]]" :style="{position: 'absolute', top: '66px', left: '1614px'}">
       <digital-roll ref="force-value-content" v-if="results" titlePosition="left" :content="{title: '竞争力指数', digital: results[0][0]}" :options="{separator: ',', decimalPlaces: 1}" :titleStyle="{color: '#367391', fontSize: '16px', fontWeight: '400'}" :prefixStyle="{color: '#367391', fontSize: '16px', fontWeight: '400'}" :suffixStyle="{color: '#367391', fontSize: '16px', fontWeight: '400'}" :digitalStyle="{fontSize: '32px', color: '#6ad6ff', fontWeight: '400', fontFamily: 'Oswald-Regular', format: '11', letterSpacing: '2.4px'}" />
     </data-loader>
   </div>
@@ -186,11 +186,12 @@ import 'echarts/lib/chart/radar'
 import 'echarts/lib/chart/scatter'
 import 'echarts/lib/component/tooltip'
 import 'echarts/lib/component/legend'
-import china from '../../public/static/china.json'
+import fujian from '../../public/static/fujian.json'
 
 import BuiltInMixin from '../mixins/built_in'
 
-Echarts.registerMap('china', china);
+Echarts.registerMap('fujian', fujian);
+
 import {
   BrickRadioButtonSelect,
   DataLoader,
@@ -204,9 +205,8 @@ import {
   Option,
 } from 'iview'
 
-Echarts.registerMap('china', china)
-
 const SELECT_OPTIONS = [{label: '福州', uuid: 'fuzhou'}, {label: '宁德', uuid: 'ningde'}, {label: '龙岩', uuid: 'longyan'}, {label: '莆田', uuid: 'putian'}, {label: '南平', uuid: 'nanping'}, {label: '三明', uuid: 'sanming'}, {label: '厦门', uuid: 'xiamen'}, {label: '漳州', uuid: 'zhangzhou'}, {label: '泉州', uuid: 'quanzhou'}]
+const PROVINCE_OPTIONS = [{label: '福建', uuid: 1}]
 
 export const talents_competitiveness = {
   mixins: [BuiltInMixin],
@@ -226,9 +226,10 @@ export const talents_competitiveness = {
   data () {
     return {
       selectOptions: SELECT_OPTIONS,
+      provinceOptions: PROVINCE_OPTIONS,
       craneStates: {
-        province: null,
-        city: SELECT_OPTIONS[0],
+        province: PROVINCE_OPTIONS[0],
+        city: null,
         indicators: [{name: '人才数量指标'}, {name: '人才质量指标'}, {name: '人才结构指标'}, {name: '人才投入指标'}, {name: '人才平台指标'}, {name: '人才生活指标'}, {name: '人才环境指标'}, {name: '人才效能指标'}, {name: '人才效益指标'}, {name: '人才发展指标'}],
         indicator: '人才数量指标',
         types: [{index: 1, name: '四川省'}, {index: 2, name: '重庆市'}, {index: 3, name: '青海省'}, {index: 4, name: '浙江省'}, {index: 5, name: '湖南省'}, {index: 6, name: '湖北省'}, {index: 7, name: '甘肃省'}, {index: 8, name: '山东省'}, {index: 9, name: '江苏省'}, {index: 10, name: '江西省'}, {index: 11, name: '福建省'}, {index: 12, name: '贵州省'}, {index: 13, name: '陕西省'}, {index: 14, name: '山西省'}],
@@ -242,14 +243,19 @@ export const talents_competitiveness = {
   watch: {
     'craneStates.city' (value) {
       if(!value) {
-        this.craneStates.city = this.selectOptions[0]
+        this.craneStates.city = null
+      }
+    },
+    'craneStates.province' (value) {
+      if(!value) {
+      this.craneStates.province = PROVINCE_OPTIONS[0]
       }
     },
   },
 
   computed: {
     tableRequestUrl () {
-      if(this.craneStates.province) {
+      if(this.craneStates.city) {
         return `/v1/components/35b74ddd-39de-493f-84ab-9d87fcf23fee/data?type='${this.craneStates.indicator}'&city=${this.craneStates.city.label}`
       }
       return `/v1/components/34b74ddd-39de-493f-84ab-9d87fcf23fee/data?type='${this.craneStates.indicator}'&province=福建省`
@@ -262,7 +268,7 @@ export const talents_competitiveness = {
         }
         return `${acc}'${item}市',`
       }, '')
-      if(this.craneStates.province) {
+      if(this.craneStates.city) {
         return `/v1/components/40b74ddd-39de-493f-84ab-9d87fcf23fee/data?city=${area}`
       }
       return '/v1/components/39b74ddd-39de-493f-84ab-9d87fcf23fee/data'

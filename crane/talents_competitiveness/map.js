@@ -3,9 +3,9 @@ module.exports = [
     component: '@byzanteam/vis-components/brick-radio-button-select',
     position: [864, 125],
     props: {
-      $options: "[{label: '福建', uuid: 1}]",
+      $options: "provinceOptions",
       'v-model': 'craneStates.province',
-      placeholder: '请选择',
+      placeholder: '全省',
     }
   },
   {
@@ -35,7 +35,7 @@ module.exports = [
         $options: {
           backgroundColor: 'transparent',
           $geo: {
-            $map: "craneStates.city.uuid",
+            $map: "craneStates.city ? craneStates.city.uuid : 'fujian'",
             $left: 0,
             $right: 0,
             $label: {
