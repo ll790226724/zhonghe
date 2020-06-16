@@ -269,6 +269,11 @@ module.exports = [
             width: '148px',
             height: '25px'
           }
+        },
+        events: {
+          'click': {
+            actions: ["setState('currentShortageIndustry', craneStates.currentShortageType)"]
+          }
         }
       }
     ]

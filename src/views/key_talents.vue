@@ -70,7 +70,7 @@
           </Option>
         </Select>
       </data-loader>
-      <brick-button type="gradient" color="primary" :style="{width: '148px', height: '25px', position: 'absolute', top: '346px', left: '1616px'}">
+      <brick-button @click="()=>[setState('currentShortageIndustry', craneStates.currentShortageType)]" type="gradient" color="primary" :style="{width: '148px', height: '25px', position: 'absolute', top: '346px', left: '1616px'}">
         查看紧缺人才地图
       </brick-button>
     </div>
@@ -215,6 +215,7 @@ export const key_talents = {
         time: '',
         dateRange: [],
         currentShortageType: '',
+        currentShortageIndustry: '',
         selectOptions: [{label: '福州', uuid: 'fuzhou'}, {label: '宁德', uuid: 'ningde'}, {label: '龙岩', uuid: 'longyan'}, {label: '莆田', uuid: 'putian'}, {label: '南平', uuid: 'nanping'}, {label: '三明', uuid: 'sanming'}, {label: '厦门', uuid: 'xiamen'}, {label: '漳州', uuid: 'zhangzhou'}, {label: '泉州', uuid: 'quanzhou'}],
         department: null,
       },
