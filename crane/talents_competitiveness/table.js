@@ -21,7 +21,7 @@ module.exports = {
         theme: 'dark',
         stripe: '',
         $headers: "[{width: 80, key: 'index',}, {width: 160, key: 'name', title: '省市排名'}, {width: 160, key: 'value', title: '人才质量指标'}]",
-        $data: "results.map((item, index) => ({index: index + 1, name: item[1], value: item[0]}))"
+        $data: "results.map((item, index) => ({index: index + 1, name: item[1], value: item[0].toFixed(2)}))"
       },
       children: [
         {

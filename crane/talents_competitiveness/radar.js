@@ -35,6 +35,10 @@ module.exports = {
               $padding: '[2, 4]'
             }
           },
+          $tooltip: {
+            trigger: 'item',
+            backgroundColor: '#566374f0',
+          },
           $color: "['#6ad6ff', '#4b9bbe', '#367290', '#275570', '#1c4159', '#153349']",
           $radiusAxis: {
             $axisLine: {
