@@ -63,6 +63,7 @@ module.exports = [
           $options: {
             backgroundColor: 'transparent',
             $legend: {
+              type: 'scroll',
               icon: 'circle',
               $itemWidth: 10,
               $itemHeight: 10,
@@ -112,6 +113,7 @@ module.exports = [
           $options: {
             backgroundColor: 'transparent',
             $legend: {
+              type: 'scroll',
               icon: 'circle',
               $itemWidth: 10,
               $itemHeight: 10,

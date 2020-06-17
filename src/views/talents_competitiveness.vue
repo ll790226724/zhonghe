@@ -28,40 +28,7 @@
                   },
                   type: 'scatter',
                   coordinateSystem: 'geo',
-                  data: [
-                    {name: '台湾', value: [121.5135, 25.0308, 42]},
-                    {name: '黑龙江', value: [127.9688, 45.368, 34]},
-                    {name: '内蒙古', value: [110.3467, 41.4899, 123,]},
-                    {name: '吉林', value: [125.8154, 44.2584, 57]},
-                    {name: '北京市', value: [116.4551, 40.2539, 89]},
-                    {name: '辽宁', value: [123.1238, 42.1216, 373]},
-                    {name: '河北', value: [114.4995, 38.1006, 21]},
-                    {name: '天津', value: [117.4219, 39.4189, 465]},
-                    {name: '山西', value: [112.3352, 37.9413, 781]},
-                    {name: '陕西', value: [109.1162, 34.2004, 90]},
-                    {name: '甘肃', value: [103.5901, 36.3043, 132]},
-                    {name: '宁夏', value: [106.3586, 38.1775, 300]},
-                    {name: '青海', value: [101.4038, 36.8207, 800]},
-                    {name: '新疆', value: [87.9236, 43.5883, 14]},
-                    {name: '西藏', value: [91.11, 29.97, 21]},
-                    {name: '四川', value: [103.9526, 30.7617, 168]},
-                    {name: '重庆', value: [108.384366, 30.439702, 78]},
-                    {name: '山东', value: [117.1582, 36.8701, 31]},
-                    {name: '河南', value: [113.4668, 34.6234, 34]},
-                    {name: '江苏', value: [118.8062, 31.9208, 33]},
-                    {name: '安徽', value: [117.29, 32.0581, 45]},
-                    {name: '湖北', value: [114.3896, 30.6628, 134]},
-                    {name: '浙江', value: [119.5313, 29.8773, 198]},
-                    {name: '福建', value: [119.4543, 25.9222, 80]},
-                    {name: '江西', value: [116.0046, 28.6633, 78]},
-                    {name: '湖南', value: [113.0823, 28.2568, 152]},
-                    {name: '贵州', value: [106.6992, 26.7682, 70]},
-                    {name: '云南', value: [102.9199, 25.4663, 345]},
-                    {name: '广东', value: [113.12244, 23.009505, 123]},
-                    {name: '广西', value: [108.479, 23.1152, 114]},
-                    {name: '海南', value: [110.3893, 19.8516, 214]},
-                    {name: '上海', value: [121.4648, 31.2891, 33]},
-                  ],
+                  data: craneStates.mapData,
                 },
                 {
                   type: 'scatter',
@@ -85,40 +52,7 @@
                       opacity: 1
                     }
                   },
-                  data: [
-                    {name: '台湾', value: [121.5135, 25.0308, 42]},
-                    {name: '黑龙江', value: [127.9688, 45.368, 34]},
-                    {name: '内蒙古', value: [110.3467, 41.4899, 123,]},
-                    {name: '吉林', value: [125.8154, 44.2584, 57]},
-                    {name: '北京市', value: [116.4551, 40.2539, 89]},
-                    {name: '辽宁', value: [123.1238, 42.1216, 373]},
-                    {name: '河北', value: [114.4995, 38.1006, 21]},
-                    {name: '天津', value: [117.4219, 39.4189, 465]},
-                    {name: '山西', value: [112.3352, 37.9413, 781]},
-                    {name: '陕西', value: [109.1162, 34.2004, 90]},
-                    {name: '甘肃', value: [103.5901, 36.3043, 132]},
-                    {name: '宁夏', value: [106.3586, 38.1775, 300]},
-                    {name: '青海', value: [101.4038, 36.8207, 800]},
-                    {name: '新疆', value: [87.9236, 43.5883, 14]},
-                    {name: '西藏', value: [91.11, 29.97, 21]},
-                    {name: '四川', value: [103.9526, 30.7617, 168]},
-                    {name: '重庆', value: [108.384366, 30.439702, 78]},
-                    {name: '山东', value: [117.1582, 36.8701, 31]},
-                    {name: '河南', value: [113.4668, 34.6234, 34]},
-                    {name: '江苏', value: [118.8062, 31.9208, 33]},
-                    {name: '安徽', value: [117.29, 32.0581, 45]},
-                    {name: '湖北', value: [114.3896, 30.6628, 134]},
-                    {name: '浙江', value: [119.5313, 29.8773, 198]},
-                    {name: '福建', value: [119.4543, 25.9222, 80]},
-                    {name: '江西', value: [116.0046, 28.6633, 78]},
-                    {name: '湖南', value: [113.0823, 28.2568, 152]},
-                    {name: '贵州', value: [106.6992, 26.7682, 70]},
-                    {name: '云南', value: [102.9199, 25.4663, 345]},
-                    {name: '广东', value: [113.12244, 23.009505, 123]},
-                    {name: '广西', value: [108.479, 23.1152, 114]},
-                    {name: '海南', value: [110.3893, 19.8516, 214]},
-                    {name: '上海', value: [121.4648, 31.2891, 33]},
-                  ],
+                  data: craneStates.mapData,
                   showEffectOn: 'render',
                   rippleEffect: {
                     brushType: 'stroke'
@@ -135,7 +69,7 @@
       <Radio v-for="(item, key) in craneStates.indicators" :key="key" :label="item.name" />
     </RadioGroup>
     <data-loader @requestDone="(param)=>[setState('radarData', param.results)]" :url="radarRequestUrl" method="get" :data="[[0, '暂无数据']]" :style="{width: '370px', height: '480px', position: 'absolute', top: '455px', left: '1506px'}">
-      <v-chart :options="{legend: {orient: 'vertical', bottom: 100, icon: 'circle', inactiveColor: '#1C4159', itemGap: 5, itemWidth: 10, itemHeight: 10, textStyle: {color: '#4b9bbe', fontSize: 14, padding: [2, 4]}}, color: ['#6ad6ff', '#4b9bbe', '#367290', '#275570', '#1c4159', '#153349'], radiusAxis: {axisLine: {color: '#19394f'}, splitLine: {color: '#19394f'}}, radar: {shape: 'circle', center: ['50%', '26%'], radius: '50% ', name: {textStyle: {color: '#4b9bbe', fontSize: 14}}, axisLine: {lineStyle: {color: '#19394f'}}, splitArea: {areaStyle: {color: 'transparent'}}, splitLine: {lineStyle: {color: '#19394f'}}, indicator: craneStates.indicators}, series: [{
+      <v-chart :options="{legend: {orient: 'vertical', bottom: 100, icon: 'circle', inactiveColor: '#1C4159', itemGap: 5, itemWidth: 10, itemHeight: 10, textStyle: {color: '#4b9bbe', fontSize: 14, padding: [2, 4]}}, tooltip: {trigger: 'item', backgroundColor: '#566374f0'}, color: ['#6ad6ff', '#4b9bbe', '#367290', '#275570', '#1c4159', '#153349'], radiusAxis: {axisLine: {color: '#19394f'}, splitLine: {color: '#19394f'}}, radar: {shape: 'circle', center: ['50%', '26%'], radius: '50% ', name: {textStyle: {color: '#4b9bbe', fontSize: 14}}, axisLine: {lineStyle: {color: '#19394f'}}, splitArea: {areaStyle: {color: 'transparent'}}, splitLine: {lineStyle: {color: '#19394f'}}, indicator: craneStates.indicators}, series: [{
                   type: 'radar',
                   areaStyle: {opacity: 0.2},
                   lineStyle: {width: 1},
@@ -165,8 +99,8 @@
         </Option>
       </Select>
     </data-loader>
-    <data-loader v-slot="{ results: results }" :url="tableRequestUrl" method="get" :data="[[0, '暂无数据']]" :style="{width: '400px', height: '678px', overflow: 'scroll', position: 'absolute', top: '316px', left: '30px'}">
-      <vis-table theme="dark" stripe="" :headers="[{width: 80, key: 'index',}, {width: 160, key: 'name', title: '省市排名'}, {width: 160, key: 'value', title: '人才质量指标'}]" :data="results.map((item, index) => ({index: index + 1, name: item[1], value: item[0]}))">
+    <data-loader v-slot="{ results: results }" @requestDone="(param)=>[setState('mapData', param.results.map((item) => ({name: item[1], value: craneStates.areaCoordMap[item[1]].concat(item[0].toFixed(2))})))]" :url="tableRequestUrl" method="get" :data="[[0, '暂无数据']]" :style="{width: '400px', height: '678px', overflow: 'scroll', position: 'absolute', top: '316px', left: '30px'}">
+      <vis-table theme="dark" stripe="" :headers="[{width: 80, key: 'index',}, {width: 160, key: 'name', title: '省市排名'}, {width: 160, key: 'value', title: '人才质量指标'}]" :data="results.map((item, index) => ({index: index + 1, name: item[1], value: item[0].toFixed(2)}))">
         <template v-slot="{ cell: cell, columnKey: columnKey }">
           <span :class="columnKey === 'index' ? 'row-index-cell' : ''">
             {{cell}}
@@ -237,7 +171,9 @@ export const talents_competitiveness = {
         types: [{index: 1, name: '四川省'}, {index: 2, name: '重庆市'}, {index: 3, name: '青海省'}, {index: 4, name: '浙江省'}, {index: 5, name: '湖南省'}, {index: 6, name: '湖北省'}, {index: 7, name: '甘肃省'}, {index: 8, name: '山东省'}, {index: 9, name: '江苏省'}, {index: 10, name: '江西省'}, {index: 11, name: '福建省'}, {index: 12, name: '贵州省'}, {index: 13, name: '陕西省'}, {index: 14, name: '山西省'}],
         currentProvince: [],
         selectedArea: {},
-        radarData: []
+        radarData: [],
+        mapData: [],
+        areaCoordMap: {福州市: [119.306239, 26.075302], 厦门市: [118.11022, 24.490474], 莆田市: [119.007558, 25.431011], 三明市: [117.635001, 26.265444], 泉州市: [118.589421, 24.908853], 漳州市: [117.661801, 24.510897], 南平市: [118.178459, 26.635627], 龙岩市: [117.02978, 25.091603], 宁德市: [119.527082, 26.65924], 鼓楼区: [119.29929, 26.082284], 台江区: [119.310156, 26.058616], 仓山区: [119.320988, 26.038912], 马尾区: [119.458725, 25.991975], 晋安区: [119.328597, 26.078837], 长乐区: [119.510849, 25.960583], 闽侯县: [119.145117, 26.148567], 连江县: [119.538365, 26.202109], 罗源县: [119.552645, 26.487234], 闽清县: [118.868416, 26.223793], 永泰县: [118.939089, 25.864825], 平潭县: [119.791197, 25.503672], 福清市: [119.376992, 25.720402], 思明区: [118.087828, 24.462059], 海沧区: [118.036364, 24.492512], 湖里区: [118.10943, 24.512764], 集美区: [118.100869, 24.572874], 同安区: [118.150455, 24.729333], 翔安区: [118.242811, 24.637479], 城厢区: [119.001028, 25.433737], 涵江区: [119.119102, 25.459273], 荔城区: [119.020047, 25.430047], 秀屿区: [119.092607, 25.316141], 仙游县: [118.694331, 25.356529], 梅列区: [117.63687, 26.269208], 三元区: [117.607418, 26.234191], 明溪县: [117.201845, 26.357375], 清流县: [116.815821, 26.17761], 宁化县: [116.659725, 26.259932], 大田县: [117.849355, 25.690803], 尤溪县: [118.188577, 26.169261], 沙县: [117.789095, 26.397361], 将乐县: [117.473558, 26.728667], 泰宁县: [117.177522, 26.897995], 建宁县: [116.845832, 26.831398], 永安市: [117.364447, 25.974075], 鲤城区: [118.588929, 24.907645], 丰泽区: [118.605147, 24.896041], 洛江区: [118.670312, 24.941153], 泉港区: [118.912285, 25.126859], 惠安县: [118.798954, 25.028718], 安溪县: [118.186014, 25.056824], 永春县: [118.29503, 25.320721], 德化县: [118.242986, 25.489004], 金门县: [118.323221, 24.436417], 石狮市: [118.628402, 24.731978], 晋江市: [118.577338, 24.807322], 南安市: [118.387031, 24.959494], 芗城区: [117.656461, 24.509955], 龙文区: [117.671387, 24.515656], 云霄县: [117.340946, 23.950486], 漳浦县: [117.614023, 24.117907], 诏安县: [117.176083, 23.710834], 长泰县: [117.755913, 24.621475], 东山县: [117.427679, 23.702845], 南靖县: [117.365462, 24.516425], 平和县: [117.313549, 24.366158], 华安县: [117.53631, 25.001416], 龙海市: [117.817292, 24.445341], 延平区: [118.178918, 26.636079], 建阳区: [118.12267, 27.332067], 顺昌县: [117.80771, 26.792851], 浦城县: [118.536822, 27.920412], 光泽县: [117.337897, 27.542803], 松溪县: [118.783491, 27.525785], 政和县: [118.858661, 27.365398], 邵武市: [117.491544, 27.337952], 武夷山市: [118.032796, 27.751733], 建瓯市: [118.321765, 27.03502], 新罗区: [117.030721, 25.0918], 永定区: [116.732691, 24.720442], 长汀县: [116.361007, 25.842278], 上杭县: [116.424774, 25.050019], 武平县: [116.100928, 25.08865], 连城县: [116.756687, 25.708506], 漳平市: [117.42073, 25.291597], 蕉城区: [119.527225, 26.659253], 霞浦县: [120.005214, 26.882068], 古田县: [118.743156, 26.577491], 屏南县: [118.987544, 26.910826], 寿宁县: [119.506733, 27.457798], 周宁县: [119.338239, 27.103106], 柘荣县: [119.898226, 27.236163], 福安市: [119.650798, 27.084246], 福鼎市: [120.219761, 27.318884]},
       },
     }
   },
@@ -312,7 +248,7 @@ export const talents_competitiveness = {
             const c =  value.find((exponent) => {
               return exponent[item.name]
             }, [])
-            return c[item.name]
+            return c[item.name].toFixed(2)
           })
         })
         return acc

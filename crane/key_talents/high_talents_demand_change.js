@@ -30,7 +30,13 @@ module.exports = [
     id: 'high-talents-demand-change-line-chart',
     component: '@byzanteam/vis-components/data-loader',
     position: [30, 550],
+    exports: {
+      results: 'results',
+    },
     props: {
+      $url: "`/v1/components/09b74ddd-39de-493f-84ab-9d87fcf23fee/data?area=${craneStates.department.label}`",
+      method: 'get',
+      $data: "[[0, '暂无数据']]",
       $style: {
         width: '400px',
         height: '200px'
@@ -73,7 +79,7 @@ module.exports = [
             },
             $xAxis: {
               type: 'category',
-              $data: "['2015', '2016', '2017', '2018', '2019', '2020']",
+              $data: "results ? results.map(item => (item[1])) : ['暂无数据']",
               $axisLine: {
                 $show: false
               },
@@ -116,7 +122,7 @@ module.exports = [
               },
               $splitNumber: 4,
             },
-            $series: "[{type: 'line', name: '人才供应', data: [200, 24, 238, 30, 50, 40], showSymbol: false, lineStyle: {width: 4}}, {type: 'line', name: '人才需求', data: [300, 274, 248, 348, 50, 40], showSymbol: false, lineStyle: {width: 4}}]"
+            $series: "[{type: 'line', name: '人才供应', data: results ? results.map(item => (item[2])) : [0], showSymbol: false, lineStyle: {width: 4}}, {type: 'line', name: '人才需求', data: results ? results.map(item => (item[0])) : [0], showSymbol: false, lineStyle: {width: 4}}]"
           }
         }
       }

@@ -18,6 +18,7 @@ module.exports = {
       props: {
         $options:{
           $legend: {
+            type: 'scroll',
             orient: 'vertical',
             right: '8%',
             top: 'middle',

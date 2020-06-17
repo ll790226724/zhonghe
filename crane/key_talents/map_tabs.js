@@ -61,6 +61,7 @@ module.exports = [
         props: {
           placeholder: '关键词',
           class: 'map-tabs-input',
+          'v-model': 'craneStates.supplyInputWord',
           $style: {
             width: '180px',
             height: '48px',
@@ -78,13 +79,18 @@ module.exports = [
       {
         component: '@byzanteam/vis-components/brick-button',
         position: [156, 400],
-        content: '查看人才需求地图',
+        content: '查看人才供应地图',
         props: {
           type: "gradient",
           color: "primary",
           $style: {
             width: '148px',
             height: '25px'
+          }
+        },
+        events: {
+          'click': {
+            actions: ["setState('mapType', 'supply')"]
           }
         }
       }
@@ -128,6 +134,7 @@ module.exports = [
         props: {
           placeholder: '关键词',
           class: 'map-tabs-input',
+          'v-model': 'craneStates.demandInputWord',
           $style: {
             width: '180px',
             height: '48px',
@@ -145,13 +152,18 @@ module.exports = [
       {
         component: '@byzanteam/vis-components/brick-button',
         position: [156, 400],
-        content: '查看人才供应地图',
+        content: '查看人才需求地图',
         props: {
           type: "gradient",
           color: "primary",
           $style: {
             width: '148px',
             height: '25px'
+          }
+        },
+        events: {
+          'click': {
+            actions: ["setState('mapType', 'demand')"]
           }
         }
       }
@@ -174,42 +186,76 @@ module.exports = [
     component: 'div',
     children: [
       {
-        component: 'iview/date-picker',
+        id: 'job_select',
+        component: '@byzanteam/vis-components/data-loader',
         position: [1503, 270],
         props: {
-          class: 'map-tab-datepicker',
-          $style: {
-            width: '180px',
+          url: '/v1/components/02b74ddd-39de-493f-84ab-9d87fcf23fee/data',
+          method: 'get',
+          $data: "[['']]",
+        },
+        events: {
+          requestDone: {
+            params: ['exports'],
+            actions: ["setState('dateRange', exports.results.map((item) => (Number(item[0]))))"],
           },
-          'v-model': 'craneStates.time',
-          type: 'year',
-          placeholder: '选择时间'
-        }
-      },
-      {
-        component: 'iview/Select',
-        position: [1697, 270],
-        props: {
-          placeholder: '所有行业',
-          class: 'map-select',
-          $style: {
-            width: '180px',
-          },
-          'v-model': 'craneStates.currentShortageType'
         },
         children: [
           {
-            component: 'iview/Option',
-            vfor: {
-              data: "craneStates.types",
-              exports: {item: 'item', index: 'key'}
-            },
+            component: 'iview/date-picker',
             props: {
-              $value: "item.index",
-              $label: "item.name"
+              class: 'map-tab-datepicker',
+              $options: {
+                $disabledDate: "(time) => {return !craneStates.dateRange.includes(time.getFullYear())}"
+              },
+              $style: {
+                width: '180px',
+              },
+              'v-model': 'craneStates.year',
+              type: 'year',
+              placeholder: '选择时间'
+            }
+          },
+        ]
+      },
+      {
+        id: 'industry_select',
+        component: '@byzanteam/vis-components/data-loader',
+        position: [1697, 270],
+        exports: {
+          results: 'results',
+        },
+        props: {
+          url: '/v1/components/30b74ddd-39de-493f-84ab-9d87fcf23fee/data?offset=10',
+          method: 'get',
+          $data: "[['']]",
+        },
+        children: [
+          {
+            component: 'iview/Select',
+            props: {
+              placeholder: '所有行业',
+              class: 'map-select',
+              $style: {
+                width: '180px',
+              },
+              'v-model': 'craneStates.currentShortageType'
             },
-            content: '{{item.name}}',
-          }
+            children: [
+              {
+                component: 'iview/Option',
+                vfor: {
+                  data: "results.map((item, index) => ({index: item[0], name: item[0]}))",
+                  exports: {item: 'item', index: 'key'}
+                },
+                props: {
+                  $value: "item.index",
+                  $label: "item.name"
+                },
+                content: '{{item.name}}',
+              }
+            ]
+          },
         ]
       },
       {
@@ -222,6 +268,11 @@ module.exports = [
           $style: {
             width: '148px',
             height: '25px'
+          }
+        },
+        events: {
+          'click': {
+            actions: ["setState('mapType', 'shortage')"]
           }
         }
       }

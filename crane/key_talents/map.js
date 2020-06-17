@@ -1,6 +1,6 @@
 module.exports = [
   {
-    component: '@byzanteam/vis-components/vis-select',
+    component: '@byzanteam/vis-components/brick-radio-button-select',
     position: [929, 125],
     props: {
       $options: "craneStates.selectOptions",
@@ -11,7 +11,13 @@ module.exports = [
   {
   component: '@byzanteam/vis-components/data-loader',
   position: [410, 160],
+  exports: {
+    results: 'results',
+  },
   props: {
+    $url: "`${requestUrl}`",
+    method: 'get',
+    $data: "[[0, '暂无数据']]",
     $style: {
       width: '1100px',
       height: '900px'
@@ -25,7 +31,7 @@ module.exports = [
           backgroundColor: 'transparent',
           $tooltip: {
             trigger: 'item',
-            formatter: '{b}<br/>人才数量：{c}人',
+            $formatter: "(params) => {return params.name + '<br />人才数量（人）：' + (isNaN(params.value) ? 0 : params.value)}",
             backgroundColor: '#566374f0',
           },
           $visualMap: {
@@ -49,21 +55,7 @@ module.exports = [
             {
               type: 'map',
               mapType: craneStates.department.uuid,
-              data: [
-                {name: '鼓楼区', value: 4},
-                {name: '台江区', value: 15},
-                {name: '仓山区', value: 31},
-                {name: '马尾区', value: 69},
-                {name: '晋安区', value: 1440},
-                {name: '长乐区', value: 4068},
-                {name: '闽侯县', value: 376},
-                {name: '连江县', value: 45},
-                {name: '罗源县', value: 55},
-                {name: '闽清县', value: 2},
-                {name: '永泰县', value: 677},
-                {name: '平潭县', value: 677},
-                {name: '福清市', value: 677},
-              ],
+              data: results.map(item => {return {name: item[1], value: item[0]}}),
               label: {
                 show: true,
                 fontSize: 14,
