@@ -208,31 +208,44 @@ module.exports = {
       },
     },
     {
-      id: 'area-select',
-      component: 'iview/Select',
+      component: '@byzanteam/vis-components/data-loader',
       position: [1500, 299],
+      exports: {
+        results: 'results',
+      },
       props: {
-        $multiple: true,
-        placeholder: '选择省市',
-        class: 'map-select',
-        $style: {
-          width: '382px',
-        },
-        'v-model': 'craneStates.currentProvince'
+        $url: "areaSelectRequestUrl",
+        method: 'get',
+        $data: "[['暂无数据']]",
       },
       children: [
         {
-          component: 'iview/Option',
-          vfor: {
-            data: "selectOptions",
-            exports: {item: 'item', index: 'key'}
-          },
+          id: 'area-select',
+          component: 'iview/Select',
           props: {
-            $value: "item.label",
-            $label: "item.label"
+            $multiple: true,
+            placeholder: '选择省市',
+            class: 'map-select',
+            $style: {
+              width: '382px',
+            },
+            'v-model': 'craneStates.currentProvince'
           },
-          content: '{{item.label}}',
-        }
+          children: [
+            {
+              component: 'iview/Option',
+              vfor: {
+                data: "results",
+                exports: {item: 'item', index: 'key'}
+              },
+              props: {
+                $value: "item[0]",
+                $label: "item[0]"
+              },
+              content: '{{item[0]}}',
+            }
+          ]
+        },
       ]
     },
     table,

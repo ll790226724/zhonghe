@@ -15,7 +15,7 @@ module.exports = [
       'v-if': 'craneStates.province',
       $options: "selectOptions",
       'v-model': 'craneStates.city',
-      placeholder: '福州',
+      placeholder: '全省',
     }
   },
   {

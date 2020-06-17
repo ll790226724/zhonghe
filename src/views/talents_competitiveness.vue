@@ -158,11 +158,13 @@
       >>
     </div>
     <div ref="force-circle" :style="{height: '10px', width: '10px', borderRadius: '10px', borderWidth: '1px', borderColor: '#6ad6ff', borderStyle: 'solid', position: 'absolute', top: '89px', left: '1588px'}" />
-    <Select ref="area-select" :multiple="true" placeholder="选择省市" class="map-select" :style="{width: '382px', position: 'absolute', top: '299px', left: '1500px'}" v-model="craneStates.currentProvince">
-      <Option v-for="(item, key) in selectOptions" :key="key" :value="item.label" :label="item.label">
-        {{item.label}}
-      </Option>
-    </Select>
+    <data-loader v-slot="{ results: results }" :url="areaSelectRequestUrl" method="get" :data="[['暂无数据']]" :style="{position: 'absolute', top: '299px', left: '1500px'}">
+      <Select ref="area-select" :multiple="true" placeholder="选择省市" class="map-select" :style="{width: '382px'}" v-model="craneStates.currentProvince">
+        <Option v-for="(item, key) in results" :key="key" :value="item[0]" :label="item[0]">
+          {{item[0]}}
+        </Option>
+      </Select>
+    </data-loader>
     <data-loader v-slot="{ results: results }" :url="tableRequestUrl" method="get" :data="[[0, '暂无数据']]" :style="{width: '400px', height: '678px', overflow: 'scroll', position: 'absolute', top: '316px', left: '30px'}">
       <vis-table theme="dark" stripe="" :headers="[{width: 80, key: 'index',}, {width: 160, key: 'name', title: '省市排名'}, {width: 160, key: 'value', title: '人才质量指标'}]" :data="results.map((item, index) => ({index: index + 1, name: item[1], value: item[0]}))">
         <template v-slot="{ cell: cell, columnKey: columnKey }">
@@ -205,7 +207,7 @@ import {
   Option,
 } from 'iview'
 
-const SELECT_OPTIONS = [{label: '福州', uuid: 'fuzhou'}, {label: '宁德', uuid: 'ningde'}, {label: '龙岩', uuid: 'longyan'}, {label: '莆田', uuid: 'putian'}, {label: '南平', uuid: 'nanping'}, {label: '三明', uuid: 'sanming'}, {label: '厦门', uuid: 'xiamen'}, {label: '漳州', uuid: 'zhangzhou'}, {label: '泉州', uuid: 'quanzhou'}]
+const SELECT_OPTIONS = [{label: '福州市', uuid: 'fuzhou'}, {label: '宁德市', uuid: 'ningde'}, {label: '龙岩市', uuid: 'longyan'}, {label: '莆田市', uuid: 'putian'}, {label: '南平市', uuid: 'nanping'}, {label: '三明市', uuid: 'sanming'}, {label: '厦门市', uuid: 'xiamen'}, {label: '漳州市', uuid: 'zhangzhou'}, {label: '泉州市', uuid: 'quanzhou'}]
 const PROVINCE_OPTIONS = [{label: '福建', uuid: 1}]
 
 export const talents_competitiveness = {
@@ -245,6 +247,7 @@ export const talents_competitiveness = {
       if(!value) {
         this.craneStates.city = null
       }
+      this.craneStates.currentProvince = []
     },
     'craneStates.province' (value) {
       if(!value) {
@@ -264,16 +267,30 @@ export const talents_competitiveness = {
     },
     radarRequestUrl () {
       const { currentProvince } = this.craneStates
-      const area = currentProvince.reduce((acc, item, index) => {
+      const areas = currentProvince.reduce((acc, item, index) => {
         if(index === currentProvince.length - 1) {
-          return `${acc}'${item}市'`
+          return `${acc}'${item}'`
         }
-        return `${acc}'${item}市',`
+        return `${acc}'${item}',`
       }, '')
-      if(this.craneStates.city) {
-        return `/v1/components/40b74ddd-39de-493f-84ab-9d87fcf23fee/data?city=${area}`
+      // 请求市级数据
+      if(!this.craneStates.city && this.craneStates.currentProvince.length > 0) {
+        return `/v1/components/40b74ddd-39de-493f-84ab-9d87fcf23fee/data?city=${areas}`
       }
+      // 请求县级数据
+      if(this.craneStates.city && this.craneStates.currentProvince.length > 0) {
+        return `/v1/components/41b74ddd-39de-493f-84ab-9d87fcf23fee/data?area=${areas}`
+      }
+      // 请求省级数据
       return '/v1/components/39b74ddd-39de-493f-84ab-9d87fcf23fee/data'
+    },
+    areaSelectRequestUrl () {
+      // 请求区县列表
+      if(this.craneStates.city) {
+        return `/v1/components/37b74ddd-39de-493f-84ab-9d87fcf23fee/data?city=${this.craneStates.city.label}`
+      }
+      // 请求市区列表
+      return `/v1/components/36b74ddd-39de-493f-84ab-9d87fcf23fee/data?province=福建省`
     }
   },
 
