@@ -31,7 +31,7 @@ module.exports = [
           backgroundColor: 'transparent',
           $tooltip: {
             trigger: 'item',
-            formatter: '{b}<br/>人才数量：{c}人',
+            $formatter: "(params) => {return params.name + '<br />人才数量（人）：' + (isNaN(params.value) ? 0 : params.value)}",
             backgroundColor: '#566374f0',
           },
           $visualMap: {
