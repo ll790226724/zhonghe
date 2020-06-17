@@ -9,9 +9,9 @@ module.exports = {
   },
 
   props: {
-    // $url: "`/v1/components/5b59abd9-bf05-4161-b53f-9b8c6120551b/data?name=${craneStates.currentArea}`",
-    // method: 'get',
-    // $data: "[[]]",
+    url: "/v1/components/23b74ddd-39de-493f-84ab-9d87fcf23fee/data",
+    method: 'get',
+    $data: "[[0, '暂无数据']]",
     $style: {
       width: '400px',
       height: '270px'
@@ -22,7 +22,6 @@ module.exports = {
       id: 'demand-vertical-bar-content',
       component: 'v-chart',
       props: {
-        // 'v-if': 'results',
         $options: {
           $grid: {
             top: '12%',
@@ -38,7 +37,7 @@ module.exports = {
             $axisLine:{
               $show: false
             },
-            $data: "['电子商务', '广告营销', '分类消息', '社交网络', '信息安全', '互联网金融', '企业服务', '互联网']"
+            $data: "results.map(item => (item[1]))"
           },
           $yAxis: {
             $axisLine: {
@@ -82,7 +81,7 @@ module.exports = {
                   }], false),`
               },
             },
-            $data: "[120, 200, 150, 80, 70, 110, 130, 102]"
+            $data: "results.map(item => (item[0]))"
           },
           $tooltip: {
             trigger: 'axis',
