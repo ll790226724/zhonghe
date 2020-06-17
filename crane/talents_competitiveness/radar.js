@@ -2,10 +2,19 @@ module.exports = {
   component: '@byzanteam/vis-components/data-loader',
   position: [1506, 455],
   props: {
+    $url: "radarRequestUrl",
+    method: 'get',
+    $data: "[[0, '暂无数据']]",
     $style: {
       width: '370px',
       height: '480px'
     }
+  },
+  events: {
+    requestDone: {
+      params: ['param'],
+      actions: ["setState('radarData', param.results)"],
+    },
   },
   children: [
     {
@@ -60,7 +69,7 @@ module.exports = {
                 color: '#19394f'
               },
             },
-            $indicator: "[{name: '人才数量指标'}, {name: '人才质量指标'}, {name: '人才结构指标'}, {name: '人才投入指标'}, {name: '人才平台指标'}, {name: '人才生活指标'}, {name: '人才环境指标'}, {name: '人才效能指标'}, {name: '人才效益指标'}, {name: '人才发展指标'}]"
+            $indicator: "craneStates.indicators"
           },
           $series: `[{
               type: 'radar',
@@ -68,24 +77,7 @@ module.exports = {
               lineStyle: {width: 1},
               axisLine: {},
               symbol: 'none',
-              data: [
-                {
-                  value: [4300, 10000, 28000, 35000, 50000, 19000, 28000, 35000, 50000, 19000],
-                  name: '四川省'
-                },
-                {
-                  value: [5000, 14000, 30000, 31000, 42000, 21000, 28000, 31000, 42000, 21000],
-                  name: '山东省'
-                },
-                {
-                  value: [5000, 1000, 38000, 31000, 42000, 21000, 38000, 31000, 42000, 21000],
-                  name: '江苏省'
-                },
-                {
-                  value: [5000, 34000, 2000, 38000, 52000, 61000, 2000, 38000, 52000, 61000],
-                  name: '上海市'
-                }
-              ]
+              data: generateRadarData()
             }
           ]`
         }

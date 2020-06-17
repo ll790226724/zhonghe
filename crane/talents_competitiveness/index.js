@@ -13,7 +13,7 @@ module.exports = {
   states: [
     {
       id: 'province',
-      value: ''
+      value: {label: '福建', uuid: 1}
     },
     {
       id: 'city',
@@ -21,11 +21,11 @@ module.exports = {
     },
     {
       id: 'indicators',
-      value: ['人才数量指标', '人才质量指标', '人才结构指标', '人才投入指标', '人才平台指标', '人才生活指标', '人才环境指标', '人才效能指标', '人才效益指标', '人才发展指标']
+      value: [{name: '人才数量指标'}, {name: '人才质量指标'}, {name: '人才结构指标'}, {name: '人才投入指标'}, {name: '人才平台指标'}, {name: '人才生活指标'}, {name: '人才环境指标'}, {name: '人才效能指标'}, {name: '人才效益指标'}, {name: '人才发展指标'}]
     },
     {
       id: 'indicator',
-      value: ''
+      value: '人才数量指标'
     },
     {
       id: 'types',
@@ -48,8 +48,16 @@ module.exports = {
     },
     {
       id: 'currentProvince',
-      value: ''
+      value: []
     },
+    {
+      id: 'selectedArea',
+      value: {}
+    },
+    {
+      id: 'radarData',
+      value: []
+    }
   ],
   components: [
     {
@@ -124,7 +132,6 @@ module.exports = {
         }
       }
     },
-    table,
     talentsIndicatorsSummary,
     radar,
     {
@@ -201,30 +208,44 @@ module.exports = {
       },
     },
     {
-      id: 'area-select',
-      component: 'iview/Select',
+      component: '@byzanteam/vis-components/data-loader',
       position: [1500, 299],
+      exports: {
+        results: 'results',
+      },
       props: {
-        placeholder: '选择省市',
-        class: 'map-select',
-        $style: {
-          width: '382px',
-        },
-        'v-model': 'craneStates.currentProvince'
+        $url: "areaSelectRequestUrl",
+        method: 'get',
+        $data: "[['暂无数据']]",
       },
       children: [
         {
-          component: 'iview/Option',
-          vfor: {
-            data: "craneStates.types",
-            exports: {item: 'item', index: 'key'}
-          },
+          id: 'area-select',
+          component: 'iview/Select',
           props: {
-            $value: "item.index",
-            $label: "item.name"
+            $multiple: true,
+            placeholder: '选择省市',
+            class: 'map-select',
+            $style: {
+              width: '382px',
+            },
+            'v-model': 'craneStates.currentProvince'
           },
-          content: '{{item.name}}',
-        }
+          children: [
+            {
+              component: 'iview/Option',
+              vfor: {
+                data: "results",
+                exports: {item: 'item', index: 'key'}
+              },
+              props: {
+                $value: "item[0]",
+                $label: "item[0]"
+              },
+              content: '{{item[0]}}',
+            }
+          ]
+        },
       ]
     },
     table,
