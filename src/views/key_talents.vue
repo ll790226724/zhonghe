@@ -255,7 +255,10 @@ export const key_talents = {
       return `${params[0].name}<br/>${params[0].marker}${params[0].seriesName}：${params[0].data}人`
     },
     demandTooltipFormatterFunc(params) {
-      return `${params[0].name}<br/>${params[0].marker}${params[0].seriesName}：${params[0].data}人</br>${params[1].marker}${params[1].seriesName}：${params[1].data}人`
+      const series = params.reduce((memo, serie) => {
+        return `${memo}${serie.marker}${serie.seriesName}: ${serie.value}人<br />`
+      }, '')
+      return `${params[0].name}<br />${series}`
     },
     pieTooltipFormatterFunc(params) {
       return `${params.marker}${params.name}：${params.percent}%`

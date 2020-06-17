@@ -175,7 +175,10 @@ export const resources = {
 
   methods: {
     demandTooltipFormatterFunc(params) {
-      return `${params[0].name}<br/><span style="display:inline-block;margin-right:5px;border-radius:10px;width:10px;height:10px;background-color: #6ad6ff;"></span>紧缺人才：${params[0].data}人`
+      const series = params.reduce((memo, serie) => {
+        return `${memo}${serie.marker}${serie.seriesName}: ${serie.value}人<br />`
+      }, '')
+      return `${params[0].name}<br />${series}`
     },
     pieTooltipFormatterFunc(params) {
       return `${params.marker}${params.name}：${params.percent}%`
