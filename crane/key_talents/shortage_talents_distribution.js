@@ -30,7 +30,7 @@ module.exports = [
   },
   {
     component: '@byzanteam/vis-components/data-loader',
-    position: [1490, 841],
+    position: [1350, 841],
     exports: {
       results: 'results',
     },
@@ -39,7 +39,7 @@ module.exports = [
       method: 'get',
       $data: "[[0, '暂无数据']]",
       $style: {
-        width: '400px',
+        width: '600px',
         height: '218px',
         overflow: 'scroll'
       }
@@ -56,21 +56,22 @@ module.exports = [
               backgroundColor: '#566374f0',
             },
             $legend: {
+              type: 'scroll',
               icon: 'circle',
               $itemWidth: 10,
               $itemHeight: 10,
-              $left: 240,
+              $left: 350,
               top: 'middle',
               $itemGap: 9,
               orient: 'vertical',
               $textStyle: {
                 color: '#4b9bbe',
-                fontSize: 12
+                $fontSize: 12
               },
               inactiveColor: '#1C4159',
             },
             $color: "['#6ad6ff', '#4b9bbe', '#367290', '#275570', '#1c4159', '#153349']",
-            $series: "[{type: 'pie', left: -120, clockwise: false, radius: ['35%', '62%'], label: {show: false}, labelLine: {show: false}, data: results ? results.map(item => ({value: item [0], name: item[1]})).sort(compare()) : [{value: 0, name: '暂无数据'}]}]"
+            $series: "[{type: 'pie', minAngle: 5, left: -120, radius: ['35%', '62%'], label: {show: false}, labelLine: {show: false}, data: results ? results.map(item => ({value: item [0], name: item[1]})).sort(compare()) : [{value: 0, name: '暂无数据'}]}]"
           }
         }
       }

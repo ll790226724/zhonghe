@@ -20,11 +20,11 @@ module.exports = {
         $options: {
           backgroundColor: 'transparent',
           $legend: {
+            type: 'scroll',
             icon: 'circle',
             $itemWidth: 10,
             $itemHeight: 10,
-            $right: 75,
-            $left: 285,
+            $left: 270,
             top: 'middle',
             $itemGap: 9,
             orient: 'vertical',
@@ -35,7 +35,7 @@ module.exports = {
             inactiveColor: '#1C4159',
           },
           $color: "['#6ad6ff', '#4b9bbe', '#367290', '#275570', '#1c4159', '#153349']",
-          $series: "[{type: 'pie', left: -140, radius: ['35%', '62%'], label: {show: false}, labelLine: {show: false}, data: results.map(item => ({value: item[0], name: item[1]}))}]",
+          $series: "[{type: 'pie', minAngle: 5, left: -140, radius: ['35%', '62%'], label: {show: false}, labelLine: {show: false}, data: results.map(item => ({value: item[0], name: item[1]})).sort(compare())}]",
           $tooltip: {
             trigger: 'item',
             $formatter: "pieTooltipFormatterFunc",
