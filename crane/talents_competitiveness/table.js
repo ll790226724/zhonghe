@@ -14,6 +14,12 @@ module.exports = {
       overflow: 'scroll'
     }
   },
+  events: {
+    requestDone: {
+      params: ['param'],
+      actions: ["setState('mapData', param.results.map((item) => ({name: item[1], value: craneStates.areaCoordMap[item[1]].concat(item[0].toFixed(2))})))"],
+    },
+  },
   children: [
     {
       component: '@byzanteam/vis-components/vis-table',
