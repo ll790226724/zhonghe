@@ -15,7 +15,7 @@
     </div>
     <div :style="{width: '400px', height: '50px', backgroundColor: 'rgba(106, 214, 255, .02)', borderRadius: '5px', position: 'absolute', top: '88px', left: '30px'}" />
     <div ref="value-circle" :style="{height: '10px', width: '10px', borderRadius: '10px', borderWidth: '1px', borderColor: '#6ad6ff', borderStyle: 'solid', position: 'absolute', top: '117px', left: '119px'}" />
-    <data-loader v-slot="{ results: results }" :url="`/v1/components/24b74ddd-39de-493f-84ab-9d87fcf23fee/data?type=${digitalKeyword}`" method="get" :data="[[0]]" :style="{position: 'absolute', top: '94px', left: '145px'}">
+    <data-loader v-slot="{ results: results }" :url="`/v1/components/24b74ddd-39de-493f-84ab-9d87fcf23fee/data?type=${digitalKeyword || ''}`" method="get" :data="[[0]]" :style="{position: 'absolute', top: '94px', left: '145px'}">
       <digital-roll ref="talent-age-index-content" titlePosition="left" :content="{title: '人才数量统计', digital: results ? results[0][0] : 0, suffix: '人'}" :options="{separator: ''}" :style="{width: '196px', height: '39px'}" :prefixStyle="{color: '#367391', fontSize: '16px', fontWeight: '400'}" :suffixStyle="{color: '#367391', fontSize: '16px', fontWeight: '400'}" :titleStyle="{color: '#367391', fontSize: '16px', fontWeight: '400'}" :digitalStyle="{fontSize: '32px', color: '#6ad6ff', fontWeight: '400', fontFamily: 'Oswald-Regular', format: '11', letterSpacing: '2.4px'}" letterSpacing="0.8px" />
     </data-loader>
     <div :style="{width: '400px', height: '50px', backgroundColor: 'rgba(106, 214, 255, .02)', borderRadius: '5px', position: 'absolute', top: '154px', left: '30px'}" />

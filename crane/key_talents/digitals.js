@@ -69,7 +69,7 @@ module.exports = [
     component: '@byzanteam/vis-components/data-loader',
     position: [145, 94],
     props: {
-      $url: "`/v1/components/24b74ddd-39de-493f-84ab-9d87fcf23fee/data?type=${digitalKeyword}`",
+      $url: "`/v1/components/24b74ddd-39de-493f-84ab-9d87fcf23fee/data?type=${digitalKeyword || ''}`",
       method: 'get',
       $data: "[[0]]",
     },
