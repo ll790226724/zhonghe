@@ -69,7 +69,7 @@
       <Radio v-for="(item, key) in craneStates.indicators" :key="key" :label="item.name" />
     </RadioGroup>
     <data-loader @requestDone="(param)=>[setState('radarData', param.results)]" :url="radarRequestUrl" method="get" :data="[[0, '暂无数据']]" :style="{width: '370px', height: '480px', position: 'absolute', top: '455px', left: '1506px'}">
-      <v-chart :options="{legend: {orient: 'vertical', top: 350, icon: 'circle', inactiveColor: '#1C4159', itemGap: 5, itemWidth: 10, itemHeight: 10, textStyle: {color: '#4b9bbe', fontSize: 14, padding: [2, 4]}}, color: ['#6ad6ff', '#4b9bbe', '#367290', '#275570', '#1c4159', '#153349'], radiusAxis: {axisLine: {color: '#19394f'}, splitLine: {color: '#19394f'}}, radar: {shape: 'circle', center: ['50%', '26%'], radius: '50% ', name: {textStyle: {color: '#4b9bbe', fontSize: 14}}, axisLine: {lineStyle: {color: '#19394f'}}, splitArea: {areaStyle: {color: 'transparent'}}, splitLine: {lineStyle: {color: '#19394f'}}, indicator: craneStates.indicators}, series: [{
+      <v-chart :options="{legend: {orient: 'vertical', top: 350, icon: 'circle', inactiveColor: '#1C4159', itemGap: 5, itemWidth: 10, itemHeight: 10, textStyle: {color: '#4b9bbe', fontSize: 14, padding: [2, 4]}}, tooltip: {trigger: 'item', backgroundColor: '#566374f0'}, color: ['#6ad6ff', '#4b9bbe', '#367290', '#275570', '#1c4159', '#153349'], radiusAxis: {axisLine: {color: '#19394f'}, splitLine: {color: '#19394f'}}, radar: {shape: 'circle', center: ['50%', '26%'], radius: '50% ', name: {textStyle: {color: '#4b9bbe', fontSize: 14}}, axisLine: {lineStyle: {color: '#19394f'}}, splitArea: {areaStyle: {color: 'transparent'}}, splitLine: {lineStyle: {color: '#19394f'}}, indicator: craneStates.indicators}, series: [{
                   type: 'radar',
                   areaStyle: {opacity: 0.2},
                   lineStyle: {width: 1},
@@ -108,7 +108,7 @@
         </template>
       </vis-table>
     </data-loader>
-    <data-loader ref="force-value" v-slot="{ results: results }" :url="`/v1/components/38b74ddd-39de-493f-84ab-9d87fcf23fee/data?province=${craneStates.province ? craneStates.province.label : ''}&city=${craneStates.city ? craneStates.city.label : ''}`" method="get" :data="[[0]]" :style="{position: 'absolute', top: '66px', left: '1614px'}">
+    <data-loader ref="force-value" v-slot="{ results: results }" :url="`/v1/components/38b74ddd-39de-493f-84ab-9d87fcf23fee/data?city=${craneStates.city ? craneStates.city.label : ''}&type='${this.craneStates.indicator}'`" method="get" :data="[[0]]" :style="{position: 'absolute', top: '66px', left: '1614px'}">
       <digital-roll ref="force-value-content" v-if="results" titlePosition="left" :content="{title: '竞争力指数', digital: results[0][0]}" :options="{separator: ',', decimalPlaces: 1}" :titleStyle="{color: '#367391', fontSize: '16px', fontWeight: '400'}" :prefixStyle="{color: '#367391', fontSize: '16px', fontWeight: '400'}" :suffixStyle="{color: '#367391', fontSize: '16px', fontWeight: '400'}" :digitalStyle="{fontSize: '32px', color: '#6ad6ff', fontWeight: '400', fontFamily: 'Oswald-Regular', format: '11', letterSpacing: '2.4px'}" />
     </data-loader>
   </div>
