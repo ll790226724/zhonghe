@@ -210,7 +210,7 @@ module.exports = [
     component: '@byzanteam/vis-components/data-loader',
     position: [1614, 134],
     props: {
-      $url: "`/v1/components/29b74ddd-39de-493f-84ab-9d87fcf23fee/data?industry=${craneStates.currentShortageType|| ''}&year=${this.craneStates.year ? this.craneStates.year.getFullYear() : new Date(Date.now()).getFullYear()}`",
+      $url: "`/v1/components/29b74ddd-39de-493f-84ab-9d87fcf23fee/data?job=${craneStates.currentShortageType|| ''}&year=${this.craneStates.year ? this.craneStates.year.getFullYear() : new Date(Date.now()).getFullYear()}`",
       method: 'get',
       $data: "[[0]]",
     },
