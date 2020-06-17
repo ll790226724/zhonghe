@@ -9,7 +9,7 @@ module.exports = {
   },
 
   props: {
-    $url: "`/v1/components/17b74ddd-39de-493f-84ab-9d87fcf23fee/data`",
+    $url: "`/v1/components/14b74ddd-39de-493f-84ab-9d87fcf23fee/data?city=${craneStates.department.label}市&type='人才综合指数'`",
     method: 'get',
     $data: "[[0]]",
   },
@@ -22,7 +22,7 @@ module.exports = {
         titlePosition: 'bottom',
         $content: {
           title: '人才综合指数',
-          $digital: "results[0][0]",
+          $digital: "results[0][0] || 0",
         },
         $options: {
           separator: '',

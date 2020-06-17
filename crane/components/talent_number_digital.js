@@ -22,7 +22,7 @@ module.exports = {
         titlePosition: 'left',
         $content: {
           title: '中高端人才数量',
-          $digital: "results[0][0]",
+          $digital: "results[0][0] || 0",
           suffix: '人',
         },
         $options: {
