@@ -6,7 +6,7 @@
       省域人才综合竞争力
     </div>
     <brick-radio-button-select :options="provinceOptions" v-model="craneStates.province" placeholder="全省" :style="{position: 'absolute', top: '125px', left: '864px'}" />
-    <brick-radio-button-select v-if="craneStates.province" :options="selectOptions" v-model="craneStates.city" placeholder="福州" :style="{position: 'absolute', top: '125px', left: '979px'}" />
+    <brick-radio-button-select v-if="craneStates.province" :options="selectOptions" v-model="craneStates.city" placeholder="全省" :style="{position: 'absolute', top: '125px', left: '979px'}" />
     <data-loader :style="{width: '950px', height: '794px', position: 'absolute', top: '190px', left: '485px'}">
       <v-chart ref="map" :options="{backgroundColor: 'transparent', geo: {map: craneStates.city ? craneStates.city.uuid : 'fujian', left: 0, right: 0, label: {normal: {show: false}, emphasis: {show: false}}, itemStyle: {normal: {areaColor: 'rgba(106, 214, 255, 0.05)', borderColor: '#6ad6ff', borderType: 'solid', borderWidth: 0.5}, emphasis: {areaColor: '#6ad6ff'}}, regions: [{name: '南海诸岛', value: 0, itemStyle: { normal: { opacity: 0, label: { show: false}}}}]}, series: [
                 {
@@ -248,7 +248,9 @@ export const talents_competitiveness = {
     },
     'craneStates.province' (value) {
       if(!value) {
-      this.craneStates.province = PROVINCE_OPTIONS[0]
+        this.$nextTick(() => {
+          this.craneStates.province = PROVINCE_OPTIONS[0]
+        })
       }
     },
   },
@@ -273,27 +275,6 @@ export const talents_competitiveness = {
       }
       return '/v1/components/39b74ddd-39de-493f-84ab-9d87fcf23fee/data'
     }
-  },
-
-  mounted() {
-    const { chart } = this.$refs.map
-    chart.on('click', (params) => {
-      chart.dispatchAction({
-        type: 'geoSelect',
-        name: params.name
-      })
-      if(this.craneStates.selectedArea) {
-        chart.dispatchAction({
-          type: 'geoUnSelect',
-          name: this.craneStates.selectedArea
-        })
-      }
-      if(this.craneStates.selectedArea === params.name) {
-        this.craneStates.selectedArea = ''
-      } else {
-        this.craneStates.selectedArea = params.name
-      }
-    })
   },
 
   methods: {
