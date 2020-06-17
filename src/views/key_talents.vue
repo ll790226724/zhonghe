@@ -64,7 +64,7 @@
         <date-picker class="map-tab-datepicker" :options="{disabledDate: (time) => {return !craneStates.dateRange.includes(time.getFullYear())}}" :style="{width: '180px'}" v-model="craneStates.year" type="year" placeholder="选择时间" />
       </data-loader>
       <data-loader ref="industry_select" v-slot="{ results: results }" url="/v1/components/30b74ddd-39de-493f-84ab-9d87fcf23fee/data?offset=10" method="get" :data="[['']]" :style="{position: 'absolute', top: '270px', left: '1697px'}">
-        <Select placeholder="所有行业" class="map-select" :style="{width: '180px'}" v-model="craneStates.currentShortageType">
+        <Select placeholder="所有行业" clearable class="map-select" :style="{width: '180px'}" v-model="craneStates.currentShortageType">
           <Option v-for="(item, key) in results.map((item, index) => ({index: item[0], name: item[0]}))" :key="key" :value="item.index" :label="item.name">
             {{item.name}}
           </Option>
