@@ -9,8 +9,8 @@ module.exports = {
   },
   events: {
     requestDone: {
-      params: ['exports'],
-      actions: ["setState('dateRange', exports.results.map((item) => (Number(item[0]))))"],
+      params: ['param'],
+      actions: ["setState('dateRange', param.results.map((item) => (Number(item[0]))))"],
     },
   },
   children: [

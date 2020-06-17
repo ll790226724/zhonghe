@@ -20,51 +20,13 @@ module.exports = {
   title: '全国人才资源态势总览',
   states: [
     {
-      id: 'options',
-      value: {
-        backgroundColor: 'transparent',
-        tooltip: {
-          trigger: 'item',
-          formatter: '{b}<br/>人才数量（人）：{c}'
-        },
-        visualMap: {
-          type:'piecewise',
-          pieces: [
-            {gt: 1500, label: '1500人及以上'},
-            {gt: 1000, lte: 1500, label: '1000-1500人'},
-            {gt: 100, lte: 999, label: '100-999人'},
-            {gt: 10, lte: 99, label: '10-99人'},
-            {gt: 1, lt: 9, label: '1-9人'}
-          ],
-          orient: 'horizontal',
-          inRange: {
-            color: ['lightskyblue', 'yellow', 'orangered']
-          }
-        },
-        series: [
-          {
-            type: 'map',
-            mapType: 'fuzhou',
-            label: {
-              show: true,
-              fontSize: 14,
-            },
-            data: [
-              {name: '城中区', value: 4},
-              {name: '柳东新区', value: 15},
-              {name: '柳南区', value: 31},
-              {name: '柳北区', value: 69},
-              {name: '柳江区', value: 1440},
-              {name: '柳城县', value: 4068},
-              {name: '鹿寨县', value: 376},
-              {name: '融安县', value: 45},
-              {name: '融水苗族自治县', value: 55},
-              {name: '三江侗族自治县', value: 2},
-            ],
-          }
-        ]
-      }
-    }
+      id: 'department',
+      value: {}
+    },
+    {
+      id: 'mapData',
+      value: []
+    },
   ],
   components: [
     {
@@ -75,9 +37,31 @@ module.exports = {
         src: '/static/images/Bg.png'
       },
     },
-
+    {
+      id: 'box-bg',
+      component: 'img',
+      position: [10, 10],
+      props: {
+        $style: {
+          width: '440px',
+          height: '1059px',
+        },
+        src: '/static/images/Box-Bg.png'
+      },
+    },
+    {
+      id: 'right-box-bg',
+      component: 'img',
+      position: [1471, 10],
+      props: {
+        $style: {
+          width: '440px',
+          height: '1059px',
+        },
+        src: '/static/images/Box-Bg.png'
+      },
+    },
     map,
-
     table,
     {
       id: 'title-bg',
@@ -91,33 +75,6 @@ module.exports = {
         src: '/static/images/Title-Bg.png'
       },
     },
-
-    {
-      id: 'box-bg',
-      component: 'img',
-      position: [10, 10],
-      props: {
-        $style: {
-          width: '440px',
-          height: '1059px',
-        },
-        src: '/static/images/Box-Bg.png'
-      },
-    },
-
-    {
-      id: 'right-box-bg',
-      component: 'img',
-      position: [1471, 10],
-      props: {
-        $style: {
-          width: '440px',
-          height: '1059px',
-        },
-        src: '/static/images/Box-Bg.png'
-      },
-    },
-
     {
       id: 'page-title',
       component: 'div',
@@ -133,7 +90,6 @@ module.exports = {
         }
       }
     },
-
     {
       id: 'talent-index',
       component: 'div',
@@ -149,7 +105,6 @@ module.exports = {
       },
       content: '人才指数综合分析',
     },
-
     {
       id: 'talent-education',
       component: 'div',
@@ -165,7 +120,6 @@ module.exports = {
       },
       content: '人才学历层次',
     },
-
     {
       id: 'talent-industry',
       component: 'div',
@@ -181,7 +135,6 @@ module.exports = {
       },
       content: '人才流动行业排名',
     },
-
     {
       id: 'industry-talent',
       component: 'div',
@@ -197,7 +150,6 @@ module.exports = {
       },
       content: '行业人才占比',
     },
-
     {
       id: 'talent-demand',
       component: 'div',
@@ -213,7 +165,6 @@ module.exports = {
       },
       content: '各行业人才需求',
     },
-
     {
       id: 'talent-index-icon',
       component: 'div',
@@ -228,7 +179,6 @@ module.exports = {
       },
       content: '>>',
     },
-
     {
       id: 'talent-education-icon',
       component: 'div',
@@ -243,7 +193,6 @@ module.exports = {
       },
       content: '>>',
     },
-
     {
       id: 'talent-industry-icon',
       component: 'div',
@@ -258,7 +207,6 @@ module.exports = {
       },
       content: '>>',
     },
-
     {
       id: 'industry-talent-icon',
       component: 'div',
@@ -273,7 +221,6 @@ module.exports = {
       },
       content: '>>',
     },
-
     {
       id: 'talent-demand-icon',
       component: 'div',
@@ -288,7 +235,6 @@ module.exports = {
       },
       content: '>>',
     },
-
     {
       id: 'value-circle',
       component: 'div',
@@ -304,7 +250,6 @@ module.exports = {
         }
       },
     },
-
     {
       id: 'number-circle',
       component: 'div',
@@ -320,7 +265,6 @@ module.exports = {
         }
       },
     },
-
     {
       id: 'education-circle',
       component: 'div',
@@ -336,7 +280,6 @@ module.exports = {
         }
       },
     },
-
     {
       id: 'rank-circle',
       component: 'div',
@@ -352,7 +295,6 @@ module.exports = {
         }
       },
     },
-
     {
       id: 'age-circle',
       component: 'div',
@@ -368,7 +310,6 @@ module.exports = {
         }
       },
     },
-
     {
       id: 'industry-circle',
       component: 'div',
@@ -384,7 +325,6 @@ module.exports = {
         }
       },
     },
-
     {
       id: 'quality-circle',
       component: 'div',
@@ -400,7 +340,6 @@ module.exports = {
         }
       },
     },
-
     {
       id: 'synthesis-circle',
       component: 'div',
@@ -416,7 +355,6 @@ module.exports = {
         }
       },
     },
-
     {
       id: 'age-bg',
       component: 'div',
@@ -430,7 +368,6 @@ module.exports = {
         }
       }
     },
-
     {
       id: 'education-bg',
       component: 'div',
@@ -444,7 +381,6 @@ module.exports = {
         }
       }
     },
-
     {
       id: 'industry-bg',
       component: 'div',
@@ -458,7 +394,6 @@ module.exports = {
         }
       }
     },
-
     {
       id: 'number-bg',
       component: 'div',
@@ -472,7 +407,6 @@ module.exports = {
         }
       }
     },
-
     {
       id: 'quality-bg',
       component: 'div',
@@ -486,7 +420,6 @@ module.exports = {
         }
       }
     },
-
     {
       id: 'synthesis-bg',
       component: 'div',
@@ -500,7 +433,6 @@ module.exports = {
         }
       }
     },
-
     {
       id: 'production-bg',
       component: 'div',
@@ -514,7 +446,6 @@ module.exports = {
         }
       }
     },
-
     {
       id: 'production-bg',
       component: 'div',
@@ -528,26 +459,16 @@ module.exports = {
         }
       }
     },
-
     {
       id: 'departments-loader',
-      component: '@byzanteam/vis-components/data-loader',
+      component: 'div',
       position: [929, 125],
-      exports: {
-        results: 'results',
-      },
-      props: {
-        // $url: "`/v1/components/d9b74ddd-39de-493f-84ab-9d87fcf23fee/data?start=${craneStates.filterRange[0]}&end=${craneStates.filterRange[1]}`",
-        // method: 'get',
-      },
       children: [
         {
           id: 'departments-select',
-          component: '@byzanteam/vis-components/vis-select',
+          component: '@byzanteam/vis-components/brick-radio-button-select',
           props: {
-            // 'v-if': 'results',
-            // $options: 'results.map( (item, index) => { return {label: item[0], uuid: index } } )',
-            $options: "[{label: '福州', uuid: '0'}, {label: '全国', uuid: '1'}, {label: '陕西省', uuid: '2'}, {label: '江苏省', uuid: '3'}, {label: '福建省', uuid: '4'}, {label: '浙江省', uuid: '5'},]",
+            $options: "selectOptions",
             'v-model': 'craneStates.department',
             placeholder: '福州',
           },

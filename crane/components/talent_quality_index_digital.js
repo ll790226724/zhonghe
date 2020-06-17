@@ -9,24 +9,20 @@ module.exports = {
   },
 
   props: {
-    // $url: "`/v1/components/89b74ddd-39de-493f-84ab-9d87fcf23fee/data?start=${craneStates.filterRange[0]}&end=${craneStates.filterRange[1]}`",
-    // method: 'get',
-    // $data: "[[0]]",
-    $style: {
-      // width: '194px',
-      // height: '44px',
-    },
+    $url: "`/v1/components/17b74ddd-39de-493f-84ab-9d87fcf23fee/data`",
+    method: 'get',
+    $data: "[[0]]",
   },
   children: [
     {
       id: 'talent-quality-index-content',
       component: '@byzanteam/vis-components/digital-roll',
       props: {
-        // 'v-if': 'results',
+        'v-if': 'results',
         titlePosition: 'bottom',
         $content: {
           title: '人才素质指数',
-          $digital: 23,
+          $digital: "results[0][0]",
         },
         $options: {
           separator: '',
