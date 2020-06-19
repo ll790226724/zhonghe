@@ -45,7 +45,7 @@
     <div ref="activity-bg" :style="{height: '50px', width: '400px', backgroundColor: '#6ad6ff05', borderRadius: '5px', position: 'absolute', top: '218px', left: '30px'}" />
     <div ref="high-level-bg" :style="{height: '50px', width: '400px', backgroundColor: '#6ad6ff05', borderRadius: '5px', position: 'absolute', top: '693px', left: '30px'}" />
     <data-loader ref="departments-loader" v-slot="{ results: results }" :style="{position: 'absolute', top: '125px', left: '929px'}">
-      <vis-select ref="departments-select" :options="craneStates.selectOptions" v-model="craneStates.department" placeholder="福州" />
+      <brick-radio-button-select ref="departments-select" :options="craneStates.selectOptions" v-model="craneStates.department" placeholder="福州" />
     </data-loader>
     <data-loader ref="activity-number-bar" v-slot="{ results: results }" :style="{width: '400px', height: '250px', position: 'absolute', top: '308px', left: '30px'}">
       <v-chart ref="activity-number-bar-content" :options="{xAxis: {axisLabel: {rotate: 0, fontSize: 12, fontWeight: 400, color: '#367391'}, axisLine: {show: false}, data: ['周一', '周二', '周三', '周四', '周五', '周六', '周日',]}, yAxis: {axisLabel: {rotate: 0, fontSize: 12, fontWeight: 400, color: '#367391', align: 'center'}, axisTick: {show: false}, axisLine: {show: false}, splitLine: {show: false}, splitNumber: 5, name: '件', nameTextStyle: {fontSize: 12, fontWeight: 400, color: '#367391', align: 'center', padding: [0, 5, 0, 0]}}, series: {type: 'bar', barWidth: 7, barCategoryGap: '10%', itemStyle: {normal: {barBorderRadius: 7, color: new Echarts.graphic.LinearGradient(0, 1, 0, 0, [
@@ -78,13 +78,15 @@
     <data-loader ref="education_rank" v-slot="{ results: results }" :style="{width: '296px', height: '290px', overflow: 'scroll', position: 'absolute', top: '746px', left: '1542px'}">
       <ranking ref="education_rank-content" :data="[{label: '本科', amount: 78.16}, {label: '硕士', amount: 23.21}, {label: '博士', amount: 18.01}, {label: '高中生', amount: 68.23}, {label: '大专', amount: 47.67}, {label: '初中', amount: 45.11},]" :keys="{label: 'label', value: 'amount', tooltip: 'name'}" :labelStyle="{color: '#4b9bbe', fontSize: '16px', lineHeight: '24px'}" :valueStyle="{color: '#6ad6ff', fontSize: '16px', fontFamily: 'Oswald-Regular', lineHeight: '1.5', fontWeight: '400'}" :lineStyle="{background: '#ffffff0D', lineColor: ['#0885b5', '#6ad6ff'], height: '5px', borderRadius: '2.5px'}" :tooltip="{text: {align: 'center', baseline: 'middle', fill: '#FFFFFF', size: 14, weight: 400}, notation: {fill: '#367391', name: 'circle-small', size: 14}}" :tooltipOptions="{background: '#566374f0', text: {align: 'center', baseline: 'middle', fill: '#FFFFFF', size: 14, weight: 400}, title: {align: 'center', baseline: 'middle', fill: '#FFFFFF', size: 14, weight: 400}}" />
     </data-loader>
-    <data-loader ref="activity-number-digital" v-slot="{ results: results }" :style="{position: 'absolute', top: '224px', left: '154px'}">
-      <digital-roll ref="activity-number-digital-content" titlePosition="left" :content="{title: '引才活动统计', suffix: '次', digital: 189}" :options="{separator: ','}" :titleStyle="{color: '#367391', fontSize: '16px', fontWeight: '400'}" :prefixStyle="{color: '#367391', fontSize: '16px', fontWeight: '400'}" :suffixStyle="{color: '#367391', fontSize: '16px', fontWeight: '400'}" :digitalStyle="{fontSize: '32px', color: '#6ad6ff', fontWeight: '400', fontFamily: 'Oswald-Regular', format: '11', letterSpacing: '2.4px'}" />
+    <data-loader ref="activity-number-digital" v-slot="{ results: results }" :url="`/v1/components/43b74ddd-39de-493f-84ab-9d87fcf23fee/data?year=${craneStates.year}&area=${craneStates.department.label}`" method="get" :data="[[0]]" :style="{position: 'absolute', top: '224px', left: '154px'}">
+      <digital-roll ref="activity-number-digital-content" titlePosition="left" :content="{title: '引才活动统计', suffix: '次', digital: results[0][0]}" :options="{separator: ','}" :titleStyle="{color: '#367391', fontSize: '16px', fontWeight: '400'}" :prefixStyle="{color: '#367391', fontSize: '16px', fontWeight: '400'}" :suffixStyle="{color: '#367391', fontSize: '16px', fontWeight: '400'}" :digitalStyle="{fontSize: '32px', color: '#6ad6ff', fontWeight: '400', fontFamily: 'Oswald-Regular', format: '11', letterSpacing: '2.4px'}" />
     </data-loader>
     <data-loader ref="high-level-talent-digital" v-slot="{ results: results }" :style="{position: 'absolute', top: '699px', left: '130px'}">
       <digital-roll ref="high-level-talent-digital-content" titlePosition="left" :content="{title: '高层次人才引进总数', suffix: '人', digital: 560}" :options="{separator: ','}" :titleStyle="{color: '#367391', fontSize: '16px', fontWeight: '400'}" :prefixStyle="{color: '#367391', fontSize: '16px', fontWeight: '400'}" :suffixStyle="{color: '#367391', fontSize: '16px', fontWeight: '400'}" :digitalStyle="{fontSize: '32px', color: '#6ad6ff', fontWeight: '400', fontFamily: 'Oswald-Regular', format: '11', letterSpacing: '2.4px'}" />
     </data-loader>
-    <date-picker class="supply-datepicker" :style="{width: '380px', height: '50px', position: 'absolute', top: '50px', left: '40px'}" v-model="craneStates.year" type="year" placeholder="选择时间" />
+    <data-loader @requestDone="(param)=>[setState('dateRange', param.results.map((item) => (Number(item[0]))))]" url="/v1/components/42b74ddd-39de-493f-84ab-9d87fcf23fee/data" method="get" :data="[['']]">
+      <date-picker class="supply-datepicker" :style="{width: '380px', height: '50px', position: 'absolute', top: '50px', left: '40px'}" v-model="craneStates.year" :options="{disabledDate: (time) => {return !craneStates.dateRange.includes(time.getFullYear())}}" type="year" placeholder="选择时间" />
+    </data-loader>
   </div>
 </template>
 
@@ -105,7 +107,7 @@ Echarts.registerMap('fuzhou', fuzhou);
 import BuiltInMixin from '../mixins/built_in'
 import {
   DataLoader,
-  VisSelect,
+  BrickRadioButtonSelect,
   Ranking,
   DigitalRoll,
 } from '@byzanteam/vis-components'
@@ -117,9 +119,9 @@ export const introduction = {
   mixins: [BuiltInMixin],
 
   components: {
-    DataLoader,
-    VisSelect,
     'v-chart': Echarts,
+    DataLoader,
+    BrickRadioButtonSelect,
     Ranking,
     DigitalRoll,
     DatePicker,
@@ -129,6 +131,7 @@ export const introduction = {
     return {
       Echarts: Echarts,
       craneStates: {
+        dateRange: [],
         selectedArea: {},
         selectOptions: [{label: '福州', uuid: 'fuzhou'}, {label: '宁德', uuid: 'ningde'}, {label: '龙岩', uuid: 'longyan'}, {label: '莆田', uuid: 'putian'}, {label: '南平', uuid: 'nanping'}, {label: '三明', uuid: 'sanming'}, {label: '厦门', uuid: 'xiamen'}, {label: '漳州', uuid: 'zhangzhou'}, {label: '泉州', uuid: 'quanzhou'}],
         department: null,

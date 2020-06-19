@@ -16,6 +16,10 @@ module.exports = {
   title: '人才引进专题',
   states: [
     {
+      id: 'dateRange',
+      value: []
+    },
+    {
       id: 'selectedArea',
       value: {}
     },
@@ -301,7 +305,7 @@ module.exports = {
       children: [
         {
           id: 'departments-select',
-          component: '@byzanteam/vis-components/vis-select',
+          component: '@byzanteam/vis-components/brick-radio-button-select',
           props: {
             $options: "craneStates.selectOptions",
             'v-model': 'craneStates.department',
