@@ -1,5 +1,6 @@
 module.exports = {
-  publicPath: '/',
+  publicPath: '/hxcr',
+  outputDir: 'fujian',
   pluginOptions: {
     i18n: {
       locale: 'yes',

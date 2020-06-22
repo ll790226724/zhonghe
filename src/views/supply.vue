@@ -1,12 +1,12 @@
 <template>
   <div class="supply">
-    <img ref="background" src="/static/images/Bg.png" :style="{position: 'absolute', top: '0px', left: '0px'}" />
-    <img ref="title-bg" :style="{width: '701px', height: '123px', position: 'absolute', top: '0px', left: '607px'}" src="/static/images/Title-Bg.png" />
+    <img ref="background" src="/hxcr/images/Bg.png" :style="{position: 'absolute', top: '0px', left: '0px'}" />
+    <img ref="title-bg" :style="{width: '701px', height: '123px', position: 'absolute', top: '0px', left: '607px'}" src="/hxcr/images/Title-Bg.png" />
     <div ref="page-title" :style="{width: '701px', color: '#fff', fontSize: '42px', fontWeight: 600, textAlign: 'center', position: 'absolute', top: '27px', left: '607px'}">
       人才供需专题
     </div>
-    <img ref="box-bg" :style="{width: '440px', height: '1059px', position: 'absolute', top: '10px', left: '10px'}" src="/static/images/Box-Bg.png" />
-    <img ref="right-box-bg" :style="{width: '440px', height: '1059px', position: 'absolute', top: '10px', left: '1471px'}" src="/static/images/Box-Bg.png" />
+    <img ref="box-bg" :style="{width: '440px', height: '1059px', position: 'absolute', top: '10px', left: '10px'}" src="/hxcr/images/Box-Bg.png" />
+    <img ref="right-box-bg" :style="{width: '440px', height: '1059px', position: 'absolute', top: '10px', left: '1471px'}" src="/hxcr/images/Box-Bg.png" />
     <data-loader ref="job_select" v-slot="{ results: results }" url="/v1/components/01b74ddd-39de-493f-84ab-9d87fcf23fee/data?offset=10" method="get" :data="[['']]" :style="{position: 'absolute', top: '50px', left: '40px'}">
       <Select class="departments-select" :clearable="true" :filterable="true" :style="{width: '380px'}" v-model="craneStates.currentJob">
         <Option v-for="(item, key) in results.map((item, index) => ({index: item[0], name: item[0]}))" :key="key" :value="item.index" :label="item.name">
@@ -119,14 +119,14 @@ import 'echarts/lib/component/legend'
 import 'echarts/lib/component/visualMap'
 import 'echarts/lib/component/legendScroll'
 
-import longyan from '../../public/static/longyan.json'
-import nanping from '../../public/static/nanping.json'
-import putian from '../../public/static/putian.json'
-import ningde from '../../public/static/ningde.json'
-import quanzhou from '../../public/static/quanzhou.json'
-import sanming from '../../public/static/sanming.json'
-import xiamen from '../../public/static/xiamen.json'
-import zhangzhou from '../../public/static/zhangzhou.json'
+import longyan from '../../public/hxcr/longyan.json'
+import nanping from '../../public/hxcr/nanping.json'
+import putian from '../../public/hxcr/putian.json'
+import ningde from '../../public/hxcr/ningde.json'
+import quanzhou from '../../public/hxcr/quanzhou.json'
+import sanming from '../../public/hxcr/sanming.json'
+import xiamen from '../../public/hxcr/xiamen.json'
+import zhangzhou from '../../public/hxcr/zhangzhou.json'
 
 Echarts.registerMap('longyan', longyan);
 Echarts.registerMap('nanping', nanping);

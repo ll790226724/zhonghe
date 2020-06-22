@@ -20,7 +20,7 @@ export default new Router({
     },
     {
       name: 'key_talents',
-      path: '/keyTalents',
+      path: '/key-talents',
       component: pages.key_talents,
     },
     {
