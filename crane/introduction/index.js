@@ -16,6 +16,10 @@ module.exports = {
   title: '人才引进专题',
   states: [
     {
+      id: 'year',
+      value: ''
+    },
+    {
       id: 'dateRange',
       value: []
     },
