@@ -6,6 +6,9 @@ module.exports = {
     results: 'results',
   },
   props: {
+    $url: "`/v1/components/49b74ddd-39de-493f-84ab-9d87fcf23fee/data?area=${selectedArea}&year=${craneStates.year ? craneStates.year.getFullYear() : new Date(Date.now()).getFullYear()}`",
+    method: 'get',
+    $data: "[[0, '暂无数据']]",
     $style: {
       width: '400px',
       height: '218px'
@@ -17,6 +20,7 @@ module.exports = {
       component: 'v-chart',
       props: {
         $options:{
+          $color: "['#6ad6ff', '#4b9bbe', '#367290', '#275570', '#1c4159', '#153349']",
           $legend: {
             type: 'scroll',
             orient: 'vertical',
@@ -25,7 +29,7 @@ module.exports = {
             icon: 'circle',
             $itemWidth: 8,
             $itemHeight: 8,
-            $data: "['学术型人才', '工程型人才', '技术型人才', '初级人才', '中级人才', '高级人才']",
+            $data: "results.map(item => (item[1]))",
             $textStyle: {
               color: '#489bbe',
               $fontSize: 14,
@@ -43,7 +47,7 @@ module.exports = {
             $labelLine: {
               $show: false,
             },
-            $data: "[{name:'学术型人才', value: 66, itemStyle: {color: '#6ad6ff'}}, {name:'工程型人才', value: 55, itemStyle: {color: '#4b9bbe'}}, {name:'技术型人才', value: 44, itemStyle: {color: '#367290'}}, {name:'初级人才', value: 33, itemStyle: {color: '#275570'}}, {name:'中级人才', value: 22, itemStyle: {color: '#1c4159'}}, {name:'高级人才', value: 11, itemStyle: {color: '#153349'}}]"
+            $data: "results.map(item => ({name: item[1], value: item[0]}))"
           },
           $tooltip: {
             trigger: 'item',

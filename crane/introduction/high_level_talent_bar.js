@@ -20,7 +20,6 @@ module.exports = {
     {
       id: 'high-level-talent-content',
       component: 'v-chart',
-      // 'v-if': 'results',
       props: {
         $options: {
           $xAxis: {

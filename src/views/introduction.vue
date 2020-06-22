@@ -2,7 +2,7 @@
   <div class="introduction">
     <img ref="background" src="/static/images/Bg.png" :style="{position: 'absolute', top: '0px', left: '0px'}" />
     <data-loader :style="{width: '1100px', height: '900px', position: 'absolute', top: '160px', left: '410px'}">
-      <v-chart ref="map" :options="{backgroundColor: 'transparent', series: [{type: 'map', mapType: craneStates.department.uuid, label: {show: true,  fontSize: 14, color: 'white'}, itemStyle: {areaColor: 'rgba(106, 214, 255, .05)', borderColor: '#6ad6ff', borderType: 'solid', borderWidth: 0.5}, emphasis: {label: {color: 'white',fontWeight: 600}, itemStyle: {areaColor: '#4B9BBE'}}}]}" />
+      <v-chart ref="map" :options="mapOptions" />
     </data-loader>
     <img ref="title-bg" :style="{width: '701px', height: '123px', position: 'absolute', top: '0px', left: '607px'}" src="/static/images/Title-Bg.png" />
     <img ref="box-bg" :style="{width: '440px', height: '1059px', position: 'absolute', top: '10px', left: '10px'}" src="/static/images/Box-Bg.png" />
@@ -69,11 +69,11 @@
                         color: '#6ad6ff'
                       }], false),}}, data: results.map(item => (item[0]))}, tooltip: {trigger: 'axis', axisPointer: {type: 'shadow'}, formatter: tooltipFormatterFunc, backgroundColor: '#566374f0'}}" />
     </data-loader>
-    <data-loader ref="introduce-place" v-slot="{ results: results }" :style="{width: '400px', height: '218px', position: 'absolute', top: '94px', left: '1490px'}">
-      <v-chart ref="introduce-place-content" :options="{legend: {type: 'scroll', orient: 'vertical', right: '8%', top: 'middle', icon: 'circle', itemWidth: 8, itemHeight: 8, data: ['猎头', '熟人推荐', '主动接触搜寻', '政府政策', '人才落户', '其他'], textStyle: {color: '#489bbe', fontSize: 14}, inactiveColor: '#1C4159'}, series: {name: '人才引进渠道', type: 'pie', left: '-34%', radius: ['0%', '59%'], label: {show: false}, labelLine: {show: false}, data: [{name:'猎头', value: 66, itemStyle: {color: '#6ad6ff'}}, {name:'熟人推荐', value: 55, itemStyle: {color: '#4b9bbe'}}, {name:'主动接触搜寻', value: 44, itemStyle: {color: '#367290'}}, {name:'政府政策', value: 33, itemStyle: {color: '#275570'}}, {name:'人才落户', value: 22, itemStyle: {color: '#1c4159'}}, {name:'其他', value: 11, itemStyle: {color: '#153349'}}]}, tooltip: {trigger: 'item', formatter: pieTooltipFormatterFunc, backgroundColor: '#566374f0'}}" />
+    <data-loader ref="introduce-place" v-slot="{ results: results }" :url="`/v1/components/48b74ddd-39de-493f-84ab-9d87fcf23fee/data?area=${selectedArea}&year=${craneStates.year ? craneStates.year.getFullYear() : new Date(Date.now()).getFullYear()}`" method="get" :data="[[0, '暂无数据']]" :style="{width: '400px', height: '218px', position: 'absolute', top: '94px', left: '1490px'}">
+      <v-chart ref="introduce-place-content" :options="{color: ['#6ad6ff', '#4b9bbe', '#367290', '#275570', '#1c4159', '#153349'], legend: {type: 'scroll', orient: 'vertical', right: '8%', top: 'middle', icon: 'circle', itemWidth: 8, itemHeight: 8, data: results.map(item => (item[1])), textStyle: {color: '#489bbe', fontSize: 14}, inactiveColor: '#1C4159'}, series: {name: '人才引进渠道', type: 'pie', left: '-34%', radius: ['0%', '59%'], label: {show: false}, labelLine: {show: false}, data: results.map(item => ({name: item[1], value: item[0]}))}, tooltip: {trigger: 'item', formatter: pieTooltipFormatterFunc, backgroundColor: '#566374f0'}}" />
     </data-loader>
-    <data-loader ref="talent-rank" v-slot="{ results: results }" :style="{width: '400px', height: '218px', position: 'absolute', top: '414px', left: '1490px'}">
-      <v-chart ref="talent-rank" :options="{legend: {type: 'scroll', orient: 'vertical', right: '8%', top: 'middle', icon: 'circle', itemWidth: 8, itemHeight: 8, data: ['学术型人才', '工程型人才', '技术型人才', '初级人才', '中级人才', '高级人才'], textStyle: {color: '#489bbe', fontSize: 14}, inactiveColor: '#1C4159'}, series: {name: '人才引进渠道', type: 'pie', left: '-34%', radius: ['35%', '62%'], label: {show: false}, labelLine: {show: false}, data: [{name:'学术型人才', value: 66, itemStyle: {color: '#6ad6ff'}}, {name:'工程型人才', value: 55, itemStyle: {color: '#4b9bbe'}}, {name:'技术型人才', value: 44, itemStyle: {color: '#367290'}}, {name:'初级人才', value: 33, itemStyle: {color: '#275570'}}, {name:'中级人才', value: 22, itemStyle: {color: '#1c4159'}}, {name:'高级人才', value: 11, itemStyle: {color: '#153349'}}]}, tooltip: {trigger: 'item', formatter: pieTooltipFormatterFunc, backgroundColor: '#566374f0'}}" />
+    <data-loader ref="talent-rank" v-slot="{ results: results }" :url="`/v1/components/49b74ddd-39de-493f-84ab-9d87fcf23fee/data?area=${selectedArea}&year=${craneStates.year ? craneStates.year.getFullYear() : new Date(Date.now()).getFullYear()}`" method="get" :data="[[0, '暂无数据']]" :style="{width: '400px', height: '218px', position: 'absolute', top: '414px', left: '1490px'}">
+      <v-chart ref="talent-rank" :options="{color: ['#6ad6ff', '#4b9bbe', '#367290', '#275570', '#1c4159', '#153349'], legend: {type: 'scroll', orient: 'vertical', right: '8%', top: 'middle', icon: 'circle', itemWidth: 8, itemHeight: 8, data: results.map(item => (item[1])), textStyle: {color: '#489bbe', fontSize: 14}, inactiveColor: '#1C4159'}, series: {name: '人才引进渠道', type: 'pie', left: '-34%', radius: ['35%', '62%'], label: {show: false}, labelLine: {show: false}, data: results.map(item => ({name: item[1], value: item[0]}))}, tooltip: {trigger: 'item', formatter: pieTooltipFormatterFunc, backgroundColor: '#566374f0'}}" />
     </data-loader>
     <data-loader ref="education_rank" v-slot="{ results: results }" :style="{width: '296px', height: '290px', overflow: 'scroll', position: 'absolute', top: '746px', left: '1542px'}">
       <ranking ref="education_rank-content" :data="[{label: '本科', amount: 78.16}, {label: '硕士', amount: 23.21}, {label: '博士', amount: 18.01}, {label: '高中生', amount: 68.23}, {label: '大专', amount: 47.67}, {label: '初中', amount: 45.11},]" :keys="{label: 'label', value: 'amount', tooltip: 'name'}" :labelStyle="{color: '#4b9bbe', fontSize: '16px', lineHeight: '24px'}" :valueStyle="{color: '#6ad6ff', fontSize: '16px', fontFamily: 'Oswald-Regular', lineHeight: '1.5', fontWeight: '400'}" :lineStyle="{background: '#ffffff0D', lineColor: ['#0885b5', '#6ad6ff'], height: '5px', borderRadius: '2.5px'}" :tooltip="{text: {align: 'center', baseline: 'middle', fill: '#FFFFFF', size: 14, weight: 400}, notation: {fill: '#367391', name: 'circle-small', size: 14}}" :tooltipOptions="{background: '#566374f0', text: {align: 'center', baseline: 'middle', fill: '#FFFFFF', size: 14, weight: 400}, title: {align: 'center', baseline: 'middle', fill: '#FFFFFF', size: 14, weight: 400}}" />
@@ -141,11 +141,43 @@ export const introduction = {
   },
 
   computed: {
-    selectedArea () {
-      if(!this.selectedArea.name) {
-        return this.department.label
+    mapOptions () {
+      return {
+        backgroundColor: 'transparent',
+        series: [
+          {
+            type: 'map',
+            mapType: this.craneStates.department.uuid,
+            label: {
+              show: true,
+              fontSize: 14,
+              color: 'white'
+            },
+            itemStyle: {
+              areaColor: 'rgba(106, 214, 255, .05)',
+              borderColor: '#6ad6ff',
+              borderType: 'solid',
+              borderWidth: 0.5
+            },
+            emphasis: {
+              label: {
+                color: 'white',
+                fontWeight: 600
+              },
+              itemStyle: {
+                areaColor: '#4B9BBE'
+              }
+            }
+          }
+        ]
       }
-      return this.selectedArea.name
+    },
+    selectedArea () {
+      const {name} = this.craneStates.selectedArea
+      if(!name) {
+        return this.craneStates.department.label
+      }
+      return name
     }
   },
 
