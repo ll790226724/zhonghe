@@ -8,9 +8,9 @@ module.exports = {
   },
 
   props: {
-    // $url: "`/v1/components/5b59abd9-bf05-4161-b53f-9b8c6120551b/data?name=${craneStates.currentArea}`",
-    // method: 'get',
-    // $data: "[[]]",
+    $url: "`/v1/components/46b74ddd-39de-493f-84ab-9d87fcf23fee/data?area=${selectedArea}`",
+    method: 'get',
+    $data: "[[0, '暂无数据']]",
     $style: {
       width: '400px',
       height: '250px'
@@ -33,7 +33,7 @@ module.exports = {
             $axisLine:{
               $show: false
             },
-            $data: "['周一', '周二', '周三', '周四', '周五', '周六', '周日',]"
+            $data: "results.map(item => (item[1]))"
           },
           $yAxis: {
             $axisLabel:{
@@ -80,7 +80,7 @@ module.exports = {
                   }], false),`
               },
             },
-            $data: "[120, 200, 150, 80, 70, 110, 130]"
+            $data: "results.map(item => (item[0]))"
           },
           $tooltip: {
             trigger: 'axis',
