@@ -47,8 +47,8 @@
     <data-loader ref="departments-loader" v-slot="{ results: results }" :style="{position: 'absolute', top: '125px', left: '929px'}">
       <brick-radio-button-select ref="departments-select" :options="craneStates.selectOptions" v-model="craneStates.department" placeholder="福州" />
     </data-loader>
-    <data-loader ref="activity-number-bar" v-slot="{ results: results }" :style="{width: '400px', height: '250px', position: 'absolute', top: '308px', left: '30px'}">
-      <v-chart ref="activity-number-bar-content" :options="{xAxis: {axisLabel: {rotate: 0, fontSize: 12, fontWeight: 400, color: '#367391'}, axisLine: {show: false}, data: ['周一', '周二', '周三', '周四', '周五', '周六', '周日',]}, yAxis: {axisLabel: {rotate: 0, fontSize: 12, fontWeight: 400, color: '#367391', align: 'center'}, axisTick: {show: false}, axisLine: {show: false}, splitLine: {show: false}, splitNumber: 5, name: '件', nameTextStyle: {fontSize: 12, fontWeight: 400, color: '#367391', align: 'center', padding: [0, 5, 0, 0]}}, series: {type: 'bar', barWidth: 7, barCategoryGap: '10%', itemStyle: {normal: {barBorderRadius: 7, color: new Echarts.graphic.LinearGradient(0, 1, 0, 0, [
+    <data-loader ref="activity-number-bar" v-slot="{ results: results }" :url="`/v1/components/44b74ddd-39de-493f-84ab-9d87fcf23fee/data?area=${craneStates.department.label}`" method="get" :data="[[0, '暂无数据']]" :style="{width: '400px', height: '250px', position: 'absolute', top: '308px', left: '30px'}">
+      <v-chart ref="activity-number-bar-content" :options="{xAxis: {axisLabel: {rotate: 0, fontSize: 12, fontWeight: 400, color: '#367391'}, axisLine: {show: false}, data: results.map(item => (item[1]))}, yAxis: {axisLabel: {rotate: 0, fontSize: 12, fontWeight: 400, color: '#367391', align: 'center'}, axisTick: {show: false}, axisLine: {show: false}, splitLine: {show: false}, splitNumber: 5, name: '件', nameTextStyle: {fontSize: 12, fontWeight: 400, color: '#367391', align: 'center', padding: [0, 5, 0, 0]}}, series: {type: 'bar', barWidth: 7, barCategoryGap: '10%', itemStyle: {normal: {barBorderRadius: 7, color: new Echarts.graphic.LinearGradient(0, 1, 0, 0, [
                       {
                         offset: 0,
                         color: '#117ea8'
@@ -56,7 +56,7 @@
                       {
                         offset: 1,
                         color: '#6ad6ff'
-                      }], false),}}, data: [120, 200, 150, 80, 70, 110, 130]}, tooltip: {trigger: 'axis', axisPointer: {type: 'shadow'}, formatter: activityTooltipFormatterFunc, backgroundColor: '#566374f0'}}" />
+                      }], false),}}, data: results.map(item => (item[0]))}, tooltip: {trigger: 'axis', axisPointer: {type: 'shadow'}, formatter: activityTooltipFormatterFunc, backgroundColor: '#566374f0'}}" />
     </data-loader>
     <data-loader ref="high-level-talent-bar" v-slot="{ results: results }" :style="{width: '400px', height: '250px', position: 'absolute', top: '783px', left: '30px'}">
       <v-chart ref="high-level-talent-content" :options="{xAxis: {axisLabel: {rotate: 0, fontSize: 12, fontWeight: 400, color: '#367391'}, axisLine: {show: false}, data: ['周一', '周二', '周三', '周四', '周五', '周六', '周日',]}, yAxis: {axisLabel: {rotate: 0, fontSize: 12, fontWeight: 400, color: '#367391', align: 'center'}, axisTick: {show: false}, axisLine: {show: false}, splitLine: {show: false}, splitNumber: 5, name: '件', nameTextStyle: {fontSize: 12, fontWeight: 400, color: '#367391', align: 'center', padding: [0, 5, 0, 0]}}, series: {type: 'bar', barWidth: 7, barCategoryGap: '10%', itemStyle: {normal: {barBorderRadius: 7, color: new Echarts.graphic.LinearGradient(0, 1, 0, 0, [
