@@ -178,6 +178,10 @@ export const talents_competitiveness = {
     }
   },
 
+  created() {
+    document.title = '省域人才综合竞争力'
+  },
+
   watch: {
     'craneStates.city' (value) {
       if(!value) {

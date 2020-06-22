@@ -192,6 +192,10 @@ export const introduction = {
     }
   },
 
+  created() {
+    document.title = '人才引进专题'
+  },
+
   mounted() {
     const { chart } = this.$refs.map
     chart.on('click', (params) => {

@@ -243,6 +243,10 @@ export const supply = {
     }
   },
 
+  created() {
+    document.title = '人才供需专题'
+  },
+
   mounted() {
     const { chart } = this.$refs.map
     chart.on('click', (params) => {

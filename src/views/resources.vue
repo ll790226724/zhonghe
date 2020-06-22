@@ -165,6 +165,10 @@ export const resources = {
     }
   },
 
+  created() {
+    document.title = '全省人才资源态势总览'
+  },
+
   watch: {
     'craneStates.department' (value) {
       if(!value) {

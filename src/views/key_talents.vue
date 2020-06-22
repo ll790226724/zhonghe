@@ -209,6 +209,7 @@ export const key_talents = {
       },
     }
   },
+
   computed: {
     requestUrl() {
       switch (this.craneStates.mapType) {
@@ -237,6 +238,10 @@ export const key_talents = {
           return  this.craneStates.demandInputWord;
       }
     }
+  },
+
+  created() {
+    document.title = '重点人才专题'
   },
 
   watch: {
