@@ -8,9 +8,9 @@ module.exports = {
     results: 'results',
   },
   props: {
-    // $url: "`/v1/components/f5b74ddd-39de-493f-84ab-9d87fcf23fee/data?start=${craneStates.filterRange[0]}&end=${craneStates.filterRange[1]}`",
-    // method: 'get',
-    // $data: "[{label: '承办单位', amount: 12}]",
+    $url: "`/v1/components/48b74ddd-39de-493f-84ab-9d87fcf23fee/data?area=${selectedArea}&year=${craneStates.year ? craneStates.year.getFullYear() : new Date(Date.now()).getFullYear()}`",
+    method: 'get',
+    $data: "[[0, '暂无数据']]",
     $style: {
       width: '296px',
       height: '290px',
@@ -22,9 +22,7 @@ module.exports = {
       id: 'education_rank-content',
       component: '@byzanteam/vis-components/ranking',
       props: {
-        // 'v-if': 'craneStates.rank',
-        // $data: "results.slice(0, 3).map(item => { return {label: item[1], amount: item[0] } } )",
-        $data: "[{label: '本科', amount: 78.16}, {label: '硕士', amount: 23.21}, {label: '博士', amount: 18.01}, {label: '高中生', amount: 68.23}, {label: '大专', amount: 47.67}, {label: '初中', amount: 45.11},]",
+        $data: "results.map(item => { return {label: item[1], amount: item[0] } } )",
         $keys: {
           label: 'label',
           value: 'amount',
