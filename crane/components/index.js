@@ -21,7 +21,7 @@ module.exports = {
   states: [
     {
       id: 'department',
-      value: {}
+      value: null
     },
     {
       id: 'mapData',

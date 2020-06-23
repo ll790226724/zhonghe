@@ -45,7 +45,7 @@
     <div ref="activity-bg" :style="{height: '50px', width: '400px', backgroundColor: '#6ad6ff05', borderRadius: '5px', position: 'absolute', top: '218px', left: '30px'}" />
     <div ref="high-level-bg" :style="{height: '50px', width: '400px', backgroundColor: '#6ad6ff05', borderRadius: '5px', position: 'absolute', top: '693px', left: '30px'}" />
     <data-loader ref="departments-loader" v-slot="{ results: results }" :style="{position: 'absolute', top: '125px', left: '929px'}">
-      <brick-radio-button-select ref="departments-select" :options="craneStates.selectOptions" v-model="craneStates.department" placeholder="福州" />
+      <brick-radio-button-select ref="departments-select" :options="craneStates.selectOptions" v-model="craneStates.department" placeholder="全省" />
     </data-loader>
     <data-loader ref="activity-number-bar" v-slot="{ results: results }" :url="`/v1/components/44b74ddd-39de-493f-84ab-9d87fcf23fee/data?area=${selectedArea}`" method="get" :data="[[0, '暂无数据']]" :style="{width: '400px', height: '250px', position: 'absolute', top: '308px', left: '30px'}">
       <v-chart ref="activity-number-bar-content" :options="{xAxis: {axisLabel: {rotate: 0, fontSize: 12, fontWeight: 400, color: '#367391'}, axisLine: {show: false}, data: results.map(item => (item[1]))}, yAxis: {axisLabel: {rotate: 0, fontSize: 12, fontWeight: 400, color: '#367391', align: 'center'}, axisTick: {show: false}, axisLine: {show: false}, splitLine: {show: false}, splitNumber: 5, name: '件', nameTextStyle: {fontSize: 12, fontWeight: 400, color: '#367391', align: 'center', padding: [0, 5, 0, 0]}}, series: {type: 'bar', barWidth: 7, barCategoryGap: '10%', itemStyle: {normal: {barBorderRadius: 7, color: new Echarts.graphic.LinearGradient(0, 1, 0, 0, [
@@ -147,7 +147,7 @@ export const introduction = {
         series: [
           {
             type: 'map',
-            mapType: this.craneStates.department.uuid,
+            mapType: this.craneStates.department ? this.craneStates.department.uuid : 'fujian',
             label: {
               show: true,
               fontSize: 14,
@@ -175,20 +175,9 @@ export const introduction = {
     selectedArea () {
       const {name} = this.craneStates.selectedArea
       if(!name) {
-        return this.craneStates.department.label
+        return this.craneStates.department ? this.craneStates.department.label : ''
       }
       return name
-    }
-  },
-
-  watch: {
-    'craneStates.department': {
-      handler (value) {
-        if(!value) {
-          this.craneStates.department = {label: '全省', uuid: 'fuzhou'}
-        }
-      },
-      immediate: true
     }
   },
 
