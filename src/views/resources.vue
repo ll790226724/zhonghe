@@ -66,7 +66,7 @@
     <div ref="production-bg" :style="{height: '50px', width: '400px', backgroundColor: '#6ad6ff05', borderRadius: '5px', position: 'absolute', top: '50px', left: '30px'}" />
     <div ref="production-bg" :style="{height: '50px', width: '400px', backgroundColor: '#6ad6ff05', borderRadius: '5px', position: 'absolute', top: '130px', left: '30px'}" />
     <div ref="departments-loader" :style="{position: 'absolute', top: '125px', left: '929px'}">
-      <brick-radio-button-select ref="departments-select" :options="selectOptions" v-model="craneStates.department" placeholder="福州" />
+      <brick-radio-button-select ref="departments-select" :options="selectOptions" v-model="craneStates.department" placeholder="全省" />
     </div>
     <data-loader v-slot="{ results: results }" url="/v1/components/22b74ddd-39de-493f-84ab-9d87fcf23fee/data" method="get" :data="[[0, '暂无数据']]" :style="{width: '460px', height: '218px', position: 'absolute', top: '435px', left: '1455px'}">
       <v-chart :options="{backgroundColor: 'transparent', legend: {type: 'scroll', icon: 'circle', itemWidth: 10, itemHeight: 10, left: 270, top: 'middle', itemGap: 9, orient: 'vertical', textStyle: {color: '#4b9bbe', fontSize: 12}, inactiveColor: '#1C4159'}, color: ['#6ad6ff', '#4b9bbe', '#367290', '#275570', '#1c4159', '#153349'], series: [{type: 'pie', minAngle: 5, left: -140, radius: ['35%', '62%'], label: {show: false}, labelLine: {show: false}, data: results.map(item => ({value: item[0], name: item[1]})).sort(compare())}], tooltip: {trigger: 'item', formatter: pieTooltipFormatterFunc, backgroundColor: '#566374f0'}}" />

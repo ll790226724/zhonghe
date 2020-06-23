@@ -20,6 +20,10 @@ module.exports = {
       value: ''
     },
     {
+      id: 'inputQuery',
+      value: ''
+    },
+    {
       id: 'year',
       value: ''
     },

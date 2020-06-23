@@ -228,7 +228,7 @@ export const key_talents = {
       return `/v1/components/26b74ddd-39de-493f-84ab-9d87fcf23fee/data?job=${this.craneStates.demandInputWord}&area=${this.craneStates.department ? this.craneStates.department.label : ''}`
     },
     shortageUrl() {
-      return `/v1/components/31b74ddd-39de-493f-84ab-9d87fcf23fee/data?industry=${this.craneStates.currentShortageType}&area=${this.craneStates.department ? this.craneStates.department.label : ''}&year=${craneStates.year ? craneStates.year.getFullYear() : new Date(Date.now()).getFullYear()}`
+      return `/v1/components/31b74ddd-39de-493f-84ab-9d87fcf23fee/data?industry=${this.craneStates.currentShortageType}&area=${this.craneStates.department ? this.craneStates.department.label : ''}&year=${this.craneStates.year ? this.craneStates.year.getFullYear() : new Date(Date.now()).getFullYear()}`
     },
     digitalKeyword() {
       switch (this.craneStates.mapType) {

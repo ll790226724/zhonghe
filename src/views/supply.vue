@@ -7,8 +7,12 @@
     </div>
     <img ref="box-bg" :style="{width: '440px', height: '1059px', position: 'absolute', top: '10px', left: '10px'}" src="/hxcr/images/Box-Bg.png" />
     <img ref="right-box-bg" :style="{width: '440px', height: '1059px', position: 'absolute', top: '10px', left: '1471px'}" src="/hxcr/images/Box-Bg.png" />
-    <data-loader ref="job_select" v-slot="{ results: results }" url="/v1/components/01b74ddd-39de-493f-84ab-9d87fcf23fee/data?offset=10" method="get" :data="[['']]" :style="{position: 'absolute', top: '50px', left: '40px'}">
+    <data-loader ref="job_select" v-slot="{ results: results }" :url="`/v1/components/01b74ddd-39de-493f-84ab-9d87fcf23fee/data?job=${craneStates.inputQuery}`" method="get" :data="[['']]" :style="{position: 'absolute', top: '50px', left: '40px'}">
       <Select class="departments-select" :clearable="true" :filterable="true" :style="{width: '380px'}" v-model="craneStates.currentJob">
+        <template v-slot:input class="ivu-select-selection">
+          <input v-model="craneStates.inputQuery" type="text" placeholder="请选择" class="ivu-select-input" />
+          <i class="ivu-icon ivu-icon-ios-arrow-down ivu-select-arrow" />
+        </template>
         <Option v-for="(item, key) in results.map((item, index) => ({index: item[0], name: item[0]}))" :key="key" :value="item.index" :label="item.name">
           {{item.name}}
         </Option>
@@ -18,7 +22,7 @@
       <date-picker v-model="craneStates.year" :style="{width: '380px', height: '50px'}" :options="{disabledDate: (time) => {return !craneStates.dateRange.includes(time.getFullYear())}}" type="year" class="supply-datepicker" placeholder="选择时间" />
     </data-loader>
     <data-loader :style="{position: 'absolute', top: '125px', left: '876px'}">
-      <brick-radio-button-select ref="departments-select" :options="selectOptions" v-model="craneStates.department" placeholder="福州" />
+      <brick-radio-button-select ref="departments-select" :options="selectOptions" v-model="craneStates.department" placeholder="全省" />
     </data-loader>
     <data-loader :style="{width: '1100px', height: '900px', position: 'absolute', top: '160px', left: '410px'}">
       <v-chart ref="map" :options="mapOptions" />
@@ -178,8 +182,9 @@ export const supply = {
       selectOptions: SELECT_OPTIONS,
       craneStates: {
         currentJob: '',
+        inputQuery: '',
         year: '',
-        department: SELECT_OPTIONS[0],
+        department: null,
         dateRange: [],
         tabNavs: TAB_NAVS,
         tabCurrent: TAB_NAVS[0],
@@ -191,11 +196,13 @@ export const supply = {
   },
 
   watch: {
-    'craneStates.department' (value) {
-      if(!value) {
-        this.craneStates.department = this.selectOptions[0]
+    'craneStates.currentJob' (value) {
+      if(value) {
+        this.craneStates.inputQuery = value
+      } else {
+        this.craneStates.inputQuery = ''
       }
-    }
+    },
   },
 
   computed: {
@@ -211,7 +218,7 @@ export const supply = {
         series: [
           {
             type: 'map',
-            mapType: this.craneStates.department.uuid,
+            mapType: this.craneStates.department ? this.craneStates.department.uuid : 'fujian',
             label: {
               show: true,
               fontSize: 14,
@@ -237,7 +244,7 @@ export const supply = {
       }
     },
     currentRegion () {
-      const city = this.craneStates.department.label
+      const city = this.craneStates.department ? this.craneStates.department.label : ''
       const region = this.craneStates.selectedArea.name || ''
       return `${city}${region}`
     }

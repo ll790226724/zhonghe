@@ -9,7 +9,7 @@ module.exports = [
         props: {
           $options: "selectOptions",
           'v-model': 'craneStates.department',
-          placeholder: '福州',
+          placeholder: '全省',
         },
       },
     ],

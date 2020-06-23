@@ -6,7 +6,7 @@ module.exports = {
     results: 'results',
   },
   props: {
-    url: '/v1/components/01b74ddd-39de-493f-84ab-9d87fcf23fee/data?offset=10',
+    $url: '`/v1/components/01b74ddd-39de-493f-84ab-9d87fcf23fee/data?job=${craneStates.inputQuery}`',
     method: 'get',
     $data: "[['']]",
   },
@@ -23,6 +23,30 @@ module.exports = {
         'v-model': 'craneStates.currentJob'
       },
       children: [
+        {
+          component: 'template',
+          slot: 'input',
+          props: {
+            class: 'ivu-select-selection'
+          },
+          children: [
+            {
+              component: 'input',
+              props: {
+                'v-model': 'craneStates.inputQuery',
+                type: 'text',
+                placeholder: '请选择',
+                class: 'ivu-select-input'
+              }
+            },
+            {
+              component: 'i',
+              props: {
+                class: "ivu-icon ivu-icon-ios-arrow-down ivu-select-arrow"
+              }
+            }
+          ]
+        },
         {
           component: 'iview/Option',
           vfor: {
