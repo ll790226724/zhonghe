@@ -92,6 +92,10 @@ input::placeholder {
   outline: none;
 }
 
+::-webkit-scrollbar {
+  display: none;
+}
+
 @font-face {
   font-family: 'Oswald-Regular';
   src:
