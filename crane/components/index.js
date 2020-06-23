@@ -133,7 +133,7 @@ module.exports = {
           letterSpacing: '1px',
         },
       },
-      content: '人才流动行业排名',
+      content: '人才流动岗位排名',
     },
     {
       id: 'industry-talent',
