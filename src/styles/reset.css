@@ -99,16 +99,16 @@ input::placeholder {
 @font-face {
   font-family: 'Oswald-Regular';
   src:
-    url('/hxcr/fonts/Oswald-Regular.woff') format('woff'),
-    url('/hxcr/fonts/Oswald-Regular.woff2') format('woff');
+    url('/hxrc/fonts/Oswald-Regular.woff') format('woff'),
+    url('/hxrc/fonts/Oswald-Regular.woff2') format('woff');
   font-weight: normal;
 }
 
 @font-face {
   font-family: 'Oswald-Light';
   src:
-    url('/hxcr/fonts/Oswald-Light.woff') format('woff'),
-    url('/hxcr/fonts/Oswald-Light.woff2') format('woff');
+    url('/hxrc/fonts/Oswald-Light.woff') format('woff'),
+    url('/hxrc/fonts/Oswald-Light.woff2') format('woff');
   font-weight: normal;
 }
 

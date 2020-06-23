@@ -42,7 +42,7 @@ module.exports = {
       component: 'img',
       position: [0, 0],
       props: {
-        src: '/hxcr/images/Bg.png'
+        src: '/hxrc/images/Bg.png'
       },
     },
     map,
@@ -55,7 +55,7 @@ module.exports = {
           width: '701px',
           height: '123px',
         },
-        src: '/hxcr/images/Title-Bg.png'
+        src: '/hxrc/images/Title-Bg.png'
       },
     },
     {
@@ -67,7 +67,7 @@ module.exports = {
           width: '440px',
           height: '1059px',
         },
-        src: '/hxcr/images/Box-Bg.png'
+        src: '/hxrc/images/Box-Bg.png'
       },
     },
     {
@@ -79,7 +79,7 @@ module.exports = {
           width: '440px',
           height: '1059px',
         },
-        src: '/hxcr/images/Box-Bg.png'
+        src: '/hxrc/images/Box-Bg.png'
       },
     },
     {

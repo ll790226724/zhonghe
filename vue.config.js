@@ -1,5 +1,5 @@
 module.exports = {
-  publicPath: '/hxcr',
+  publicPath: '/hxrc',
   outputDir: 'fujian',
   pluginOptions: {
     i18n: {

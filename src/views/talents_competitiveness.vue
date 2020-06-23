@@ -1,7 +1,7 @@
 <template>
   <div class="talents_competitiveness">
-    <img ref="background" src="/hxcr/images/Bg.png" :style="{position: 'absolute', top: '0px', left: '0px'}" />
-    <img ref="title-bg" :style="{width: '701px', height: '123px', position: 'absolute', top: '0px', left: '607px'}" src="/hxcr/images/Title-Bg.png" />
+    <img ref="background" src="/hxrc/images/Bg.png" :style="{position: 'absolute', top: '0px', left: '0px'}" />
+    <img ref="title-bg" :style="{width: '701px', height: '123px', position: 'absolute', top: '0px', left: '607px'}" src="/hxrc/images/Title-Bg.png" />
     <div ref="page-title" :style="{color: '#fff', fontSize: '42px', fontWeight: 600, textAlign: 'center', position: 'absolute', top: '27px', left: '770px'}">
       省域人才综合竞争力
     </div>
@@ -62,8 +62,8 @@
                 },
               ]}" />
     </data-loader>
-    <img ref="box-bg" :style="{width: '440px', height: '1059px', position: 'absolute', top: '10px', left: '10px'}" src="/hxcr/images/Box-Bg.png" />
-    <img ref="right-box-bg" :style="{width: '440px', height: '1059px', position: 'absolute', top: '10px', left: '1471px'}" src="/hxcr/images/Box-Bg.png" />
+    <img ref="box-bg" :style="{width: '440px', height: '1059px', position: 'absolute', top: '10px', left: '10px'}" src="/hxrc/images/Box-Bg.png" />
+    <img ref="right-box-bg" :style="{width: '440px', height: '1059px', position: 'absolute', top: '10px', left: '1471px'}" src="/hxrc/images/Box-Bg.png" />
     <div ref="force-digital-bg" :style="{height: '50px', width: '400px', backgroundColor: '#6ad6ff05', borderRadius: '5px', position: 'absolute', top: '60px', left: '1490px'}" />
     <RadioGroup v-model="craneStates.indicator" type="button" :style="{width: '388px', height: '184px', position: 'absolute', top: '92px', left: '36px'}">
       <Radio v-for="(item, key) in craneStates.indicators" :key="key" :label="item.name" />
@@ -122,7 +122,7 @@ import 'echarts/lib/chart/radar'
 import 'echarts/lib/chart/scatter'
 import 'echarts/lib/component/tooltip'
 import 'echarts/lib/component/legend'
-import fujian from '../../public/hxcr/fujian.json'
+import fujian from '../../public/hxrc/fujian.json'
 
 import BuiltInMixin from '../mixins/built_in'
 
