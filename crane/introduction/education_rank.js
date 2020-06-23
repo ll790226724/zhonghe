@@ -22,7 +22,7 @@ module.exports = {
       id: 'education_rank-content',
       component: '@byzanteam/vis-components/ranking',
       props: {
-        $data: "results.map(item => { return {label: item[1], amount: item[0] } } )",
+        $data: "results.map(item => { return {label: item[1], amount: item[0].toFixed(2) } } )",
         $keys: {
           label: 'label',
           value: 'amount',
