@@ -185,7 +185,7 @@ export const introduction = {
     'craneStates.department': {
       handler (value) {
         if(!value) {
-          this.craneStates.department = this.craneStates.selectOptions[0]
+          this.craneStates.department = {label: '全省', uuid: 'fuzhou'}
         }
       },
       immediate: true
