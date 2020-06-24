@@ -122,24 +122,8 @@ import 'echarts/lib/component/tooltip'
 import 'echarts/lib/component/legend'
 import 'echarts/lib/component/visualMap'
 import 'echarts/lib/component/legendScroll'
-
-import longyan from '../../public/hxrc/longyan.json'
-import nanping from '../../public/hxrc/nanping.json'
-import putian from '../../public/hxrc/putian.json'
-import ningde from '../../public/hxrc/ningde.json'
-import quanzhou from '../../public/hxrc/quanzhou.json'
-import sanming from '../../public/hxrc/sanming.json'
-import xiamen from '../../public/hxrc/xiamen.json'
-import zhangzhou from '../../public/hxrc/zhangzhou.json'
-
-Echarts.registerMap('longyan', longyan);
-Echarts.registerMap('nanping', nanping);
-Echarts.registerMap('putian', putian);
-Echarts.registerMap('ningde', ningde);
-Echarts.registerMap('quanzhou', quanzhou);
-Echarts.registerMap('sanming', sanming);
-Echarts.registerMap('xiamen', xiamen);
-Echarts.registerMap('zhangzhou', zhangzhou);
+import fujian from '../../public/hxrc/fujian.json'
+Echarts.registerMap('fujian', fujian);
 
 import {
   DataLoader,
@@ -180,6 +164,7 @@ export const supply = {
   data () {
     return {
       selectOptions: SELECT_OPTIONS,
+      Echarts: Echarts,
       craneStates: {
         currentJob: '',
         inputQuery: '',
@@ -203,6 +188,9 @@ export const supply = {
         this.craneStates.inputQuery = ''
       }
     },
+    'craneStates.department' (value) {
+      this.craneStates.selectedArea = {}
+    }
   },
 
   computed: {
@@ -245,13 +233,14 @@ export const supply = {
     },
     currentRegion () {
       const city = this.craneStates.department ? this.craneStates.department.label : ''
-      const region = this.craneStates.selectedArea.name || ''
+      const region = this.craneStates.selectedArea.name ? this.craneStates.selectedArea.name.slice(0, 2) : ''
       return `${city}${region}`
     }
   },
 
   created() {
     document.title = '人才供需专题'
+    this.requestMapGeojson()
   },
 
   mounted() {

@@ -154,6 +154,8 @@ import 'echarts/lib/component/tooltip'
 import 'echarts/lib/component/legend'
 import 'echarts/lib/component/visualMap'
 import 'echarts/lib/component/legendScroll'
+import fujian from '../../public/hxrc/fujian.json'
+Echarts.registerMap('fujian', fujian);
 
 import {
   DataLoader,
@@ -191,6 +193,7 @@ export const key_talents = {
 
   data () {
     return {
+      Echarts: Echarts,
       craneStates: {
         types: [{index: 1, name: '学术型人才'}, {index: 2, name: '工程型人才'}, {index: 3, name: '技能型人才'}, {index: 4, name: '技术型人才'}],
         supplyInputWord: '',
@@ -242,6 +245,7 @@ export const key_talents = {
 
   created() {
     document.title = '重点人才专题'
+    this.requestMapGeojson()
   },
 
   methods: {

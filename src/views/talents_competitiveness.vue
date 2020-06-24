@@ -123,10 +123,9 @@ import 'echarts/lib/chart/scatter'
 import 'echarts/lib/component/tooltip'
 import 'echarts/lib/component/legend'
 import fujian from '../../public/hxrc/fujian.json'
+Echarts.registerMap('fujian', fujian);
 
 import BuiltInMixin from '../mixins/built_in'
-
-Echarts.registerMap('fujian', fujian);
 
 import {
   BrickRadioButtonSelect,
@@ -163,6 +162,7 @@ export const talents_competitiveness = {
     return {
       selectOptions: SELECT_OPTIONS,
       provinceOptions: PROVINCE_OPTIONS,
+      Echarts: Echarts,
       craneStates: {
         province: PROVINCE_OPTIONS[0],
         city: null,
@@ -180,6 +180,7 @@ export const talents_competitiveness = {
 
   created() {
     document.title = '省域人才综合竞争力'
+    this.requestMapGeojson()
   },
 
   watch: {
