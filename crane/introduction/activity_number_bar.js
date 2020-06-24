@@ -32,7 +32,7 @@ module.exports = {
             $axisLine:{
               $show: false
             },
-            $data: "results.map(item => (item[1]))"
+            $data: "results ? results.map(item => (item[1])) : ['暂无数据']"
           },
           $yAxis: {
             $axisLabel:{
@@ -79,7 +79,7 @@ module.exports = {
                   }], false),`
               },
             },
-            $data: "results.map(item => (item[0]))"
+            $data: "results ? results.map(item => (item[0])) : [0]"
           },
           $tooltip: {
             trigger: 'axis',

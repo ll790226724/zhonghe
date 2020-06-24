@@ -303,9 +303,6 @@ module.exports = {
       id: 'departments-loader',
       component: '@byzanteam/vis-components/data-loader',
       position: [929, 125],
-      exports: {
-        results: 'results',
-      },
       children: [
         {
           id: 'departments-select',

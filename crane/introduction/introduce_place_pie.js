@@ -29,7 +29,7 @@ module.exports = {
             icon: 'circle',
             $itemWidth: 8,
             $itemHeight: 8,
-            $data: "results.map(item => (item[1]))",
+            $data: "results ? results.map(item => (item[1])) : ['暂无数据']",
             $textStyle: {
               color: '#489bbe',
               $fontSize: 14,
@@ -47,7 +47,7 @@ module.exports = {
             $labelLine: {
               $show: false,
             },
-            $data: "results.map(item => ({name: item[1], value: item[0]}))"
+            $data: "results ? results.map(item => ({name: item[1], value: item[0]})) : [{name: '暂无数据', value: 0}]"
           },
           $tooltip: {
             trigger: 'item',
