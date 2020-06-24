@@ -172,11 +172,18 @@ export const introduction = {
       }
     },
     selectedArea () {
-      const {name} = this.craneStates.selectedArea
-      if(!name) {
-        return this.craneStates.department ? this.craneStates.department.label : ''
+      const name = this.craneStates.selectedArea.name ? this.craneStates.selectedArea.name : ''
+      const city = this.craneStates.department ? this.craneStates.department.label : ''
+      if(name) {
+        return name
       }
-      return name
+      return city
+    }
+  },
+
+  watch: {
+    'craneStates.department' () {
+      this.craneStates.selectedArea = {}
     }
   },
 
