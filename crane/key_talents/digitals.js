@@ -69,7 +69,7 @@ module.exports = [
     component: '@byzanteam/vis-components/data-loader',
     position: [145, 94],
     props: {
-      $url: "`/v1/components/24b74ddd-39de-493f-84ab-9d87fcf23fee/data?type=${digitalKeyword}`",
+      $url: "`/v1/components/24b74ddd-39de-493f-84ab-9d87fcf23fee/data?type=${digitalKeyword || ''}`",
       method: 'get',
       $data: "[[0]]",
     },
@@ -129,6 +129,14 @@ module.exports = [
   {
     component: '@byzanteam/vis-components/data-loader',
     position: [145, 160],
+    props: {
+      $url: "`/v1/components/45b74ddd-39de-493f-84ab-9d87fcf23fee/data?job=${craneStates.currentShortageType|| ''}&year=${this.craneStates.year ? this.craneStates.year.getFullYear() : new Date(Date.now()).getFullYear()}`",
+      method: 'get',
+      $data: "[[0]]",
+    },
+    exports: {
+      results: 'results',
+    },
     children: [
       {
         id: 'talent-age-index-content',
@@ -137,14 +145,14 @@ module.exports = [
           titlePosition: 'left',
           $content: {
             title: '人才引进统计',
-            $digital: 0,
+            $digital: "results ? results[0][0] : 0",
             suffix: '次',
           },
           $options: {
             separator: '',
           },
           $style: {
-            width: '158px',
+            width: '278px',
             height: '39px'
           },
           ...digital_style
@@ -210,7 +218,7 @@ module.exports = [
     component: '@byzanteam/vis-components/data-loader',
     position: [1614, 134],
     props: {
-      $url: "`/v1/components/29b74ddd-39de-493f-84ab-9d87fcf23fee/data?industry=${craneStates.currentShortageType|| ''}&year=${this.craneStates.year ? this.craneStates.year.getFullYear() : new Date(Date.now()).getFullYear()}`",
+      $url: "`/v1/components/29b74ddd-39de-493f-84ab-9d87fcf23fee/data?job=${craneStates.currentShortageType|| ''}&year=${craneStates.year ? craneStates.year.getFullYear() : new Date(Date.now()).getFullYear()}`",
       method: 'get',
       $data: "[[0]]",
     },

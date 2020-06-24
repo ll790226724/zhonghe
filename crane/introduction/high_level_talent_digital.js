@@ -9,21 +9,21 @@ module.exports = {
   },
 
   props: {
-    // $url: "`/v1/components/89b74ddd-39de-493f-84ab-9d87fcf23fee/data?start=${craneStates.filterRange[0]}&end=${craneStates.filterRange[1]}`",
-    // method: 'get',
-    // $data: "[[0]]",
+    $url: "`/v1/components/45b74ddd-39de-493f-84ab-9d87fcf23fee/data?year=${craneStates.year || 2020}&area=${selectedArea}`",
+    method: 'get',
+    $data: "[[0]]",
   },
   children: [
     {
       id: 'high-level-talent-digital-content',
       component: '@byzanteam/vis-components/digital-roll',
       props: {
-        // 'v-if': 'results',
+        'v-if': 'results',
         titlePosition: 'left',
         $content: {
           title: '高层次人才引进总数',
           suffix: '人',
-          $digital: 560,
+          $digital: "results[0][0]",
         },
         $options: {
           separator: ',',

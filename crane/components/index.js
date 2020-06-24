@@ -21,7 +21,7 @@ module.exports = {
   states: [
     {
       id: 'department',
-      value: {}
+      value: null
     },
     {
       id: 'mapData',
@@ -34,7 +34,7 @@ module.exports = {
       component: 'img',
       position: [0, 0],
       props: {
-        src: '/static/images/Bg.png'
+        src: '/hxrc/images/Bg.png'
       },
     },
     {
@@ -46,7 +46,7 @@ module.exports = {
           width: '440px',
           height: '1059px',
         },
-        src: '/static/images/Box-Bg.png'
+        src: '/hxrc/images/Box-Bg.png'
       },
     },
     {
@@ -58,7 +58,7 @@ module.exports = {
           width: '440px',
           height: '1059px',
         },
-        src: '/static/images/Box-Bg.png'
+        src: '/hxrc/images/Box-Bg.png'
       },
     },
     map,
@@ -72,7 +72,7 @@ module.exports = {
           width: '701px',
           height: '123px',
         },
-        src: '/static/images/Title-Bg.png'
+        src: '/hxrc/images/Title-Bg.png'
       },
     },
     {
@@ -133,7 +133,7 @@ module.exports = {
           letterSpacing: '1px',
         },
       },
-      content: '人才流动行业排名',
+      content: '人才流动岗位排名',
     },
     {
       id: 'industry-talent',
@@ -470,7 +470,7 @@ module.exports = {
           props: {
             $options: "selectOptions",
             'v-model': 'craneStates.department',
-            placeholder: '福州',
+            placeholder: '全省',
           },
         },
       ],

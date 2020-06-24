@@ -6,6 +6,9 @@ module.exports = {
     results: 'results',
   },
   props: {
+    $url: "`/v1/components/48b74ddd-39de-493f-84ab-9d87fcf23fee/data?area=${selectedArea}&year=${craneStates.year ? craneStates.year.getFullYear() : new Date(Date.now()).getFullYear()}`",
+    method: 'get',
+    $data: "[[0, '暂无数据']]",
     $style: {
       width: '400px',
       height: '218px'
@@ -17,6 +20,7 @@ module.exports = {
       component: 'v-chart',
       props: {
         $options:{
+          $color: "['#6ad6ff', '#4b9bbe', '#367290', '#275570', '#1c4159', '#153349']",
           $legend: {
             type: 'scroll',
             orient: 'vertical',
@@ -25,7 +29,7 @@ module.exports = {
             icon: 'circle',
             $itemWidth: 8,
             $itemHeight: 8,
-            $data: "['猎头', '熟人推荐', '主动接触搜寻', '政府政策', '人才落户', '其他']",
+            $data: "results ? results.map(item => (item[1])) : ['暂无数据']",
             $textStyle: {
               color: '#489bbe',
               $fontSize: 14,
@@ -43,7 +47,7 @@ module.exports = {
             $labelLine: {
               $show: false,
             },
-            $data: "[{name:'猎头', value: 66, itemStyle: {color: '#6ad6ff'}}, {name:'熟人推荐', value: 55, itemStyle: {color: '#4b9bbe'}}, {name:'主动接触搜寻', value: 44, itemStyle: {color: '#367290'}}, {name:'政府政策', value: 33, itemStyle: {color: '#275570'}}, {name:'人才落户', value: 22, itemStyle: {color: '#1c4159'}}, {name:'其他', value: 11, itemStyle: {color: '#153349'}}]"
+            $data: "results ? results.map(item => ({name: item[1], value: item[0]})) : [{name: '暂无数据', value: 0}]"
           },
           $tooltip: {
             trigger: 'item',

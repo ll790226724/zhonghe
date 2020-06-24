@@ -6,7 +6,7 @@ Vue.use(Router)
 
 export default new Router({
   mode: 'history',
-  base: '/',
+  base: '/hxrc/',
   routes: [
     {
       name: 'resources',
@@ -20,7 +20,7 @@ export default new Router({
     },
     {
       name: 'key_talents',
-      path: '/keyTalents',
+      path: '/key-talents',
       component: pages.key_talents,
     },
     {

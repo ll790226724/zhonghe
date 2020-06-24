@@ -20,6 +20,10 @@ module.exports = {
       value: ''
     },
     {
+      id: 'inputQuery',
+      value: ''
+    },
+    {
       id: 'year',
       value: ''
     },
@@ -58,7 +62,7 @@ module.exports = {
       component: 'img',
       position: [0, 0],
       props: {
-        src: '/static/images/Bg.png'
+        src: '/hxrc/images/Bg.png'
       },
     },
     {
@@ -70,7 +74,7 @@ module.exports = {
           width: '701px',
           height: '123px',
         },
-        src: '/static/images/Title-Bg.png'
+        src: '/hxrc/images/Title-Bg.png'
       },
     },
     {
@@ -97,7 +101,7 @@ module.exports = {
           width: '440px',
           height: '1059px',
         },
-        src: '/static/images/Box-Bg.png'
+        src: '/hxrc/images/Box-Bg.png'
       },
     },
     {
@@ -109,7 +113,7 @@ module.exports = {
           width: '440px',
           height: '1059px',
         },
-        src: '/static/images/Box-Bg.png'
+        src: '/hxrc/images/Box-Bg.png'
       },
     },
     jobSelect,

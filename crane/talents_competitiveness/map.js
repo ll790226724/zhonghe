@@ -36,10 +36,6 @@ module.exports = [
           backgroundColor: 'transparent',
           $geo: {
             $map: "craneStates.city ? craneStates.city.uuid : 'fujian'",
-            $top: 10,
-            $bottom: 10,
-            $left: 10,
-            $right: 10,
             $label: {
               $normal: {
                 $show: false

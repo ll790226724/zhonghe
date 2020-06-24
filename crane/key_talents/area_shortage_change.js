@@ -36,7 +36,7 @@ module.exports = [
     props: {
       $url: "`/v1/components/32b74ddd-39de-493f-84ab-9d87fcf23fee/data?industry=${craneStates.currentShortageType|| ''}`",
       method: 'get',
-      $data: "[[0, '暂无数据']]",
+      $data: "[['暂无数据', 0]]",
       $style: {
         width: '400px',
         height: '214px'

@@ -37,7 +37,7 @@ module.exports = [
     props: {
       url: "/v1/components/08b74ddd-39de-493f-84ab-9d87fcf23fee/data",
       method: 'get',
-      $data: "[['暂无数据']]",
+      $data: "null",
       $style: {
         width: '400px',
         height: '221px',

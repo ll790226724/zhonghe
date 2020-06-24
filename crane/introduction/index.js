@@ -16,6 +16,14 @@ module.exports = {
   title: '人才引进专题',
   states: [
     {
+      id: 'year',
+      value: ''
+    },
+    {
+      id: 'dateRange',
+      value: []
+    },
+    {
       id: 'selectedArea',
       value: {}
     },
@@ -34,7 +42,7 @@ module.exports = {
       component: 'img',
       position: [0, 0],
       props: {
-        src: '/static/images/Bg.png'
+        src: '/hxrc/images/Bg.png'
       },
     },
     map,
@@ -47,7 +55,7 @@ module.exports = {
           width: '701px',
           height: '123px',
         },
-        src: '/static/images/Title-Bg.png'
+        src: '/hxrc/images/Title-Bg.png'
       },
     },
     {
@@ -59,7 +67,7 @@ module.exports = {
           width: '440px',
           height: '1059px',
         },
-        src: '/static/images/Box-Bg.png'
+        src: '/hxrc/images/Box-Bg.png'
       },
     },
     {
@@ -71,7 +79,7 @@ module.exports = {
           width: '440px',
           height: '1059px',
         },
-        src: '/static/images/Box-Bg.png'
+        src: '/hxrc/images/Box-Bg.png'
       },
     },
     {
@@ -295,17 +303,14 @@ module.exports = {
       id: 'departments-loader',
       component: '@byzanteam/vis-components/data-loader',
       position: [929, 125],
-      exports: {
-        results: 'results',
-      },
       children: [
         {
           id: 'departments-select',
-          component: '@byzanteam/vis-components/vis-select',
+          component: '@byzanteam/vis-components/brick-radio-button-select',
           props: {
             $options: "craneStates.selectOptions",
             'v-model': 'craneStates.department',
-            placeholder: '福州',
+            placeholder: '全省',
           },
         },
       ],
