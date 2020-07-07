@@ -245,7 +245,10 @@ export const key_talents = {
 
   created() {
     document.title = '重点人才专题'
-    this.requestMapGeojson()
+  },
+
+  beforeMount() {
+    this.requestMapGeojson(Echarts)
   },
 
   methods: {

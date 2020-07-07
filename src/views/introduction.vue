@@ -191,8 +191,11 @@ export const introduction = {
     document.title = '人才引进专题'
   },
 
+  beforeMount() {
+    this.requestMapGeojson(Echarts)
+  },
+
   mounted() {
-    this.requestMapGeojson()
 
     const { chart } = this.$refs.map
     chart.on('click', (params) => {

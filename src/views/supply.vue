@@ -238,9 +238,12 @@ export const supply = {
     }
   },
 
+  beforeMount() {
+    this.requestMapGeojson(Echarts)
+  },
+
   created() {
     document.title = '人才供需专题'
-    this.requestMapGeojson()
   },
 
   mounted() {

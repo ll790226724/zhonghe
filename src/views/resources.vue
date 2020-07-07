@@ -164,8 +164,8 @@ export const resources = {
     }
   },
 
-  mounted() {
-    this.requestMapGeojson()
+  beforeCreate() {
+    this.requestMapGeojson(Echarts)
   },
 
   created() {
