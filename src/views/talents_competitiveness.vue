@@ -180,7 +180,10 @@ export const talents_competitiveness = {
 
   created() {
     document.title = '省域人才综合竞争力'
-    this.requestMapGeojson()
+  },
+
+  beforeMount() {
+    this.requestMapGeojson(Echarts)
   },
 
   watch: {
