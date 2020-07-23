@@ -57,14 +57,14 @@
     <div ref="industry-circle" :style="{height: '10px', width: '10px', borderRadius: '10px', borderWidth: '1px', borderColor: '#6ad6ff', borderStyle: 'solid', position: 'absolute', top: '472px', left: '264px'}" />
     <div ref="quality-circle" :style="{height: '10px', width: '10px', borderRadius: '10px', borderWidth: '1px', borderColor: '#6ad6ff', borderStyle: 'solid', position: 'absolute', top: '580px', left: '64px'}" />
     <div ref="synthesis-circle" :style="{height: '10px', width: '10px', borderRadius: '10px', borderWidth: '1px', borderColor: '#6ad6ff', borderStyle: 'solid', position: 'absolute', top: '580px', left: '264px'}" />
-    <div ref="age-bg" :style="{height: '80px', width: '180px', backgroundColor: '#6ad6ff05', borderRadius: '5px', position: 'absolute', top: '324px', left: '40px'}" />
-    <div ref="education-bg" :style="{height: '80px', width: '180px', backgroundColor: '#6ad6ff05', borderRadius: '5px', position: 'absolute', top: '324px', left: '240px'}" />
-    <div ref="industry-bg" :style="{height: '80px', width: '180px', backgroundColor: '#6ad6ff05', borderRadius: '5px', position: 'absolute', top: '432px', left: '40px'}" />
-    <div ref="number-bg" :style="{height: '80px', width: '180px', backgroundColor: '#6ad6ff05', borderRadius: '5px', position: 'absolute', top: '432px', left: '240px'}" />
-    <div ref="quality-bg" :style="{height: '80px', width: '180px', backgroundColor: '#6ad6ff05', borderRadius: '5px', position: 'absolute', top: '540px', left: '40px'}" />
-    <div ref="synthesis-bg" :style="{height: '80px', width: '180px', backgroundColor: '#6ad6ff05', borderRadius: '5px', position: 'absolute', top: '540px', left: '240px'}" />
-    <div ref="production-bg" :style="{height: '50px', width: '400px', backgroundColor: '#6ad6ff05', borderRadius: '5px', position: 'absolute', top: '50px', left: '30px'}" />
-    <div ref="production-bg" :style="{height: '50px', width: '400px', backgroundColor: '#6ad6ff05', borderRadius: '5px', position: 'absolute', top: '130px', left: '30px'}" />
+    <div ref="age-bg" :style="{height: '80px', width: '180px', backgroundColor: '#6ad6ff1a', borderRadius: '5px', position: 'absolute', top: '324px', left: '40px'}" />
+    <div ref="education-bg" :style="{height: '80px', width: '180px', backgroundColor: '#6ad6ff1a', borderRadius: '5px', position: 'absolute', top: '324px', left: '240px'}" />
+    <div ref="industry-bg" :style="{height: '80px', width: '180px', backgroundColor: '#6ad6ff1a', borderRadius: '5px', position: 'absolute', top: '432px', left: '40px'}" />
+    <div ref="number-bg" :style="{height: '80px', width: '180px', backgroundColor: '#6ad6ff1a', borderRadius: '5px', position: 'absolute', top: '432px', left: '240px'}" />
+    <div ref="quality-bg" :style="{height: '80px', width: '180px', backgroundColor: '#6ad6ff1a', borderRadius: '5px', position: 'absolute', top: '540px', left: '40px'}" />
+    <div ref="synthesis-bg" :style="{height: '80px', width: '180px', backgroundColor: '#6ad6ff1a', borderRadius: '5px', position: 'absolute', top: '540px', left: '240px'}" />
+    <div ref="production-bg" :style="{height: '50px', width: '400px', backgroundColor: '#6ad6ff1a', borderRadius: '5px', position: 'absolute', top: '50px', left: '30px'}" />
+    <div ref="production-bg" :style="{height: '50px', width: '400px', backgroundColor: '#6ad6ff1a', borderRadius: '5px', position: 'absolute', top: '130px', left: '30px'}" />
     <div ref="departments-loader" :style="{position: 'absolute', top: '125px', left: '929px'}">
       <brick-radio-button-select ref="departments-select" :options="selectOptions" v-model="craneStates.department" placeholder="全省" />
     </div>

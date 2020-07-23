@@ -363,7 +363,7 @@ module.exports = {
         $style: {
           height: '80px',
           width: '180px',
-          backgroundColor: '#6ad6ff05',
+          backgroundColor: '#6ad6ff1a',
           borderRadius: '5px',
         }
       }
@@ -376,7 +376,7 @@ module.exports = {
         $style: {
           height: '80px',
           width: '180px',
-          backgroundColor: '#6ad6ff05',
+          backgroundColor: '#6ad6ff1a',
           borderRadius: '5px',
         }
       }
@@ -389,7 +389,7 @@ module.exports = {
         $style: {
           height: '80px',
           width: '180px',
-          backgroundColor: '#6ad6ff05',
+          backgroundColor: '#6ad6ff1a',
           borderRadius: '5px',
         }
       }
@@ -402,7 +402,7 @@ module.exports = {
         $style: {
           height: '80px',
           width: '180px',
-          backgroundColor: '#6ad6ff05',
+          backgroundColor: '#6ad6ff1a',
           borderRadius: '5px',
         }
       }
@@ -415,7 +415,7 @@ module.exports = {
         $style: {
           height: '80px',
           width: '180px',
-          backgroundColor: '#6ad6ff05',
+          backgroundColor: '#6ad6ff1a',
           borderRadius: '5px',
         }
       }
@@ -428,7 +428,7 @@ module.exports = {
         $style: {
           height: '80px',
           width: '180px',
-          backgroundColor: '#6ad6ff05',
+          backgroundColor: '#6ad6ff1a',
           borderRadius: '5px',
         }
       }
@@ -441,7 +441,7 @@ module.exports = {
         $style: {
           height: '50px',
           width: '400px',
-          backgroundColor: '#6ad6ff05',
+          backgroundColor: '#6ad6ff1a',
           borderRadius: '5px',
         }
       }
@@ -454,7 +454,7 @@ module.exports = {
         $style: {
           height: '50px',
           width: '400px',
-          backgroundColor: '#6ad6ff05',
+          backgroundColor: '#6ad6ff1a',
           borderRadius: '5px',
         }
       }
