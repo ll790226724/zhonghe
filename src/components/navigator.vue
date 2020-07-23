@@ -16,7 +16,7 @@
             {{list.name}}
           </div>
           <div class="navigation__list__title__icon">
-            <img src="/hxrc/images/card-title.png">
+            <img src="/hxrc/images/card-title.jpg">
             <div class="navigation__list__title__icon__line"></div>
           </div>
         </div>
@@ -131,7 +131,7 @@ export default {
     height: 720px;
     top: 180px;
     position: absolute;
-    background-image: url('/hxrc/images/card-bg-430_720.png');
+    background-image: url('/hxrc/images/card-bg-430_367.png');
     overflow: hidden;
     transform-origin: top;
     transform: scale3d(0, 0, 0);
@@ -139,7 +139,7 @@ export default {
     animation: open .3s ease-in .3s;
 
     &:nth-child(1) {
-      left: 255px;
+      left: 745px;
     }
 
     &:nth-child(2) {
@@ -163,7 +163,7 @@ export default {
   }
 
   .navigation__list:first-child {
-    left: 255px;
+    left: 745px;
   }
 
   &__list__title {
@@ -176,7 +176,7 @@ export default {
   }
 
   &__list__title__text {
-    color: rgb(42, 238, 194);
+    color: rgb(106, 214, 255);
     font-size: 20px;
     font-weight: 600;
     text-align: left;
@@ -198,7 +198,7 @@ export default {
 
   &__list__title__icon__line {
     flex-grow: 1;
-    border-bottom: 1px solid rgb(42, 238, 194);
+    border-bottom: 1px solid #308EBD;
     opacity: .4;
   }
 
