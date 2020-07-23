@@ -1,5 +1,6 @@
 <template>
   <div class="resources">
+    <navigator ref="navigator"/>
     <img ref="background" src="/hxrc/images/Bg.png" :style="{position: 'absolute', top: '0px', left: '0px'}" />
     <img ref="box-bg" :style="{width: '440px', height: '1059px', position: 'absolute', top: '10px', left: '10px'}" src="/hxrc/images/Box-Bg.png" />
     <img ref="right-box-bg" :style="{width: '440px', height: '1059px', position: 'absolute', top: '10px', left: '1471px'}" src="/hxrc/images/Box-Bg.png" />
@@ -138,6 +139,7 @@ import {
   Donut,
   VerticalBar,
 } from '@byzanteam/graphite'
+import Navigator from '../components/navigator'
 
 export const resources = {
   mixins: [BuiltInMixin],
@@ -151,6 +153,7 @@ export const resources = {
     Ranking,
     Donut,
     VerticalBar,
+    Navigator
   },
 
   data () {
