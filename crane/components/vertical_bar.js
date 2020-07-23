@@ -29,6 +29,7 @@ module.exports = {
           },
           $xAxis: {
             $axisLabel:{
+              $formatter: "limitXaxisLabel",
               $rotate: -315,
               $fontSize: 12,
               $fontWeight: 400,
