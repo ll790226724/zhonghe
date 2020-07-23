@@ -45,23 +45,24 @@ module.exports = {
               $show: false
             },
             $axisLabel:{
+              $formatter: 'limitLabelLength',
               $rotate: 0,
               $fontSize: 12,
               $fontWeight: 400,
               color: '#367391',
-              align: 'center'
+              align: 'right'
             },
             $splitLine: {
               $show: false
             },
             $splitNumber: 5,
-            name: '人',
+            name: '千人',
             $nameTextStyle: {
               $fontSize: 12,
               $fontWeight: 400,
               color: '#367391',
-              align: 'center',
-              $padding:"[0, 5, 0, 0]"
+              align: 'right',
+              $padding:"[0, 8, 0, 0]"
             },
           },
           $series: {
