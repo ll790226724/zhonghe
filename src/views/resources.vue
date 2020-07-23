@@ -17,7 +17,7 @@
       </vis-table>
     </data-loader>
     <img ref="title-bg" :style="{width: '701px', height: '123px', position: 'absolute', top: '0px', left: '607px'}" src="/hxrc/images/Title-Bg.png" />
-    <div ref="page-title" :style="{color: '#fff', fontSize: '42px', fontWeight: 500, textAlign: 'center', letterSpacing: '1.2px', position: 'absolute', top: '27px', left: '750px'}">
+    <div @click="()=>[openNavigator()]" :style="{cursor: 'pointer', width: '454px', color: '#fff', fontSize: '42px', fontWeight: 600, textAlign: 'center', lineHeight: 1, position: 'absolute', top: '38px', left: '733px'}">
       全省人才资源态势总览
     </div>
     <div ref="talent-index" :style="{color: '#fff', fontSize: '18px', fontWeight: '600', textAlign: 'left', letterSpacing: '1px', position: 'absolute', top: '262px', left: '73px'}">
@@ -100,7 +100,7 @@
       <ranking ref="department-ranking-content" v-if="results" :data="results.map(item => ({label: item[1], amount: item[0]}))" :keys="{label: 'label', value: 'amount', tooltip: 'name'}" :labelStyle="{color: '#4b9bbe', fontSize: '16px', lineHeight: '24px'}" :valueStyle="{color: '#6ad6ff', fontSize: '16px', fontFamily: 'Oswald-Regular', lineHeight: '1.5', fontWeight: '400'}" :lineStyle="{background: '#ffffff1a', lineColor: ['#0885b5', '#6ad6ff'], height: '5px', borderRadius: '2.5px'}" :tooltip="{text: {align: 'center', baseline: 'middle', fill: '#FFFFFF', size: 14, weight: 400}, notation: {fill: '#367391', name: 'circle-small', size: 14}}" :tooltipOptions="{background: '#566374f0', text: {align: 'center', baseline: 'middle', fill: '#FFFFFF', size: 14, weight: 400}, title: {align: 'center', baseline: 'middle', fill: '#FFFFFF', size: 14, weight: 400}}" />
     </data-loader>
     <data-loader ref="demand-vertical-bar" v-slot="{ results: results }" url="/v1/components/23b74ddd-39de-493f-84ab-9d87fcf23fee/data" method="get" :data="[[0, '暂无数据']]" :style="{width: '400px', height: '270px', position: 'absolute', top: '762px', left: '1490px'}">
-      <v-chart ref="demand-vertical-bar-content" :options="{grid: {top: '12%', right: '1%'}, xAxis: {axisLabel: {formatter: limitXaxisLabel, rotate: -315, fontSize: 12, fontWeight: 400, color: '#367391'}, axisLine: {show: false}, data: results.map(item => (item[1]))}, yAxis: {axisLine: {show: false}, axisLabel: {formatter: limitLabelLength, rotate: 0, fontSize: 12, fontWeight: 400, color: '#367391', align: 'right'}, splitLine: {show: false}, splitNumber: 5, name: '千人', nameTextStyle: {fontSize: 12, fontWeight: 400, color: '#367391', align: 'right', padding: [0, 8, 0, 0]}}, series: {type: 'bar', barWidth: 7, barCategoryGap: 10, itemStyle: {normal: {barBorderRadius: 7, color: new Echarts.graphic.LinearGradient(0, 1, 0, 0, [
+      <v-chart ref="demand-vertical-bar-content" :options="{grid: {top: '12%', right: '1%'}, xAxis: {axisLabel: {formatter: limitXaxisLabel, rotate: -315, fontSize: 12, fontWeight: 400, color: '#367391'}, axisLine: {show: false}, data: results.map(item => (item[1]))}, yAxis: {axisLine: {show: false}, axisLabel: {formatter: limitLabelLength, rotate: 0, fontSize: 12, fontWeight: 400, color: '#367391', align: 'right'}, splitLine: {show: false}, splitNumber: 5, name: '千人', nameTextStyle: {fontSize: 12, fontWeight: 400, color: '#367391', align: 'right', padding: [0, 8, 0, 0]}}, series: {type: 'bar', barWidth: 7, barCategoryGap: '10%', itemStyle: {normal: {barBorderRadius: 7, color: new Echarts.graphic.LinearGradient(0, 1, 0, 0, [
                       {
                         offset: 0,
                         color: '#117ea8'

@@ -84,3 +84,24 @@ const chartTooltipOptions = {
   }
 };
 exports.chartTooltipOptions = chartTooltipOptions;
+
+exports.page_title_content = {
+  component: 'div',
+  position: [733, 38],
+  events: {
+    'click': {
+      actions: ["openNavigator()"]
+    }
+  },
+  props: {
+    $style: {
+      cursor: 'pointer',
+      width: '454px',
+      color: '#fff',
+      fontSize: '42px',
+      $fontWeight: '600',
+      textAlign: 'center',
+      $lineHeight: 1,
+    }
+  }
+}

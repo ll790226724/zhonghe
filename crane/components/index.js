@@ -11,6 +11,8 @@ const talentRank = require('./talent_rank_index_digital')
 const talentSynthesis = require('./talent_synthesis_index_digital')
 const rank = require('./rank')
 const verticalBar = require('./vertical_bar')
+const { page_title_content } = require('../share')
+
 
 module.exports = {
   route: {
@@ -76,19 +78,8 @@ module.exports = {
       },
     },
     {
-      id: 'page-title',
-      component: 'div',
+      ...page_title_content,
       content: '全省人才资源态势总览',
-      position: [750, 27],
-      props: {
-        $style: {
-          color: '#fff',
-          fontSize: '42px',
-          $fontWeight: '500',
-          textAlign: 'center',
-          letterSpacing: '1.2px',
-        }
-      }
     },
     {
       id: 'talent-index',
