@@ -7,6 +7,7 @@ const rank = require('./education_rank')
 const activityDigital = require('./activity_number_digital')
 const highLevelDigital = require('./high_level_talent_digital')
 const date = require('./date_picker')
+const { page_title_content } = require('../share')
 
 module.exports = {
   route: {
@@ -83,19 +84,8 @@ module.exports = {
       },
     },
     {
-      id: 'page-title',
-      component: 'div',
+      ...page_title_content,
       content: '人才引进专题',
-      position: [833, 27],
-      props: {
-        $style: {
-          color: '#fff',
-          fontSize: '42px',
-          $fontWeight: '500',
-          textAlign: 'center',
-          letterSpacing: '1.2px',
-        }
-      }
     },
     {
       id: 'activity-number',

@@ -3,6 +3,7 @@ const table = require('./table')
 const talentsIndicatorsSummary = require('./talents_indicators_summary')
 const radar = require('./radar')
 const digital = require('./force_digital')
+const { page_title_content } = require('../share')
 
 module.exports = {
   route: {
@@ -184,18 +185,8 @@ module.exports = {
       },
     },
     {
-      id: 'page-title',
-      component: 'div',
+      ...page_title_content,
       content: '省域人才综合竞争力',
-      position: [770, 27],
-      props: {
-        $style: {
-          color: '#fff',
-          fontSize: '42px',
-          $fontWeight: '600',
-          textAlign: 'center',
-        }
-      }
     },
     ...map,
     {

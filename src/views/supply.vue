@@ -1,8 +1,9 @@
 <template>
   <div class="supply">
+    <navigator ref="navigator"/>
     <img ref="background" src="/hxrc/images/Bg.png" :style="{position: 'absolute', top: '0px', left: '0px'}" />
     <img ref="title-bg" :style="{width: '701px', height: '123px', position: 'absolute', top: '0px', left: '607px'}" src="/hxrc/images/Title-Bg.png" />
-    <div ref="page-title" :style="{width: '701px', color: '#fff', fontSize: '42px', fontWeight: 600, textAlign: 'center', position: 'absolute', top: '27px', left: '607px'}">
+    <div @click="()=>[openNavigator()]" :style="{cursor: 'pointer', width: '454px', color: '#fff', fontSize: '42px', fontWeight: 600, textAlign: 'center', lineHeight: 1, position: 'absolute', top: '38px', left: '733px'}">
       人才供需专题
     </div>
     <img ref="box-bg" :style="{width: '440px', height: '1059px', position: 'absolute', top: '10px', left: '10px'}" src="/hxrc/images/Box-Bg.png" />
@@ -139,6 +140,8 @@ import {
 } from 'iview'
 import {
 } from 'element-ui'
+import Navigator from '../components/navigator'
+
 
 const TAB_NAVS = [{uuid: 1, label: '岗位排名'}, {uuid: 2, label: '岗位薪资排名'}]
 
@@ -159,6 +162,7 @@ export const supply = {
     Option,
     DatePicker,
     'v-chart': Echarts,
+    Navigator
   },
 
   data () {
