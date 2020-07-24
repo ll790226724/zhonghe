@@ -1,6 +1,6 @@
 .ivu-select .ivu-select-selection {
   height: 50px;
-  background-color: rgba(106, 214, 255, .02) !important;
+  background-color: rgba(106, 214, 255, .1) !important;
   border-color: rgba(106, 214, 255, .12) !important;
 }
 
@@ -100,6 +100,10 @@
   background: transparent;
 }
 
+.ivu-select-dropdown-list {
+  background-color: #152d47;
+}
+
 .ivu-select-dropdown .ivu-select-dropdown-list .ivu-select-item {
   color: #4b9bbe;
   font-size: 16px !important;
@@ -123,7 +127,7 @@
 
 .ivu-date-picker .ivu-date-picker-rel .ivu-input {
   height: 50px;
-  background-color: rgba(106, 214, 255, .02);
+  background-color: rgba(106, 214, 255, .1);
   border-color: rgba(106, 214, 255, .12);
   color: #ffffff;
   font-size: 16px;

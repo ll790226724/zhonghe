@@ -9,7 +9,7 @@ module.exports = [
       $style: {
         width: '400px',
         height: '50px',
-        backgroundColor: 'rgba(106, 214, 255, .02)',
+        backgroundColor: 'rgba(106, 214, 255, .1)',
         borderRadius: '5px'
       }
     }
