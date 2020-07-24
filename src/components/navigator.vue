@@ -132,6 +132,7 @@ export default {
     top: 180px;
     position: absolute;
     background-image: url('/hxrc/images/card-bg-430_367.png');
+    background-size: 100% 100%;
     overflow: hidden;
     transform-origin: top;
     transform: scale3d(0, 0, 0);
