@@ -20,6 +20,7 @@ module.exports = {
         $options: {
           backgroundColor: 'transparent',
           $legend: {
+            $formatter: "legendText",
             type: 'scroll',
             icon: 'circle',
             $itemWidth: 10,
@@ -30,7 +31,8 @@ module.exports = {
             orient: 'vertical',
             $textStyle: {
               color: '#4b9bbe',
-              $fontSize: 12
+              $fontSize: 12,
+              $lineHeight: 15
             },
             inactiveColor: '#1C4159',
           },
