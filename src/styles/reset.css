@@ -126,3 +126,10 @@ input::placeholder {
 .table.table--dark th{
   line-height: 40px;
 }
+.departments-select .ivu-select-dropdown {
+  top: 38px !important;
+}
+
+.map-select .ivu-select-dropdown {
+  top: 38px !important;
+}
