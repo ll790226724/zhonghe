@@ -42,11 +42,11 @@
       >>
     </div>
     <data-loader ref="department_select" @requestDone="(param)=>[setState('selectOptions', param.results ? param.results.map((item, index) => ({index: item[0], name: item[0]})) : [])]" :url="`/v1/components/00004ddd-39de-493f-84ab-9d87fcf23fee/data`" method="get" :data="[['']]" :style="{position: 'absolute', top: '140px', left: '559px'}">
-      <v-select class="departments-select" :clearable="true" :filterable="true" :style="{width: '400px'}" v-model="craneStates.currentDepartment">
-        <v-option v-for="(item, key) in craneStates.selectOptions" :key="key" :value="item.index" :label="item.name">
+      <Select class="departments-select" :clearable="true" :style="{width: '400px'}" v-model="craneStates.currentDepartment">
+        <Option v-for="(item, key) in craneStates.selectOptions" :key="key" :value="item.index" :label="item.name">
           {{item.name}}
-        </v-option>
-      </v-select>
+        </Option>
+      </Select>
     </data-loader>
     <data-loader v-slot="{ results: results }" :url="`/v1/components/00104ddd-39de-493f-84ab-9d87fcf23fee/data`" method="get" :data="[[0, '暂无数据']]" :style="{width: '428px', height: '546px', position: 'absolute', top: '280px', left: '81px'}">
       <vis-table theme="dark" stripe="" :headers="[{width: 88, key: 'index',}, {width: 226, key: 'name', title: '单位名称'}, {width: 114, key: 'value', title: '申报人数'}]" :data="results.map((item, index) => ({index: index + 1, name: item[0], value: item[1]}))" :style="{overflow: 'scroll'}">
@@ -77,8 +77,8 @@ export const high_talents = {
   components: {
     DataLoader,
     VisTable,
-    'v-select': Select,
-    'v-option': Option,
+    Select,
+    Option,
   },
 
   data () {

@@ -19,7 +19,6 @@ module.exports = {
       props: {
         class: 'departments-select',
         $clearable: true,
-        $filterable: true,
         $style: {
           width: '400px',
         },
