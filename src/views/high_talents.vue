@@ -48,6 +48,15 @@
         </v-option>
       </v-select>
     </data-loader>
+    <data-loader v-slot="{ results: results }" :url="`/v1/components/00104ddd-39de-493f-84ab-9d87fcf23fee/data`" method="get" :data="[[0, '暂无数据']]" :style="{width: '428px', height: '546px', position: 'absolute', top: '280px', left: '81px'}">
+      <vis-table theme="dark" stripe="" :headers="[{width: 88, key: 'index',}, {width: 226, key: 'name', title: '单位名称'}, {width: 114, key: 'value', title: '申报人数'}]" :data="results.map((item, index) => ({index: index + 1, name: item[0], value: item[1]}))" :style="{overflow: 'scroll'}">
+        <template v-slot="{ cell: cell, columnKey: columnKey }">
+          <span :class="columnKey === 'index' ? 'row-index-cell' : ''">
+            {{cell}}
+          </span>
+        </template>
+      </vis-table>
+    </data-loader>
   </div>
 </template>
 
@@ -55,6 +64,7 @@
 import BuiltInMixin from '../mixins/built_in'
 import {
   DataLoader,
+  VisTable,
 } from '@byzanteam/vis-components'
 import {
   Select,
@@ -66,6 +76,7 @@ export const high_talents = {
 
   components: {
     DataLoader,
+    VisTable,
     'v-select': Select,
     'v-option': Option,
   },
