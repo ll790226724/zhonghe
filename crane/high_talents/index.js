@@ -1,5 +1,6 @@
 const { page_title_content } = require('../share')
 const subtitle = require('./subtitle')
+const departmentSelect = require('./department_select')
 
 module.exports = {
   route: {
@@ -13,7 +14,7 @@ module.exports = {
       value: []
     },
     {
-      id: 'department',
+      id: 'currentDepartment',
       value: null,
     }
   ],
@@ -43,5 +44,6 @@ module.exports = {
       content: '高端人才专题',
     },
     ...subtitle,
+    departmentSelect,
   ]
 }

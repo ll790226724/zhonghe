@@ -41,23 +41,40 @@
     <div ref="talent-abroad-icon" :style="{color: '#6ad6ff', fontSize: '14px', fontWeight: '400', textAlign: 'left', position: 'absolute', top: '580px', left: '1459px'}">
       >>
     </div>
+    <data-loader ref="department_select" @requestDone="(param)=>[setState('selectOptions', param.results ? param.results.map((item, index) => ({index: item[0], name: item[0]})) : [])]" :url="`/v1/components/00004ddd-39de-493f-84ab-9d87fcf23fee/data`" method="get" :data="[['']]" :style="{position: 'absolute', top: '140px', left: '559px'}">
+      <v-select class="departments-select" :clearable="true" :filterable="true" :style="{width: '400px'}" v-model="craneStates.currentDepartment">
+        <v-option v-for="(item, key) in craneStates.selectOptions" :key="key" :value="item.index" :label="item.name">
+          {{item.name}}
+        </v-option>
+      </v-select>
+    </data-loader>
   </div>
 </template>
 
 <script>
 import BuiltInMixin from '../mixins/built_in'
+import {
+  DataLoader,
+} from '@byzanteam/vis-components'
+import {
+  Select,
+  Option,
+} from 'iview'
 
 export const high_talents = {
   mixins: [BuiltInMixin],
 
   components: {
+    DataLoader,
+    'v-select': Select,
+    'v-option': Option,
   },
 
   data () {
     return {
       craneStates: {
         selectOptions: [],
-        department: {},
+        currentDepartment: null,
       },
     }
   },
