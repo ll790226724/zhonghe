@@ -1,0 +1,47 @@
+const { page_title_content } = require('../share')
+const subtitle = require('./subtitle')
+
+module.exports = {
+  route: {
+    name: 'high_talents',
+    path: 'highTalents'
+  },
+  title: '高端人才专题',
+  states: [
+    {
+      id: 'selectOptions',
+      value: []
+    },
+    {
+      id: 'department',
+      value: null,
+    }
+  ],
+  components: [
+    {
+      id: 'background',
+      component: 'img',
+      position: [0, 0],
+      props: {
+        src: '/hxrc/images/Bg.png'
+      },
+    },
+    {
+      id: 'title-bg',
+      component: 'img',
+      position: [607, 0],
+      props: {
+        $style: {
+          width: '701px',
+          height: '123px',
+        },
+        src: '/hxrc/images/Title-Bg.png'
+      },
+    },
+    {
+      ...page_title_content,
+      content: '高端人才专题',
+    },
+    ...subtitle,
+  ]
+}

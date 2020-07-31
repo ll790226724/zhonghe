@@ -105,3 +105,29 @@ exports.page_title_content = {
     }
   }
 }
+
+exports.subtitle_text= {
+  component: 'div',
+  props: {
+    $style: {
+      color: '#fff',
+      fontSize: '18px',
+      fontWeight: '600',
+      textAlign: 'left',
+      letterSpacing: '1px',
+    },
+  },
+}
+
+exports.subtitle_icon = {
+  component: 'div',
+  props: {
+    $style: {
+      color: '#6ad6ff',
+      fontSize: '14px',
+      fontWeight: 400,
+      textAlign: 'left',
+    },
+  },
+  content: '>>',
+}
