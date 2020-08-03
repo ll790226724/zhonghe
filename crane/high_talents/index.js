@@ -15,7 +15,7 @@ module.exports = {
     name: 'high_talents',
     path: 'highTalents'
   },
-  title: '高端人才专题',
+  title: '高端人才统计',
   states: [
     {
       id: 'selectOptions',

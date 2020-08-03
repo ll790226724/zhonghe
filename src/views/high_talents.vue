@@ -1,9 +1,10 @@
 <template>
   <div class="high_talents">
+    <navigator ref="navigator"/>
     <img ref="background" src="/hxrc/images/Bg.png" :style="{position: 'absolute', top: '0px', left: '0px'}" />
     <img ref="title-bg" :style="{width: '701px', height: '123px', position: 'absolute', top: '0px', left: '607px'}" src="/hxrc/images/Title-Bg.png" />
     <div @click="()=>[openNavigator()]" :style="{cursor: 'pointer', width: '454px', color: '#fff', fontSize: '42px', fontWeight: 600, textAlign: 'center', lineHeight: 1, position: 'absolute', top: '38px', left: '733px'}">
-      高端人才专题
+      高端人才统计
     </div>
     <div ref="talent-analysis" :style="{color: '#fff', fontSize: '18px', fontWeight: '600', textAlign: 'left', letterSpacing: '1px', position: 'absolute', top: '230px', left: '77px'}">
       申报分析
@@ -90,10 +91,10 @@
 </template>
 
 <script>
-  import Echarts from 'vue-echarts'
-  import 'echarts/lib/chart/pie'
-  import 'echarts/lib/component/tooltip'
-  import 'echarts/lib/component/legend'
+import Echarts from 'vue-echarts'
+import 'echarts/lib/chart/pie'
+import 'echarts/lib/component/tooltip'
+import 'echarts/lib/component/legend'
 import BuiltInMixin from '../mixins/built_in'
 import {
   DataLoader,
@@ -104,7 +105,7 @@ import {
   Select,
   Option,
 } from 'iview'
-
+import Navigator from '../components/navigator'
 export const high_talents = {
   mixins: [BuiltInMixin],
 
@@ -115,6 +116,7 @@ export const high_talents = {
     DigitalRoll,
     Select,
     Option,
+    Navigator
   },
 
   data () {
