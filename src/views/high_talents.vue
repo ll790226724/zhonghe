@@ -101,7 +101,7 @@ export const high_talents = {
 
   methods: {
     pieTooltipFormatterFunc(params) {
-      return `${params.marker}${params.name}：${params.percent}%`
+      return `${params.marker}${params.name}：${params.percent}%&nbsp&nbsp${params.value}人`
     },
   }
 }
