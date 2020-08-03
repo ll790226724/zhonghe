@@ -60,6 +60,6 @@ module.exports = {
     talentNow,
     talentAbroad,
     applyAnalysis,
-    applyNumber,
+    ...applyNumber,
   ]
 }

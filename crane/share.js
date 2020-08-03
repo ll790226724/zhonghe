@@ -165,3 +165,29 @@ exports.high_level_legendStyle_small = {
 }
 
 exports.color_series = "['#6ad6ff', '#4b9bbe', '#367290', '#275570', '#1c4159', '#153349']"
+
+exports.digital_bg_400_50 = {
+  component: 'div',
+  props: {
+    $style: {
+      width: '400px',
+      height: '50px',
+      backgroundColor: 'rgba(106, 214, 255, .1)',
+      borderRadius: '5px'
+    }
+  }
+}
+
+exports.digital_circle_icon = {
+  component: 'div',
+  props: {
+    $style: {
+      height:'10px',
+      width: '10px',
+      borderRadius: '10px',
+      borderWidth: '1px',
+      borderColor: '#6ad6ff',
+      borderStyle: 'solid',
+    }
+  },
+}
