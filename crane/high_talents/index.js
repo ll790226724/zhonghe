@@ -7,6 +7,7 @@ const talentType = require('./talent_type')
 const talentPast = require('./talent_past')
 const talentNow = require('./talent_now')
 const talentAbroad = require('./talent_abroad')
+const applyAnalysis = require('./apply_analysis')
 
 module.exports = {
   route: {
@@ -57,5 +58,6 @@ module.exports = {
     talentPast,
     talentNow,
     talentAbroad,
+    applyAnalysis,
   ]
 }
