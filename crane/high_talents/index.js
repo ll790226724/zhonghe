@@ -3,6 +3,7 @@ const subtitle = require('./subtitle')
 const departmentSelect = require('./department_select')
 const table = require('./table')
 const applyRoute = require('./apply_route')
+const talentType = require('./talent_type')
 
 module.exports = {
   route: {
@@ -49,5 +50,6 @@ module.exports = {
     departmentSelect,
     table,
     applyRoute,
+    talentType
   ]
 }
