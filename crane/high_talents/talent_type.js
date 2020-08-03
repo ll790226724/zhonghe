@@ -2,7 +2,7 @@ const {high_level_legendStyle_normal, color_series} = require('../share')
 
 module.exports = {
   component: '@byzanteam/vis-components/data-loader',
-  position: [1009, 280],
+  position: [920, 280],
   exports: {
     results: 'results',
   },
