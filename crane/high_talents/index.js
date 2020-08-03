@@ -2,6 +2,7 @@ const { page_title_content } = require('../share')
 const subtitle = require('./subtitle')
 const departmentSelect = require('./department_select')
 const table = require('./table')
+const applyRoute = require('./apply_route')
 
 module.exports = {
   route: {
@@ -47,5 +48,6 @@ module.exports = {
     ...subtitle,
     departmentSelect,
     table,
+    applyRoute,
   ]
 }

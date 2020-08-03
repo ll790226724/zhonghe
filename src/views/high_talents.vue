@@ -57,10 +57,17 @@
         </template>
       </vis-table>
     </data-loader>
+    <data-loader v-slot="{ results: results }" :url="`/v1/components/00204ddd-39de-493f-84ab-9d87fcf23fee/data?area=${craneStates.currentDepartment ? craneStates.currentDepartment : ''}`" method="get" :data="[[0, '暂无数据']]" :style="{width: '460px', height: '218px', position: 'absolute', top: '435px', left: '1455px'}">
+      <v-chart :options="{backgroundColor: 'transparent', legend: {icon: 'circle', itemWidth: 10, itemHeight: 10, left: 270, top: 'middle', itemGap: 9, orient: 'vertical', textStyle: {color: '#4b9bbe', fontSize: 12, lineHeight: 15}, inactiveColor: '#1C4159'}, color: ['#6ad6ff', '#4b9bbe', '#367290', '#275570', '#1c4159', '#153349'], series: [{type: 'pie', minAngle: 5, left: -140, radius: ['35%', '62%'], label: {show: false}, labelLine: {show: false}, data: results ? results.map(item => ({value: item[0], name: item[1]})) : {name: '暂无数据', value: 0}}], tooltip: {trigger: 'item', formatter: pieTooltipFormatterFunc, backgroundColor: '#566374f0'}}" />
+    </data-loader>
   </div>
 </template>
 
 <script>
+  import Echarts from 'vue-echarts'
+  import 'echarts/lib/chart/pie'
+  import 'echarts/lib/component/tooltip'
+  import 'echarts/lib/component/legend'
 import BuiltInMixin from '../mixins/built_in'
 import {
   DataLoader,
@@ -75,6 +82,7 @@ export const high_talents = {
   mixins: [BuiltInMixin],
 
   components: {
+    'v-chart': Echarts,
     DataLoader,
     VisTable,
     Select,
@@ -83,12 +91,19 @@ export const high_talents = {
 
   data () {
     return {
+      Echarts: Echarts,
       craneStates: {
         selectOptions: [],
         currentDepartment: null,
       },
     }
   },
+
+  methods: {
+    pieTooltipFormatterFunc(params) {
+      return `${params.marker}${params.name}：${params.percent}%`
+    },
+  }
 }
 export default high_talents
 </script>
