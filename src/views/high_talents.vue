@@ -81,6 +81,9 @@
     <data-loader v-slot="{ results: results }" :url="`/v1/components/00104ddd-39de-493f-84ab-9d87fcf23fee/data?area=${craneStates.currentDepartment ? craneStates.currentDepartment : ''}`" method="get" :data="[[0, '暂无数据']]" :style="{width: '400px', height: '571px', position: 'absolute', top: '281px', left: '40px'}">
       <v-chart :options="{backgroundColor: 'transparent', legend: {icon: 'circle', itemWidth: 10, itemHeight: 10, top: 'bottom', itemGap: 9, orient: 'vertical', textStyle: {color: '#4b9bbe', fontSize: 12, lineHeight: 15}, inactiveColor: '#1C4159'}, color: ['#6ad6ff', '#4b9bbe', '#367290', '#275570', '#1c4159', '#153349'], series: [{type: 'pie', top: -300, minAngle: 5, radius: ['0%', '60%'], label: {show: false}, labelLine: {show: false}, data: results ? results.map(item => ({value: item[1], name: item[0]})) : {name: '暂无数据', value: 0}}], tooltip: {trigger: 'item', formatter: pieTooltipFormatterFunc, backgroundColor: '#566374f0'}}" />
     </data-loader>
+    <data-loader v-slot="{ results: results }" :url="`/v1/components/00104ddd-39de-493f-84ab-9d87fcf23fee/data`" method="get" :data="[['', 0]]" :style="{position: 'absolute', top: '140px', left: '40px'}">
+      <digital-roll ref="talent-number-content" v-if="results" titlePosition="left" :content="{title: '2020年07月申报人数', digital: results.reduce((total, item) => total + item[1], 0), suffix: '人'}" :options="{separator: ','}" :titleStyle="{color: '#367391', fontSize: '16px', fontWeight: '400'}" :prefixStyle="{color: '#367391', fontSize: '16px', fontWeight: '400'}" :suffixStyle="{color: '#367391', fontSize: '16px', fontWeight: '400'}" :digitalStyle="{fontSize: '32px', color: '#6ad6ff', fontWeight: '400', fontFamily: 'Oswald-Regular', format: '11', letterSpacing: '2.4px'}" />
+    </data-loader>
   </div>
 </template>
 
@@ -93,6 +96,7 @@ import BuiltInMixin from '../mixins/built_in'
 import {
   DataLoader,
   VisTable,
+  DigitalRoll,
 } from '@byzanteam/vis-components'
 import {
   Select,
@@ -106,6 +110,7 @@ export const high_talents = {
     'v-chart': Echarts,
     DataLoader,
     VisTable,
+    DigitalRoll,
     Select,
     Option,
   },
