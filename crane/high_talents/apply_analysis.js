@@ -25,7 +25,7 @@ module.exports = {
             icon: 'circle',
             $itemWidth: 10,
             $itemHeight: 10,
-            top: 'bottom',
+            top: 280,
             $itemGap: 9,
             orient: 'vertical',
             $textStyle: {
@@ -36,7 +36,7 @@ module.exports = {
             inactiveColor: '#1C4159',
           },
           $color: color_series,
-          $series: "[{type: 'pie', top: -300, minAngle: 5, radius: ['0%', '60%'], label: {show: false}, labelLine: {show: false}, data: results ? results.map(item => ({value: item[1], name: item[0]})) : {name: '暂无数据', value: 0}}]",
+          $series: "[{type: 'pie', top: -300, minAngle: 5, radius: ['0%', '55%'], label: {show: false}, labelLine: {show: false}, data: results ? results.map(item => ({value: item[1], name: item[0]})) : {name: '暂无数据', value: 0}}]",
           $tooltip: {
             trigger: 'item',
             $formatter: "pieTooltipFormatterFunc",
