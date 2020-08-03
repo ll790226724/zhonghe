@@ -119,6 +119,10 @@ export const high_talents = {
     Navigator
   },
 
+  created() {
+    document.title = '高端人才统计'
+  },
+
   data () {
     return {
       Echarts: Echarts,
