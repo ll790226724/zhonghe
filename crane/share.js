@@ -152,7 +152,7 @@ exports.high_level_legendStyle_small = {
   icon: 'circle',
   $itemWidth: 10,
   $itemHeight: 10,
-  $left: 200,
+  $left: 180,
   top: 'middle',
   $itemGap: 9,
   orient: 'vertical',
