@@ -131,3 +131,37 @@ exports.subtitle_icon = {
   },
   content: '>>',
 }
+
+exports.high_level_legendStyle_normal = {
+  icon: 'circle',
+  $itemWidth: 10,
+  $itemHeight: 10,
+  $left: 250,
+  top: 'middle',
+  $itemGap: 9,
+  orient: 'vertical',
+  $textStyle: {
+    color: '#4b9bbe',
+    $fontSize: 12,
+    $lineHeight: 15
+  },
+  inactiveColor: '#1C4159',
+}
+
+exports.high_level_legendStyle_small = {
+  icon: 'circle',
+  $itemWidth: 10,
+  $itemHeight: 10,
+  $left: 200,
+  top: 'middle',
+  $itemGap: 9,
+  orient: 'vertical',
+  $textStyle: {
+    color: '#4b9bbe',
+    $fontSize: 12,
+    $lineHeight: 15
+  },
+  inactiveColor: '#1C4159',
+}
+
+exports.color_series = "['#6ad6ff', '#4b9bbe', '#367290', '#275570', '#1c4159', '#153349']"

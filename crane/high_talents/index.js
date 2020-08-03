@@ -4,6 +4,9 @@ const departmentSelect = require('./department_select')
 const table = require('./table')
 const applyRoute = require('./apply_route')
 const talentType = require('./talent_type')
+const talentPast = require('./talent_past')
+const talentNow = require('./talent_now')
+const talentAbroad = require('./talent_abroad')
 
 module.exports = {
   route: {
@@ -50,6 +53,9 @@ module.exports = {
     departmentSelect,
     table,
     applyRoute,
-    talentType
+    talentType,
+    talentPast,
+    talentNow,
+    talentAbroad,
   ]
 }

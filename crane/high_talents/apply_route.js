@@ -1,3 +1,5 @@
+const {high_level_legendStyle_normal, color_series} = require('../share')
+
 module.exports = {
   component: '@byzanteam/vis-components/data-loader',
   position: [559, 280],
@@ -19,22 +21,8 @@ module.exports = {
       props: {
         $options: {
           backgroundColor: 'transparent',
-          $legend: {
-            icon: 'circle',
-            $itemWidth: 10,
-            $itemHeight: 10,
-            $left: 270,
-            top: 'middle',
-            $itemGap: 9,
-            orient: 'vertical',
-            $textStyle: {
-              color: '#4b9bbe',
-              $fontSize: 12,
-              $lineHeight: 15
-            },
-            inactiveColor: '#1C4159',
-          },
-          $color: "['#6ad6ff', '#4b9bbe', '#367290', '#275570', '#1c4159', '#153349']",
+          $legend: high_level_legendStyle_normal,
+          $color: color_series,
           $series: "[{type: 'pie', minAngle: 5, left: -140, radius: ['35%', '62%'], label: {show: false}, labelLine: {show: false}, data: results ? results.map(item => ({value: item[0], name: item[1]})) : {name: '暂无数据', value: 0}}]",
           $tooltip: {
             trigger: 'item',
