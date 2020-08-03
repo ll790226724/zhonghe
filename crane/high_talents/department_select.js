@@ -1,7 +1,7 @@
 module.exports = {
   id: 'department_select',
   component: '@byzanteam/vis-components/data-loader',
-  position: [559, 140],
+  position: [760, 140],
   events: {
     requestDone: {
       params: ['param'],

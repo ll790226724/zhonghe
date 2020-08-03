@@ -47,7 +47,7 @@
     <div ref="talent-abroad-icon" :style="{color: '#6ad6ff', fontSize: '14px', fontWeight: '400', textAlign: 'left', position: 'absolute', top: '592px', left: '1120px'}">
       >>
     </div>
-    <data-loader ref="department_select" @requestDone="(param)=>[setState('selectOptions', param.results ? param.results.map((item, index) => ({index: item[0], name: item[0]})) : [])]" :url="`/v1/components/00004ddd-39de-493f-84ab-9d87fcf23fee/data`" method="get" :data="[['']]" :style="{position: 'absolute', top: '140px', left: '559px'}">
+    <data-loader ref="department_select" @requestDone="(param)=>[setState('selectOptions', param.results ? param.results.map((item, index) => ({index: item[0], name: item[0]})) : [])]" :url="`/v1/components/00004ddd-39de-493f-84ab-9d87fcf23fee/data`" method="get" :data="[['']]" :style="{position: 'absolute', top: '140px', left: '760px'}">
       <Select class="departments-select" :clearable="true" :style="{width: '400px'}" v-model="craneStates.currentDepartment">
         <Option v-for="(item, key) in craneStates.selectOptions" :key="key" :value="item.index" :label="item.name">
           {{item.name}}
