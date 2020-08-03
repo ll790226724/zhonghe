@@ -1,70 +1,81 @@
 const { subtitle_text, subtitle_icon } = require('../share')
 module.exports = [
   {
-    id: 'talent-stock',
-    position: [118, 230],
+    id: 'talent-analysis',
+    position: [77, 230],
     ...subtitle_text,
-    content: '人才存量',
+    content: '申报分析',
+  },
+  {
+    id: 'apply-rank',
+    position: [1507, 230],
+    ...subtitle_text,
+    content: '申报数排名',
   },
   {
     id: 'apply-route',
-    position: [596, 230],
+    position: [517, 230],
     ...subtitle_text,
     content: '申报途径',
   },
   {
     id: 'talent-type',
-    position: [1046, 230],
+    position: [957, 230],
     ...subtitle_text,
     content: '人才认定分类',
   },
   {
     id: 'talent-past',
-    position: [596, 578],
+    position: [517, 590],
     ...subtitle_text,
     content: '人才原来状况',
   },
   {
     id: 'talent-now',
-    position: [1046, 578],
+    position: [837, 590],
     ...subtitle_text,
     content: '人才现在情况',
   },
   {
     id: 'talent-abroad',
-    position: [1496, 578],
+    position: [1157, 590],
     ...subtitle_text,
     content: '人才境内外分类',
   },
   {
-    id: 'talent-stock-icon',
-    position: [81, 232],
+    id: 'talent-analysis-icon',
+    position: [40, 232],
+    ...subtitle_icon
+  },
+  {
+    id: 'apply-rank-icon',
+    position: [1470, 232],
     ...subtitle_icon
   },
   {
     id: 'apply-route-icon',
-    position: [559, 232],
+    position: [480, 232],
     ...subtitle_icon
   },
   {
     id: 'talent-type-icon',
     component: 'div',
-    position: [1009, 232],
+    position: [920, 232],
     ...subtitle_icon
   },
   {
     id: 'talent-past-icon',
-    position: [559, 580],
+    position: [480, 592],
     ...subtitle_icon
   },
   {
     id: 'talent-now-icon',
-    position: [1009, 580],
+    position: [800, 592],
     ...subtitle_icon
   },
   {
     id: 'talent-abroad-icon',
-    position: [1459, 580],
+    position: [1120, 592],
     ...subtitle_icon
   },
 ]

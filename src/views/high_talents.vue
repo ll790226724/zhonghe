@@ -5,40 +5,46 @@
     <div @click="()=>[openNavigator()]" :style="{cursor: 'pointer', width: '454px', color: '#fff', fontSize: '42px', fontWeight: 600, textAlign: 'center', lineHeight: 1, position: 'absolute', top: '38px', left: '733px'}">
       高端人才专题
     </div>
-    <div ref="talent-stock" :style="{color: '#fff', fontSize: '18px', fontWeight: '600', textAlign: 'left', letterSpacing: '1px', position: 'absolute', top: '230px', left: '118px'}">
-      人才存量
+    <div ref="talent-analysis" :style="{color: '#fff', fontSize: '18px', fontWeight: '600', textAlign: 'left', letterSpacing: '1px', position: 'absolute', top: '230px', left: '77px'}">
+      申报分析
     </div>
-    <div ref="apply-route" :style="{color: '#fff', fontSize: '18px', fontWeight: '600', textAlign: 'left', letterSpacing: '1px', position: 'absolute', top: '230px', left: '596px'}">
+    <div ref="apply-rank" :style="{color: '#fff', fontSize: '18px', fontWeight: '600', textAlign: 'left', letterSpacing: '1px', position: 'absolute', top: '230px', left: '1507px'}">
+      申报数排名
+    </div>
+    <div ref="apply-route" :style="{color: '#fff', fontSize: '18px', fontWeight: '600', textAlign: 'left', letterSpacing: '1px', position: 'absolute', top: '230px', left: '517px'}">
       申报途径
     </div>
-    <div ref="talent-type" :style="{color: '#fff', fontSize: '18px', fontWeight: '600', textAlign: 'left', letterSpacing: '1px', position: 'absolute', top: '230px', left: '1046px'}">
+    <div ref="talent-type" :style="{color: '#fff', fontSize: '18px', fontWeight: '600', textAlign: 'left', letterSpacing: '1px', position: 'absolute', top: '230px', left: '957px'}">
       人才认定分类
     </div>
-    <div ref="talent-past" :style="{color: '#fff', fontSize: '18px', fontWeight: '600', textAlign: 'left', letterSpacing: '1px', position: 'absolute', top: '578px', left: '596px'}">
+    <div ref="talent-past" :style="{color: '#fff', fontSize: '18px', fontWeight: '600', textAlign: 'left', letterSpacing: '1px', position: 'absolute', top: '590px', left: '517px'}">
       人才原来状况
     </div>
-    <div ref="talent-now" :style="{color: '#fff', fontSize: '18px', fontWeight: '600', textAlign: 'left', letterSpacing: '1px', position: 'absolute', top: '578px', left: '1046px'}">
+    <div ref="talent-now" :style="{color: '#fff', fontSize: '18px', fontWeight: '600', textAlign: 'left', letterSpacing: '1px', position: 'absolute', top: '590px', left: '837px'}">
       人才现在情况
     </div>
-    <div ref="talent-abroad" :style="{color: '#fff', fontSize: '18px', fontWeight: '600', textAlign: 'left', letterSpacing: '1px', position: 'absolute', top: '578px', left: '1496px'}">
+    <div ref="talent-abroad" :style="{color: '#fff', fontSize: '18px', fontWeight: '600', textAlign: 'left', letterSpacing: '1px', position: 'absolute', top: '590px', left: '1157px'}">
       人才境内外分类
     </div>
-    <div ref="talent-stock-icon" :style="{color: '#6ad6ff', fontSize: '14px', fontWeight: '400', textAlign: 'left', position: 'absolute', top: '232px', left: '81px'}">
+    <div ref="talent-analysis-icon" :style="{color: '#6ad6ff', fontSize: '14px', fontWeight: '400', textAlign: 'left', position: 'absolute', top: '232px', left: '40px'}">
       >>
     </div>
-    <div ref="apply-route-icon" :style="{color: '#6ad6ff', fontSize: '14px', fontWeight: '400', textAlign: 'left', position: 'absolute', top: '232px', left: '559px'}">
+    <div ref="apply-rank-icon" :style="{color: '#6ad6ff', fontSize: '14px', fontWeight: '400', textAlign: 'left', position: 'absolute', top: '232px', left: '1470px'}">
       >>
     </div>
-    <div ref="talent-type-icon" :style="{color: '#6ad6ff', fontSize: '14px', fontWeight: '400', textAlign: 'left', position: 'absolute', top: '232px', left: '1009px'}">
+    <div ref="apply-route-icon" :style="{color: '#6ad6ff', fontSize: '14px', fontWeight: '400', textAlign: 'left', position: 'absolute', top: '232px', left: '480px'}">
       >>
     </div>
-    <div ref="talent-past-icon" :style="{color: '#6ad6ff', fontSize: '14px', fontWeight: '400', textAlign: 'left', position: 'absolute', top: '580px', left: '559px'}">
+    <div ref="talent-type-icon" :style="{color: '#6ad6ff', fontSize: '14px', fontWeight: '400', textAlign: 'left', position: 'absolute', top: '232px', left: '920px'}">
       >>
     </div>
-    <div ref="talent-now-icon" :style="{color: '#6ad6ff', fontSize: '14px', fontWeight: '400', textAlign: 'left', position: 'absolute', top: '580px', left: '1009px'}">
+    <div ref="talent-past-icon" :style="{color: '#6ad6ff', fontSize: '14px', fontWeight: '400', textAlign: 'left', position: 'absolute', top: '592px', left: '480px'}">
       >>
     </div>
-    <div ref="talent-abroad-icon" :style="{color: '#6ad6ff', fontSize: '14px', fontWeight: '400', textAlign: 'left', position: 'absolute', top: '580px', left: '1459px'}">
+    <div ref="talent-now-icon" :style="{color: '#6ad6ff', fontSize: '14px', fontWeight: '400', textAlign: 'left', position: 'absolute', top: '592px', left: '800px'}">
+      >>
+    </div>
+    <div ref="talent-abroad-icon" :style="{color: '#6ad6ff', fontSize: '14px', fontWeight: '400', textAlign: 'left', position: 'absolute', top: '592px', left: '1120px'}">
       >>
     </div>
     <data-loader ref="department_select" @requestDone="(param)=>[setState('selectOptions', param.results ? param.results.map((item, index) => ({index: item[0], name: item[0]})) : [])]" :url="`/v1/components/00004ddd-39de-493f-84ab-9d87fcf23fee/data`" method="get" :data="[['']]" :style="{position: 'absolute', top: '140px', left: '559px'}">
